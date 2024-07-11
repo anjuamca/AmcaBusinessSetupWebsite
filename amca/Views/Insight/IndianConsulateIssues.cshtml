@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Indian Consulate Issues Advisory on Shipping Firms";
+    ViewBag.Keyword = "indian consulate issues, advisory on shipping firms, shipping companies, due diligence, ships, Federal Transport Authority, fta, gulf news, consulate in dubai";
+    ViewBag.Description = "The Indian Consulate in Dubai has issued an advisory about unscrupulous shipping companies and agents following a huge number of complaints received recently from Indian seafarers in distress in the";
+    ViewBag.PageURL = "https://amca.ae/indian-consulate-issues-advisory-on-shipping-firms-agents-with-bad-records";
+    ViewBag.ImageURL = "https://amca.ae/wimages/amca_Indian_consulate_issues_advisory.jpg";
+}
+@section AdditionalMeta{
+    <meta property='og:title' content="@ViewBag.Title" />
+    <meta property='og:url' content="@ViewBag.PageURL" />
+    <meta property='og:type' content='website' />
+    <meta property='og:description' content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.ImageURL" />
+    <meta property="fb:page_id" content="3058581424174487" />
+}
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.Title</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-9 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="wimages/amca_Indian_consulate_issues_advisory.jpg" class="img-responsive" alt="Indian Consulate in Dubai" title="Indian Consulate in Dubai">
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>Indian consulate issues advisory on shipping firms, agents with bad records</h1>
+                            <p>The Indian Consulate in Dubai has issued an advisory about unscrupulous shipping companies and agents following a huge number of complaints received recently from Indian seafarers in distress in the UAE waters.For the first time, the mission has named and shamed repeated offenders so that sailors do not fall into trouble with them again.The consulate on its website — www.cgidubai.org — has also advised the sailors to apply due diligence before accepting an employment offer to work on these ships and not to get recruited through unscrupulous agents.</p>
+
+                            <p>The mission said a number of cases of Indian seafarers in distress on ships had been brought to the attention of the mission in the past few months. According to the mission, the complaints received from the seafarers included non-payment of salaries for several months, bad working conditions, inadequate supply of food, water and bunker (fuel), delays in sign-off and absence of proper medical care.</p>
+                            <p>“The consulate has been providing assistance wherever it can and has also apprised local authorities about these cases for their early resolution. A number of cases have been resolved with the helpful intervention of the Federal Transport Authority (FTA) of the UAE,” it said.</p>
+                            <p>Gulf News had first reported about 97 Indian sailors stranded aboard 22 ships in the UAE waters seeking help from the mission in the recent months.Earlier this week, this newspaper also reported about 53 out of the 97 sailors returning home after persistent efforts by the mission in cooperation with the FTA and missions of flag countries like the Panama Consulate in Dubai.</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/indian-consulate-issues-advisory-on-shipping-firms-agents-with-bad-records" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Findian-consulate-issues-advisory-on-shipping-firms-agents-with-bad-records&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/indian-consulate-issues-advisory-on-shipping-firms-agents-with-bad-records">
+                            </script>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 blogComments">
+                                    </div>
+                                </div>
+                                @*<div class="col-md-12">
+            <div class="col-md-12 border-comment">
+                <div class="row">
+                    <div class="col-md-1">
+                        <img src="wimages/avtar.jpg" class="img-circle">
+                    </div>
+                    <div class="col-md-10">
+                        <h3>Arif Ansari</h3>
+                        <p>2 Days Ago</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>After reading your article, I think Chipmunk is the best solution for me. Glad to found your article on google. Thanks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+                                <div class="col-md-12">
+                                    <h3><strong>Leave a Comment</strong></h3>
+                                </div>
+
+                                @using (Html.BeginForm("Index", "Sidebar", FormMethod.Post))
+                                {
+                                    <input type="hidden" id="BlogTitle" name="BlogTitle" value="@ViewBag.Title" />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(model => model.Usercomment, new { @class = "form-control textFld", @placeholder = "Positive Comment" })
+                                            @Html.ValidationMessageFor(model => model.Usercomment, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit Now">
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

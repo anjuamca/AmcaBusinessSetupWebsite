@@ -1,0 +1,255 @@
+﻿@model amca.Models.Validation
+@using CaptchaMvc.HtmlHelpers;
+
+<div class="row bgtest space" id="requestWrapper">
+    <div class="overlayYl"></div>
+    <div class="container">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="mainHeading spaceHeading">request a free <span>consultation</span></h2>
+                    <p>For more details, tell us your needs, and we will get back to you.</p>
+                </div>
+            </div>
+            @using (Html.BeginForm("PageQuery", "Page", FormMethod.Post, new { @class = "fromB", @id = "ReqForm" }))
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group" style="color:white;">
+                            @Html.RadioButtonFor(model => model.LeadDataType, "Entity", new { @checked = "checked" }) Entity
+                            @Html.RadioButtonFor(model => model.LeadDataType, "Individual") Individual
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control inputB", @placeholder = "Company Name" })
+                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control inputB", @placeholder = "Name" })
+                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control inputB", @placeholder = "Email Id" })
+                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker inputB ddlNationalityCode" })
+                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control inputB restrictZero", @placeholder = "Contact No" })
+                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="TradeLicenseAuthority">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control inputB selectpicker" })
+                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                        </div>
+                    </div>
+                </div>
+                @*<div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.Service, ViewBag.ServiceList as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                        @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                    </div>
+                </div>
+            </div>*@
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.Service, ViewBag.AllServices as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.SubServiceId, new SelectList(""), "Select Sub Service", new { @class = "form-control inputB", id = "subServiceId" })
+                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control inputB" })
+                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="color: #ffffff">
+                        <div class="form-group homerefresh" id="captcha">
+                            @Scripts.Render("~/bundles/jquery")
+                            @Html.Captcha("Refresh", "", 5)
+                            @Html.Hidden("txtPageName", "RegulatoryComplianceReporting")
+                            @Html.Hidden("txtPageID", "7")
+                            @Html.ValidationSummary(true)
+                            <p style="color:Red">  @ViewBag.ErrMessage </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="hidden" id="token" name="token">
+                            <input href="#CaptchaImage" id="submitbtn" type="submit" class="btn btnTheme" value="Submit Now">
+                        </div>
+                    </div>
+                </div>
+            }
+        </div> <!-- end of col-md-6 -->
+        <div class="col-md-offset-1 col-md-7">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="mainHeading spaceHeading">our client <span>stories</span></h2>
+                </div>
+                <div class="col-md-12 testimonials">
+                    <div class="owl-carousel owl-theme testm-slide">
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="circleTH">
+                                        <img src="../wimages/Qingdao.jpg" class="img-circle" width="135" height="135" alt="Qingdao" title="Mr. Dong Xin, the Vice-president of the Overseas Dept.">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4><strong>Mr. Dong Xin, the Vice-president of the Overseas Dept.</strong></h4>
+                                    <h5><strong>Qingdao Yueyang Engineering Consulting Co., Ltd.</strong></h5>
+                                    <p>I would like to take this opportunity to thank Mr. Nadeem &amp; AMCA for their diligence, hard work &amp; professional expertise. I am extremely pleased working with them and would happily recommend their services to any business owner.</p>
+                                </div>
+                            </div>
+                        </div> <!-- end of item -->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="circleTH">
+                                        <img src="../wimages/Emanuela.jpg" class="img-circle" width="135" height="135" alt="Emanuela" title="Ms. Emanuela Mihaela, Founder">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4><strong>Ms. Emanuela Mihaela, Founder</strong></h4>
+                                    <h5><strong>Body Fit Studio</strong></h5>
+                                    <p>Our company has been working with AMCA for 2 years. We are extremely satisfied with the quality of their service &amp; prompt response to all our queries. We highly recommend AMCA to other companies who need Audit &amp; Accounting services in UAE.</p>
+                                </div>
+                            </div>
+
+                        </div> <!-- end of item -->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="circleTH">
+                                        <img src="../wimages/yosufAhmad.jpg" class="img-circle" width="135" height="135" alt="Yousef Ahmad" title="Mr. Yousef Ahmad, Managing Director">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4><strong>Mr. Yousef Ahmad, Managing Director</strong></h4>
+                                    <h5><strong>Golden Rock Contracting LLC</strong></h5>
+                                    <p>AMCA has a great team of professionals who say what they mean &amp; do what they say. All my VAT related affairs are handled by them. This is one of the few companies who met their commitment &amp; did  everything with perfection. </p>
+                                </div>
+                            </div>
+                        </div> <!-- end of item -->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="circleTH">
+                                        <img src="../wimages/Natalie.jpg" class="img-circle" width="135" height="135" alt="Natalie Meze" title="Ms. Natalie Meze, Manager">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4><strong>Ms. Natalie Meze, Manager</strong></h4>
+                                    <h5><strong>Fruit Filosofia</strong></h5>
+                                    <p>AMCA services have been outstanding so far. We are very pleased with the professionalism of the whole team. Definitely would recommend it to anyone we know. </p>
+                                </div>
+                            </div>
+                        </div> <!-- end of item -->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="circleTH">
+                                        <img src="../wimages/Vinko.jpg" class="img-circle" width="135" height="135" alt="Vinko Cijic" title="Mr. Vinko Cijic, CEO">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4><strong>Mr. Vinko Cijic, CEO</strong></h4>
+                                    <h5><strong>German Technical Consultancies DMCC</strong></h5>
+                                    <p>I am working with AMCA since long and I remain completely free of tension as AMCA is handling the work very well and in timely manner. I love the staff and I feel them like a family working together.</p>
+                                </div>
+                            </div>
+                        </div> <!-- end of item -->
+                    </div> <!-- end of carousal -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("inputB");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+    $(document).ready(function () {
+        if ($('#captcha p').text().length > 3) {
+            document.getElementById('ReqForm').scrollIntoView();
+        }
+    })
+    
+    
+</script>
+
+
+<script>
+
+    $(function () {
+
+        $(':radio[name=LeadDataType]').change(function () {
+            if ($(this).val() == "Individual") {
+                $("#CompanyName").hide();
+                $("#TradeLicenseAuthority").hide();
+            }
+            else
+            {
+               $("#CompanyName").show();
+               $("#TradeLicenseAuthority").show();
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $("#serviceId").change(function () {
+            $.get("/Page/GetSubServices", { Id: $("#serviceId").val() }, function (data) {
+                var jsondata = JSON.parse(data);
+                $("#subServiceId").empty();
+                $("#subServiceId").append("<option value=''>Select Sub Service</option>");
+                $.each(jsondata, function (index, row) {
+                    $("#subServiceId").append("<option value='" + row.Id + "'>" + row.Name + "</option>");
+                });
+            });
+        })
+    }); 
+</script>

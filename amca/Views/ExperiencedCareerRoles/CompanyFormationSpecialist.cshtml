@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Company Formation Specialist | Jobs in Dubai";
+    ViewBag.PageTitle = "Company Formation Specialist";
+    ViewBag.Keyword = "Company Formation Specialist, Company Formation Specialist job description, Company Formation Specialist jobs in uae, Company Formation Specialist jobs in dubai, Company Formation Specialist job responsibilities, Company Formation Specialist duties, Company Formation Specialist job role, role of Company Formation Specialist";
+    ViewBag.Description = "Company Formation Specialists oversee lead development, sales consultations, and license application process.";
+    ViewBag.CompanyFormationSpecialist = "ActiveSubLink";
+    ViewBag.Value = "Company Formation Specialist";
+}
+
+@model amca.Models.ExperienceDesignation
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ExperiencedCareerRoles", "Career")">Experienced career roles</a></li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space sidebarFull">
+    <div class="container">
+        <div class="col-md-3 sidebarHalf">
+            @RenderPage("~/Views/Sidebar/CareerSidebar.cshtml")
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        AMCA is expanding, and we want you to be a part of it! So we are looking for a dynamic <strong>COMPANY FORMATION SPECIALIST</strong> to join us. We want to hear from you if you're passionate, enthusiastic, and ambitious!
+                    </p>
+                </div>
+                <div class="col-md-12 jobDesc">
+                    <h4 class="subHeading"><strong>Job Description:</strong></h4>
+                    <ul>
+                        <li>Structuring high-impact solutions based on the available packages for clients seeking a business license requires business setup and company formation assistance.</li>
+                        <li>Generating awareness of customer-oriented solutions</li>
+                        <li>Implementing recommendations/solutions and ensuring the client receives professional assistance to carry out their desired business in UAE.</li>
+                        <li>Presenting recommendations to clients regarding the business opportunities and advantages of starting a business in different jurisdictions.</li>
+                        <li>Liaising with the client keeps them informed of progress and makes relevant decisions to ensure a smooth application process.</li>
+                        <li>Attend networking events to promote company services.</li>
+                        <li>You must be able to familiarize yourself with the available business license packages.</li>
+                        <li>Presenting recommendations to clients regarding the business opportunities and advantages of the business packages</li>
+                        <li>Continuous relationship with clients to ensure business continuity</li>
+                        <li>Completing all administrative duties associated with the role as required</li>
+                        <li>In-depth understanding of various company formation packages as provided by the company.</li>
+                    </ul>
+                    <h4 class="subHeading"><strong>Requirements:</strong></h4>
+                    <ul>
+                        <li>Must have a minimum of 3 years experience, mainly in business setup/ company formation n UAE</li>
+                        <li>Must have Excellent communication and Negotiation skills</li>
+                        <li>Must be highly professional and smart</li>
+                        <li>Must be Fluent in <strong>Russian/Chinese/Arabic</strong></li>
+                        <li>Must have a clear target market and straightforward client approach in mind</li>
+                        <li>Proven sales experience in a target-driven, KPI-focused environment</li>
+                        <li>Strong networking skills and excellent personality</li>
+                        <li>Passion for achieving results and exceeding targets</li>
+                        <li>Initiative and commitment, able to manage clients independently</li>
+                        <li>Exceptional communication skills</li>
+                        <li>Preferably a female candidate</li>
+                    </ul>
+                    <br />
+                    @using (Html.BeginForm("SubmitJob", "ExperiencedCareerRoles", FormMethod.Post, new { @class = "primary-form mt-3" }))
+                    {
+                        @Html.HiddenFor(model => model.JobTitle, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                        <input type="submit" class="btn btnTheme mr0" value="Apply for this position">
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

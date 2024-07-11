@@ -1,0 +1,13 @@
+﻿<div class="mainSidebar">
+    <h3><strong>Regulatory Compliance and Reporting </strong></h3>
+    <ul>
+        <li class="@ViewBag.ESR"><a href="@Url.Action("ESRService", "Services")">ESR</a></li>
+        <li class="@ViewBag.UBO"><a href="@Url.Action("UltimateBeneficialOwner", "Services")">UBO</a></li>
+        <li class="@ViewBag.CbCR"><a href="@Url.Action("cbcr", "Services")">CbCR</a></li>
+        <li class="@ViewBag.goAML"><a href="@Url.Action("goAML", "Services")">goAML</a></li>
+        <li class="@ViewBag.ParentCompany"><a href="@Url.Action("ParentCompany", "Services")">Parent Company Officers DMCC</a></li>
+    </ul>
+    @RenderPage("~/Views/Sidebar/_RelatedPost.cshtml")
+</div>
+
+

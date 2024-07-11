@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Federal Tax Authority mandated to audit tax compliance in the UAE";
+    ViewBag.Keyword = "federal tax authority, audit tax, uae, due diligence, audit firms in dubai, accounting firms in dubai, auditors in dubai, ca firms in dubai, bookkeeping and accounting firms in dubai, accountants & auditors dubai, top audit firms in dubai, list of audit firms in dubai, best audit firms in dubai, audit firms in dubai, external audit, big 4 audit firms, audit firm, accounting services in dubai, internal and external audit, internal audit and external audit, external audit services, dmcc approved auditors, jafza approved auditors, dafza approved auditors";
+    ViewBag.Description = "The Indian Consulate in Dubai has issued an advisory about unscrupulous shipping companies and agents following a huge number of complaints received recently from Indian seafarers in distress in the";
+    ViewBag.PageURL = "https://amca.ae/federal-tax-authority-mandated-to-audit-tax-compliance-in-the-uae";
+    ViewBag.ImageURL = "https://amca.ae/wimages/amca_federal_tax_authority_mandated.jpg";
+}
+
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.Title</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-8 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/amca_federal_tax_authority_mandated.jpg" class="img-responsive" alt="Federal Tax Authority mandated to audit tax compliance in the UAE" title="Audit">
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.Title</h1>
+                            <p>The Indian Consulate in Dubai has issued an advisory about unscrupulous shipping companies and agents following a huge number of complaints received recently from Indian seafarers in distress in the UAE waters.For the first time, the mission has named and shamed repeated offenders so that sailors do not fall into trouble with them again.The consulate on its website — www.cgidubai.org — has also advised the sailors to apply due diligence before accepting an employment offer to work on these ships and not to get recruited through unscrupulous agents.</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/federal-tax-authority-mandated-to-audit-tax-compliance-in-the-uae" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Ffederal-tax-authority-mandated-to-audit-tax-compliance-in-the-uae&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/federal-tax-authority-mandated-to-audit-tax-compliance-in-the-uae">
+                            </script>
+                        </div>
+                        @RenderPage("~/Views/Sidebar/BlogComment.cshtml")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

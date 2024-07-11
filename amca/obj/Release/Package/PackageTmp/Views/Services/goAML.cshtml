@@ -1,0 +1,263 @@
+﻿@{
+    ViewBag.Title = "goAML Registration Dubai, UAE | goAML System Registration";
+    ViewBag.PageTitle = "goAML Registration Dubai, UAE";
+    ViewBag.Keyword = "money laundering, goaml system, ministry of economy, moe, designated non-financial business and professions, dnfbps, financial intelligent unit, goaml, financial institutions, suspicious transaction reports, strs, suspicious activity reports, financial sanctions, ministry of economy, moe, auditors, corporate service providers, real estate agents, brokers, due diligence, beneficial owner";
+    ViewBag.Description = "What is goAML ? how to register on goAML ? We will help you to register on the goAML & automatic reporting systems in the UAE.";
+    ViewBag.goAML = "ActiveSubLink";
+}
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>goAML</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/goAMLSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/goAML.svg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("ServiceQuery", "Services", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Entity" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Service", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="captcha">
+                                            @Scripts.Render("~/bundles/jquery")
+                                            @Html.Captcha("Refresh", "", 5)
+                                            @Html.Hidden("txtPageName", "goAML")
+                                            @Html.Hidden("txtPageID", "6")
+                                            @Html.ValidationSummary(true)
+                                        </div>
+                                        <p style="color:Red;text-align:right"> @ViewBag.ErrMessage </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+        
+                            <h2>Overview</h2>
+                            <p>
+                                <strong>Federal Decree No. 20 of 2018 </strong> on Anti-Money Laundering and Countering the Financing of Terrorism was issued to establish a legal framework for complying with international standards on anti-money laundering and countering the financing of terrorism. Primarily, it describes the legal requirements the government must observe to comply with international standards. In addition, it capitalizes on the legal and institutional framework's efficacy in implementing procedures and interventions that help anti-money laundering efforts and fight terrorism and criminal organization financing.
+                            </p>
+                            <p>
+                                The UAE conducted its first national risk assessment on money laundering and terrorist funding in 2018, with broad participation from all relevant authorities. According to the assessment, money laundering and terrorist funding are high risks in various regions. FATF (Financial Action Task Force) reviewed the UAE in compliance with international standards in 2019 and discovered a range of areas that would benefit from a national structure to tackle money laundering and terrorist funding.
+                            </p>
+                            <h2>Institutional Framework for AML/CFT</h2>
+                            <p>In line with the UAE’s interest in and commitment to enforcing AML/CFT legislation, the ‘Higher Committee Overseeing National Strategy on Anti-Money Laundering and Countering the Financing of Terrorism’ was formed and headed by His Highness Sheikh Abdullah bin Zayed Al Nahyan, Minister of Foreign Affairs and International Cooperation. This strategy will implement 12 national strategic goals from 2020-to 2023.</p>
+                            <p>The Governor of the Central Bank chairs the NAMLCFTC, which was founded in the year 2000. It controls the country's strategies and efforts to tackle money laundering and terrorist financing.</p>
+                            <h2>Annual AML/CTF Risk Assessment Report</h2>
+                            <p>It is an obligation to file an annual AML/CTF risk assessment report to the Ministry of Economy (MoE) for all Designated non-financial businesses and Professionals.</p>
+                            <p>In accordance with Article 44.4 1 of "Cabinet Decision No. (10) of 2019 Concerning the Implementing Regulations of Decree-Law No. (20) of 2018, on Countering Money Laundering and Terrorism Financing and Combatting Illegal Organizations", all DNFBPs must provide information as discussed below. Information requests such as this are part of the Ministry of Economy's efforts to modify its activities as a Supervisory Authority of Designated Non-Financial Businesses or Professions in accordance with a risk-based approach. Therefore, the Ministry of Economy will seek such information annually moving forward.</p>
+                            <p>It consists of internal and external information about the business and its activities to assess how it complies with AML laws and regulations, based on which the authorities give entities a risk score. Providing wrong information or lack of compliance is taken seriously and will likely be penalized by the authorities. The information that needs to be delivered can be divided into the following parts:</p>
+                            <h3>Inherent Risk </h3>
+                            <p>This section contains mainly the following type of information:</p>
+                            <ol>
+                                <li>Legal</li>
+                                <li>Operational Activities</li>
+                                <li>Ultimate Beneficiary details</li>
+                                <li>Client records</li>
+                                <li>Nature of Transactions during the year</li>
+                            </ol>
+
+                            <h3>Control and Quality of Risk Mitigation  </h3>
+                            <p>This section deals with how the entity is implementing AML-CTF controls and procedures and how are they documented, including: </p>
+                            <ol>
+                                <li>How are risks assessed?</li>
+                                <li>How are client records maintained?</li>
+                                <li>How any risks detected are mitigated?</li>
+                                <li>Are there appropriate policies and procedures in place to tackle such problems?</li>
+                            </ol>
+
+                            <h3>Signatories</h3>
+                            <p>It includes the details of the person who prepares the report and has reviewed it. Furthermore, as mentioned above, it is a yearly obligation. Therefore it is essential to ensure all Regulated reporting entities within UAE implement proper and robust controls and measures necessary to develop and maintain a sound compliance system.</p>
+                            <h2>AML/CTF Risk Report Deadline for 2021 Filing</h2>
+
+                            <h3>Submission Deadline</h3>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>Auditors and Accountants</td>
+                                    <td>07 September 2021, 00:09 UAE time</td>
+                                </tr>
+                                <tr>
+                                    <td>Real Estate Brokers</td>
+                                    <td>23 August 2021 at 11:59 pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Dealers of Precious metals and Stones</td>
+                                    <td>16 August 2021</td>
+                                </tr>
+                            </table>
+                            <p>All goAML registered entities will receive filing notification and details on your registered email. </p>
+
+                            <h2>The goAML System Registration</h2>
+                            <p>The Ministry of Economy (MoE) announced the launch of an awareness and monitoring campaign to enable registered Designated Non-Financial Business and Professions (DNFBPs) in the UAE to register with the Financial Intelligent Unit (goAML) system. Similarly, it encourages targeted groups to write in the design of the Committee on Goods Subject to Import and Export Control (Automatic Reporting System for Sanctions Lists) and to take action in relation to both the provisions of Federal Law No 20 of 2018 on the fight against money laundering crimes and the funding of terrorism and criminal organizations and the legislation and related decision-making rules and regulations.</p>
+
+                            <p>
+                                According to the Ministry of Economy, the last date to  <a href="https://goaml.ae/" target="_blank">register in the goAML system</a>
+                                was April 30, 2021. However, registrations are still being accepted by the MoE. Further Anti-Money Laundering (AML) violators may face administrative fines ranging from <strong>AED 50,000 to 1,000,000</strong>.
+                            </p>
+
+                            <h2>What is the goAML System?</h2>
+                            <p>The goAML system is an integrated digital platform through which financial institutions, designated non-financial businesses, occupations, and the relevant authorities can send Suspicious Transaction Reports (STRs) and Suspicious Activity Reports (SARs). The Financial Intelligence Unit uses it to collect, evaluate and distribute suspicious transaction information rapidly and effectively.</p>
+                            <p><strong>What is Committee for Commodities Subject to Import and Export Control (Automatic Reporting System for Sanctions Lists)?</strong></p>
+                            <p>By registering in this system, financial institutions and designated non-financial undertakings and professions will be able to receive timely updates when individuals are added or removed to the local or UN list of targeted financial sanctions. In addition, the system automatically sends e-mail notifications to all registered establishments and authorities.</p>
+                            
+                            <h4>Which Businesses are treated as Designated Non-financial Businesses and Professions (DNFBPs)?</h4>
+                            <p>A DNFBP is anyone who engages in the following trade or business activities:</p>
+                            <ol>
+                                <li>When brokers and real estate agents complete transactions for the benefit of their clients in the purchase and selling of real estate.</li>
+                                <li>Precious metals and precious stone dealers carry out a single cash transaction or multiple transactions that tend to be connected or exceed more than AED 55,000.</li>
+                                <li>Attorneys, notaries, and other independent legal practitioners, as well as independent accountants, when planning, performing or executing financial transactions for their clients: </li>
+                                <li>
+                                    <ul>
+                                        <li>Purchase and sale of real estate.</li>
+                                        <li>Management of funds owned by the Customer.</li>
+                                        <li>Management of bank accounts, saving accounts, or securities accounts.</li>
+                                        <li>Contributions for the establishment, operation, or management of companies.</li>
+                                        <li>Creating, operating, or managing legal persons or Legal Arrangements.</li>
+                                        <li>Selling and buying commercial entities.</li>
+                                    </ul>
+                                </li>
+                                <li>Providers of corporate services and trusts when they perform or execute a transaction on behalf of their customers in the following areas: Acting as an agent in the creation or establishment of legal persons;</li>
+                                <li>
+                                    <ul>
+                                        <li>Working as or equipping another person to serve as a director or secretary of a company, as a partner, or in a similar position in a legal person.</li>
+                                        <li>Provide a registered office, work address, residence, correspondence address, or administrative address of a legal person or Legal Arrangement.</li>
+                                        <li>Performing work or equipping another person to act as a trustee for a direct Trust or conduct a similar function in favor of another form of Legal Arrangement.</li>
+                                        <li>Working or equipping another person to act as a nominal shareholder favors another person.</li>
+                                        <li>A decision of the Minister shall determine other professions and activities</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p>According to the Ministry of Economy, the targeted establishment must take three key measures to protect its enterprises against money laundering threats. As follows, the three steps are:</p>
+                            <ol>
+                                <li>Appointment of a facility compliance officer with responsibility for the registration and follow-up of the two systems;</li>
+                                <li>Exercising due diligence on customers by checking the identity of the client and the beneficial owner before forming a business relationship or opening an account and other information listed in the implementing regulations; and</li>
+                                <li>Registration in the 'goAML' system, filing of suspicious transaction reports through it, registration in the Automatic Reporting System For Sanctions Lists of the Committee for Commodities Subject to Import and Export Control, and alignment of their commercial operations with the lists produced on an ongoing basis by that system.</li>
+                            </ol>
+                            <p>The Ministry of Economy (MoE) has stated that it will organize field inspection campaigns to track the scope of the dedication of the target establishments to the registration and implementation of relevant measures in both systems. Such initiatives will also help raise awareness of federal law requirements and punishments for violations and ensure they are committed to its provisions.</p>
+                            
+                            <h2>UAE Central Bank issues updated guidance on AML/CTF</h2>
+                            <p>By including the Financial Action Task Force (FATF) standards in the updated guidance, which came into effect on the <strong> 1st of August-2022</strong>, LFIs will understand risks better and ensure they are meeting their statutory obligations in terms of Anti-Money laundering and counter-terrorism financing.</p>
+                              <p>According to the newly issued guidance some of the <strong>key preventive measures</strong> that should be implemented by LFIs to mitigate the money laundering and the financing of terrorism risks relating to payments include, but not limited to, the following:</p>
+                              <ol>
+                                <li>Risk-based Approach should be taken when managing the risks involved.</li>
+                                <li>Should Conduct Regular Risk Assessments to cover all the payment products, services, relationships, and exposure to domestic and foreign payment sector participants.</li>
+                                <li>Conduct Regular Due diligence on customers, monitoring all transactions processed or conducted through the LFIs.</li>
+                                <li>Reporting suspicious transactions to the UAE’s Financial Intelligence Unit.</li>
+                                <li>Put in place a sanctions compliance program with operational systems that appropriately screen transactions and transmit required information throughout the payment cycle.</li>
+                                <li>In correspondent relationships, LFIs should not process any payments for a correspondent unless they are entirely confident that the correspondent conducts appropriate screening.</li>
+                              </ol>  
+                                <p><em><strong>*Note: These preventive measures should be integrated into an LFI’s AML/CFT compliance program and supported with governance and training*</strong></em></p>
+                            <h3>How can we help you?</h3>
+                            <p>The goAML system and the Automatic Reporting System for Sanctions Lists are two of the newest anti-money laundering programs introduced by the Ministry of Economy (MOE). According to the MOE, AMCA will help you register in the four classifications : (1) Brokers and Real Estate Agents, (2) Dealers in Precious Metals and Precious Stones, (3) Auditors, and (4) Corporate Service Providers.</p>
+                            
+                        
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/the-goaml-system-and-automatic-reporting-system");
+         })
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+</script>

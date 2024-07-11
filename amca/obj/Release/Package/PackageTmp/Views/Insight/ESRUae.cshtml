@@ -1,0 +1,179 @@
+﻿@{
+    ViewBag.Title = "The Overhauling of Economic Substance Regulation | ESR UAE";
+    ViewBag.PageTitle = "The Overhauling of Economic Substance Regulation in the UAE";
+    ViewBag.Keyword = "economic substance regulation, economic regulation, economic substance uae";
+    ViewBag.Description = "In the year 2019, 30th of April, the Economic Substance Regulation, known as ESR were presented in the UAE through Cabinet of Minister Resolution No. 31 of 2019. The Ministry of Finance (MOF) through Ministerial Decision";
+    ViewBag.PageURL = "https://amca.ae/esr-uae";
+    ViewBag.ImageURL = "https://amca.ae/wimages/esr-overhauling.jpg";
+}
+@section AdditionalMeta{
+    <meta property='og:title' content="@ViewBag.Title" />
+    <meta property='og:url' content="@ViewBag.PageURL" />
+    <meta property='og:type' content='website' />
+    <meta property='og:description' content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.ImageURL" />
+    <meta property="fb:page_id" content="3058581424174487" />
+}
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-9 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/esr-overhauling.jpg" class="img-responsive" title="The Overhauling of Economic Substance Regulation in the UAE" alt="The Overhauling of Economic Substance Regulation in the UAE" />
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.PageTitle</h1>
+                            <p>In the year 2019, 30th of April, the Economic Substance Regulation, known as ESR were presented in the UAE through Cabinet of Minister Resolution No. 31 of 2019. The Ministry of Finance (MOF) through Ministerial Decision 215 of 2019 gave explicit direction on those regulations on the 11th of September 2019. Authoritatively, 2019 was considered as the ESR’s pioneer year for all UAE based entities such as the companies and organization, branches and business permit holders included.</p>
+
+                            <p>A revised legislation overhauling the Economic Substance Regulation (ESR) has been published by the UAE this 2020. There are explicit perspectives in the ESR nowadays which are primarily prioritized and overhauled. UAE based entities which are covered by the ESR are all reminded of these changes ahead of the deadline of the first ESR report on December 31, 2020. </p>
+
+                            <p>Voiding the effectivity and supplanting the previously applicable Resolution No. 31 of 2019, a new resolution was formally adapted by the Cabinet of Ministers on the 10th of August 2020. The new resolution is the Resolution No. 57/2020 which was announced to the public on the 2nd of September 2020. In addition to this, a renewed Ministerial Decision 100/2020 was likewise formally adapted on the 19th of August 2020. The announcement for this has been done to the public on the 2nd of September, voiding and ousting the primary Decision 215 of 2020.</p>
+
+                            <h2><strong>What is the Resolution 57/2020?</strong></h2>
+                            <p>The Resolution 57/2020, a new resolution voiding the effectivity of the previous Decision 215 of 2020, came up with the number of changes to the original ESR. A new category of licensee under the ESR include among others have been presented as the Exempted Licensee:  </p>
+                            <ul>
+                                <li>Investment Funds</li>
+                                <li>Licensees which are tax resident in another jurisdiction</li>
+                                <li>Branches of foreign entities which relevant income is subject to tax resident in a jurisdiction outside the UAE</li>
+                                <li>Entity conducted entirely by the residents in UAE and not correlated with the MNE, in any given manner </li>
+                            </ul>
+                            <p>Recording a notification and providing documentary evidence demonstrating such position should be done by the exempted licensees in order for them to make the most of their exempt status for ESR purposes. </p>
+                            <p>While the UAE Federal Tax Authority has now been appointed as the authority to:</p>
+                            <ul>
+                                <li>Evaluate if the licensees have met the economic substance tests</li>
+                                <li>Function as the National Assessing Authority</li>
+                                <li>Enforce administrative penalties for non-compliance</li>
+                                <li>Listen and settle on a decision with respect to the appeals filed by the licensees, among others  </li>
+                                <li>Exchange information with competent authorities</li>
+                            </ul>
+                            <p>Beforehand, the regulatory authorities of each licensee, including the relevant UAE free zone authorities and the ministry of economy, among others have the only rights with respect to the above-mentioned powers. </p>
+                            <h2><strong>A New Set of Penalties</strong></h2>
+                            <p>As indicated by the Resolution 57/2020, the penalties for non-compliance have increased the relevant amounts. The following penalties are as follows:</p>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr style="background:#8e6c3a; color:#fff;">
+                                        <th>Name of Activity</th>
+                                        <th>Penalty(under Resolution 57/2020)</th>
+                                        <th>Penalty (Before)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="background:#8e6c3a; color: #fff;">1. Failure to submit the ESR Notification </td>
+                                        <td>
+                                            USD 5,450 (AED 20,000)
+                                        </td>
+                                        <td>
+                                            US2,725
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background:#8e6c3a; color: #fff;">2. Failing the economic substance test</td>
+                                        <td>USD 13,625 (AED 50,000)</td>
+                                        <td>USD 2,725 to US13,625</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background:#8e6c3a; color: #fff;">3. Providing inaccurate information </td>
+                                        <td>AED 50,000</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>As mentioned, the imposition of penalties has been shifted now to the UAE Federal Tax Authority. Corresponding to this, a strict policy against non-compliance must be expected. 	</p>
+                            <h2><strong>Relevant Activities of the Resolution 57/2020</strong></h2>
+                            <p>As what is stated from the previously applicable regulation, all the organizations which have an applicable license for conducting “Relevant Activities” are required to conform with ESR requirements. Nonetheless, there are some minor changes to what the ESR considers “relevant activities.” The licensees’ demonstration of such activities ought to be in terms of sufficient economic substance in the UAE. Such changes incorporate, among others, further explanation identifying the relevant activities of a distribution and services business and a high-risk IP business. </p>
+                            <p>The licensees that submitted the ESR Notification in June and currently preparing for the ESR report filing before the end of this year ought to likewise consider the relevant changes.</p>
+                            <h2><strong>ESR Reporting through a New Portal</strong></h2>
+                            <p>Before, all the reports, notifications, and related documentation ought to be submitted by licensees with their respective regulatory authority. Currently, the UAE MOF will be launching a portal to facilitate the electronic filing of all the reports, notifications, and other related documentation, this has been clarified by the Decision 100/2020. Nevertheless, the Decision does not state when does this portal will be accessible. </p>
+                            <p>The first deadline for submitting the ESR Reports which is on December 31, 2020 is drawing nearer. Businesses must consider these recent changes. </p>
+                        </div>
+
+                        <div class="col-md-12 writer text-right">
+                            <p class="date">15 Jun 2020</p>
+                            <h4><strong>Mohammad Sharique Nadeem</strong></h4>
+                            <p>Business Analyst</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/esr-uae" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Fesr-uae&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/esr-uae">
+                            </script>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 blogComments">
+                                    </div>
+                                </div>
+                                @*<div class="col-md-12">
+            <div class="col-md-12 border-comment">
+                <div class="row">
+                    <div class="col-md-1">
+                        <img src="wimages/avtar.jpg" class="img-circle">
+                    </div>
+                    <div class="col-md-10">
+                        <h3>Arif Ansari</h3>
+                        <p>2 Days Ago</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>After reading your article, I think Chipmunk is the best solution for me. Glad to found your article on google. Thanks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+                                <div class="col-md-12">
+                                    <h3><strong>Leave a Comment</strong></h3>
+                                </div>
+
+                                @using (Html.BeginForm("Index", "Sidebar", FormMethod.Post))
+                                {
+                                    <input type="hidden" id="BlogTitle" name="BlogTitle" value="@ViewBag.PageTitle" />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(model => model.Usercomment, new { @class = "form-control textFld", @placeholder = "Positive Comment" })
+                                            @Html.ValidationMessageFor(model => model.Usercomment, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit Now">
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

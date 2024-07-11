@@ -1,0 +1,10 @@
+﻿<div class="mainSidebar">
+    <h3><strong>Economic Substance Regulations (ESR)</strong></h3>
+    <ul>
+        <li class="@ViewBag.ESRNotificationFiling"><a href="@Url.Action("ESRNotificationFiling", "ESRSubServices")">ESR Notification Filing</a></li>
+        <li class="@ViewBag.ESRReport"><a href="@Url.Action("ESRReport", "ESRSubServices")">ESR Report</a></li>
+        <li class="@ViewBag.ESRTesting"><a href="@Url.Action("ESRTesting", "ESRSubServices")">ESR Testing</a></li>
+    </ul>
+    @RenderPage("~/Views/Sidebar/_RelatedPost.cshtml")
+</div>
+

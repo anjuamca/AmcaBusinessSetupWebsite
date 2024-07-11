@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "IT System Administrator | Jobs in Dubai";
+    ViewBag.PageTitle = "IT System Administrator";
+    ViewBag.Keyword = "IT System Administrator, it project coordinator, it support coordinator, it security coordinator, it coordinator in school, project coordinator it, it operations coordinator, it project coordinator job, it systems coordinator, it coordinator job, it infrastructure coordinator, it coordinator meaning, it helpdesk coordinator, it logistics coordinator";
+    ViewBag.Description = "We are looking for a talented IT Coordinator to join our team. Job Description: Designing a Pamphlet, Preparing a WhatsApp graphics for marketing, Illustrating concept by designing rough layout of art and copy regarding arrangement, size, type size and style, and related aesthetic concepts";
+    ViewBag.ITCoordinator = "ActiveSubLink";
+    ViewBag.Value = "IT System Administrator";
+}
+
+@model amca.Models.ExperienceDesignation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ExperiencedCareerRoles", "Career")">Experienced career roles</a></li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space sidebarFull">
+    <div class="container">
+        <div class="col-md-3 sidebarHalf">
+            @RenderPage("~/Views/Sidebar/CareerSidebar.cshtml")
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    We are looking for a talented IT System Administrator to join our team.
+                </div>
+               
+                <div class="col-md-12 jobDesc">
+                    
+                    <h4 class="subHeading"><strong> Responsibilities : </strong></h4>
+                    <ul>
+                        <li>Identifying, analyzing, and interpreting trends or patterns in complex data sets</li>
+                        <li>Working with management to prioritize business and information needs</li>
+                        <li>Updating the Microsoft account for the employees like Ms. Word, Ms. Excel Outlook etc.</li>
+                        <li>Handling queries coming from the web on help desk</li>
+                        <li>Making backup system for all the accounting and auditing files for our clients and for our company as well</li>
+                        <li>Maintaining the punching system for attendance purposes</li>
+                        <li>Interpreting data, analyzing results using statistical techniques and providing ongoing reports</li>
+                        <li>Maintaining the company data base</li>
+                        <li>Taking care of network connections and servers on cloud computing </li>
+                        <li>Updating all system software and checking system’s virus and memory status. </li>
+                        <li>Checking the system’s passwords.</li>
+                        <li>Configuring emails for all employees and for new employees</li>
+                        <li>Installing and configuring computer hardware, software, systems, networks, printers, and scanners</li>
+                        <li>Monitoring and maintaining computer systems and networks</li>
+                        <li>Responding in a timely manner to service issues and requests</li>
+                        <li>Providing technical support across the company (this may be in person or over the phone)</li>
+                        <li>Configuring emails for all employees and for new employees</li>
+                        <li>Repairing and replacing equipment as necessary</li>
+                        <li>Installing and configuring computer hardware operating systems and applications</li>
+                        <li>Communicating with the staff through a series of actions, either face-to-face or over the phone, to help in setting up the systems or resolve issues</li>
+                        <li>Troubleshooting system and network problems, diagnosing, and solving hardware or software faults</li>
+                        <li>Replacing parts as required</li>
+                        <li>Providing support, including procedural documentation and relevant reports</li>
+                        <li>Following diagrams and written instructions to repair a fault or set up a system</li>
+                        <li>Support the roll-out of new applications</li>
+                        <li>Setting up new user’s accounts and profiles and dealing with password issues</li>
+                        <li>Responding within agreed time limits to call-outs</li>
+                        <li>Conductingt electrical safety checks on computer equipment.</li>
+                        <li>Working on photoshop</li>
+                        <li>Making backup system for all the accounting and auditing files for both the clients and the company</li>
+                        <li>Defining new process improvement opportunities</li>
+                    </ul>
+                    <br />
+                    @using (Html.BeginForm("SubmitJob", "ExperiencedCareerRoles", FormMethod.Post, new { @class = "primary-form mt-3" }))
+                    {
+                        @Html.HiddenFor(model => model.JobTitle, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                        <input type="submit" class="btn btnTheme mr0" value="Apply for this position">
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

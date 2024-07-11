@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Error";
+    ViewBag.Keyword = "error";
+    ViewBag.Description = "An error occurred while processing your request.";
+}
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.Title</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Error</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12 pagesMContain">
+                    <h1>Error.</h1>
+                    <h2>An error occurred while processing your request.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

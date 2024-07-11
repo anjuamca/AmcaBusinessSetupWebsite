@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Management Reporting Services in Dubai, UAE";
+    ViewBag.PageTitle = "Management Reporting Services in Dubai";
+    ViewBag.Keyword = "management report";
+    ViewBag.Description = "We provide management reporting services in Dubai. Management report is an important factor to run an effective business.";
+    ViewBag.ManagementReport = "ActiveSubLink";
+    ViewBag.Value = "Management Report";
+}
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("AdvisoryServices", "Services")">Advisory Services</a> </li>
+                    <li>Management Report</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/AdvisoryServicesSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/ManagementReport.svg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/AdvisorySubServices/QueryForm.cshtml")
+                        </div>
+                    </div>
+                    <p>
+                        Management reports aim at informing managers of various parts of the business to help them make better-informed decisions. They gather data from different organization departments, track key performance indicators (KPIs), and understandably present them. They essentially show the worth of your business over a particular time by disclosing financial and operational information. Reporting for management provides insights on how the organization is doing, empowering decision-makers to find the right path to increase operating efficiency and make appropriate decisions to remain competitive.
+                    </p>
+                    <p>Management reporting is an important term for business intelligence that includes reports meant to assist managers in overseeing operations and performance. These sorts of reports are core pieces of numerous new enterprise technologies that intend to automate or enhance the process of management reporting. We realize that the management information needed by each business varies, so we don't give a standard approach to all our clients. Instead, we endeavor to understand the particular business needs and key performance indicators applicable to the client’s industry and business.</p>
+                    <h3><strong>How we can help</strong></h3>
+                    <p>Your management reports pack will be tailored to meet your business needs but will commonly include</p>
+                    <ul>
+                        <li>Profit and income/loss statement every month</li>
+                        <li>Balance sheet</li>
+                        <li>Departmental reports</li>
+                        <li>Comparisons to prior periods and budgets</li>
+                        <li>Multi-currency reporting</li>
+                        <li>Schedules detailing key control account reconciliations; and</li>
+                        <li>Full transaction report.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/management-report");
+         })
+
+</script>

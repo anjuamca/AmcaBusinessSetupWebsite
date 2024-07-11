@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Due Diligence | Commercial Due Diligence Services in Dubai";
+    ViewBag.PageTitle = "Due Diligence Services in Dubai";
+    ViewBag.Keyword = "due diligence";
+    ViewBag.Description = "Due Diligence Services in Dubai, UAE. Due Diligence is an investigation, audit, or review performed to confirm facts or details of a matter under consideration";
+    ViewBag.DueDiligence = "ActiveSubLink";
+    ViewBag.Value = "Due Diligence";
+}
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("AdvisoryServices", "Services")">Advisory Services</a> </li>
+                    <li>Due Diligence</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/AdvisoryServicesSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/DueDeligence.svg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/AdvisorySubServices/QueryForm.cshtml")
+                        </div>
+                    </div>
+                    <h2><strong>What is due diligence in business?</strong></h2>
+                    <p>
+                        Due diligence is the systematic examination of a business before an event like a merger or acquisition, IPO, capital raise, or audit. The investigation is carried out to assess commercial and legal risks and opportunities.
+                    </p>
+                    <h3><strong>What does the due diligence process involve?</strong></h3>
+                    <p>Due diligence is an extensive process that covers numerous aspects of a business, from financial statements and accounting records to key staff members and agreements. The elements of an organization covered by due diligence usually fall within five broad areas: commercial performance, finances, legal compliance, operations, and environmental impact.</p>
+                    <p>As there are no official guidelines for what should be covered by the due diligence process, it is generally tailored to each specific transaction. Some types of due diligence are more significant in particular industries than in others, and the depth, length, and scope of the investigation usually depend on:</p>
+                    <ul>
+                        <li>The nature of the transaction</li>
+                        <li>The purchasing or investing company’s needs and interests</li>
+                        <li>The perceived level of risk.</li>
+                    </ul>
+                    <h3><strong>How the Due Diligence Process Works</strong></h3>
+                    <p>The due diligence process requires the involvement of both the purchaser or investor and their accountant and attorney. However, it's generally performed after an intent-to-purchase agreement has been signed before a formal purchase agreement with the exchange of assets and funds is entered into. The letter of intent is a non-binding document that each party signs to allow the due diligence process to start.</p>
+                    <p>As due diligence starts, it's time to get external advisors involved. For example, you may want to hire a business appraiser to look through all business records to give you an estimate of the business value, an attorney to look at legal matters, and a CPA to review accounting records.</p>
+                    <h3><strong>What Can We do for you</strong></h3>
+                    <p>The third-party due diligence service can be customized to your necessities, ranging from a potential gap analysis or regulatory assistance to implementing a digital platform or managed service. As a result, we can give a complete end-to-end offering. The digital platform has been adapted to perform due diligence on third parties within the asset management industry like fund distributors, investment managers, and fund administrators. Our solution is quick to be deployed and allows asset managers to accomplish efficiencies in their due diligence execution, and will enable them to focus more on the required risk assessment.</p>
+                    <p>Our outsider due to determination administration can be custom fitted to your necessities, which can go from a potential hole investigation or offering administrative help to the execution of a computerized stage or arrangement of an oversaw administration. We can give a total start to finish offering. The advanced stage has been adjusted to perform due diligence on outsiders in the resource of the executive's business, for example, reserve wholesalers, speculation supervisors, and asset managers. Our answer rushes to be conveyed and empowers resource chiefs to accomplish efficiencies in their due tirelessness execution and empowers them to focus more on the necessary danger evaluation. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/due-diligence");
+         })
+
+</script>

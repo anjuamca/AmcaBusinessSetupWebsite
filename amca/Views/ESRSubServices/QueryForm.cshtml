@@ -1,0 +1,92 @@
+﻿@model amca.Models.Validation
+@using CaptchaMvc.HtmlHelpers;
+<div class="formThemePage">
+    @using (Html.BeginForm("ESRQuery", "ESRSubServices", FormMethod.Post, new { @class = "fromB" }))
+    {
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <h4><strong>Free Consultation</strong></h4>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.HiddenFor(model => model.LeadDataType, new { Value = "Entity" })
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.SubServiceId, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="captcha">
+                @Scripts.Render("~/bundles/jquery")
+                @Html.ValidationSummary(true)
+                @Html.Captcha("Refresh", "", 5)
+            </div>
+            <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="hidden" id="token" name="token">
+                <input type="submit" class="btn btnTheme pull-right" value="Submit">
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+
+</script>

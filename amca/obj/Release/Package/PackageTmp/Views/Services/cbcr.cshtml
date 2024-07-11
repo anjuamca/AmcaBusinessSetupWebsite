@@ -1,0 +1,189 @@
+﻿@{
+    ViewBag.Title = "Country-by-Country Reporting (CbCR) in UAE | CbCR";
+    ViewBag.PageTitle = "Country-by-Country Reporting (CbCR)";
+    ViewBag.Keyword = "country by country reporting, cbcr, organization for economic cooperation and development, oecd, group of companies, multinational group, mne, mne group, cbcr notification, cbc report, quantitative, qualitative, cbcr requirements, administrative fine, ministry of finance, mof, uae tax resident";
+    ViewBag.Description = " AMCA is happy to assist in your business to fulfilling and complying  the process, procedures, and submission of your CbCR Notification and also CbC Report.";
+    ViewBag.CbCR = "ActiveSubLink";
+}
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>The UAE Country-by-Country Reporting (CbCR)</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/RegulatoryComplianceReportingSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/CbCR.svg" class="img-responsive" alt="CbCR" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("ServiceQuery", "Services", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Entity" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @Value = "CbCR" })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div id="captcha">
+                                                @Scripts.Render("~/bundles/jquery")
+                                                @Html.Captcha("Refresh", "", 5)
+                                                @Html.Hidden("txtPageName", "cbcr")
+                                                @Html.ValidationSummary(true)
+                                            </div>
+                                            <p style="color:Red;text-align:right">  @ViewBag.ErrMessage </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                The Cabinet Resolution No. (32) of 2019 (the “Resolution”) on Country-by-Country Reporting (“CbCR”) was issued in the United Arab Emirates on 30 April 2019. On the one hand, it is amended and covered by Cabinet Resolution No. (44) of 2020.
+                            </p>
+                            <p>
+                                The Country-by-Country Reporting (“CbCR”) rules are issued under the guidance administered by the Organization for Economic Cooperation and Development (“OECD”) on CbCR. CbCR is intended for the UAE-headquartered Groups of companies that are part of a multinational group consisting of two or more enterprises that are residents for tax purposes in different jurisdictions and with consolidated revenues equal to or exceeding UAE Dirhams (“AED”) 3,150,000,000 in the preceding financial year.
+                            </p>
+                            <p>The CbCR requirements apply to the UAE-headquartered Multinational Enterprises (MNE) Groups with financial reporting years starting on or after the 1st of January 2019. For the previous financial reporting year, the CbC report must be submitted by the 1st of December 2020, and varying administrative penalties are likely to be imposed on those concerned UAE taxpayers. This is because they will fail to comply with the CbCR requirements.</p>
+                            <h2>Country by Country Notification and Reporting</h2>
+
+                            <h3>CbCR Notification</h3>
+                            <p>The CbCR requirements are applicable for the UAE-headquartered Multinational Enterprises Groups of companies meeting the above criteria.</p>
+                            <p>The UAE tax resident, Ultimate Parent Entity of the MNE Group, must submit the notification confirming that the notifying company is the Ultimate Parent Entity of the MNE Group, a resident in the UAE and that the CbCR requirements are applicable.</p>
+                            <p>The submission of the CbCR notifications must be made no later than the last day of the financial reporting year of the MNE. For example, the MNE Group, whose financial year commences on the 1ST of January 2022,  submit its CbCR notification in the UAE no later than the 31st of December 2022.</p>
+                            <h3>CbC Report</h3>
+                            <p>The UAE-headquartered Groups of companies that meet the criteria mentioned earlier should comply with CbC Reporting legislation in the UAE. </p>
+                            <p>The CbC Report includes quantitative and qualitative information about the MNE Group, such as revenues, profits, employee count, business description, etc.</p>
+                            <p>The submission of the CbC report should be within 12 months from the end of the reporting year of the MNE Group. For example, for the MNE Group, whose financial year commences on the 1st of January 2022 and lots by the 31st of December 2022, the CbC Report should be filed no later than December 31, 2023.</p>
+                            <h3>Penalties for non-compliance</h3>
+                            <p>Penalties will be served to those who fail to comply with the Country-by-Country Reporting (CbCR) requirements. Such penalties are as follows:</p>
+                            <ul>
+                                <li>An administrative fine of up to AED 1,000,000 will be given to those who failed to file the CbCR on time (plus AED 10,000 for each day of failure to submit. The fine could be up to AED 250,000.)</li>
+                                <li>Failure to provide complete and accurate information in the CbCR/CbCR Notification An administrative fine of no less than AED 50,000 and not exceeding AED 500,000 is applicable will be given to those who failed to provide complete and accurate information in the CbCR/CbCR Notification.</li>
+                                <li>Failure to maintain information and documentation for five years is subject to a fine of AED 100,000.</li>
+                                <li>Failure to provide any other information requested is subject to a fine of AED 100,000</li>
+                            </ul>
+                            <h3>Penalty process as per the legislation</h3>
+
+                            <p><strong>Step 1: </strong>Identification of non-compliance by the Ministry of Finance (MOF).</p>
+                            <p><strong>Step 2: </strong>Notification to the entity by the Ministry of Finance, providing 14 days grace period to comply</p>
+                            <p><strong>Step 3: </strong>Ministry of Finance to issue penalty notices if entity does not comply or does not provide a reasonable excuse.</p>
+                            <p>These steps are for six months)</p>
+                            <p>Then...</p>
+                            <p><strong>Step 4: </strong>The entity can appeal within 30 business days or pay the penalty within 30 days </p>
+                            <p><strong>Step 5: </strong>MoF appeal committee to confirm or reject the appeal within 60 days</p>
+                            <p><strong>Step 6: </strong>If an appeal is rejected, the entity to pay the penalty within 30 business days</p>
+
+                            <h3>How can we help you?</h3>
+                            <p>In relation to the Country-by-Country Reporting, AMCA is happy to lend our hands to you and your business in fulfilling and complying with the process, procedures, and submission of your CbCR Notification and CbC Report. AMCA will therefore take the following actions:</p>
+                            <ol>
+                                <li>CbCR Notification – We will assist in preparing your CbCR Notification, which must be shared with the Authority as part of compliance with CbCR.</li>
+                                <li>CbC Report – We will prepare the CbCR Report per the Ministry of Finance (MOF) requirement.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/the-uae-country-by-country-reporting-cbcr");
+    })
+
+</script>

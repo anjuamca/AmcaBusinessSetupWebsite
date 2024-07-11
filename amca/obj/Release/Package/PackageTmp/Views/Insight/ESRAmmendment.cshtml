@@ -1,0 +1,236 @@
+﻿@{
+    ViewBag.Title = "The Amendments to the Economic Substance Regulations";
+    ViewBag.Keyword = "esr, Economic Substance Regulations, esr dubai, dmcc";
+    ViewBag.Description = "The aforementioned regulation aims to combat harmful tax practices while complying with the global standards. Similarly, the Ministry of Finance introduced the so-called “Relevant Activities” which plays a vital function in complying with the Economic Substance Regulation. ";
+    ViewBag.PageURL = "https://amca.ae/amendments-to-the-esr-in-the-uae";
+    ViewBag.ImageURL = "https://amca.ae/wimages/ammendment-esr.jpg";
+}
+@section AdditionalMeta{
+    <meta property='og:title' content="@ViewBag.Title" />
+    <meta property='og:url' content="@ViewBag.PageURL" />
+    <meta property='og:type' content='website' />
+    <meta property='og:description' content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.ImageURL" />
+    <meta property="fb:page_id" content="3058581424174487" />
+}
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.Title</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-9 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/ammendment-esr.jpg" class="img-responsive" title="The Amendments to the Economic Substance Regulations in the UAE" alt="The Amendments to the Economic Substance Regulations in the UAE" />
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.Title</h1>
+                            <h2><strong>Background</strong></h2>
+                            <p>The Economic Substance Regulations, which is also known as “ESR” was formally introduced to the United Arab Emirates through Cabinet of Minister Resolution No. (31) of 2019, on 30th of April 2019.  The aforementioned regulation aims to combat harmful tax practices while complying with the global standards. Similarly, the Ministry of Finance introduced the so-called “Relevant Activities” which plays a vital function in complying with the Economic Substance Regulation. </p>
+
+                            <h2><strong>What do you mean by Relevent Activities?</strong></h2>
+                            <p>Entities carrying out Relevant Activities shall demonstrate their Economic Substance here in the UAE and comply with the submission of the notification and Economic Substance Report to their Regulatory Authorities. The Relevant Activities are as follows:</p>
+                            <ul>
+                                <li>Banking Business</li>
+                                <li>Insurance Business</li>
+                                <li>Fund Management Business</li>
+                                <li>Financial or Leasing Business</li>
+                                <li>Intellectual Property</li>
+                                <li>Headquarters Business</li>
+                                <li>Shipping Business</li>
+                                <li>Holding Company Business</li>
+                                <li>Distribution and Services Business</li>
+                            </ul>
+                            <h2><strong>ESR UAE: Amended</strong></h2>
+                            <p>A revised legislation overhauling the ESR has been issued by the UAE this 2020. The amendment in the ESR UAE was formally introduced through Cabinet of Minister Resolution No. (57) of 2020 on 10th of August 2020. The ESR guidelines was similarly updated through Ministerial Decision No. (100) of 2020 on 19th of August 2020. </p>
+                            <p><strong>Changes in the Amended ESR:</strong></p>
+                            <p>The Amended ESR points out the following changes: </p>
+
+                            <ol>
+                                <li>
+                                    <strong>The Definition of Licensee:</strong>
+                                    <ul>
+                                        <li>The amended ESR clearly states the new classification of Licensee which includes (a) a juridical person (incorporated inside or outside the State) or (b) an unincorporated partnership; UAE registered, which includes a Free Zone and a Financial Free Zone and carries on a Relevant Activity.</li>
+                                        <li>A parent company which is registered in the UAE shall file all their Relevant Activities as well as the Relevant Activities conducted by their UAE branches. For this reason, UAE branches will be no longer a “Licensee” as they will be already an extension of their parent company. </li>
+                                        <li>A UAE branch of a foreign company shall file their own ESR (if they carry out a Relevant Activity) unless the Relevant Income of the UAE branch is subject to tax in the foreign company’s authority. </li>
+                                        <li>A parent company in the UAE shall not consolidate the activities and income of the foreign branch for purposes of the Regulations, provided the Relevant Income of the foreign branch is subject to tax in the jurisdiction where the branch is located.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Exempted Licensee:</strong>
+                                    <ul>
+                                        <li>Entities that are tax resident in jurisdiction outside the UAE</li>
+                                        <li><strong>Investment Funds</strong></li>
+                                        <li>Entities that are wholly owned by UAE residents, likewise not part of a multinational group and only carry out business activities in the UAE</li>
+                                        <li>UAE branches of a foreign head office / parent which relevant income is subject to tax in the foreign head office / parent jurisdiction.</li>
+                                    </ul>
+                                </li>
+                                <p>An entity which will fall under Exempted Licensee is still eligible in submitting the ESR Notification, providing with sufficient evidence of becoming an Exempted Licensee. </p>
+                                <li>
+                                    <strong>Changes to some Relevant Activities:</strong>
+                                    <ul>
+                                        <li>
+                                            Distribution and Service Centre
+                                            <ul style="list-style: lower-alpha">
+                                                <li>purchasing component parts or materials for goods, or goods ready for sale from a Foreign Connected Person; and reselling such component parts, materials or goods </li>
+                                                <li>providing services to a Foreign Connected Person</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            High Risk Intellectual Property Licensee
+                                            <ul style="list-style: lower-alpha">
+                                                <li>The business did not create the intellectual property asset.</li>
+                                                <li>
+                                                    The business acquired the intellectual property asset from either
+                                                    <ul>
+                                                        <li>-	Connected Person, or</li>
+                                                        <li>-	in consideration for funding research and development by another person situated in a foreign jurisdiction; and</li>
+                                                    </ul>
+                                                </li>
+                                                <li>The business licenses or has sold to a Connected Person the intellectual property asset or earns separately identifiable income from a Foreign Connected Person in respect of the use or exploitation of the intellectual property asset.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <h2><strong>ESR Notification</strong></h2>
+                            <p>The amended Economic Substance Regulations confirm that ESR notifications must be filed within <u>six months of the Licensees financial year-end</u>.</p>
+                            <p>Similarly, businesses that already submitted the ESR to their Regulatory Authorities will be required to do the <u>re-submission of their notification on the Ministry of Finance portal.</u> The guidance for the resubmission is not yet confirmed. </p>
+                            <h2><strong>ESR Report Filing</strong></h2>
+                            <p>All the Economic Substance Reports must be submitted within twelve months from the end of the Financial year. </p>
+
+                            <h2><strong>Ministry of Finance Portal </strong></h2>
+                            <p>The amended Economic Substance Regulations verify that the filing will be done electronically on the Ministry of Finance Portal.</p>
+                            <p>The re-submission of the notification for those who already conformed with the ESR submission will likewise be done after the portal goes live. </p>
+                            <p>Update as of November 2, 2020: portal will be live by first week of December; deadline of notification and report is no later than 31st December 2020. </p>
+                        </div>
+                        <div class="col-md-12 spacing-top">
+                            <h2><strong>ESR Deadlines and its Penalties</strong></h2>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr style="background:#8e6c3a; color:#fff;">
+                                            <th>&nbsp;</th>
+                                            <th>Filing Deadlines</th>
+                                            <th>Penalties</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="background:#f2f2f2">
+                                                Notifications due before the Ministry of Finance Portal goes live
+                                            </td>
+                                            <td style="background:#f2f2f2;">
+                                                Extended until 31 December 2020
+                                            </td>
+                                            <td style="background:#f2f2f2;">Failure to submit the Notification along with the required supporting documents by 31 December 2020 will result to a penalty of AED 20,000.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#fff">
+                                                Notifications previously filed
+                                            </td>
+                                            <td>Licensees and/or Exempted Licensees that have submitted the ESR Notification to a Regulatory Authority before the Ministry of Finance Portal goes live (e.g. submitted last 30 June 2020) are required to resubmit their Notification by no later than 31 December 2020. </td>
+                                            <td>
+                                                Failure to resubmit the Notification by the mentioned date would be subjected to a penalty of AED 20,000.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#f2f2f2">
+                                                Economic Substance Reports due before the Ministry of Finance Portal goes live
+                                            </td>
+                                            <td style="background:#f2f2f2;">The Economic Substance Reports for a Financial Year commencing on or after 1 January 2019 and ending on or before 31 December 2019 shall be submitted on 31 December 2020.</td>
+                                            <td style="background:#f2f2f2;">
+                                                If applicable, failure to submit the ESR Report within the given period would be subjected to a penalty of AED 50,000.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p>Licensees and Exempted Licensees shall ensure that the filing deadlines are met for both the Notification and the Economic Substance Report. All the above-mentioned penalties are under Article 13 and Article 14 of Decision 57 for failure to provide a Notification and for failure to provide Economic Substance Report, respectively.</p>
+                        </div>
+                        <div class="col-md-12 writer text-right">
+                            <p class="date">8 Nov 2020</p>
+                            <h4><strong>Gladys Sorima</strong></h4>
+                            <p>Business Advisor</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/amendments-to-the-esr-in-the-uae" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Famendments-to-the-esr-in-the-uae&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/amendments-to-the-esr-in-the-uae">
+                            </script>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 blogComments">
+                                    </div>
+                                </div>
+                                @*<div class="col-md-12">
+            <div class="col-md-12 border-comment">
+                <div class="row">
+                    <div class="col-md-1">
+                        <img src="wimages/avtar.jpg" class="img-circle">
+                    </div>
+                    <div class="col-md-10">
+                        <h3>Arif Ansari</h3>
+                        <p>2 Days Ago</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>After reading your article, I think Chipmunk is the best solution for me. Glad to found your article on google. Thanks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+                                <div class="col-md-12">
+                                    <h3><strong>Leave a Comment</strong></h3>
+                                </div>
+
+                                @using (Html.BeginForm("Index", "Sidebar", FormMethod.Post))
+                                {
+                                    <input type="hidden" id="BlogTitle" name="BlogTitle" value="@ViewBag.Title" />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(model => model.Usercomment, new { @class = "form-control textFld", @placeholder = "Positive Comment" })
+                                            @Html.ValidationMessageFor(model => model.Usercomment, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit Now">
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

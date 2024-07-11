@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "PRO Services in Dubai | PRO Consultants";
+    ViewBag.PageTitle = "PRO Services in Dubai";
+    ViewBag.Keyword = "pro service, professional service, pro, visa application, attestation service, pro agents, business profitability, pro services in dubai";
+    ViewBag.Description = "If you are seeking for PRO services, our teams can provide the best PRO services carrying out all the visa application and attestation services and related work.";
+}
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>PRO Services</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/PROSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/PRO-Service.jpg" class="img-responsive" alt="PRO-Service" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("ServiceQuery", "Services", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <h4><strong>Free Consultation</strong></h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                @Html.RadioButtonFor(model => model.LeadDataType, "Entity", new { @checked = "checked" }) Entity
+                                                @Html.RadioButtonFor(model => model.LeadDataType, "Individual") Individual
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" id="CompanyName">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                                @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                                @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                                @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                                @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" id="TradeLicenseAuthority">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                                @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                                @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        @*<div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Service", new { @class = "form-control textFld" })
+                                                @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>*@
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.SubServiceId, ViewBag.PROServices as SelectList, "Select Sub Service", new { @class = "form-control textFld", id = "serviceId" })
+                                                @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div id="captcha">
+                                                @Scripts.Render("~/bundles/jquery")
+                                                @Html.Captcha("Refresh", "", 5)
+                                                @Html.Hidden("txtPageName", "PROServices")
+                                                @Html.Hidden("txtPageID", "3")
+                                                @Html.ValidationSummary(true)
+                                            </div>
+                                            <p style="color:Red;text-align:right">@ViewBag.ErrMessage </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="hidden" id="token" name="token">
+                                                <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row space">
+                        <div class="col-md-12">
+                            <p>
+                                The United Arab of Emirates is considered one of the busiest countries in the world. People keep on moving on different grounds, primarily because of business purposes. UAE is one of the investors' top picks as the country offers and opens a lot of privileges for all the businessmen and business aspirants. This is why the number of companies in the country cannot be halted. As a result, many obligations must be met to achieve the legalization of the businesses in the country.
+                            </p>
+                            <p>
+                                Documentation and paperwork for business purposes take a lot of time. Hence, businessmen and investors prefer to hire someone to handle these tasks on their behalf rather than doing them on their own. So let us look at the facts. Wise consumption of time can attract more opportunities and even money. And consuming your time while waiting in the queue until your number is called for whatever application you have on that day is tiresome and a waste of time.
+                            </p>
+                            <p>That being the case, AMCA can provide you with ways to spend less time doing parts of your job that you hate. We provide PRO Services to our clients to help them spend their time on more valuable and productive work while not neglecting their obligations to be a business owners. Moreover, we provide PRO Services for visa application and attestation services and ensure that clients will be given end-to-end support for this matter. </p>
+
+                            <h2><strong>Receive the Best PRO Services in Dubai </strong></h2>
+                            <p>If you seek PRO services, our team of well-trained PROs can systematically provide the best PRO services carrying out all the visa application and attestation services related to you. We offer professional services to our existing clients and the new and established businesses in the UAE.</p>
+                            <p>A cozy completion of all the assigned works is an assurance provided by our committed and reliable PRO agents. We will work on all your administrative and PRO-related tasks while you focus on your business and enhance business profitability.</p>
+                            <p>As a corporate providing PRO Services in Dubai, we are dedicated to delivering comprehensive PRO solutions to our clients. We offer a service package that suitably addresses the business requirements as quickly as possible.</p>
+
+                            <h3><strong>Why AMCA?</strong></h3>
+                            <p><strong>AMCA offer PRO services in the following activities:</strong></p>
+                            <ul>
+                                <li>Visa Services</li>
+                                <li>Attestation Services</li>
+                            </ul>
+                            <p>We always aim to deliver the best quality of services to our clients, and this is why we have a systematic procedure in our PRO services. Our team handles and focuses on all your requirements and ensures that they will promptly be delivered to you.</p>
+                            <p>In addition to our PRO services, we ensure that we are always up-to-date on all local laws and regulations in the Emirate so that any uncertainty relating to the processing of your requirements will be avoided in advance. As a result, our clients will communicate the updates to prevent misconstruing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/pro-services-in-dubai");
+    })
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+</script>
+
+<script>
+    $(function () {
+
+        $(':radio[name=LeadDataType]').change(function () {
+            if ($(this).val() == "Individual") {
+                $("#CompanyName").hide();
+                $("#TradeLicenseAuthority").hide();
+            }
+            else {
+                $("#CompanyName").show();
+                $("#TradeLicenseAuthority").show();
+            }
+        });
+    });
+</script>

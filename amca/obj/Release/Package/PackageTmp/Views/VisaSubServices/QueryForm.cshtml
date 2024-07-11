@@ -1,0 +1,237 @@
+﻿@model amca.Models.Validation
+@using CaptchaMvc.HtmlHelpers;
+<div class="formThemePage">
+    @using (Html.BeginForm("VisaQuery", "VisaSubServices", FormMethod.Post, new { @class = "fromB" }))
+    {
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <h4><strong>Free Consultation</strong></h4>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.HiddenFor(model => model.LeadDataType, new { Value = "Individual" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Name" })
+                @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.VisaType, ViewBag.VisaList as SelectList, "Types of Visa", new { @class = "form-control textFld" })
+                @Html.ValidationMessageFor(model => model.VisaType, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        @*<div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.VisaType, new List<SelectListItem>
+                {
+                   new SelectListItem{ Text="Types of Golden Visa", Value = "" },
+                   new SelectListItem{ Text="5-year silver Visa", Value = "5-year siver Visa" },
+                   new SelectListItem{ Text="10-year golden Visa", Value = "10-year golden Visa" },
+
+                }, new { @class = "form-control selectpicker " })
+                @Html.ValidationMessageFor(model => model.VisaType, "", new { @class = "errorValidation" })
+            </div>
+        </div>*@
+        <div class="col-md-6" id="ddlCatagories">
+            <div>
+                <div class="form-group">
+                    @Html.DropDownListFor(model => model.Catagories, new List<SelectListItem>
+                    {
+                       new SelectListItem{ Text="Catagories", Value = "" },
+                       new SelectListItem{ Text="Investors", Value = "Investors" },
+                       new SelectListItem{ Text="Entrepreneur", Value = "Entrepreneur" },
+                       new SelectListItem{ Text="Outstanding Students", Value = "Outstanding Students" },
+                       new SelectListItem{ Text="Specialized talents/ Researchers", Value = "Specialized talents/ Researchers" }
+
+                    }, new { @class = "form-control selectpicker ddlCatagories" })
+                    @Html.ValidationMessageFor(model => model.Catagories, "", new { @class = "errorValidation" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld CompanyName", @placeholder = "Company Name" })
+                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation " })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+
+                @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Licenced Authority Name", new { @class = "form-control textFld LicencedAuthority" })
+                @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+
+
+                @*@Html.TextBoxFor(model => model.TradeLicenseAuthority, new { @class = "form-control textFld LicencedAuthority", @placeholder = "Licenced Authority Name" })
+                @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation " })*@
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <div class="form-group UniversityDiv">
+                    @Html.DropDownListFor(model => model.University, new List<SelectListItem>
+                    {
+                       new SelectListItem{ Text="Mode", Value = "" },
+                       new SelectListItem{ Text="University", Value = "University" },
+                       new SelectListItem{ Text="Profession", Value = "Profession" }
+                    }, new { @class = "form-control selectpicker University" })
+                    @Html.ValidationMessageFor(model => model.University, "", new { @class = "errorValidation " })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <div class="form-group Specfield">
+                    @Html.DropDownListFor(model => model.Specialization, new List<SelectListItem>
+                    {
+                       new SelectListItem{ Text="Specialization", Value = "" },
+                       new SelectListItem{ Text="Art and Culture", Value = "Art and Culture" },
+                       new SelectListItem{ Text="Specialist (Engineering/ Science)", Value = "Specialist (Engineering/ Science)" },
+                       new SelectListItem{ Text="Doctors", Value = "Doctors" },
+                       new SelectListItem{ Text="Scientists", Value = "Scientists" },
+                       new SelectListItem{ Text="Inventors", Value = "Inventors" },
+                       new SelectListItem{ Text="Athletes", Value = "Athletes" },
+                       new SelectListItem{ Text="Ph.D Holders", Value = "Ph.D Holders" },
+                       new SelectListItem{ Text="Engineers", Value = "Engineers" },
+                       new SelectListItem{ Text="Coders", Value = "Coders" },
+                       new SelectListItem{ Text="Other", Value = "Other" },
+                    }, new { @class = "form-control  selectpicker" })
+                    @Html.ValidationMessageFor(model => model.Specialization, "", new { @class = "errorValidation " })
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.SchoolName, new { @class = "form-control textFld School", @placeholder = "School Name / University Name" })
+                @Html.ValidationMessageFor(model => model.SchoolName, "", new { @class = "errorValidation " })
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="captcha">
+                @Scripts.Render("~/bundles/jquery")
+                @Html.ValidationSummary(true)
+                @Html.Captcha("Refresh", "Verify Captcha", 5)
+            </div>
+            <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+        </div>
+        <div class="col-md-6" style="padding-top: 85px;">
+            <div class="form-group">
+                <input type="hidden" id="token" name="token">
+                <input type="submit" class="btn btnTheme pull-right" value="Submit">
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+
+    }, 500);
+
+    $(document).ready(function () {
+        $('.CompanyName').hide();
+        $('.LicencedAuthority').hide();
+        $('.School').hide();
+        $('.Specfield').hide();
+        $('.UniversityDiv').hide();
+    })
+
+   
+  
+
+
+    $('.ddlCatagories').change(function () {
+
+        if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 0) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.University').hide();
+        }
+        if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 1 || document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 2) {
+          
+            $('.CompanyName').show();
+            $('.LicencedAuthority').show();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.University').hide();
+        }
+        else if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 3) {
+
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').show();
+            $('.Specfield').hide();
+            $('.University').hide();
+        } else if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 4) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.UniversityDiv').show();
+            $('.University').show();
+        }
+    })
+
+    $('.University').change(function () {
+        var aa = document.getElementsByClassName('University')[1].selectedIndex;
+        if (document.getElementsByClassName('University')[1].selectedIndex == 1) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+        }
+        else if (document.getElementsByClassName('University')[1].selectedIndex == 2) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').show();
+
+        }
+    })
+           
+</script>

@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "VAT Registration in UAE";
+    ViewBag.Keyword = "vat registration in uae, when to register for vat in the uae, why register for vat in the uae, how to register for vat in the uae, fta approved tax agency, value added tax";
+    ViewBag.Description = "Value Added Tax has been implemented in the UAE last 1st January 2018. With this, businesses need to consider whether they are required to register for VAT purposes as non-compliance will result to heavy fines and penalties.";
+    ViewBag.PageURL = "https://amca.ae/vat-registration-in-uae";
+    ViewBag.ImageURL = "https://amca.ae/wimages/amca-VAT-Registration-in-UAE.jpg";
+}
+
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.Title</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-8 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/amca-VAT-Registration-in-UAE.jpg" class="img-responsive" title="VAT Registration in UAE" alt="VAT Registration in UAE" />
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.Title</h1>
+                            <p>Value Added Tax has been implemented in the UAE last 1st January 2018. With this, businesses need to consider whether they are required to register for VAT purposes as non-compliance will result to heavy fines and penalties. It’s very important for a business to know when, why, and how to register for VAT in the UAE in order to avoid such penalties and to ensure compliance with the respective laws and regulations.</p>
+                            <h2>When to register for VAT in the UAE?</h2>
+                            <p>As per Article 13 of Federal Decree-Law No. (8) of 2017 on Value Added Tax, every Person who has a Place of Residence in the UAE is required to register for VAT if:</p>
+                            <ul>
+                                <li>The total value of its taxable supplies and imports exceeds the mandatory registration threshold amounting to AED 375,000 over the previous 12 months, or</li>
+                                <li>The business anticipates that the total value of its taxable supplies and imports will exceed the mandatory registration threshold in the next 30 days.</li>
+                            </ul>
+                            <p>It is very important to know when exactly you must register for VAT since failure of the Taxable Person to submit a registration application within the timeframe specified in the Tax Law has an administrative penalty amounting to <strong>AED 20,000</strong>. Instead of appropriating this amount to operating or investing activities of the company, imagine the opportunities one company has lost just because of late registration for VAT.</p>
+                            <p>A company can also opt to register for VAT even though the mandatory threshold criteria has not been met. A business may apply to register if</p>
+                            <ul>
+                                <li>The total value of its taxable supplies and imports or taxable expenses in the previous 12 months exceeds the voluntary registration threshold of <strong>AED 187,500</strong>, or</li>
+                                <li>The business anticipates that the total value of its taxable supplies and imports or taxable expenses will exceed the voluntary registration threshold in the next 30 days.</li>
+                            </ul>
+                            <h2>Why register for VAT in the UAE?</h2>
+                            <p>It’s not just about avoiding the administrative penalties. VAT registration also means:</p>
+                            <ul>
+                                <li>Only VAT registered companies can reclaim the VAT that they have paid on goods and services bought from other businesses known as input tax. Because of this, there are some companies that can even ask for a monetary refund if their input tax is greater than the output tax, (which is the Value Added Tax that a company charge on its sales). If your company deals with export of goods/service, your normal position will be refundable.</li>
+                                <li>VAT registration (especially those in voluntary position), can make your company appear larger and more established. This can be particularly appealing to other VAT registered businesses and clients. Displaying of TRN in your websites and correspondences, may encourage larger firms to do business with your company. </li>
+                            </ul>
+                            <h2>How to register for VAT in the UAE?</h2>
+                            <p>You can register online by creating an e-Services account in the FTA Portal. You have to prepare various documentations to prove that you reached the threshold and you have submitted the application registration on time. Best thing to do is contact an FTA approved tax agency to assist you in applying for registration.</p>
+                        </div>
+                        <div class="col-md-12 writer text-right">
+                            <p class="date">18 Feb 2020</p>
+                            <h4><strong>Alyssa Marie Pamiloza</strong></h4>
+                            <p>Certified Public Accountant</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/vat-registration-in-uae" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Fvat-registration-in-uae&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/vat-registration-in-uae">
+                            </script>
+                        </div>
+                        @RenderPage("~/Views/Sidebar/BlogComment.cshtml")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

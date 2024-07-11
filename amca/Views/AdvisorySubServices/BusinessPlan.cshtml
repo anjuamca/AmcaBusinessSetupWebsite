@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Business Plan Writers Dubai | Business Planning Consultants";
+    ViewBag.PageTitle = "Business Plan Writers in Dubai";
+    ViewBag.Keyword = "business plan in dubai";
+    ViewBag.Description = "Business plan writers in Dubai, UAE. A business plan is a written description of your business's future, a document that tells what you plan to do.";
+    ViewBag.BusinessPlan = "ActiveSubLink";
+    ViewBag.Value = "Business Plan";
+}
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("AdvisoryServices", "Services")">Advisory Services</a> </li>
+                    <li>Business Plan</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/AdvisoryServicesSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/BusinessPlan.svg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/AdvisorySubServices/QueryForm.cshtml")
+                        </div>
+                    </div>
+                    <p>
+                        We at AMCA are professional business plan writers in Dubai and can write you a high-quality business plan for any business or purpose. A business plan is a very essential and strategic tool for entrepreneurs. A good business plan not only assists entrepreneurs in focusing on the particular steps required for them to make business ideas succeed, but it also helps them accomplish short-term and long-term objectives. If you are looking to raise funds from institutional investors and lenders, remember that having a good business plan is extremely valuable. You should focus on having a well-documented plan that speaks for itself. It needs to be clear and straightforward to understand.
+                    </p>
+                    <h2><strong>Why write a business plan? </strong></h2>
+                    <p>The business plan is the blueprint for your business. But unfortunately, most people think of a business plan as a single document that you just put together when you're initially beginning out and then set aside something to check off the to-do list and be finished with.</p>
+                    <p>However, in actuality, the business plan for any business will change over time as the business develops, and any specific business may have multiple business plans as its goals change. An updated business plan is helpful for forecasting or raising additional capital for expansion in the development stage. And if you decide to sell or close the business, the business plan can include strategies and timelines for the exchange for new ownership or dissolution of the company.</p>
+                    <h3><strong>Why  Choose Us</strong></h3>
+                    <p>It doesn’t matter whether you are a start-up business, mid-sized company, non-profit company, or large multinational; you will get a supremely crafted, detail-oriented business plan targeted to the recipient using industry-specific language. Our current clients include entrepreneurs, startups, and small businesses across multiple industries in Dubai, UAE.</p>
+                    <p>We review your business strategy, research your industry, and analyze your market to determine your competitive position. From here, we build up a clear and compelling business plan that articulates your business goals. Templates and automated software are a no-go here. We only utilize creative writing to capture the nuances of your particular business. Our service doesn’t just stop at Business Plan writing; we can also advise you on how to structure your organization, provide information on operations, raise capital, advise you on liquidity or exit strategies, and even help source the capital funding that you ultimately look within your business plan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/business-plan");
+         })
+
+</script>
+

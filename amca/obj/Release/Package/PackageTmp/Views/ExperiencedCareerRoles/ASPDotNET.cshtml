@@ -1,0 +1,73 @@
+﻿
+
+@{
+    ViewBag.Title = "ASP.NET | Jobs in Dubai";
+    ViewBag.PageTitle = "ASP.NET";
+    ViewBag.Keyword = "ASP.NET, ASP.NET job description, ASP dot NET jobs in dubai, ASP.NET meaning, full stack developer jobs in dubai";
+    ViewBag.Description = "Looking for an ideal candidate, preferably female, familiar with the entire software design life cycle, with experience in designing, coding and testing.";
+    ViewBag.ASPDotNET = "ActiveSubLink";
+    ViewBag.Value = "ASP.NET";
+}
+
+@model amca.Models.ExperienceDesignation
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ExperiencedCareerRoles", "Career")">Experienced career roles</a></li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space sidebarFull">
+    <div class="container">
+        <div class="col-md-3 sidebarHalf">
+            @RenderPage("~/Views/Sidebar/CareerSidebar.cshtml")
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>We at AMCA are looking for an ideal candidate, preferably female, familiar with the entire software design life cycle, with experience in designing, coding, testing, and consistently managing applications. In addition, they should be comfortable coding in the language and be able to test code to maintain high-quality code.</p>
+                </div>
+                <div class="col-md-12 jobDesc">
+                    <h4 class="subHeading"><strong>Responsibilities:</strong></h4>
+                    <ul>
+                        <li>Design, code, test, and manage various applications</li>
+                        <li>Collaborate with the team to establish the best result</li>
+                        <li>Follow outlined standards of quality related to code and systems</li>
+                        <li>Develop automated tests and conduct performance tuning</li>
+                        <li>Experience developing web-based applications in C#, HTML, jQuery,  JavaScript, ASP.NET</li>
+                        <li>Experience working with MS SQL Server Knowledge of practices and procedures for complete software design life cycle</li>
+                        <li>Experience working in an agile development environment with keen attention to detail.</li>
+                    </ul>
+                    <h4 class="subHeading"><strong>Qualifications:</strong></h4>
+                    <ul>
+                        <li>Bachelor's degree in Computer Science or a relevant field</li>
+                        <li>2-3 years of experience working with ASP.NET or relevant experiences</li>
+                        <li>Familiarity with Agile development methodologies</li>
+                        <li>Experience in a test-driven environment</li>
+                        <li>Resourcefulness and troubleshooting aptitude</li>
+                        <li>Attention to detail</li>
+                        <li>Outstanding collaboration and communication skills are essential.</li>
+
+                    </ul>
+                    <br />
+                        @using (Html.BeginForm("SubmitJob", "ExperiencedCareerRoles", FormMethod.Post, new { @class = "primary-form mt-3" }))
+                        {
+                            @Html.HiddenFor(model => model.JobTitle, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                            <input type="submit" class="btn btnTheme mr0" value="Apply for this position">
+                        }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

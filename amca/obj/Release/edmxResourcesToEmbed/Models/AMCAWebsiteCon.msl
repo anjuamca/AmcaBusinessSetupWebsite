@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="amca_website_aeModelStoreContainer" CdmEntityContainer="amca_website_aeEntities1">
+    <EntitySetMapping Name="BlogComments">
+      <EntityTypeMapping TypeName="amca_website_aeModel.BlogComment">
+        <MappingFragment StoreEntitySet="BlogComments">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Useremail" ColumnName="Useremail" />
+          <ScalarProperty Name="Userwebsite" ColumnName="Userwebsite" />
+          <ScalarProperty Name="Usercomment" ColumnName="Usercomment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUsDatas">
+      <EntityTypeMapping TypeName="amca_website_aeModel.ContactUsData">
+        <MappingFragment StoreEntitySet="ContactUsData">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="NameContact" ColumnName="NameContact" />
+          <ScalarProperty Name="EmailContact" ColumnName="EmailContact" />
+          <ScalarProperty Name="CountryCodeContact" ColumnName="CountryCodeContact" />
+          <ScalarProperty Name="MobileContact" ColumnName="MobileContact" />
+          <ScalarProperty Name="MessageContact" ColumnName="MessageContact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebsiteLeads">
+      <EntityTypeMapping TypeName="amca_website_aeModel.WebsiteLead">
+        <MappingFragment StoreEntitySet="WebsiteLead">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Services" ColumnName="Services" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="amca_website_aeModel.Service">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ProcBlogComments" FunctionName="amca_website_aeModel.Store.ProcBlogComments" />
+    <FunctionImportMapping FunctionImportName="ProcContactLeadData" FunctionName="amca_website_aeModel.Store.ProcContactLeadData" />
+    <FunctionImportMapping FunctionImportName="WebsiteLeadData" FunctionName="amca_website_aeModel.Store.WebsiteLeadData" />
+  </EntityContainerMapping>
+</Mapping>

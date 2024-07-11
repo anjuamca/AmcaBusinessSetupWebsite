@@ -1,0 +1,329 @@
+﻿@{
+    ViewBag.Title = "Ultimate Beneficial Ownership (UBO) | UBO Declaration UAE";
+    ViewBag.PageTitle = "Ultimate Beneficial Ownership (UBO)";
+    ViewBag.Keyword = "ultimate beneficial owner, ultimate beneficial owner rule, ultimate beneficial owner ubo";
+    ViewBag.Description = "The Ultimate Beneficial Owner’s (UBO’s) objectives cover the maintenance of the economic position of UAE with international requirements.";
+    ViewBag.PageURL = "https://amca.ae/ultimate-beneficial-owner";
+    ViewBag.ImageURL = "https://amca.ae/wimages/ultimate-beneficial-owner.jpg";
+    ViewBag.Value = "Ultimate Beneficial Ownership (UBO)";
+    ViewBag.UBO = "ActiveSubLink";
+}
+@section AdditionalMeta{
+    <meta property='og:title' content="@ViewBag.Title" />
+    <meta property='og:url' content="@ViewBag.PageURL" />
+    <meta property='og:type' content='website' />
+    <meta property='og:description' content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.ImageURL" />
+    <meta property="fb:page_id" content="3058581424174487" />
+}
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/RegulatoryComplianceReportingSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/ultimate-beneficial-owner.jpg" class="img-responsive" title="@ViewBag.PageTitle" alt="@ViewBag.PageTitle" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.PageTitle</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/insight/QueryForm.cshtml")
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12 linkingText">
+                            <h2>Cabinet Decision NO. 58 Of 2020: <span style="display: block; font-size: 20px;">REGULATING THE BENEFICIAL OWNER PROCEDURES</span></h2>
+                            <p>The United Arab of Emirates just recently replaced Cabinet Resolution No. 34 of 2020 to Cabinet Resolution No. (58) of 2020 regulating Beneficial Owner Procedures (the “Resolution”). The Resolution covers the most updated requirements for the entities in UAE to disclose its beneficial owners which are intended to enhance transparency of the UAE registered entities. It likewise intends to develop effective and sustainable executive and regulatory mechanisms and procedures in respect of beneficial owner data.</p>
+
+                            <p>The Ultimate Beneficial Owner’s (UBO’s) objectives cover the maintenance of the economic position of UAE with international requirements. It also aims to regulate minimum obligations in disclosure of Beneficial Owners, Shareholders, Partners and Nominee Board Members, and lastly, to establish an effective regulatory mechanism and procedure for the beneficial owner data. </p>
+
+                            <h2><strong>How to Identify Ultimate Beneficial Owner?</strong></h2>
+                            <p><em>Ultimate Beneficial Owner Rule</em></p>
+                            <p>As per Cabinet Resolution No. (58) of 2020, Beneficial Owner or Real Beneficiaries can be the following:</p>
+                            <h4><strong>For UBO:</strong></h4>
+
+                            <ul>
+                                <li>UBOs are individuals who ultimately own or control or have the right to vote with a minimum of 25% shareholding of the company, either directly or indirectly, or who have the right to either appoint or dismiss the majority of the Directors/Managers.</li>
+                                <li>If no one meets the condition above, then any natural person who has the power to control the company using any other means may be termed as the UBO.</li>
+                                <li>In cases where UBO cannot be identified through the two conditions above, then a natural person who holds Higher Management in the company may be deemed as the UBO. </li>
+                            </ul>
+
+                            <h4><strong>For Nominee Director/Manager:</strong></h4>
+                            <ul>
+                                <li>The details of the Director / Manager, acting in agreement with the instructions of another person. </li>
+                            </ul>
+                            <h4><strong>For the Partner/Shareholder:</strong></h4>
+                            <ul>
+                                <li>A UBO is any individual who controls 25% or more of the capital of the partnership, or who ultimately is entitled to control 25% or more of the voting rights of the partnership. </li>
+                            </ul>
+
+
+                            <p>On the other hand, there are entities which are exempted with this resolution. They are as follows: (a) the companies in financial free zones like Abu Dhabi Gold Markets and Dubai International Financial Centre, and (b) the companies which are directly or indirectly owned by the Federal or Emirate Government. </p>
+
+                            <p>Entities will need to assess who constitutes a UBO and consider whether anyone is a nominee Director / Manager. The Register of Shareholders / Partners is not a new concept as this is a requirement outlined in the UAE Commercial Companies Law, as well as in respective Free Zone Companies Regulations. Although the Resolution requires additional information to be detailed (for example, voting rights).  </p>
+
+                            <h2><strong>Ultimate Beneficial Owner Companies Act</strong></h2>
+                            <p>As per Cabinet Resolution No. (58) of 2020, all Relevant Entities must perform the following: </p>
+                            <ol>
+                                <li>
+                                    Maintain in their headquarters each the following registers:
+                                    <ul>
+                                        <li>Partners/Shareholders (state the information about the ownership interests and voting rights held by each individual);</li>
+                                        <li>Real Beneficiaries (provide the reason behind being Real Beneficiaries and the date they termed as one; </li>
+                                        <li>Directors and Nominee Directors;</li>
+                                    </ul>
+                                </li>
+                                <li>Submit the information mentioned above (information must be accurate) with the relevant authority by no later than 27 October 2020. (Note: All the information will be handled confidentially by the authority);</li>
+                                <li>Notify the relevant authority of any amendment regarding the initial information given, provided within fifteen (15) days of such change or amendment.</li>
+                                <li>Provide a contact details of an in individual (resident in the UAE) with whom the authority can contact regarding any information provided. </li>
+                            </ol>
+                            <p>If entities failed to comply with the Resolution, the UAE Ministry of Economy possibly enforce sanctions on those entities. The list of administrative sanctions is yet to be issued.</p>
+                        </div>
+                        <div class="col-md-12">
+                            <h2><strong>Deadline for the UBO Declaration</strong></h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr style="background:#8e6c3a; color:#fff;">
+                                            <th style="vertical-align: top;">Authority Name</th>
+                                            <th style="vertical-align: top;">Notification required</th>
+                                            <th style="vertical-align: top;">Notification deadline</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai Media City (DMC)</td>
+                                            <td>Yes</td>
+                                            <td>27th of October 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">International Freezone Authority (IFZA)</td>
+                                            <td>Yes</td>
+                                            <td>27th of October 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai Studio City (DSO)</td>
+                                            <td>Yes</td>
+                                            <td>27th of October 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Ras Al Khaimah Economic Zone (RAKEZ)</td>
+                                            <td>Yes</td>
+                                            <td>27th of October 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Fujairah Creative City (FCC)</td>
+                                            <td>Yes</td>
+                                            <td>27th of October 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Sharjah Media City Free Zone (SHAMS)</td>
+                                            <td>Yes</td>
+                                            <td>27th of October 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Ajman Free Zone Authority (AFZA)</td>
+                                            <td>Yes</td>
+                                            <td>Before 31st of October 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai Multi Commodities Centre (DMCC)</td>
+                                            <td>Yes</td>
+                                            <td>Before 31st of October 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai Outsource Zone (DOZ)</td>
+                                            <td>Yes</td>
+                                            <td>Waiting for the ministry's confirmation</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai Airport Free Zone (DAFZA)</td>
+                                            <td>Yes</td>
+                                            <td>Waiting for the ministry's confirmation</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai South (DWC)</td>
+                                            <td>Yes</td>
+                                            <td>UBO applied only to Corporate and Branch companies. For other entities, still waiting for the ministry's confirmation.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai Internet City (DIC)</td>
+                                            <td>Yes</td>
+                                            <td>30th of September</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Jebel Ali Free Zone (JAFZA)</td>
+                                            <td>Yes</td>
+                                            <td>No timeframe (Until further notice)</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai Silicon Oasis (DSO)</td>
+                                            <td>Yes</td>
+                                            <td>1st of November 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai Department of Economic Development (Dubai DED)</td>
+                                            <td>Yes</td>
+                                            <td>No timeframe (Until further notice)</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Sharjah Airport International Free Zone (SAIF)</td>
+                                            <td>Yes</td>
+                                            <td>Submission will be updated next week via an official email</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai Science Park</td>
+                                            <td>Yes</td>
+                                            <td>31st of October 2020</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Dubai Development Authority (DDA)</td>
+                                            <td>Yes</td>
+                                            <td>The deadline was supposed to be 30th of September. However, if an entity is not able to comply yet, an entity can still submit the UBO declaration.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Hamriya Free Zone</td>
+                                            <td>Yes</td>
+                                            <td>The deadline was supposed to be 1st of November. However, if an entity is not able to comply yet, an entity can still submit the UBO declaration.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Abu Dhabi Department of Economic Development</td>
+                                            <td>Yes</td>
+                                            <td>No timeframe (Until further notice)</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color:#fff">Sharjah Department of Economic Development</td>
+                                            <td>Yes</td>
+                                            <td>No timeframe (Until further notice)</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <h5><strong>For Other Authorities:</strong></h5>
+                                                <p>As per the advice from the other authorities, they are still waiting for the ministry approval regarding the extension request. </p>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                            <h2><strong>Synopsis</strong></h2>
+                            <ul>
+                                <li>All entities in the United Arab Emirates (unless excluded by the Resolution) must comply with the preparation of the UBO Declaration until 27 October 2020. </li>
+                                <li>The filing of the UBO Declaration to the relevant authority is until 27 October 2020. Some other authorities extended the filing until further notice. </li>
+                                <li>The entities shall notify the relevant authority of any amendment regarding the initial information given, provided within fifteen (15) days of such change or amendment.</li>
+                                <li><strong>For Dubai Department of Economic Development,</strong> note that the cabinet resolution No. 58 includes companies that have a corporate’s shareholder, LLC for one person (owner is a company), a service agent (UAE company 100%), representative offices or branches in general (Branch of a foreign company – GCC - Local - Free zone).</li>
+                            </ul>
+                            <h2><strong>How can we help?</strong></h2>
+
+                            <p>On your behalf, <a href="https://amcaauditing.com/" target="_blank"><strong>AMCA</strong></a> will be the one to prepare the registers of the UBO’s Partners/Shareholders and Nominee Directors/Managers (if applicable) as per the Resolution. You will not be worried regarding the filing of your declaration of UBO, because we will do it for you. In addition to that, we’ll take care of informing the relevant authority regarding the changes and amendment on the information provided. Rest assured that you are in good hands during the filing and submission of your UBO if you work with us.</p>
+                        </div>
+                        <div class="col-md-12 writer text-right">
+                            <p class="date">24 Oct 2020</p>
+                            <h4><strong>Mohammad Sharique Nadeem</strong></h4>
+                            <p>Business Analyst</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/ultimate-beneficial-owner" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Fultimate-beneficial-owner&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/ultimate-beneficial-owner">
+                            </script>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 blogComments">
+                                    </div>
+                                </div>
+                                @*<div class="col-md-12">
+                                        <div class="col-md-12 border-comment">
+                                            <div class="row">
+                                                <div class="col-md-1">
+                                                    <img src="wimages/avtar.jpg" class="img-circle">
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <h3>Arif Ansari</h3>
+                                                    <p>2 Days Ago</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>After reading your article, I think Chipmunk is the best solution for me. Glad to found your article on google. Thanks.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                <div class="col-md-12">
+                                    <h3><strong>Leave a Comment</strong></h3>
+                                </div>
+
+                                @using (Html.BeginForm("Index", "Sidebar", FormMethod.Post))
+                                {
+                                    <input type="hidden" id="BlogTitle" name="BlogTitle" value="@ViewBag.PageTitle" />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(model => model.Usercomment, new { @class = "form-control textFld", @placeholder = "Positive Comment" })
+                                            @Html.ValidationMessageFor(model => model.Usercomment, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit Now">
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Modal -->
+@*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Ultimate Beneficial Ownership (UBO)</h4>
+                </div>
+                <div class="modal-body row">
+
+                </div>
+            </div>
+        </div>
+    </div>*@
+

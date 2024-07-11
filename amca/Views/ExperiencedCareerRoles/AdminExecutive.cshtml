@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Admin Coordinator | Executive Assistant Job Description";
+    ViewBag.PageTitle = "Admin Coordinator";
+    ViewBag.Keyword = "jobs in uae, jobs in dubai, admin coordinator jobs in dubai";
+    ViewBag.Description = "Help an organization create and execute schedules, manage company budgets, greet and communicate with staff and clients.";
+    ViewBag.AdminExecutive = "ActiveSubLink";
+    ViewBag.Value = "Admin Coordinator";
+}
+@model amca.Models.ExperienceDesignation
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ExperiencedCareerRoles", "Career")">Experienced career roles</a></li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space sidebarFull">
+    <div class="container">
+        <div class="col-md-3 sidebarHalf">
+            @RenderPage("~/Views/Sidebar/CareerSidebar.cshtml")
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3><strong>We are looking for an Admin Coordinator</strong></h3>
+                </div>
+                <div class="col-md-12 jobDesc">
+                    <h4 class="subHeading"><strong>Qualifications:</strong></h4>
+                    <ul>
+                        <li> Demonstrating excellent IT Skills.</li>
+                        <li>Acquiring good communication skills (verbal & written) in English. Arabic is a plus.</li>
+                        <li>Preferably Female under Spouse Visa.</li>
+                    </ul>
+                    <h4 class="subHeading"><strong>Job Descriptions:</strong></h4>
+                    <ul>
+                        <li>Opening a file for clients</li>
+                        <li>Displaying knowledge about the different zones in the UAE.</li>
+                        <li>Arranging employees’ conveyances for client meetings and/or visit purposes.</li>
+                        <li>Demonstrating knowledge about FTA Portal and Registrations.</li>
+                        <li>Exemplifying knowledge about DMCC Portal</li>
+                        <li>Coordinating with the teams and the Accounts Department for payments.</li>
+                        <li>Arranging reports delivery.</li>
+                        <li>Attending to calls and replying to emails.</li>
+                        <li>Arranging meetings.</li>
+                        <li>Following up with the clients.</li>
+                        <li>Preparing quotations and sending them to the clients.</li>
+                        <li>Demonstrating knowledge in VAT Registration.</li>
+                        <li>Maintaining Master sheets/ Trackers</li>
+                        <li>Working under pressure.</li>
+                        <li>Displaying knowledge in document control.</li>
+                        <li>Uploading reports on the portal.</li>
+                        <li>Coordinating with the Office Boy.</li>
+                        <li>Updating the Company Portal.</li>
+                        <li>Reviewing and Tracking the Audit Files.</li>
+                        <li>Preparing the paper requirements as well as the auditor’s appointment letter.</li>
+                    </ul>
+                    <br />
+                    @using (Html.BeginForm("SubmitJob", "ExperiencedCareerRoles", FormMethod.Post, new { @class = "primary-form mt-3" }))
+                    {
+                        @Html.HiddenFor(model => model.JobTitle, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                        <input type="submit" class="btn btnTheme mr0" value="Apply for this position">
+                    }
+
+                    @*<a href="javascript:void(0)">
+                        <button class="btn btnTheme mr0">Apply for this position</button>
+                    </a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

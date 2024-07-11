@@ -1,0 +1,760 @@
+﻿@{
+    ViewBag.Title = "Ultimate Beneficial Ownership (UBO) | UBO Declaration UAE";
+    ViewBag.PageTitle = "Ultimate Beneficial Ownership (UBO)";
+    ViewBag.Keyword = "ultimate beneficial owner, ultimate beneficial owner rule, ultimate beneficial owner ubo";
+    ViewBag.Description = "The Ultimate Beneficial Owner’s (UBO’s) objectives cover the maintenance of the economic position of UAE with international requirements.";
+    ViewBag.PageURL = "https://amca.ae/ultimate-beneficial-owner";
+    ViewBag.ImageURL = "https://amca.ae/wimages/ultimate-beneficial-owner.jpg";
+    ViewBag.Value = "Ultimate Beneficial Ownership (UBO)";
+    ViewBag.UBO = "ActiveSubLink";
+
+}
+
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+
+<div class="row otherBanner aboutUs lgHeight">
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/RegulatoryComplianceReportingSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <marquee width="100%" direction="left" scrollamount="10"  onmouseover="this.stop();" onmouseout="this.start();">
+                                <p><strong>Licensing authorities begins issuing written warnings to entities that violate Ultimate Beneficial Owner Procedures.</strong></p>
+                            </marquee>
+                        </div>
+                        <div class="col-md-12">
+                            <img src="~/wimages/UltimateBeneficialOwner.svg" class="img-responsive" title="@ViewBag.PageTitle" alt="@ViewBag.PageTitle" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("ServiceQuery", "Services", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Entity" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.UBOServices as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div id="captcha">
+                                                @Scripts.Render("~/bundles/jquery")
+                                                @Html.Captcha("Refresh", "", 5)
+                                                @Html.Hidden("txtPageName", "UltimateBeneficialOwner")
+                                                @Html.ValidationSummary(true)
+                                            </div>
+                                            <p style="color:Red;text-align:right">  @ViewBag.ErrMessage </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row space3">
+                        <div class="col-md-12 linkingText">
+                            <h2>Cabinet Decision NO. 58 Of 2020: <span style="display: block; font-size: 20px;">REGULATING THE BENEFICIAL OWNER PROCEDURES</span></h2>
+                            <p>
+                                The United Arab of Emirates replaced Cabinet Resolution No. 34 of 2020 with Cabinet Resolution No. (58) of 2020 regulating Beneficial Owner Procedures (the “Resolution”).
+                            </p>
+                            <p>The Resolution covers the most updated requirements for the entities in UAE to disclose their Real beneficiaries or Ultimate Beneficial Owners, which intends to enhance the transparency of the UAE-registered entities. Similarly, it intends to improve compliance and global confidence in international data by developing effective and sustainable executive and regulatory mechanisms.</p>
+                            <p>The Ultimate Beneficial Owner’s (UBO’s) objectives cover the maintenance of the economic position of UAE with international requirements. It also aims to regulate minimum obligations in disclosure of Beneficial Owners, Shareholders, Partners, and Nominee Board Members, and lastly, establish an effective regulatory mechanism and procedure for the beneficial owner data. In addition, it aims to control Money Laundering and Terrorist Financing.</p>
+                            <p>As per Ministry, 513000, regulated by 38 licensing authorities, are required to provide data on ultimate beneficial owners. Including all Licensed by the local licensing authorities and the non-financial free zones.</p>
+
+
+                            <h2>How to Identify Ultimate Beneficial Owner?</h2>
+                            <p><em>Ultimate Beneficial Owner Rule</em></p>
+                            <p>As per Cabinet Resolution No. (58) of 2020, Beneficial Owner or Real Beneficiaries can be the following:</p>
+                            <h3>For UBO:</h3>
+
+                            <ul>
+                                <li>Natural Person who owns/controls the establishment definitively, through direct/indirect ownership shares of 25 % or more.</li>
+                                <li>Or: someone who holds the right to vote by 25% or more or the right to appoint/dismiss the majority of the establishment’s managers or any other means by which he exercises ultimate control over the establishment.</li>
+                                <li>In cases where UBO cannot be identified through the two conditions above, then a natural person who holds the position of Senior Management Official in the company may be deemed as the UBO. </li>
+                            </ul>
+                            <p>On the other hand, there are entities exempted from this resolution. They are as follows: (a) the companies in economic free zones like Abu Dhabi Gold Markets and Dubai International Financial Centre, and (b) the companies directly or indirectly owned or affiliated by the Federal or Emirate Government. </p>
+                            <p>Entities must assess who constitutes a UBO and consider whether anyone is a nominee Director / Manager. The Register of Shareholders / Partners is not a new concept. The Thirequirement isn't outlined in the UAE Commercial Companies Law and Free Zone Companies Regulations. The Resolution requires additional information about voting rights.</p>
+                            <p>For Nominee Director/Manager:</p>
+                            <p>
+                                The details of the Director / Manager, acting in agreement with the instructions of another person.
+                                For the Partner/Shareholder:
+                            </p>
+                            <p>A UBO is any individual who controls 25% or more of the partnership's capital or who ultimately is entitled to control 25% or more of the voting rights of the partnership.</p>
+                            <p>On the other hand, some entities are exempted from this resolution. They are as follows: (a) the companies in economic free zones like Abu Dhabi Gold Markets and Dubai International Financial Centre, and (b) the companies directly or indirectly owned by the Federal or Emirate Government.</p>
+                            <p>Entities must assess who constitutes a UBO and consider whether anyone is a nominee Director / Manager. The Register of Shareholders / Partners is not a new concept, as this requirement is outlined in the UAE Commercial Companies Law and respective Free Zone Companies Regulations. However, the Resolution requires additional information to be detailed (for example, voting rights).</p>
+
+                            <h2>Ultimate Beneficial Owner Companies Act</h2>
+                            <p>As per Cabinet Resolution No. (58) of 2020, all Relevant Entities must perform the following: </p>
+                            <ol>
+                                <li>
+                                    Maintain in their headquarters each the following registers:
+                                    <ul>
+                                        <li>Partners/Shareholders (state the information about the ownership interests and voting rights).</li>
+                                        <li>Actual Beneficiaries (provide the reason behind being Real Beneficiaries and the date they termed as one;</li>
+                                        <li>Directors and Nominee Directors;</li>
+                                        <li>And other essential documents and UBO forms were submitted to authorities.</li>
+                                    </ul>
+                                </li>
+                                <li>Submitting undertaking to create the registry and ensure data accuracy (which gives establishments with complex structures to start the procedures for determining their Ultimate Beneficial owner, keep their data in registers, and submit to their relevant Regulatory Authority.</li>
+                                <li>Notify the relevant authority of any amendment regarding the initial information provided within fifteen (15) days of such change or modification. Establishments are also required to appoint a person residing in the UAE as a point of contact so that the licensing authority can contact that person regarding the UBO data and other essential information requirements.</li>
+                                <li>Entering Ultimate Beneficial owner data in the systems of licensing authorities and keep updated regarding any communication from authorities to avoid penalties.</li>
+                            </ol>
+                            <p>If entities fail to comply with the Resolution, the UAE Ministry of Economy has announced significant penalties for non-compliance.</p>
+                            <p>However, it has been assured by the ministry that any data submitted will be kept with utmost confidentiality with no access to anyone for any commercial purposes, including the employees of the entity itself, except in case of an investigation and the required disclosure to specific official entities, according to the strict internal policies and Regulations, as stated by Al Hosani in a recent media briefing.</p>
+                            
+                        </div>
+                        <div class="col-md-12">
+                            <p><strong>
+                                   <u>
+                                       Cabinet Resolution No. (53) of 2021 Concerning the Administrative Penalties against Violators of The Provisions of the Cabinet Resolution No. (58) of 2020 Concerning the Regulation of Beneficial Owner Procedure
+                                   </u></strong>
+                            </p>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr style="background:#8e6c3a; color:#fff;">
+                                            <th rowspan="2" style="vertical-align: top;">#</th>
+                                            <th rowspan="2" style="vertical-align: top;" >Violation</th>
+                                            <th rowspan="2" style="vertical-align: top;">
+                                                Legal Ref.,
+                                                Cabinet
+                                                Resolution No.
+                                                (58) of 2020
+                                            </th>
+                                            <th colspan="3" style="vertical-align: top;">Administrative Penalties</th>
+                                        </tr>
+                                        <tr style="background:#8e6c3a; color:#fff;">
+                                            <th style="vertical-align: top;">First Time</th>
+                                            <th style="vertical-align: top;">Second Time</th>
+                                            <th style="vertical-align: top;">Third Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td >1</td>
+                                            <td>
+                                                Failure of the legal person to
+                                                create Register of Beneficial
+                                                Owner and maintain its data.
+                                            </td>
+                                            <td>Article (8)</td>
+                                            <td>Written Warning</td>
+                                            <td>
+                                                AED 50,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Thirty (30) Days as
+                                                of the violation
+                                                issue.
+                                            </td>
+                                            <td>
+                                                AED 100,000 and
+                                                suspension of the
+                                                trade license for at
+                                                least Twelve (12)
+                                                Months.
+                                            </td>
+                                        </tr>   
+                                        <tr>
+                                            <td>2</td>
+                                            <td>
+                                                Failure to include the data
+                                                mentioned in Clause (2) of
+                                                Article (8) of the mentioned
+                                                Cabinet Resolution No. (58) of
+                                                2020.
+                                            </td>
+                                            <td>Article (8) </td>
+                                            <td>Written Warning</td>
+                                            <td>
+                                                AED 20,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Fifteen (15) Days as
+                                                of the violation
+                                                issue.
+                                            </td>
+                                            <td>
+                                                AED 40,000 and
+                                                suspension of the
+                                                trade license for at
+                                                least Six (6)
+                                                Months.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>
+                                                Failure of the legal person to
+                                                maintain adequate, accurate,
+                                                specific and updated data of
+                                                Beneficial Owner or Failure of
+                                                the legal person to correctly
+                                                record down the Beneficial
+                                                Ownership.
+                                            </td>
+                                            <td>
+                                                Article (6) and
+                                                Article (7)
+                                            </td>
+                                            <td>Written Warning</td>
+                                            <td>
+                                                AED 10,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Fifteen (15) Days as
+                                                of the violation
+                                                issue.
+                                            </td>
+                                            <td>
+                                                AED 20,000 and
+                                                suspension of the
+                                                trade license for at
+                                                least One (1)
+                                                Month
+                                            </td>
+                                        </tr>   
+                                        <tr>
+                                            <td>4</td>
+                                            <td>
+                                                Failure of the legal person to
+                                                provide the Registrar with the
+                                                data referred to in Article (10)
+                                                of the mentioned Cabinet
+                                                Resolution No. (58) of 2020
+                                                regarding the details of the
+                                                director or nominal board
+                                                member.
+                                            </td>
+                                            <td>Article (9)</td>
+                                            <td>Written Warning</td>
+                                            <td>
+                                                AED 20,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Fifteen (15) Days as
+                                                of the violation
+                                                issue
+                                            </td>
+                                            <td>
+                                                AED 40,000 and
+                                                restriction of the
+                                                powers of the
+                                                board members or
+                                                directors, who are
+                                                proved liable for
+                                                the violation.
+                                            </td>
+                                        </tr>   
+                                        <tr>
+                                            <td>5</td>
+                                            <td>
+                                                Failure of the legal person to
+                                                create the Register of Partners
+                                                or Shareholders.
+                                            </td>
+                                            <td>Article (10)</td>
+                                            <td>-</td>
+                                            <td>
+                                                AED 50,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Sixty (60) Days as of
+                                                the violation issue.
+                                            </td>
+                                            <td>
+                                                AED 100,000 and
+                                                suspension of the
+                                                trade license for at
+                                                least Twelve (12)
+                                                Months.
+                                            </td>
+                                        </tr>   
+                                        <tr>
+                                            <td>6</td>
+                                            <td>
+                                                Failure of the legal person to
+                                                maintain the information of all
+                                                partners or shareholders in the
+                                                Register of Partners or
+                                                Shareholders.
+                                            </td>
+                                            <td>Article (10)</td>
+                                            <td>Written Warning</td>
+                                            <td>
+                                                AED 30,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Fifteen (15) Days as
+                                                of the violation
+                                                issue.
+                                            </td>
+                                            <td>
+                                                AED 60,000 and
+                                                suspension of the
+                                                trade license for at
+                                                least Six (6)
+                                                Months.
+                                            </td>
+                                        </tr>   
+                                        <tr>
+                                            <td>7</td>
+                                            <td>
+                                                Failure of the legal person to
+                                                provide the Registrar with the
+                                                information of beneficial owner
+                                                and the Register of Partners or
+                                                Shareholders and maintain such
+                                                registers from damage, loss or
+                                                destruction
+                                            </td>
+                                            <td>Article (11.1)</td>
+                                            <td>Written Warning  </td>
+                                            <td>
+                                                AED 15,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Fifteen (15) Days as
+                                                of the violation
+                                                issue
+                                            </td>
+                                            <td>
+                                                AED 30,000 and
+                                                suspension of the
+                                                trade license for
+                                                Three (3) months.
+                                            </td>
+                                        </tr>   
+                                        <tr>
+                                            <td>8</td>
+                                            <td>
+                                                Failure of the legal person to
+                                                provide any additional
+                                                information required by the
+                                                Registrar
+                                            </td>
+                                            <td>Article (11.2) </td>
+                                            <td>Written Warning</td>
+                                            <td>
+                                                AED 5,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Fifteen (15) Days as
+                                                of the violation
+                                                issue.
+                                            </td>
+                                            <td>
+                                                AED 10,000 and
+                                                suspension of the
+                                                trade license for at
+                                                least One (1)
+                                                Month
+                                            </td>
+                                        </tr>   
+                                        <tr>
+                                            <td>9</td>
+                                            <td>
+                                                Failure of the legal person to
+                                                provide the Registrar with the
+                                                name of a natural person
+                                                residing in the UAE and
+                                                authorized to disclose to the
+                                                Registrar all data and
+                                                information required by the
+                                                mentioned Federal Decree-Law
+                                                or Executive Regulations
+                                                thereof.
+                                            </td>
+                                            <td>Article (11.4)</td>
+                                            <td>Written Warning</td>
+                                            <td>
+                                                AED 1,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Fifteen (15) Days as
+                                                of the violation
+                                                issue.
+                                            </td>
+                                            <td>
+                                                AED 2,000 and
+                                                suspension of the
+                                                trade license for at
+                                                least One (1)
+                                                Month
+                                            </td>
+                                        </tr>   
+                                        <tr>
+                                            <td>10</td>
+                                            <td>
+                                                legal person to issue
+                                                shareholder's share guarantees.
+                                            </td>
+                                            <td>Article (11.5)</td>
+                                            <td>Written Warning</td>
+                                            <td>AED 5,000</td>
+                                            <td>AED 10,000</td>
+                                        </tr>   
+                                        <tr>
+                                            <td>11</td>
+                                            <td>
+                                                Failure of the legal person, on
+                                                the issuance of shares or stocks
+                                                in the name of persons or board
+                                                members, to disclose to the
+                                                Registrar the information in
+                                                respect of such shares or stocks
+                                                and the identity of such persons
+                                                or board members within
+                                                Fifteen (15) Days as of such
+                                                issuance.
+                                            </td>
+                                            <td>Article (11.6) </td>
+                                            <td>Written Warning</td>
+                                            <td>
+                                                AED 5,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Fifteen (15) Days as
+                                                of the violation
+                                                issue. 
+                                            </td>
+                                            <td>
+                                                AED 10,000 and
+                                                restriction of the
+                                                powers of the
+                                                board members,
+                                                directors or
+                                                owners, who are
+                                                proved liable for
+                                                the violation.
+                                            </td>
+                                        </tr>   
+                                        <tr>
+                                            <td>12</td>
+                                            <td>
+                                                Failure of the legal person to
+                                                hand over to the liquidator the
+                                                Register of Beneficial Owner
+                                                and Register of Partners or
+                                                Shareholders within Thirty (30)
+                                                Days as of appointing the said
+                                                liquidator
+                                            </td>
+                                            <td>Article (11.7) </td>
+                                            <td>Written Warning </td>
+                                            <td>
+                                                AED 5,000 and
+                                                warning the legal
+                                                person to rectify its
+                                                situation within
+                                                Fifteen (15) Days as
+                                                of the violation
+                                                issue.
+                                            </td>
+                                            <td>
+                                                AED 10,000 and
+                                                suspension of the
+                                                trade license for at
+                                                least One (1)
+                                                Month.
+                                            </td>
+                                        </tr>   
+                                        <tr>
+                                            <td>13</td>
+                                            <td>
+                                                Failure of the legal person or
+                                                the liquidator to maintain the
+                                                records and all information
+                                                referred to herein for at least
+                                                Five (5) Years as of the date of
+                                                dissolution, liquidation or de-registration.
+                                            </td>
+                                            <td>Article (11.8) </td>
+                                            <td>Written Warning</td>
+                                            <td>AED 20,000</td>
+                                            <td>AED 40,000</td>
+                                        </tr>   
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                            <div class="col-md-12">
+                                <h3>Synopsis</h3>
+                                <ul>
+                                   <li>All entities in the United Arab Emirates (unless excluded by the Resolution) must comply with the UBO Declaration's preparation until the earlier deadline specified by their licensing authority. According to the Ministry of Economy, the last date to provide data on Ultimate Beneficial Owners is the 30th of June 2021. However, most leaders have extended their deadline until the licensing authorities still accept July 8, 2021, and registrations.</li>
+                                   <li>The filing of the UBO Declaration to the relevant authority is per the deadline set by each licensing authority.</li>
+                                   <li>The entities shall notify the relevant authority of any amendment regarding the initial information given within fifteen (15) days of such change or modification.</li>
+                                   <li>Non Compliance will lead to Administrative Fines ranging from AED 50,000 to AED 1,000,000.</li>
+                                </ul>
+                                <h2><strong>Deadline for the UBO Declaration</strong></h2>
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <td colspan="3">
+                                            <h5><strong>For Other Authorities:</strong></h5>
+                                            <p>As per the advice from the other authorities, they are still waiting for the ministry approval regarding the extension request. </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr style="background:#8e6c3a; color:#fff;">
+                                                <th style="vertical-align: top;">Authority Name</th>
+                                                <th style="vertical-align: top;">Notification required</th>
+                                                <th style="vertical-align: top;">Notification deadline</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai Media City (DMC)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">International Freezone Authority (IFZA) </td>
+                                                <td>Yes</td>
+                                                <td>
+                                                    Registrations are still being accepted
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai Studio City (DSC)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Ras Al Khaimah Economic Zone (RAKEZ)</td>
+                                                <td>Yes</td>
+                                                <td><strong>Before 8th of July 2021</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Fujairah Creative City (FCC)</td>
+                                                <td>Yes</td>
+                                                <td><strong>Before 8th of July 2021</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Sharjah Media City Free Zone (SHAMS)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Ajman Free Zone Authority (AFZA)</td>
+                                                <td>Yes</td>
+                                                <td>7th of July 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai Multi Commodities Centre (DMCC)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai Outsource Zone (DOZ)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai Airport Free Zone (DAFZA)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai South (DWC)</td>
+                                                <td>Yes</td>
+                                                <td><strong>Before 8th of July 2021</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai Internet City (DIC)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Jebel Ali Free Zone (JAFZA)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai Silicon Oasis (DSO)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai Department of Economic Development (Dubai DED)</td>
+                                                <td>Yes</td>
+                                                <td>
+                                                    15th of July 2021
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Sharjah Airport International Free Zone (SAIF)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai Science Park</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Dubai Development Authority (DDA)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Hamriya Free Zone</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Abu Dhabi Department of Economic Development</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Sharjah Department of Economic Development</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="background:#8e6c3a; color:#fff">Umm Al Quwain Free Trade Zone Authority (UAQ)</td>
+                                                <td>Yes</td>
+                                                <td>30th of June 2021</td>
+                                            </tr>
+
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <h2><strong>How can we help?</strong></h2>
+                                <p>According to the Resolution, <a href="https://amcaauditing.com/" target="_blank"><strong>AMCA</strong></a> will prepare the UBO's partners and shareholders', and director/manager nominees' registers (if applicable) on your behalf. We will manage your UBO declaration for you, so you don't have to worry about it. Furthermore, we will notify the relevant authorities about changes and amendments to the information provided. </p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/ultimate-beneficial-owner");
+    })
+
+</script>
+
+
+
+
+

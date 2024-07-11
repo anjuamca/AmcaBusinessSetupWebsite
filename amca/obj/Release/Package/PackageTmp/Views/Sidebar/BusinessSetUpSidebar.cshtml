@@ -1,0 +1,10 @@
+﻿<div class="mainSidebar">
+    <h3><strong>Business Setup</strong></h3>
+    <ul>
+        <li class="@ViewBag.MainlandCompanyFormation"><a href="@Url.Action("MainlandCompanyFormation", "BusinessSetupSubServices")">Mainland Company Formation</a></li>
+        <li class="@ViewBag.FreeZoneCompanyFormation"><a href="@Url.Action("FreeZoneCompanyFormation", "BusinessSetupSubServices")">Free zone Company Formation</a></li>
+        <li class="@ViewBag.OffshoreCompanyFormation"><a href="@Url.Action("OffshoreCompanyFormation", "BusinessSetupSubServices")">Offshore Company Formation</a></li>
+    </ul>
+    @RenderPage("~/Views/Sidebar/_RelatedPost.cshtml")
+</div>
+

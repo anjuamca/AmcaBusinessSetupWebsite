@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "VAT could mean higher costs for banking services";
+    ViewBag.Keyword = "banking services, potential challenges, financial institutions, outsourced services, services incidental to financial services";
+    ViewBag.Description = "Indications from the new tax law announced last week point to a system that UAE banks and financial institutions will have both exempt as well as taxable supplies.";
+    ViewBag.PageURL = "https://amca.ae/vat-could-mean-higher-costs-for-banking-services";
+    ViewBag.ImageURL = "https://amca.ae/wimages/amca_VAT_could_mean_higher_costs_for_banking_service.jpg";
+}
+
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.Title</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-8 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="wimages/amca_VAT_could_mean_higher_costs_for_banking_service.jpg" class="img-responsive" alt="VAT could mean higher costs for banking services" title="VAT could mean higher costs for banking services">
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.Title</h1>
+                            <p>Indications from the new tax law announced last week point to a system that UAE banks and financial institutions will have both exempt as well as taxable supplies.This means that VAT incurred on common costs and general overheads such as marketing and promotional expenses, utilities, professional fees, purchases of office furniture will not be fully claimable and would need to be apportioned.Everything you need to know about VAT in UAE. “It is likely that only a portion of VAT incurred on such expenses, in proportion to the amount of taxable supplies made over total supplies made (standard method of apportionment), will be claimable,” PwC said in a note.</p>
+                            <h4><strong>Potential challenges</strong></h4>
+                            <p>Financial institutions could face a host of challenges while complying with VAT rules, according to PwC.</p>
+                            <p>Input VAT credit allocation — A complex issue for financial institutions is often the tracking and allocation of input credits between taxable supplies and exempt supplies. A major area of risk will be correctly identifying inputs which are used for both types of activities; such as office rental, utilities and IT systems.</p>
+                            <p>Outsourced services — It is common practice for financial institutions to outsource non-core activities (such as general administrative tasks, data processing and telephone help desk facilities) to third party service providers. Under the VAT, many of these outsourced activities will be taxable. Where the VAT becomes a cost, the outsourced arrangement may need to be reviewed to assess its viability and start considering any restructuring.</p>
+                            <p>Mixed supplies — Some financial services may comprise of a number of components (‘packaged services’), which if supplied separately, may be subject to different VAT treatment. For example, in the case of a motor vehicle sale via instalment payments with a separately disclosed interest charge, the sale of the motor vehicle is considered as taxable supply of goods, whereas the supply of credit is treated as an exempt service. In order to establish the correct VAT treatment of such packaged services, certain characteristics will need to be assessed to determine whether different VAT treatments will apply.</p>
+                            <p>Services incidental to financial services — The provision of a particular financial service provided in connection with exempt financial supplies are also likely to be exempt. For example, the provision of a loan (exempt supply) may require the processing of a loan application form for which there is a fee. Without the loan application (and it being approved), there can be no provision of the loan. Such supplies are ‘incidental’ to the principal supply and treated in the same manner for VAT purposes. In contrast, explicit fees are likely be taxable.</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/vat-could-mean-higher-costs-for-banking-services" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Fvat-could-mean-higher-costs-for-banking-services&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/vat-could-mean-higher-costs-for-banking-services">
+                            </script>
+                        </div>
+                        @RenderPage("~/Views/Sidebar/BlogComment.cshtml")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

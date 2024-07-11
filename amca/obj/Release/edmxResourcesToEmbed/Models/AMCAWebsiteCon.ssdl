@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="amca_website_aeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BlogComments">
+    <Key>
+      <PropertyRef Name="AutoId" />
+    </Key>
+    <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Useremail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Userwebsite" Type="nvarchar" MaxLength="50" />
+    <Property Name="Usercomment" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="ContactUsData">
+    <Key>
+      <PropertyRef Name="AutoId" />
+    </Key>
+    <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameContact" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailContact" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryCodeContact" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileContact" Type="nvarchar" MaxLength="50" />
+    <Property Name="MessageContact" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'amca_website_ae.dbo.Services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WebsiteLead">
+    <Key>
+      <PropertyRef Name="AutoId" />
+    </Key>
+    <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Services" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="ProcBlogComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AutoId" Type="int" Mode="In" />
+    <Parameter Name="Username" Type="nvarchar" Mode="In" />
+    <Parameter Name="Useremail" Type="nvarchar" Mode="In" />
+    <Parameter Name="Userwebsite" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usercomment" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ProcContactLeadData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AutoId" Type="int" Mode="In" />
+    <Parameter Name="NameContact" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmailContact" Type="nvarchar" Mode="In" />
+    <Parameter Name="CountryCodeContact" Type="nvarchar" Mode="In" />
+    <Parameter Name="MobileContact" Type="nvarchar" Mode="In" />
+    <Parameter Name="MessageContact" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="WebsiteLeadData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AutoId" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmailId" Type="nvarchar" Mode="In" />
+    <Parameter Name="CountryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="PhoneNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Services" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="amca_website_aeModelStoreContainer">
+    <EntitySet Name="BlogComments" EntityType="Self.BlogComments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactUsData" EntityType="Self.ContactUsData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebsiteLead" EntityType="Self.WebsiteLead" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Services].[ServiceID] AS [ServiceID], 
+    [Services].[ServiceName] AS [ServiceName]
+    FROM [dbo].[Services] AS [Services]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta name="keywords" content="@ViewBag.Keyword" />
+    <meta name="description" content="@ViewBag.Description" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" async
+            src="//l.getsitecontrol.com/e4zj51v7.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            //$(".renderClass").prop('class', 'textFld selectpicker form-control');
+            $(".renderClass").attr('data-live-search', true);
+        });
+    </script>
+    <script>
+        $(function () {
+            $('.selectpicker').selectpicker({
+                liveSearch: true,
+                showSubtext: true
+            });
+        });
+
+    </script>
+</body>
+</html>
+

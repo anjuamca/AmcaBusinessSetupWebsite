@@ -1,0 +1,177 @@
+﻿@{
+    ViewBag.Title = "Parent Company Officers Declaration";
+    ViewBag.Keyword = "parent company, dmcc, company officers, directors, subsidiary, joint ventures, administrative sanctions, officers, companies, branches, higher management, natural persons, administrative sanctions, amca";
+    ViewBag.Description = "Declaration of Parent Company Officers in DMCC. DMCC introduced a new service request for the declaration of Parent Company officers.";
+    ViewBag.ParentCompany = "ActiveSubLink";
+    ViewBag.Value = "Parent Company Officers DMCC";
+}
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.Title</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>Parent Company Officers in DMCC</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/RegulatoryComplianceReportingSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/parentcompanyofficers.svg" class="img-responsive" title="@ViewBag.PageTitle" alt="@ViewBag.PageTitle" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("ServiceQuery", "Services", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Entity" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.DMCCServices as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div id="captcha">
+                                                @Scripts.Render("~/bundles/jquery")
+                                                @Html.Captcha("Refresh", "", 5)
+                                                @Html.Hidden("txtPageName", "ParentCompany")
+                                                @Html.ValidationSummary(true)
+                                            </div>
+                                            <p style="color:Red;text-align:right">  @ViewBag.ErrMessage </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                In compliance with the mandate of UAE Cabinet Resolution No. (58) of 2020, registered Companies (Subsidiary and Joint Ventures) and established Branches (for a non-DMCC Company) must provide relevant information of officers holding a higher management position in the Parent Company, such as its Directors. To comply with this mandate, DMCC introduces a new service request for the declaration of Parent Company officers.
+                            </p>
+                            <h2>Parent Company Officers</h2>
+                            <p>
+                                All those officers holding a higher management position in the Parent Company have decision-making authority over the DMCC Entity.
+                            </p>
+                            <p>
+                                Only those officers with decision-making power over the DMCC Entity must be declared.
+                            </p>
+                            <h2>Business Rules and Validations</h2>
+                            <p>This Declaration process is applicable and mandatory for registered Companies (Subsidiaries and Joint Ventures) and established Branches (for non-DMCC Companies).</p>
+                            <ul>
+                                <li>No active sanction shall prevent the SR from being submitted as long as the registration status of the DMCC Entity is active.</li>
+                                <li>Declaration of Parent Company Officers is limited to natural persons only, and there is no limit as it is dependent on the structure of the Parent company. However, only those Officers with decision-making authority over the DMCC Entity are required to be declared.</li>
+                                <li>Registered Parent Company officer information will be stored in the DMCC Officer Register. Still, it shall not be available for public view, and no official extract shall be issued by DMCC containing such information.</li>
+                            </ul>
+                            <h3>Deadline for the Submission of the Parent Company Officers</h3>
+                            <p>To comply with the mandated requirement, please declare the Parent Company officers of your registered DMCC Entity on or before 31 March 2021.</p>
+                            <h3>How can we help you?</h3>
+                            <p>
+                                On your behalf, AMCA will be the one to prepare the declaration of your Parent Company Officers. In addition to that, we'll take care of informing the relevant authority regarding the changes and amendments to the information provided. So rest assured that you are in good hands during the submission of your Parent Company Officers if you work with us.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/parent-company-officers-in-dmcc");
+    })
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+</script>

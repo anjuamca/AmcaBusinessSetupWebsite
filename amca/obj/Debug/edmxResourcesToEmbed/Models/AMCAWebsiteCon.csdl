@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="amca_website_aeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BlogComment">
+    <Key>
+      <PropertyRef Name="AutoId" />
+    </Key>
+    <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Useremail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Userwebsite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Usercomment" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContactUsData">
+    <Key>
+      <PropertyRef Name="AutoId" />
+    </Key>
+    <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCodeContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MessageContact" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WebsiteLead">
+    <Key>
+      <PropertyRef Name="AutoId" />
+    </Key>
+    <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Services" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="amca_website_aeEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BlogComments" EntityType="Self.BlogComment" />
+    <EntitySet Name="ContactUsDatas" EntityType="Self.ContactUsData" />
+    <EntitySet Name="WebsiteLeads" EntityType="Self.WebsiteLead" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <FunctionImport Name="ProcBlogComments">
+      <Parameter Name="AutoId" Mode="In" Type="Int32" />
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Useremail" Mode="In" Type="String" />
+      <Parameter Name="Userwebsite" Mode="In" Type="String" />
+      <Parameter Name="Usercomment" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcContactLeadData">
+      <Parameter Name="AutoId" Mode="In" Type="Int32" />
+      <Parameter Name="NameContact" Mode="In" Type="String" />
+      <Parameter Name="EmailContact" Mode="In" Type="String" />
+      <Parameter Name="CountryCodeContact" Mode="In" Type="String" />
+      <Parameter Name="MobileContact" Mode="In" Type="String" />
+      <Parameter Name="MessageContact" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WebsiteLeadData">
+      <Parameter Name="AutoId" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+      <Parameter Name="CountryCode" Mode="In" Type="String" />
+      <Parameter Name="PhoneNo" Mode="In" Type="String" />
+      <Parameter Name="Services" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

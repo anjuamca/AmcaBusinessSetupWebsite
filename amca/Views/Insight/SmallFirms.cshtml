@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Small firms need to be sticklers at book-keeping";
+    ViewBag.Keyword = "bookkeeping, Small firms, business success, business";
+    ViewBag.Description = "The importance of maintaining proper accounting records by SMEs cannot be overstated. Yet many entrepreneurs and business owners do not take keeping a record of accounts seriously, placing it low";
+    ViewBag.PageURL = "https://amca.ae/small-firms-need-to-be-sticklers-at-book-keeping";
+    ViewBag.ImageURL = "https://amca.ae/wimages/amca_small_firms_need.jpg";
+}
+
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.Title</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-8 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="wimages/amca_small_firms_need.jpg" class="img-responsive" alt="Small firms need to be sticklers at book-keeping" title="Small firms need to be sticklers at book-keeping">
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.Title</h1>
+                            <p>The importance of maintaining proper accounting records by SMEs cannot be overstated. Yet many entrepreneurs and business owners do not take keeping a record of accounts seriously, placing it low on their list of priorities Often, small businesses adopt what is known as a 'shoebox' approach to record keeping, recording sales and purchase transactions on a piece of paper and then throwing it into a shoebox. But half-hearted efforts are of no use when it comes to business decision-making.</p>
+                            <p>Still others perceive bookkeeping as an inconvenience, a colossal waste of time on a mundane administrative task, not realising the positive impact it could have on their business success. Remember the adage ‘if you can’t measure it, you can’t manage it’? But what is it that makes bookkeeping so important for SMEs?</p>
+                            <p>For starters, book-keeping helps businesses plan ahead. It ‘forces’ them to take a good look at their budget, allowing them to plan for purchases and other miscellaneous costs which makes it easier to forecast business needs ahead of time. It also assists with meeting deadlines for payments such as rent, salaries, bills and loans.From a day-to-day perspective, maintaining a proper record of transactions is essential for effective cash flow management, without which no business can stand the test of time. It is also an essential tool to help gauge performance, letting a small business know how it is fairing and whether it is growing, declining or stagnant.</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/small-firms-need-to-be-sticklers-at-book-keeping" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Fsmall-firms-need-to-be-sticklers-at-book-keeping&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/small-firms-need-to-be-sticklers-at-book-keeping">
+                            </script>
+                        </div>
+                        @RenderPage("~/Views/Sidebar/BlogComment.cshtml")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

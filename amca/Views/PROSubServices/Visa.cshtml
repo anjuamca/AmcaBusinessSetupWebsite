@@ -1,0 +1,193 @@
+﻿@{
+    ViewBag.Title = "Visa Services | Visa Services in Dubai | Visa Application";
+    ViewBag.PageTitle = "Visa Services in Dubai";
+    ViewBag.Keyword = "visa services in dubai, visa, setting up a business in dubai, pro services, pro, visa application, visa services, employment visa, sponsor, visa processing, dependent visa, dnrd, visa renewal, renewal of visa, general directorate of residency and foreigners affairs, gdrfa, visa cancellation, visa amendment, entry status, residency visa, penalties, pro agents, business profitability, pro services in dubai";
+    ViewBag.Description = "Looking for visa services in Dubai? We AMCA, provide all kind of visa services in Dubai at best price. Contact us today.";
+    ViewBag.Visa = "ActiveSubLink";
+}
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li> <a href="@Url.Action("PROServices", "Services")">PRO Services</a></li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/PROSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/get-your-lifetime-investor-visa-in-uae.jpg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("PROQuery", "PROSubServices", FormMethod.Post, new { @class = "fromB" }))
+                                    {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Individual" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Service", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.VISAService as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" id="captcha">
+                                        @Scripts.Render("~/bundles/jquery")
+                                        @Html.ValidationSummary(true)
+                                        @Html.Captcha("Refresh", "", 5)
+                                        <p style="color:Red">  @ViewBag.ErrMessage </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br />
+                            <p>
+                                Due to the excellent infrastructure, geologically favorable circumstances, and exceptional human resources, setting up a business in Dubai is one of the best decisions. In addition, Dubai is one of the fastest-growing economies that could help your business thrive and grow as an individual, and develop your skills as a professional.
+                            </p>
+                            <p>Visa is an approved entry into a country that can be given and granted to an individual who will successfully meet the requirements to enter or visit the country. A visa enables an individual to stay in the country for a given amount of time and provides enough reason to determine whether an individual can just simply stay or work in the country. AMCA offers Visa Services in Dubai for individuals and corporate clients. Our expert PROs will take care of your visa application process through our PRO Services.</p>
+                            <h3><strong>What Visa Services do we offer?</strong></h3>
+                            <ul>
+                                <li>
+                                    <strong>Visa Application</strong>
+                                    <ul>
+                                        <li><strong>Employment Visa</strong></li>
+                                        <li>An employment visa is one of the documents which an individual must be able to have if they have a plan to reside in the UAE. This document will allow an individual to stay in the country and be legally employed by a particular UAE employer.</li>
+                                        <li>In the UAE, an employment visa means you have an employer who acts as your sponsor for you to live and work in the UAE. It simply means that through an employment visa, an individual can lawfully act or work with an employer inside the country without worrying about any troubles with the authorities.</li>
+                                        <li>The validity of an employment visa depends on the sponsor and the nature of the employment. The options for employment visa validity are one-year, two-year, and three-year validity.</li>
+                                        <li>Individuals 18 years old and above are qualified to be employed in Dubai, meaning that these individuals are even eligible for getting the visa.</li>
+                                        <li>Ideally, the visa processing time might take up to 2 weeks. But, be that as it may, the Dubai working visa processing time might vary depending on various factors.</li>
+                                        <li><strong>Dependent Visa</strong></li>
+                                        <li>While your employer in the UAE is sponsoring you, on the other hand, you can sponsor your spouse, children (below 18 years of age), and other dependents, like, for instance, your parents, through a dependent visa.</li>
+                                        <li>How is it possible? Well, to be able to sponsor your family members to the UAE, the following must be fulfilled:
+                                            <ul>
+                                                <li>The male residents employed in the UAE must be able to meet the minimum wage of AED 3,000 with accommodation or AED 4,000 without accommodation in Dubai.</li>
+                                                <li>In Abu Dhabi, the female expatriates must belong to one of the two categories as per the laws in the country.
+                                                    <ul>
+                                                        <li>If she is a teacher, medical professional, or engineer, she may sponsor a visa for her husband with a salary of AED 3,000 with accommodation or AED 4,000 without accommodation in Dubai.
+                                                        <li>If her job falls under a different category, she must be able to meet the minimum wage of AED 9,000.
+                                                        <li>However, in Dubai, if a woman is not employed in one of these categories, she may still get approval to sponsor her family if her monthly salary reaches more than AED 10,000 and get special permission from the DNRD.
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Visa Renewal</strong>
+                                    <p>The sponsor must do the renewal of the visitor before its expiration. The visa renewal is necessary to let an individual live legally in the UAE without worrying about the fines or facing legal consequences. On the other hand, a grace period of 30 days to stay in the UAE is given by the General Directorate of Residency and Foreigners Affairs (GDRFA) to those residents after their visas expire.</p>
+                                </li>
+                                <li>
+                                    <strong>Visa Cancellation</strong>
+                                    <p>Suppose you have decided to leave the country permanently and have a residence visa sponsored by your employer or family member. In that case, your residence visa must be canceled officially.</p>
+                                </li>
+                                <li>
+                                    <strong>Visa Amendment </strong>
+                                    <p>Under Ministerial Resolution No. 377 of 2014, holders of all visas can modify their entry status while staying inside the country. This is if the holder wishes to transfer their visas into a residency visa. However, the applicant must do this before the expiry of their current visa to avoid any penalties.</p>
+                                </li>
+                            </ul>
+
+                            <h3><strong>How AMCA can assist you?</strong></h3>
+                            <p>AMCA has well-trained PROs who can systematically provide the best PRO services carrying out all the visa applications if you seek PRO services. Completing all the assigned work is an assurance provided by our committed and reliable PRO agents. We will work on all your administrative and PRO-related tasks while you focus on your business and enhance business profitability.</p>
+                            <p>As a corporate providing PRO Services in Dubai, we are dedicated to delivering comprehensive PRO solutions to our clients. We offer a service package that suitably addresses the business requirements as quickly as possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/visa-services-in-dubai");
+         })
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+</script>

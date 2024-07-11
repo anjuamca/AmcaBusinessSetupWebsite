@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Offshore company formation in Dubai | UAE offshore company";
+    ViewBag.Keyword = "company(s), business set up dubai, company formation, offshore company formation in dubai, company formation, company formation in the uae, mainland company formation, free zone company formation, offshore companies, foreign investors, personal tax, corporation tax, registered agents, share capital, transferable shares, start up a business, setting up a business";
+    ViewBag.Description = "Offshore company formation in Dubai indisputably offers good privileges to its investors. Dubai is indeed the best option for the offshore company formation";
+    ViewBag.OffshoreCompanyFormation = "ActiveSubLink";
+    ViewBag.Value = "Offshore Company Formation";
+}
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">Offshore Company Formation Dubai</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("BusinessSetUp", "Services")">Business Set-up</a> </li>
+                    <li>Offshore Company Formation</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/BusinessSetUpSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/Offshore.svg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/BusinessSetupSubServices/QueryForm.cshtml")
+                            @Html.Hidden("txtPageName", "OffShoreCompanyFormation")
+
+                        </div>
+                    </div>
+                    <p>A company formation in the UAE indisputably offers good privileges to its investors. From having a conducive working environment to easy accessibility and safety and security, Dubai is the best option for company formation.</p>
+                    <p>Aside from the Mainland Company Formation and the Free Zone Company Formation, the Offshore Companies are similarly registered business entities with non-resident status and are administered by the Offshore Company regulations and trade rules in the UAE. Amongst the benefits of having an Offshore Company is the capability of the foreign investors to grow their businesses internationally, which is outside the UAE’s jurisdiction. The UAE Offshore companies can manage, control and oversee companies and their properties globally.</p>
+                    <h3><strong>Advantages of Offshore Company Formation</strong></h3>
+                    <ol>
+                        <li><strong>Full Foreign Ownership</strong><br />This type of company formation does not require a local shareholder, which means that the foreign investors own the 100% share equity.</li>
+                        <li><strong>Corporate Taxes Exemption</strong><br />There is no personal tax or corporation tax imposed on offshore companies.</li>
+                        <li><strong>Apt Registration Processes</strong><br />From the beginning until the end, the offshore company formation process is considered simple and does not pose apparent difficulties for foreign investors. Upon completing all the required documents, the registration can be completed within 3 to 4 working days only.</li>
+                        <li><strong>Cheap Operational Costs</strong><br />The Offshore companies are not entitled to perform any registration for leasing purposes and other related activities. However, offshore companies can run the business through the office of registered agents.</li>
+                        <li><strong>No Requirement for the Share Capital</strong><br />The Registrar may require the company to pay their capital as adequate as the level of their proposed activities, but it has no requirements for any minimum share capital.</li>
+                        <li><strong>Convenience in the Transferable Shares</strong><br />It is more convenient for offshore companies to perform the transferable shares.</li>
+                        <li><strong>Privacy</strong><br />The offshore companies can fully be benefited from the privilege of having privacy.</li>
+                    </ol>
+                    <p>These are some benefits that foreign investors may acquire from having offshore companies. One of the advantages of having lawsuit protection is that the assets are completely protected by legal means. The registered agent can fulfill all the official requirements on behalf of the investors.</p>
+                    <h3><strong>Start up your business with AMCA</strong></h3>
+                    <p>Once you have decided to start a business, you should also prepare all the documents and legalities you may probably encounter to establish your dream company. Although it might require you a lot of time to prepare all the needed documents, it will never be a problem for AMCA to be here to help you and assist you from the beginning to the end.</p>
+                    <p>We will take care of preparing your documents and assure you to keep our eyes on every detail of the processing of your offshore company formation. By hiring our expert team, you will be able to realize your dream of owning your own business without having to worry about the legalities and formalities involved in setting up a business.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

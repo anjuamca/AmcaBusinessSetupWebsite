@@ -1,0 +1,630 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <meta name="keywords" content="@ViewBag.Keyword" />
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="msvalidate.01" content="7F2F37669F1E2310642F2415D3B41631" />
+    <meta name="theme-color" content="#caa669">
+    @RenderSection("AdditionalMeta", false)
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="canonical" href="@Request.Url.AbsoluteUri" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156526620-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-156526620-1');
+    </script>
+    <script type="text/javascript">
+        (function () {
+            window.sib = { equeue: [], client_key: "1xymgwm80r3ol8gz8o5wn097" };
+            /* OPTIONAL: email to identify request*/
+            // window.sib.email_id = 'example@domain.com';
+            /* OPTIONAL: to hide the chat on your script uncomment this line*/
+            // window.sib.display_chat = 0;
+            // window.sib.display_logo = 0;
+            /* OPTIONAL: to overwrite the default welcome message uncomment this line*/
+            window.sib.custom_welcome_message = 'Thank you for contacting AMCA! Please let us know how We can help you.';
+            /* OPTIONAL: to overwrite the default offline message uncomment this line*/
+            // window.sib.custom_offline_message = 'We are currently offline. In order to answer you, please indicate your email in your messages.';
+            window.sendinblue = {}; for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) { (function (k) { window.sendinblue[k] = function () { var arg = Array.prototype.slice.call(arguments); (window.sib[k] || function () { var t = {}; t[k] = arg; window.sib.equeue.push(t); })(arg[0], arg[1], arg[2]); }; })(j[i]); } var n = document.createElement("script"), i = document.getElementsByTagName("script")[0]; n.type = "text/javascript", n.id = "sendinblue-js", n.async = !0, n.src = "https://sibautomation.com/sa.js?key=" + window.sib.client_key, i.parentNode.insertBefore(n, i), window.sendinblue.page();
+        })();
+    </script>
+        @if (ViewBag.Controller != "InsightController")
+            {
+            <meta property='og:title' content="@ViewBag.Title" />
+            <meta property='og:url' content="@Request.Url.AbsoluteUri" />
+            <meta property='og:type' content='website' />
+            <meta property='og:description' content="@ViewBag.Description" />
+            <meta property="og:image" content="https://amca.ae/wimages/tourist-VISA.jpg" />
+            <meta property="fb:page_id" content="3058581424174487" />
+            }
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0&appId=3058581424174487&autoLogAppEvents=1"></script>
+    <div class="container-fluid">
+        @*<a href="https://amca.ae/track-file/default.aspx" target="_blank" rel="noreferrer">
+                <div class="trackFile">
+                    <span>T</span>
+                    <span>R</span>
+                    <span>A</span>
+                    <span>C</span>
+                    <span>K</span>
+                    <span>&nbsp;</span>
+                    <span>F</span>
+                    <span>I</span>
+                    <span>L</span>
+                    <span>E</span>
+                </div>
+            </a>*@
+        <a href="https://wa.me/97142408784" target="_blank" rel="noreferrer">
+            <div class="whatsapp">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+            </div>
+        </a>
+        <div class="mobileMenu">
+            <div class="cross">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <ul>
+                <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                <li><a href="@Url.Action("AboutUs", "Page")">About Us</a> </li>
+                <h4>Services</h4>
+                <li>
+                    <a href="@Url.Action("BusinessSetUp", "Services")">Business Set-up</a>
+                    <ul class="mobile-submenu">
+                        <li><a href="@Url.Action("MainlandCompanyFormation", "BusinessSetupSubServices")">Mainland Company Formation</a></li>
+                        <li><a href="@Url.Action("FreeZoneCompanyFormation", "BusinessSetupSubServices")">Free zone Company Formation</a></li>
+                        <li><a href="@Url.Action("OffshoreCompanyFormation", "BusinessSetupSubServices")">Offshore Company Formation</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="@Url.Action("AdvisoryServices", "Services")">Advisory Services</a>
+                    <ul class="mobile-submenu">
+                        <li><a href="@Url.Action("BusinessValuation", "AdvisorySubServices")">Business Valuation</a></li>
+                        <li><a href="@Url.Action("FeasibilityStudy", "AdvisorySubServices")">Feasibility Study</a></li>
+                        <li><a href="@Url.Action("ManagementConsultancy", "AdvisorySubServices")">Management Consultancy</a></li>
+                        <li><a href="@Url.Action("DueDiligence", "AdvisorySubServices")">Due Diligence</a></li>
+                        <li><a href="@Url.Action("BusinessPlan", "AdvisorySubServices")">Business Plan</a></li>
+                        <li><a href="@Url.Action("ManagementReport", "AdvisorySubServices")">Management Report</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="@Url.Action("RegulatoryComplianceReporting", "Services")">Regulatory Compliance and Reporting</a>
+                    <ul class="mobile-submenu">
+                        <li>
+                            <a href="@Url.Action("ESRService", "Services")">ESR</a>
+                            <ul class="mobile-submenu">
+                                <li><a href="@Url.Action("ESRNotificationFiling", "ESRSubServices")">ESR Notification Filing</a></li>
+                                <li><a href="@Url.Action("ESRReport", "ESRSubServices")">ESR Report</a></li>
+                                <li><a href="@Url.Action("ESRTesting", "ESRSubServices")">ESR Testing</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Action("UltimateBeneficialOwner", "Services")">UBO</a></li>
+                        <li><a href="@Url.Action("cbcr", "Services")">CbCR</a></li>
+                        <li><a href="@Url.Action("goAML", "Services")">goAML</a></li>
+                        <li><a href="@Url.Action("ParentCompany", "Services")">Parent Company Officers DMCC</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="@Url.Action("PROServices", "Services")">PRO Services</a>
+                    @*<ul class="mobile-submenu">
+                <li>
+                    <a href="@Url.Action("Visa", "PROSubServices")">Visa Services</a>
+                    <ul class="mobile-submenu">
+                        <li><a href="@Url.Action("GoldenVisa", "VisaSubServices")">Golden Visa</a></li>
+                        <li><a href="@Url.Action("SilverVisa", "VisaSubServices")">Silver Visa</a> </li>
+                        <li><a href="@Url.Action("BusinessVisa", "VisaSubServices")">Business Visa</a></li>
+                        <li><a href="@Url.Action("RemoteWorkVisa", "VisaSubServices")">Remote Work Visa</a></li>
+                        <li><a href="@Url.Action("TouristVisa", "VisaSubServices")">Tourist Visa</a></li>
+                        <li><a href="@Url.Action("RetirementVisa", "VisaSubServices")">Retirement Visa</a></li>
+                    </ul>
+                </li>
+            </ul>*@
+                </li>
+                <li>
+                    <a href="@Url.Action("Visa", "PROSubServices")">Visa Services</a>
+                    <ul class="mobile-submenu">
+                        <li><a href="@Url.Action("GoldenVisa", "VisaSubServices")">Golden Visa</a></li>
+                        <li><a href="@Url.Action("GreenVisa", "VisaSubServices")">Green Visa</a> </li>
+                        <li><a href="@Url.Action("EntryPermitsVisa", "VisaSubServices")">Entry Permits Visa</a></li>
+                        <li><a href="@Url.Action("RemoteWorkVisa", "VisaSubServices")">Remote Work Visa</a></li>
+                        <li><a href="@Url.Action("RetirementVisa", "VisaSubServices")">Retirement Visa</a></li>
+                    </ul>
+                </li>
+
+                <h4>Our Groups</h4>
+                <li><a href="https://amcaauditing.com/" target="_blank" rel="noreferrer">Abdulla Al Marzooqi Chartered Accountants, Dubai</a></li>
+                <li><a href="#">AMCA Accounting &amp; Business Advisors DMCC</a></li>
+                <li><a href="#">Abdulla Al Marzooqi Chartered Accountants, Abu Dhabi</a></li>
+                <li><a href="#">AMCA Data Analytics &amp; IT Solutions, Dubai</a></li>
+                <li><a href="#">Trustworthy Educational Consultancy</a></li>
+                <li><a href="#">Trustworthy Human Welfare Foundation</a></li>
+                <h4>Careers</h4>
+                <li><a href="@Url.Action("ExperiencedCareerRoles", "Career")">Experienced Career Roles</a></li>
+                @*<li><a href="@Url.Action("StudentAndCampusRole", "Career")">Student and Campus Roles</a></li>*@
+                <h4>Quick Links</h4>
+                <li><a href="@Url.Action("Industries", "Page")">Industries</a></li>
+                <li><a href="@Url.Action("Insights", "Page")">Insights</a></li>
+                <li><a href="~/wimages/companyProfile.pdf" target="_blank" rel="noreferrer">Brochures</a></li>
+                <li><a href="@Url.Action("ContactUs", "Page")" class="noPaddingR">Contact Us</a></li>
+                <li><a href="@Url.Action("TermsandConditions", "Page")">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <header class="fixedHeader" id="site-header">
+            <div class="row topHeader">
+                <div class="container">
+                    <div class="mobileTop" id="mobileTop">
+                        <ul>
+                            <li class="fb">
+                                <a href="https://www.facebook.com/amcaauditing" target="_blank" rel="noreferrer">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="in">
+                                <a href="https://www.linkedin.com/company/amcamiddleeast" target="_blank" rel="noreferrer">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="insta">
+                                <a href="https://www.instagram.com/amca.auditing/">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="youtube">
+                                <a href="https://www.youtube.com/watch?v=bcMiiT8Y04s">
+                                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://portal.amca.ae/" target="_blank" rel="noreferrer"><i class="fa fa-user"></i></a>
+                            </li>
+                            <li class="searchLi">
+                                <a href="javascript:void(0)" class="searchIc">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </a>
+                                <div class="serchMW">
+                                    <form>
+                                        <div class="searchWrap">
+                                            <input type="text" class="form-control" placeholder="Search Here">
+                                            <button class="btn btnThemeS">Search</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <li><a href="https://portal.amca.ae/track-file/" target="_blank" rel="noreferrer">Track File</a></li>
+                            <li class="reqMobile"><a href="@Url.Action("RequestProposal", "Page")" class="noPaddingR">Request for Proposal</a></li>
+                            @*<li>
+                    <button class="btn btnD btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <img src="~/wimages/language.svg" width="24" />
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Arabic</a></li>
+                    </ul>
+                </li>*@ 
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-xs-8 logo">
+                        <a href="@Url.Action("Index", "Page")">
+                            <img src="../wimages/logo.svg" class="scrLogo img-responsive" id="scrLogo" width="350" height="80" alt="AMCA - Top Consulting Firm in Dubai" title="Logo">
+                        </a>
+                    </div> <!-- end of col-md-4 -->
+                    <div class="col-md-8 text-right">
+                        <div class="menuIcon">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-xs-12 rightTop">
+                        <div class="row topNav" id="tpNon">
+                            <div class="frstLst">
+                                <ul class="socialIcons">
+                                    <li class="fb">
+                                        <a href="https://www.facebook.com/amcaauditing" target="_blank" rel="noreferrer"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li class="in">
+                                        <a href="https://www.linkedin.com/company/amcamiddleeast" target="_blank" rel="noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li class="insta">
+                                        <a href="https://www.instagram.com/amca.auditing/" target="_blank" rel="noreferrer"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li class="youtube">
+                                        <a href="https://www.youtube.com/watch?v=bcMiiT8Y04s" target="_blank" rel="noreferrer"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                    </li>
+                                    @*<a href="https://www.facebook.com/amcaauditing" target="_blank" rel="noreferrer">
+                            <li class="fb">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </li>
+                        </a>
+                        <a href="https://www.linkedin.com/company/amcamiddleeast" target="_blank" rel="noreferrer">
+                            <li class="in">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </li>
+                        </a>
+                        <a href="https://www.instagram.com/amca.auditing/" target="_blank" rel="noreferrer">
+                            <li class="insta">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </li>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=bcMiiT8Y04s" target="_blank" rel="noreferrer">
+                            <li class="youtube">
+                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                            </li>
+                        </a>*@
+                                </ul>
+                            </div>
+                            <div class="secondLst">
+                                <ul>
+                                    <li>
+                                        <button class="btn btnD btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Our Groups
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                            <li><a href="https://amcaauditing.com/" target="_blank" rel="noreferrer">Abdulla Al Marzooqi Chartered Accountants, Dubai</a></li>
+                                            <li><a href="#">AMCA Accounting &amp; Business Advisors DMCC</a></li>
+                                            <li><a href="#">Abdulla Al Marzooqi Chartered Accountants, Abu Dhabi</a></li>
+                                            <li><a href="#">AMCA Data Analytics &amp; IT Solutions, Dubai</a></li>
+                                            <li><a href="#">Trustworthy Educational Consultancy</a></li>
+                                            <li><a href="#">Trustworthy Human Welfare Foundation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="https://portal.amca.ae/" target="_blank" rel="noreferrer">
+                                            <i class="fa fa-user"></i>
+                                        </a>
+                                    </li>
+                                    <li class="searchLi">
+                                        <a href="javascript:void(0)" class="searchIc">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </a>
+                                        <div class="serchMW">
+                                            <div class="searchWrap">
+                                                <input type="text" class="form-control" placeholder="Search Here">
+                                                <button class="btn btnThemeS">Search</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @*<li>
+                            <button class="btn btnD btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <img src="~/wimages/language.svg" width="22" />
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">Arabic</a></li>
+                            </ul>
+                        </li>*@
+                                    <li>
+                                        <a href="https://portal.amca.ae/track-file/" target="_blank" rel="noreferrer">
+                                            <button class="btn btnNormal btn-sm">Track Your File</button>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("RequestProposal", "Page")"><button class="btn btnNormal1 btn-sm">Request For Proposal</button></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> <!-- end of row -->
+                        <div class="navigation row">
+                            <nav class="navbar navbar-default">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="@Url.Action("AboutUs", "Page")">About Us</a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li class="dropdown-submenu">
+                                                    <a href="@Url.Action("BusinessSetUp", "Services")" class="dropdown-toggle">Business Set-up</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="@Url.Action("MainlandCompanyFormation", "BusinessSetupSubServices")">Mainland Company Formation</a></li>
+                                                        <li><a href="@Url.Action("FreeZoneCompanyFormation", "BusinessSetupSubServices")">Free zone Company Formation</a></li>
+                                                        <li><a href="@Url.Action("OffshoreCompanyFormation", "BusinessSetupSubServices")">Offshore Company Formation</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown-submenu">
+                                                    <a href="@Url.Action("AdvisoryServices", "Services")" class="dropdown-toggle">Advisory Services</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="@Url.Action("BusinessValuation", "AdvisorySubServices")">Business Valuation</a></li>
+                                                        <li><a href="@Url.Action("FeasibilityStudy", "AdvisorySubServices")">Feasibility Study</a></li>
+                                                        <li><a href="@Url.Action("ManagementConsultancy", "AdvisorySubServices")">Management Consultancy</a></li>
+                                                        <li><a href="@Url.Action("DueDiligence", "AdvisorySubServices")">Due Diligence</a></li>
+                                                        <li><a href="@Url.Action("BusinessPlan", "AdvisorySubServices")">Business Plan</a></li>
+                                                        <li><a href="@Url.Action("ManagementReport", "AdvisorySubServices")">Management Report</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown-submenu">
+                                                    <a href="@Url.Action("RegulatoryComplianceReporting", "Services")">Regulatory Compliance and Reporting</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="dropdown-submenu">
+                                                            <a href="@Url.Action("ESRService", "Services")">ESR</a>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a href="@Url.Action("ESRNotificationFiling", "ESRSubServices")">ESR Notification Filing</a></li>
+                                                                <li><a href="@Url.Action("ESRReport", "ESRSubServices")">ESR Report</a></li>
+                                                                <li><a href="@Url.Action("ESRTesting", "ESRSubServices")">ESR Testing</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><a href="@Url.Action("UltimateBeneficialOwner", "Services")">UBO</a></li>
+                                                        <li><a href="@Url.Action("cbcr", "Services")">CbCR</a></li>
+                                                        <li><a href="@Url.Action("goAML", "Services")">goAML</a></li>
+                                                        <li><a href="@Url.Action("ParentCompany", "Services")">Parent Company Officers DMCC</a></li>
+                                                    </ul>
+                                                </li>
+                                                @*<li class="dropdown-submenu">
+                    <a href="@Url.Action("PROServices", "Services")">PRO Services</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="@Url.Action("Visa", "PROSubServices")">Visa Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("GoldenVisa", "VisaSubServices")">Golden Visa</a></li>
+                                <li><a href="@Url.Action("SilverVisa", "VisaSubServices")">Silver Visa</a> </li>
+                                <li><a href="@Url.Action("BusinessVisa", "VisaSubServices")">Business Visa</a></li>
+                                <li><a href="@Url.Action("RemoteWorkVisa", "VisaSubServices")">Remote Work Visa</a></li>
+                                <li><a href="@Url.Action("TouristVisa", "VisaSubServices")">Tourist Visa</a></li>
+                                <li><a href="@Url.Action("RetirementVisa", "VisaSubServices")">Retirement Visa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>*@
+                                                <li class="dropdown-submenu">
+                                                    <a href="@Url.Action("PROServices", "Services")">PRO Services</a>
+                                                    @*<ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="@Url.Action("Visa", "PROSubServices")">Visa Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("GoldenVisa", "VisaSubServices")">Golden Visa</a></li>
+                                <li><a href="@Url.Action("SilverVisa", "VisaSubServices")">Silver Visa</a> </li>
+                                <li><a href="@Url.Action("BusinessVisa", "VisaSubServices")">Business Visa</a></li>
+                                <li><a href="@Url.Action("RemoteWorkVisa", "VisaSubServices")">Remote Work Visa</a></li>
+                                <li><a href="@Url.Action("TouristVisa", "VisaSubServices")">Tourist Visa</a></li>
+                                <li><a href="@Url.Action("RetirementVisa", "VisaSubServices")">Retirement Visa</a></li>
+                            </ul>
+                        </li>
+                    </ul>*@
+                                                </li>
+                                                <li class="dropdown-submenu">
+                                                    <a href="@Url.Action("Visa", "PROSubServices")">Visa Services</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="@Url.Action("GoldenVisa", "VisaSubServices")">Golden Visa</a></li>
+                                                        <li><a href="@Url.Action("GreenVisa", "VisaSubServices")">Green Visa</a> </li>
+                                                        <li><a href="@Url.Action("EntryPermitsVisa", "VisaSubServices")">Entry Permits Visa</a></li>
+                                                        <li><a href="@Url.Action("RemoteWorkVisa", "VisaSubServices")">Remote Work Visa</a></li>
+                                                        <li><a href="@Url.Action("RetirementVisa", "VisaSubServices")">Retirement Visa</a></li>
+                                                    </ul>
+                                                </li>
+                                                @*<li class="dropdown-submenu">
+                    <a href="@Url.Action("ESRService", "Services")">Economic Substance Regulations (ESR)</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@Url.Action("ESRNotificationFiling", "ESRSubServices")">ESR Notification Filing</a></li>
+                        <li><a href="@Url.Action("ESRReport", "ESRSubServices")">ESR Report</a></li>
+                        <li><a href="@Url.Action("ESRTesting", "ESRSubServices")">ESR Testing</a></li>
+                    </ul>
+                </li>*@
+                                            </ul>
+                                        </li>
+                                        <li><a href="@Url.Action("Industries", "Page")">Industries</a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Careers <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="@Url.Action("ExperiencedCareerRoles", "Career")">Experienced Career Roles</a></li>
+                                                @*<li><a href="@Url.Action("StudentAndCampusRole", "Career")">Student and Campus Roles</a></li>*@
+                                            </ul>
+                                        </li>
+                                        <li><a href="@Url.Action("Insights", "Page")">Insights</a></li>
+                                        <li><a href="@Url.Action("ContactUs", "Page")" class="noPaddingR">Contact Us</a></li>
+                                      
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+                            </nav>
+                        </div>
+                    </div> <!-- end of col-md-4 -->
+
+                  
+                </div> <!-- end of container -->
+            </div> <!-- end of row -->
+        </header>
+    </div>
+
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="row space section1 partners">
+                <div class="container">
+                    <div class="col-md-12">
+                        <h2 class="mainHeading spaceHeading">our <span>partners</span></h2>
+                    </div> <!-- end of col-md-12 -->
+                    <div class="col-md-12">
+                        <div class="owl-carousel owl-theme partners-slide">
+                            <div class="item">
+                                <img src="../wimages/ded.png" class="img-responsive" width="300" height="200" alt="Dubai Economy" title="Dubai Economy">
+                            </div>
+                            <div class="item">
+                                <img src="../wimages/fta.png" class="img-responsive" width="300" height="200" alt="FTA" title="FTA">
+                            </div>
+                            <div class="item">
+                                <img src="../wimages/dsoa-logo.png" class="img-responsive" width="300" height="200" alt="Dubai Silicon Oasis Authority" title="Dubai Silicon Oasis Authority">
+                            </div>
+                            <div class="item">
+                                <img src="../wimages/dmcc.png" class="img-responsive" width="300" height="200" alt="DMCC" title="DMCC">
+                            </div>
+                            <div class="item">
+                                <img src="../wimages/dafza.png" class="img-responsive" width="300" height="200" alt="Dafza" title="Dafza">
+                            </div>
+                            <div class="item">
+                                <img src="../wimages/jafza.png" class="img-responsive" width="300" height="200" alt="Jafza" title="Jafza">
+                            </div>
+                            <div class="item">
+                                <img src="../wimages/difc.png" class="img-responsive" width="300" height="200" alt="DIFC" title="DIFC">
+                            </div>
+                            <div class="item">
+                                <img src="../wimages/DWC.png" class="img-responsive" width="300" height="200" alt="DWC" title="DWC">
+                            </div>
+                            <div class="item">
+                                <img src="../wimages/dtec.png" class="img-responsive" width="300" height="200" alt="DTEC" title="DTEC">
+                            </div>
+                        </div>
+                    </div> <!-- end of col-md-12 -->
+                </div> <!-- end of container -->
+            </div> <!-- end of row -->
+            <div class="row footer-main">
+                <div class="container">
+                    <div class="col-md-12" data-aos="fade-up">
+                        <div class="addWrap">
+                            <div class="addressBox">
+                                <h3>Corporate Office</h3>
+                                <p>Unit No. 1801, Cluster T Fortune Executive Tower JLT, DMCC, Dubai, UAE</p>
+                                <p><a href="Tel:+97142408784">+971 4 240 8784</a> </p>
+                                <p><a href="mailto:info@amca.ae">info@amca.ae</a> </p>
+                                <p>Mon-Fri. 09:00AM-6:00PM</p>
+                            </div>
+                            <div class="addressBox">
+                                <h3>Dubai Office</h3>
+                                <p>Unit no 301, RAK Bank Building Sheikh Zayed Road, Dubai, UAE, P.O Box 117346 </p>
+                                <p><a href="Tel:+97143211204">+971 4 321 1204</a> </p>
+                                <p><a href="mailto:info@amcaauditing.com">info@amcaauditing.com</a></p>
+                                <p>Mon-Fri. 09:00AM-6:00PM</p>
+                            </div>
+                            <div class="addressBox">
+                                <h3>Abu Dhabi Office</h3>
+                                <p>Unit No. 919, Building No. 9, Dar Al Salam, Corniche Road. Abu Dhabi, UAE</p>
+                                <p><a href="Tel:+97125827200">+971 2 582 7200</a> </p>
+                                <p><a href="mailto:info@amcaauditing.com">info@amcaauditing.com</a></p>
+                                <p>Mon-Fri. 09:00AM-6:00PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-md-4 first-section">
+                        <img src="../wimages/logoFooter.svg" height="76" width="280" alt="AMCA - Top Consulting Firm in Dubai" title="AMCA">
+                        <p>AMCA is one of the most promising business setup consultants in UAE, with over a decade of experience. We are registered with the Ministry of Economy to operate as a Licensed Auditor. Additionally, we are registered with the mainland (LLC) authorities and all major free zones, including DMCC, JAFZA, DAFZA, DWC, DIFC, DSO, Abu Dhabi, Sharjah, RAK, Fujairah, Ajman & Umm al-Quwain.</p>
+                        <h4>Reach Us</h4>
+                        <ul>
+                            <li><a href="Tel: +97142408784">+971 4 321 1204</a> <span>Mon-Fri. 09:00AM-6:00PM</span></li>
+                            <li><a href="mailto:info@amca.ae">info@amca.ae</a></li>
+                            <li>PO Box No. 117346</li>
+                        </ul>
+                    </div> <!-- end of col-md-3 -->
+                    <div class="col-md-3 second-block">
+                        <h4>Quick links</h4>
+                        <ul>
+                            <li><a href="@Url.Action("AboutUs", "Page")">About Us</a></li>
+                            <li><a href="@Url.Action("Industries", "Page")">Industries</a></li>
+                            <li><a href="@Url.Action("AuditFirmsInDubaiCareers", "Page")">Careers</a></li>
+                            <li><a href="@Url.Action("Insights", "Page")">Insights</a></li>
+                            <li><a href="@Url.Action("ContactUs", "Page")">Contact Us</a></li>
+                            <li><a href="@Url.Action("TermsandConditions", "Page")">Terms & Conditions</a></li>
+                        </ul>
+                    </div> <!-- end of col-md-3 -->
+                    <div class="col-md-3 second-block">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="@Url.Action("BusinessSetUp", "Services")">Business Set-up</a></li>
+                            <li><a href="@Url.Action("AdvisoryServices", "Services")">Advisory Services</a></li>
+                            <li><a href="@Url.Action("PROServices", "Services")">PRO Services</a></li>
+                            <li><a href="@Url.Action("ESRService", "Services")">Economic Substance Regulations (ESR)</a></li>
+                            <li><a href="@Url.Action("UltimateBeneficialOwner", "Services")">Ultimate Beneficial Ownership (UBO)</a></li>
+                            <li><a href="@Url.Action("cbcr", "Services")">CbCR</a></li>
+                            <li><a href="@Url.Action("goAML", "Services")">goAML</a></li>
+                            <li><a href="@Url.Action("ParentCompany", "Services")">Parent Company Officers DMCC</a></li>
+                        </ul>
+                    </div> <!-- end of col-md-3 -->
+                    <div class="col-md-2 th-block">
+                        <h4>follow us</h4>
+                        <a href="https://www.facebook.com/amcaauditing" target="_blank" rel="noreferrer"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/company/amcamiddleeast" target="_blank" rel="noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/amca.auditing/" target="_blank" rel="noreferrer"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/watch?v=bcMiiT8Y04s" target="_blank" rel="noreferrer"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        <hr>
+                        <ul class="dis">
+                            <li><a href="~/wimages/companyProfile.pdf" target="_blank" rel="noreferrer">Brochures</a></li>
+                            <li><a href="@Url.Action("Disclaimer", "Page")">Disclaimer</a></li>
+                            <li><a href="@Url.Action("PrivacyPolicy", "Page")">Privacy Policy</a></li>
+                        </ul>
+                    </div> <!-- end of col-md-3 -->
+                </div> <!-- end of container -->
+            </div> <!-- end of row -->
+            <div class="row footer-last">
+                <div class="container">
+                    <div class="col-md-12">
+                        <p>Copyright &copy; 2010 - @DateTime.Now.Year AMCA. All Rights Reserved.</p>
+                    </div> <!-- end of col-md-12 -->
+                </div> <!-- end of container -->
+            </div> <!-- end of row -->
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" async
+            src="//l.getsitecontrol.com/e4zj51v7.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            //$(".renderClass").prop('class', 'textFld selectpicker form-control');
+            $(".renderClass").attr('data-live-search', true);
+        });
+    </script>
+    <script>
+        $(function () {
+            $('.selectpicker').selectpicker({
+                liveSearch: true,
+                showSubtext: true
+            });
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('.popup-youtube').magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                fixedContentPos: false
+            });
+        });
+    </script>
+    <script>
+        function Showmessage(data) {
+            //debugger
+            var isok = data.isok;
+            var msg = data.message;
+            $("#SuccessfulMsg").fadeIn("fast");
+            $('#SuccessfulMsg').html(msg);
+            setTimeout(function () {
+                $("#SubscribeForm")[0].reset();
+                $("#SuccessfulMsg").fadeOut("slow");
+            }, 2000);
+        }
+    </script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                autoclose: true,
+                todayHighlight: false
+            });
+        });
+    </script>
+</body>
+</html>

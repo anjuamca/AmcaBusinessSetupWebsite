@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Freezone company setup in Dubai | Freezone company setup";
+    ViewBag.Keyword = "dubai company(ies), company(s), business set up dbai, company formation in dubai, company formation, free zne companies, fze, fzc, free zone, free zone company formation, federal tax authority, fta, vat, financial audit, free zone authority, audit, investor residence visa, investor visa, corporate taxes, business set up, start up a business, company set up";
+    ViewBag.Description = "Looking for freezone company setup in Dubai ? We’ll handle all the legal documents for your freezone company registration in UAE";
+    ViewBag.FreeZoneCompanyFormation = "ActiveSubLink";
+    ViewBag.Value = "Free Zone Company Formation";
+}
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">Freezone Company Setup in Dubai</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("BusinessSetUp", "Services")">Business Set-up</a> </li>
+                    <li>Free Zone Company Formation</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/BusinessSetUpSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/Freezone.svg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/BusinessSetupSubServices/QueryForm.cshtml")
+                            @Html.Hidden("txtPageName", "FreeZoneCompanyFormation")
+                        </div>
+                    </div>
+                    <p>
+                        Dubai has grown over the years. With its widely renowned infrastructures, high-quality health facilities, blue-ribbon education, and even recreation, Dubai is considered one of the best places to set up a business. It likewise offers a lot of privileges to all its investors.
+                    </p>
+                    <p>Owning a 100% foreign ownership of a Dubai company is undoubtedly possible in a Free zone Company Formation. The UAE Free zones have been so renowned for offering many good opportunities to investors who will profit over the long run of their businesses.</p>
+                    <p>When you have chosen to set up your company in a free zone area, aside from profiting from the full foreign ownership of the business, the company owners may likewise enjoy the zero-tax privilege of having the free zone companies.</p>
+                    <p>Those mentioned earlier are just a few benefits that the company owners may relish from a company formation in the free zone. The free site is considered the UAE’s most favorable location for starting up a business.</p>
+                    <h3><strong>Two types of Free Zone Companies</strong></h3>
+                    <ol>
+                        <li><strong>Free Zone Establishment (FZE)</strong><br />The FZE does not require having multiple numbers of shareholders as it only requires having a single shareholder (either a person or a company). </li>
+                        <li><strong>Free Zone Company (FZC)</strong><br />The FZC generally mandates two or more shareholders. However, the shareholder can be a maximum of 5.</li>
+                    </ol>
+                    <h3><strong>Benefits of having a Free-Zone Company</strong></h3>
+                    <p>From having the ultra-modern infrastructure, and world-class business amenities to a flexible government policy, it cannot be rejected that establishing a company in free-zone areas in Dubai may gain lots of advantages for the company owners, such as the following:</p>
+
+                    <ul>
+                        <li><strong>Full Ownership of the Company</strong><br />Unlike in any other areas in the state, a free zone company formation does not require having a local partner or agent. However, it implies that a foreign investor can possess 100% of a free zone company.</li>
+                        <li><strong>Exemption from taxes</strong><br />The Federal Tax Authority (FTA) declared 20 free zones that will be exempted from VAT. For VAT purposes, these 20 designated zones are considered special zones, which are considered outside the UAE in terms of VAT.</li>
+                        <li><strong>Financial Audit is not mandatory</strong><br />Some Free zone companies are not required to present their financial audit. The Free Zone authority does not require the free zone companies to submit their audit.</li>
+                        <li><strong>Free Zone Residence Visa</strong><br />Having a company in a free zone area benefits the investors as they can apply for employment or an investor’s residence visa. In addition, with certain conditions, including the minimum salary, the holder of either employment or investor’s visa can apply for the dependent’s residence permit (spouse, children, housemaid, etc.)</li>
+                    </ul>
+                    <p>In addition to these, it is possible to get the following benefits from a free zone company:</p>
+                    <ul>
+                        <li>100% repatriation of capital and profits</li>
+                        <li>Exclusion from all the import and export obligations</li>
+                        <li>Exemption on corporate taxes (suitable for 15 years, renewable for another 15 days)</li>
+                        <li>Privilege to work in international businesses</li>
+                        <li>No restrictions on currency movements</li>
+                        <li>Easy processing for liquidation</li>
+                    </ul>
+                    <h3><strong>Establish your Free Zone Company with AMCA</strong></h3>
+                    <p>As a leading business setup firm in Dubai, we treat our clients like royalty and are dedicated to providing them with quality services.</p>
+                    <p>With AMCA, you will not be worried about setting up your Free Zone Company, for we will be the one to take care of all its processes from beginning to end. With the assistance of our experts in business setup, we prepare all the documents required for your company setup. Known to be well-experienced with the free zone company formation, we will extend our knowledge about the laws related to this type of company formation in Dubai. We’ll handle all the legal documents for your business setup and assure to send them to the authorities on your behalf.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/free-zone-company-formation-in-dubai-uae");
+         })
+
+</script>
+

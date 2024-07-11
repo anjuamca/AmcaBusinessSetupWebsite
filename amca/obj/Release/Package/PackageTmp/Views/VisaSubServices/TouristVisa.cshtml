@@ -1,0 +1,190 @@
+﻿@{
+    ViewBag.Title = "Tourist Visa UAE | Tourist Visa Services in Dubai";
+    ViewBag.PageTitle = "Tourist Visa UAE";
+    ViewBag.Keyword = "uae tourist visa";
+    ViewBag.Description = "Tourist visas are available to people who do not qualify for a visa on arrival or visa-free entry to Dubai (UAE).";
+    ViewBag.touristVisa = "ActiveSubLink";
+    ViewBag.Value = "Tourist Visa UAE";
+}
+@model amca.Models.Validation
+
+@using CaptchaMvc.HtmlHelpers;
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>PRO Services</li>
+                    <li>Visa Services </li>
+                    <li>Tourist Visa</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/VisaSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/tourist-VISA.jpg" class="img-responsive" alt="tourist-VISA" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("VisaQuery", "VisaSubServices", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Individual" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <div class="form-group Specfield">
+                                                @Html.DropDownListFor(model => model.Emirate, new List<SelectListItem>
+                                                {
+                                                   new SelectListItem{ Text="Emirate", Value = "" },
+                                                   new SelectListItem{ Text="Abu Dhabi", Value = "Abu Dhabi" },
+                                                   new SelectListItem{ Text="Ajman", Value = "Ajman" },
+                                                   new SelectListItem{ Text="Dubai", Value = "Dubai" },
+                                                   new SelectListItem{ Text="Fujairah", Value = "Fujairah" },
+                                                   new SelectListItem{ Text="Ras Al Khaimah", Value = "Ras Al Khaimah" },
+                                                   new SelectListItem{ Text="Sharjah", Value = "Sharjah" },
+                                                   new SelectListItem{ Text="Umm Al Quwain", Value = "Umm Al Quwain" },
+                                                }, new { @class = "form-control  selectpicker" })
+                                                @Html.ValidationMessageFor(model => model.Emirate, "", new { @class = "errorValidation " })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Licenced Authority Name", new { @class = "form-control textFld LicencedAuthority" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="captcha">
+                                            @Scripts.Render("~/bundles/jquery")
+                                            @Html.ValidationSummary(true)
+                                            @Html.Captcha("Refresh", "", 5)
+                                        </div>
+                                        <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                Tourist visas are available to people who do not qualify for a visa on arrival or visa-free entry to Dubai (UAE). Individual travelers from all around the globe can apply for a tourist visa. Unless they are traveling with their parents, females under 18 are not eligible to apply for this form of Visa. However, according to a Cabinet resolution published in July 2018, minors under 18 who accompany adults can acquire a free visa for their stay from July 15 to September 15 each year.
+                            </p>
+                            <h3><strong>Multiple entry tourist visa</strong></h3>
+                            <p>
+                                All nationalities can now apply for a new multiple-entry tourist visa, which will make the procedure easier for tourists and visitors. For example, tourists with a five-year Visa can enter the nation on self-sponsorship several times and stay for 90 days on each visit, which travelers can extend for another 90 days.
+                            </p>
+                            <h3><strong>The validity of a tourist visa?</strong></h3>
+                            <p>
+                                Tourist visas to Dubai(UAE) are available for 30 or 90 days, single entrance or multiple admission, depending on your plans. In addition, the UAE recently facilitated a five-year visa that allows travelers to enter the nation several times on self-sponsorship and stay for 90 days on each visit, which can extend for another 90 days.
+                            </p>
+                            <h3><strong>Renewing or extending tourist visa</strong></h3>
+                            <p>
+                                All visit and tourist visas can be renewed for another 30 days after being applied for and granted by the appropriate authorities. Without leaving the country, this is possible. Before the initial renewal expires, visitors and tourists can apply for a second renewal for AED 600 each time.
+                            </p>
+                            <p>
+                                Overstayers who do not renew their visas will be fined AED 100 for each overstaying day, starting ten days after the Visa expires.
+                            </p>
+
+                            <p><strong>The new extension rule, however, does not apply to the following categories:</strong></p>
+                            <ul>
+                                <li>Visitors and tourists from GCC countries.</li>
+                                <li>Residents accompanying GCC nationals</li>
+                                <li>Those on special entry permits</li>
+                                <li>Those with a 96-hour special mission permit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/tourist-visa-uae");
+        //$("#ddlCatagories").hide();
+    })
+
+</script>
+<script>
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+
+    }, 500);
+</script>

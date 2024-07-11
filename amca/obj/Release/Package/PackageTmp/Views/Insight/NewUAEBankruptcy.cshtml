@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "New UAE bankruptcy law to be operational in early 2017";
+    ViewBag.Keyword = "new UAE bankruptcy law, minister of state for financial affairs, free zones, audit firms in dubai, accounting firms in dubai, auditors in dubai, ca firms in dubai, bookkeeping and accounting firms in dubai, accountants & auditors dubai, top audit firms in dubai, list of audit firms in dubai, best audit firms in dubai, audit firms in dubai, external audit";
+    ViewBag.Description = "The new UAE bankruptcy law approved by the UAE Cabinet this week is likely to come into effect early next year.Obaid Humaid Al Tayer, Minister of State for Financial Affairs";
+    ViewBag.PageURL = "https://amca.ae/new-uae-bankruptcy-law-to-be-operational-in-early-2017";
+    ViewBag.ImageURL = "https://amca.ae/wimages/amca_new_UAE_bankruptcy_law.jpg";
+}
+@section AdditionalMeta{
+    <meta property='og:title' content="@ViewBag.Title" />
+    <meta property='og:url' content="@ViewBag.PageURL" />
+    <meta property='og:type' content='website' />
+    <meta property='og:description' content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.ImageURL" />
+    <meta property="fb:page_id" content="3058581424174487" />
+}
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.Title</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-9 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="wimages/amca_new_UAE_bankruptcy_law.jpg" class="img-responsive" alt="New UAE bankruptcy law to be operational in early 2017" title="New UAE bankruptcy law to be operational in early 2017">
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.Title</h1>
+                            <p>The new UAE bankruptcy law approved by the UAE Cabinet this week is likely to come into effect early next year.Obaid Humaid Al Tayer, Minister of State for Financial Affairs, told a press conference that the law will come into effect three months after its publication in the official gazette which will be issued in the coming weeks, "The law is based on modern legislative and economic principles, while taking into consideration the global developments and changes taking place in the economic and business sectors," said Al Tayer.</p>
+                            <p>The UAE Cabinet approved the much-awaited bankruptcy law on Sunday.Experts say the new law will help boost the economy as it improves business confidence and enhance the attractiveness of the UAE to investors.It will also facilitate the work of commercial companies, by paving the way for companies in financial distress to restructure.The law is expected to facilitate liquidation of debtors’ assets in the event of bankruptcy — and allow the possibility of getting fresh loans under terms set by the law, it was revealed on Tuesday.The law will also prevent individuals from bypassing the law as there is a punishment, including five years’ prison sentence, as well as fines of up to Dh1 million.</p>
+                            <p>The bankruptcy law is implemented on both private and government owned companies, with some exceptions such as firms based in special free zones."We drafted the law to be very clear so that there are no interpretations under any by-law. There is lot of transparency in the process of the law. We looked at the best practices, best laws that achieved [a] high ranking in the World Bank report on doing business," he said.</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/new-uae-bankruptcy-law-to-be-operational-in-early-2017" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Fnew-uae-bankruptcy-law-to-be-operational-in-early-2017&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/new-uae-bankruptcy-law-to-be-operational-in-early-2017">
+                            </script>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 blogComments">
+                                    </div>
+                                </div>
+                                @*<div class="col-md-12">
+                                        <div class="col-md-12 border-comment">
+                                            <div class="row">
+                                                <div class="col-md-1">
+                                                    <img src="wimages/avtar.jpg" class="img-circle">
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <h3>Arif Ansari</h3>
+                                                    <p>2 Days Ago</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>After reading your article, I think Chipmunk is the best solution for me. Glad to found your article on google. Thanks.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                <div class="col-md-12">
+                                    <h3><strong>Leave a Comment</strong></h3>
+                                </div>
+
+                                @using (Html.BeginForm("Index", "Sidebar", FormMethod.Post))
+                                {
+                                    <input type="hidden" id="BlogTitle" name="BlogTitle" value="@ViewBag.Title" />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(model => model.Usercomment, new { @class = "form-control textFld", @placeholder = "Positive Comment" })
+                                            @Html.ValidationMessageFor(model => model.Usercomment, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit Now">
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

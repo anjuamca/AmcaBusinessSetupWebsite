@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "UAE Moves Towards Normalcy | COVID-19";
+    ViewBag.PageTitle = "UAE Moves Towards Normalcy";
+    ViewBag.Keyword = "uae moves towards normalcy, COVID-19, SARS-CoV 2 virus, economic activities, EXPO 2020, Economic Substance Regulations";
+    ViewBag.Description = "The biggest highlight of 2020 has been the COVID-19 or the SARS-CoV 2 virus. The initial jolt caused by COVID-19 disrupted the normal functioning of life all around the world.";
+    ViewBag.PageURL = "https://amca.ae/uae-moves-towards-normalcy";
+    ViewBag.ImageURL = "https://amca.ae/wimages/uae-moves-towards-normalcy.jpg";
+}
+@section AdditionalMeta{
+    <meta property='og:title' content="@ViewBag.Title" />
+    <meta property='og:url' content="@ViewBag.PageURL" />
+    <meta property='og:type' content='website' />
+    <meta property='og:description' content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.ImageURL" />
+    <meta property="fb:page_id" content="3058581424174487" />
+}
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-9 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/uae-moves-towards-normalcy.jpg" class="img-responsive" title="UAE Moves Towards Normalcy" alt="UAE Moves Towards Normalcy" />
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.PageTitle</h1>
+                            <p>The biggest highlight of 2020 has been the COVID-19 or the SARS-CoV 2 virus. </p>
+                            <p>The initial jolt caused by COVID-19 disrupted the normal functioning of life all around the world. Barring the essentials, most economic activities came to a jarring halt. UAE being closely linked with the world economy & emerging markets,  also experienced repercussions. The government quickly sprung into action and a blanket travel ban was imposed in the last week of March. </p>
+                            <p>Timely intervention by the authorities and diligent efforts by the medical community have relatively kept this pandemic under control.</p>
+                            <p>Much awaited EXPO 2020 has also been postponed for the next year. </p>
+                            <p>All this said and done, what lies ahead? Can we expect light at the end of this tunnel?</p>
+                            <p>Yes, certainly.</p>
+                            <p>After travel bans lasting for around 3 months, UAE will be welcoming expats &amp; travellers again. </p>
+                            <p>The usual business is slowly getting back on track. Restrictions are being eased in a phased manner & most of the public places are already open or are expected to open this month. </p>
+                            <p>While the movement restrictions have been lifted, the invisible threat of virus still looms over our head. We have a dual responsibility of protecting ourselves and also keeping the business running. </p>
+                            <p>The economic activities are picking up pace and this graph is expected to rise sharply in coming months. </p>
+                            <p>We at AMCA see this as an opportunity in disguise. We are using this space to digitise our systems & the way we function. </p>
+                            <p>Online tracking of files with real time updates has been made available to all the clients. The delivery of all reports has been made online and only on demand by clients we are making contactless physical delivery. All our employees have been working in shifts to keep physical interaction at a minimum. </p>
+                            <p>In past months, our experts have conducted many webinars for clients on latest updates by the authorities & clarifying doubts on the Economic Substance Regulations. </p>
+                            <p>Life after COVID-19 may be out of sight for the near future, but we will have to be ready for this new normal. </p>
+                        </div>
+                        <div class="col-md-12 writer text-right">
+                            <p class="date">5 July 2020</p>
+                            <h4><strong>Mohammad Sharique Nadeem</strong></h4>
+                            <p>Business Analyst</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/uae-moves-towards-normalcy" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Fuae-moves-towards-normalcy&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/uae-moves-towards-normalcy">
+                            </script>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 blogComments">
+                                    </div>
+                                </div>
+                                @*<div class="col-md-12">
+            <div class="col-md-12 border-comment">
+                <div class="row">
+                    <div class="col-md-1">
+                        <img src="wimages/avtar.jpg" class="img-circle">
+                    </div>
+                    <div class="col-md-10">
+                        <h3>Arif Ansari</h3>
+                        <p>2 Days Ago</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>After reading your article, I think Chipmunk is the best solution for me. Glad to found your article on google. Thanks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+                                <div class="col-md-12">
+                                    <h3><strong>Leave a Comment</strong></h3>
+                                </div>
+
+                                @using (Html.BeginForm("Index", "Sidebar", FormMethod.Post))
+                                {
+                                    <input type="hidden" id="BlogTitle" name="BlogTitle" value="@ViewBag.PageTitle" />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(model => model.Usercomment, new { @class = "form-control textFld", @placeholder = "Positive Comment" })
+                                            @Html.ValidationMessageFor(model => model.Usercomment, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit Now">
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

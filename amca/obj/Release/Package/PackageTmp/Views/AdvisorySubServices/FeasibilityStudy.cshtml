@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Feasibility Study | Feasibility Study Consultants in Dubai";
+    ViewBag.PageTitle = "Feasibility Study Consultants in Dubai";
+    ViewBag.Keyword = "feasibility study in dubai, feasibility study, business set up, assessment, feasible, legal feasibility, economic feasibility, project assessment, financial resources, technical feasibility, technical resources, operational feasibility, project plan, scheduling feasibility, project advisor";
+    ViewBag.Description = "A feasibility study is a thorough analysis to see all the risks and possibilities which may potentially exists right before the business projects. ";
+    ViewBag.FeasibilityStudy = "ActiveSubLink";
+    ViewBag.Value = "Feasibility Study";
+}
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("AdvisoryServices", "Services")">Advisory Services</a> </li>
+                    <li>Feasibility Study</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/AdvisoryServicesSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/FeasibilityStudy.svg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/AdvisorySubServices/QueryForm.cshtml")
+                        </div>
+                    </div>
+                    <p>
+                        Setting up a business implies accepting to deal with many possibilities that may emerge along the way of building the business. It might be risky, for it brings a lot of vulnerabilities for the investors. Nonetheless, the risks might be lessened if a thorough analysis is done beforehand. As the adage goes, “Prevention is better than cure,” an in-depth feasibility study would be vital for an organization to amplify the potential in completing the business ventures.
+                    </p>
+                    <h3><strong>What is feasibility study?</strong></h3>
+                    <p>Before the business project, a feasibility study thoroughly analyzes all the risks and possibilities. In addition, it profoundly examines all the elements of a business setup, such as economic, technical, legal, and scheduling considerations which is an approach to determine the probability of completing the project successfully.</p>
+                    <p>With the help of the feasibility study, seeing the risks in advance is possible, and this could mean considering the strategic ways to forestall and avoid them.</p>
+                    <p>Simple. If you want your project business to succeed in its making, consider having your feasibility study. This assessment will give you a clear answer if your project is feasible or not.</p>
+                    
+                    
+                    <h3><strong>Understanding the Goals of the Feasibility Study</strong></h3>
+                    <p>The feasibility study seems to be a magnifying glass which has the capability to augment and heighten those which seems to be just tiny issues and promptly put a solution in it just before it completely tear down the project. It helps the investors to be extensively mindful of the problems that can possibly occur while carrying out the undertaking. This has been so possible because the feasibility study has the extensive capacity to understand the project in all aspects and views such as its concept and plan. </p>
+                    <p>Right after considering all the significant factor, it would be the time to determine whether the project is feasible and worth undertaking. </p>
+                    
+                    <h3><strong>Elements of Feasibility Study</strong></h3>
+                    <ol>
+                        <li><strong>Legal Feasibility</strong><br />Performing investigations with the proposed projects, the legal feasibility focuses on all the legal aspects of the project. It gives appropriate findings on whether the project has made good decisions in all facets.</li>
+                        <li><strong>Economic Feasibility</strong><br />Serving as the independent project assessment, the economic feasibility boosts the so-called “credibility of the project” by characterizing its viability and cost and focusing on the benefits associated with a project before the financial resources are allocated.</li>
+                        <li><strong>Technical Feasibility</strong><br />Focusing on the technical resources in the organization, technical feasibility helps determine whether the organization has been able to fulfill the guidelines in converting the ideas into working systems.</li>
+                        <li><strong>Operational Feasibility</strong><br />Aiming to determine whether the project plan fulfills the analysis phase’s prerequisites, the operational feasibility emphasizes how well the project's necessities can be met by completing it. </li>
+                        <li><strong>Scheduling Feasibility</strong><br />The scheduling feasibility will estimate the number of times needed to complete the project.</li>
+                    </ol>
+                    <h3><strong>AMCA: Your Project Advisor</strong></h3>
+                    <p>Wanting and visualizing to make your dreams of having your own company to be tangible, but worried about the risks and possibilities which possibly arise in building your project? Countless ideas and plans for your projects, however hesitant to face challenges and lose money because of indiscreet choices? Indeed, you need to conduct a feasibility study!</p>
+                    <p>With AMCA, we will assist you in assessing your project’s chances of success. By focusing on all aspects of your projects, magnifying the problems beforehand of your project plan, and formulating solutions, AMCA will serve as your backbone and complete your project.</p>
+                    <p>We will turn your vulnerabilities into confidence and your worries into assurances!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/feasibility-study");
+         })
+
+</script>

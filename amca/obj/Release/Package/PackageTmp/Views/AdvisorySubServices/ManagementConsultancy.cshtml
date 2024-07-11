@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Management Consultancy | Business setup consultants in Dubai";
+    ViewBag.PageTitle = "Management Consultancy in Dubai";
+    ViewBag.Keyword = "management consultancy";
+    ViewBag.Description = "Looking for business consultancy services in Dubai? We are one of the best business setup consultants in Dubai. Management consultancy in Dubai.";
+    ViewBag.ManagementConsultancy = "ActiveSubLink";
+    ViewBag.Value = "Management Consultancy";
+}
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("AdvisoryServices", "Services")">Advisory Services</a> </li>
+                    <li>Management Consultancy</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/AdvisoryServicesSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/ManagementConsultancy.svg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/AdvisorySubServices/QueryForm.cshtml")
+                        </div>
+                    </div>
+                    <p>
+                        Management consulting is the practice of assisting associations to improve their performance. Associations may draw upon the services of management consultants for different reasons, including gaining external advice and access to consultants' specialized aptitude. As a result of their exposure to, and relationships with various organizations, consulting firms are typically aware of industry "best practices." However, the circumstances under consideration may limit the ability or appropriateness of transferring such practices from one organization to another. Because of the great diversity in disciplines and contrasts in required capacities of advisors, management consulting is the broadest area within the consulting industry. It covers 50% - 55% of the total consulting market.
+                    </p>
+                    <h3><strong>Benefits of Management Consulting in Dubai</strong></h3>
+                    <p>An advantage of utilizing AMCA’s management consulting service is improving and enhancing business operations. </p>
+                    <ol>
+                        <li>Making use of expert knowledge</li>
+                        <li>Looking at problems from a different perspective</li>
+                        <li>Making important decisions takes less time</li>
+                        <li>Suitable for achieving short-term goals</li>
+                        <li>Employing new skills</li>
+                        <li>An effective way to explore new markets</li>
+                    </ol>
+                    <h3><strong>Why AMCA</strong></h3>
+                    <p>ACMA's management consulting services help executives and investors bring their transformational initiatives to life, advising on making and executing better strategic decisions to assist them in thoroughly understanding their business objectives. With an alternate scope of business consulting services and deep experience in advising associations, we help design and deploy enormous scale. These comprehensive strategies impact multiple lines of business and functions.</p>
+                    <p>We begin with understanding your organization, culture, operation, competitive dynamics, objectives, and challenges. By seeing the world the way, you do, they can work to your agenda, not their own, and will apply their insights to your particular strategic and operational issues. Then, our management consultants work with your team to formulate comprehensive business solutions to your association's fundamental difficulties. Finally, we’ll deliver the value we guarantee and that you expect. That could mean quicker time to value, improved cash flow, lower costs, and higher revenue. This can assist you in achieving new goals, penetrating new markets, making effective mergers, and simplifying legacy systems and emerging technologies alike.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/management-consultancy");
+         })
+
+</script>

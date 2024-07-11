@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "ESR Notification | ESR Filing Requirements and Deadlines UAE";
+    ViewBag.PageTitle = "ESR Notification Filing";
+    ViewBag.Keyword = "esr notification, free zonem offshore, relevant activities, licensee, economic substance report, economic substance, corporate entity, limited liability company, public joint stock company, private joint stock company, partnership, general partnership, regulatory authority, accounting, vat, economic substance test, uae branch(es), liquidation, ministry of finance, ministry of finance portal, penalt(ies), administrative penalty";
+    ViewBag.Description = "ESR notification filing in Dubai, UAE. ESR notification filing for an entity which carries out a relevant activity for part of the year. ESR notification deadline.";
+    ViewBag.ESRNotificationFiling = "ActiveSubLink";
+    ViewBag.Value = "ESR Notification Filing";
+}
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ESRService", "Services")">Economic Substance Regulations (ESR)</a> </li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/ESRSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/esr-notification.jpg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/ESRSubServices/QueryForm.cshtml")
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><strong>Introduction</strong></h2>
+                            <p>
+                                All the entities holding a trade for the UAE (particularly the free zone and offshore entities) must notify their concerned Regulatory Authorities regardless of whether they are carrying out the Relevant Activities within the UAE. Aside from informing the Relevant Activities to the Regulatory Authority, providing the information with reference to the Licensee also serves as the primary purpose of the ESR Notification. Therefore, all the information provided in the ESR Notification is highly required in filing the Economic Substance Report for the same period.
+                            </p>
+                            <h3>The Submission of the ESR Notification</h3>
+                            <p>
+                                An entity conducting more Relevant Activities is regarded as a "Licensee."
+                            </p>
+                            <p>The filing of the ESR Notification is a must for those entities carrying out the Relevant Activities within the UAE during the relevant Financial Year. These entities include:</p>
+
+                            <ul style="list-style: lower-alpha">
+                                <li>
+                                   A Corporate Entity
+                                    <ul>
+                                        <li>Limited Liability Company</li>
+                                        <li>Public Joint Stock Company</li>
+                                        <li>Private Joint Stock Company</li>
+                                        <li>etc.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Partnership
+                                    <ul>
+                                        <li>Limited Liability Partnership</li>
+                                        <li>General Partnership</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h3>ESR Notification Filing</h3>
+                            <ol>
+                                <li>
+                                    <strong>ESR Notification Filing for an entity that carries out a relevant activity for part of the year</strong>
+                                    <p>An entity may carry out a Relevant Activity for part of the year. Nevertheless, the Licensee must notify the Regulatory Authority of all relevant activities performed during the financial year, regardless of whether those activities are conducted throughout the year.</p>
+                                </li>
+                                <li>
+                                    <strong>ESR Notification Filing for the UAE Parent Company with UAE Branches</strong>
+                                    <p>Parent companies and head offices in the UAE are responsible for notifying their Regulatory Authority about their Relevant Activities and the Relevant Activities of their UAE branches. Accordingly, there is no difference between whether or not the UAE parent company is performing Relevant Activities.</p>
+                                </li>
+                                <li><strong>ESR Notification Filing for a Multiple Licensee</strong>
+                                    <p>For the UAE parent company/head office, it is their obligation to notify their Regulatory Authority regarding their Relevant Activities as well as the Relevant Activities of their UAE branches. This is applicable regardless if the UAE parent company/head office is carrying out their own Relevant Activities or not.</p>
+                                 </li>
+                                <li>
+                                    <strong>ESR Notification Filing for a Licensee which is in the process of Liquidation</strong>
+                                    <p>Licensed entities in the process of liquidation which may perform relevant activities in the year of liquidation must file their ESR Notifications and Economic Substance Reports (if applicable) for the period up to liquidation.</p>
+                                </li>
+                            </ol>
+                            <h3>Deadline for ESR Notification</h3>
+                            <p>The Notification must be filed within  <u>six months from the Licensee's financial year-end.</u> </p>
+                            <p>* For Example, If your Financial year ended on 31 December 2021, you need to file your ESR Notification by no later than 30 June 2022. </p>
+                            <h3>Penalties for Failure to provide a Notification</h3>
+                            <p>If the Licensee or Exempted Licensee failed to submit the Notification before the deadline, the Licensee is subject to an administrative penalty of dirhams twenty thousand (AED 20,000).</p>
+                            <p>If the Licensee or Exempted Licensee provides inaccurate information to the Regulatory Authority or the National Assessing Authority and knows of the inaccuracy at the time the information is provided but fails to inform the authorities, as mentioned earlier means the Licensee or Exempted Licensee is subject to a penalty amounting to dirhams fifty thousand (AED 50,000).</p>
+                            <h3>Get in touch with us and let AMCA do it for you!</h3>
+                            <p>To comply with ESR, AMCA will help you prepare your ESR Notification, which must be shared with the Authority. AMCA will handle all the processes for filing your ESR Notification for you with confidentiality, integrity, and a timely manner.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/esr-notification-filing");
+         })
+
+</script>

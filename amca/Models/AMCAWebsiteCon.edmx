@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="amca_website_aeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BlogComments">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Useremail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Userwebsite" Type="nvarchar" MaxLength="50" />
+          <Property Name="Usercomment" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="ContactUsData">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameContact" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailContact" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryCodeContact" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileContact" Type="nvarchar" MaxLength="50" />
+          <Property Name="MessageContact" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'amca_website_ae.dbo.Services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WebsiteLead">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Services" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="ProcBlogComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AutoId" Type="int" Mode="In" />
+          <Parameter Name="Username" Type="nvarchar" Mode="In" />
+          <Parameter Name="Useremail" Type="nvarchar" Mode="In" />
+          <Parameter Name="Userwebsite" Type="nvarchar" Mode="In" />
+          <Parameter Name="Usercomment" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ProcContactLeadData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AutoId" Type="int" Mode="In" />
+          <Parameter Name="NameContact" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmailContact" Type="nvarchar" Mode="In" />
+          <Parameter Name="CountryCodeContact" Type="nvarchar" Mode="In" />
+          <Parameter Name="MobileContact" Type="nvarchar" Mode="In" />
+          <Parameter Name="MessageContact" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WebsiteLeadData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AutoId" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmailId" Type="nvarchar" Mode="In" />
+          <Parameter Name="CountryCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="PhoneNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Services" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="amca_website_aeModelStoreContainer">
+          <EntitySet Name="BlogComments" EntityType="Self.BlogComments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactUsData" EntityType="Self.ContactUsData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebsiteLead" EntityType="Self.WebsiteLead" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Services].[ServiceID] AS [ServiceID], 
+    [Services].[ServiceName] AS [ServiceName]
+    FROM [dbo].[Services] AS [Services]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="amca_website_aeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BlogComment">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Useremail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Userwebsite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Usercomment" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ContactUsData">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCodeContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MessageContact" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WebsiteLead">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Services" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="amca_website_aeEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BlogComments" EntityType="Self.BlogComment" />
+          <EntitySet Name="ContactUsDatas" EntityType="Self.ContactUsData" />
+          <EntitySet Name="WebsiteLeads" EntityType="Self.WebsiteLead" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <FunctionImport Name="ProcBlogComments">
+            <Parameter Name="AutoId" Mode="In" Type="Int32" />
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Useremail" Mode="In" Type="String" />
+            <Parameter Name="Userwebsite" Mode="In" Type="String" />
+            <Parameter Name="Usercomment" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ProcContactLeadData">
+            <Parameter Name="AutoId" Mode="In" Type="Int32" />
+            <Parameter Name="NameContact" Mode="In" Type="String" />
+            <Parameter Name="EmailContact" Mode="In" Type="String" />
+            <Parameter Name="CountryCodeContact" Mode="In" Type="String" />
+            <Parameter Name="MobileContact" Mode="In" Type="String" />
+            <Parameter Name="MessageContact" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WebsiteLeadData">
+            <Parameter Name="AutoId" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="EmailId" Mode="In" Type="String" />
+            <Parameter Name="CountryCode" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo" Mode="In" Type="String" />
+            <Parameter Name="Services" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="amca_website_aeModelStoreContainer" CdmEntityContainer="amca_website_aeEntities1">
+          <EntitySetMapping Name="BlogComments">
+            <EntityTypeMapping TypeName="amca_website_aeModel.BlogComment">
+              <MappingFragment StoreEntitySet="BlogComments">
+                <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Useremail" ColumnName="Useremail" />
+                <ScalarProperty Name="Userwebsite" ColumnName="Userwebsite" />
+                <ScalarProperty Name="Usercomment" ColumnName="Usercomment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactUsDatas">
+            <EntityTypeMapping TypeName="amca_website_aeModel.ContactUsData">
+              <MappingFragment StoreEntitySet="ContactUsData">
+                <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+                <ScalarProperty Name="NameContact" ColumnName="NameContact" />
+                <ScalarProperty Name="EmailContact" ColumnName="EmailContact" />
+                <ScalarProperty Name="CountryCodeContact" ColumnName="CountryCodeContact" />
+                <ScalarProperty Name="MobileContact" ColumnName="MobileContact" />
+                <ScalarProperty Name="MessageContact" ColumnName="MessageContact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebsiteLeads">
+            <EntityTypeMapping TypeName="amca_website_aeModel.WebsiteLead">
+              <MappingFragment StoreEntitySet="WebsiteLead">
+                <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="amca_website_aeModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ProcBlogComments" FunctionName="amca_website_aeModel.Store.ProcBlogComments" />
+          <FunctionImportMapping FunctionImportName="ProcContactLeadData" FunctionName="amca_website_aeModel.Store.ProcContactLeadData" />
+          <FunctionImportMapping FunctionImportName="WebsiteLeadData" FunctionName="amca_website_aeModel.Store.WebsiteLeadData" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

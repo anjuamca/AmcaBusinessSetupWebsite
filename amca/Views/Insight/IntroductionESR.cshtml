@@ -1,0 +1,196 @@
+﻿@{
+    ViewBag.Title = "The Introduction of Economic Substance Regulations in the UAE";
+    ViewBag.Keyword = "economic substance regulations, esr uae, esr guidelines, esr relevant activities, relevant activities, economic substance, economic substance report, economic substance test, esr regulations, esr notification, esr notification form, esr filing, esr report";
+    ViewBag.Description = "UAE has issued resolution in connection with Economic Substance Regulations last 30th April 2019 as a part of UAE’s efforts to comply with global standards that aim to combat harmful tax practices.";
+    ViewBag.PageURL = "https://amca.ae/the-introduction-of-economic-substance-regulations-in-the-uae";
+    ViewBag.ImageURL = "https://amca.ae/wimages/esr.jpg";
+}
+@section AdditionalMeta{
+    <meta property='og:title' content="@ViewBag.Title" />
+    <meta property='og:url' content="@ViewBag.PageURL" />
+    <meta property='og:type' content='website' />
+    <meta property='og:description' content="@ViewBag.Description" />
+    <meta property="og:image" content="@ViewBag.ImageURL" />
+    <meta property="fb:page_id" content="3058581424174487" />
+}
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.Title</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-9 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/esr.jpg" class="img-responsive" title="Economic Substance Regulations (ESR)" alt="Economic Substance Regulations (ESR)" />
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.Title</h1>
+                            <p>UAE has issued resolution in connection with Economic Substance Regulations last 30th April 2019 as a part of UAE’s efforts to comply with global standards that aim to combat harmful tax practices. The Regulations require companies and other business forms registered in the UAE that are conducting “Relevant Activities” to demonstrate their economic substance here in the UAE and to comply with notification and reporting requirements to their Regulatory Authorities as set in the Regulations.</p>
+
+                            <p>As a part of the new Regulation, DMCC, the UAE's largest free zone, has already issued a notification template to be followed by all member firms to comply with their Economic Substance Regulation ("ESR") filing obligations. As expected, the notification will be electronic, via the free zone's member company portal.</p>
+                            <p>Elsewhere in the UAE, other Authorities have also communicated on their ESR Notification procedure.</p>
+                            <h2><strong>Relevant Activities</strong></h2>
+                            <ul>
+                                <li>Banking Business</li>
+                                <li>Insurance Business</li>
+                                <li>Fund Management Business</li>
+                                <li>Financial or Leasing Business</li>
+                                <li>Intellectual Property</li>
+                                <li>Headquarters Business</li>
+                                <li>Shipping Business</li>
+                                <li>Holding Company Business</li>
+                                <li>Distribution and Services Business</li>
+                            </ul>
+                            <p><strong>Note: Including Irrelevant Activity which needs to be notified.</strong></p>
+                        </div>
+                        <div class="col-md-12 spacing-top">
+                            <h2><strong>Deadline for Notification Under ESR</strong></h2>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr style="background:#8e6c3a; color:#fff;">
+                                            <th style="vertical-align: top">Authority Name</th>
+                                            <th style="vertical-align: top">Notification required</th>
+                                            <th style="vertical-align: top">Notification deadline</th>
+                                            <th style="vertical-align: top">Summary / Guidance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="background:#8e6c3a; color: #fff;">Fujairah Creative City</td>
+                                            <td style="background:#f2f2f2;">Yes</td>
+                                            <td style="background:#f2f2f2;">31st July 2020</td>
+                                            <td style="background:#f2f2f2;">All entities/ licensees, including those who do not undertake relevant activity</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background: #8e6c3a; color: #fff;">Dubai International Financial Centre (DIFC)</td>
+                                            <td style="background: #fff;">Yes</td>
+                                            <td style="background: #fff;">By 30 June 2020 (extended from 12 June 2020)</td>
+                                            <td style="background: #fff;">All entities/ licensees, including those who do not undertake relevant activity</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background: #8e6c3a; color: #fff">Dubai Multi Commodities Centre (DMCC)</td>
+                                            <td style="background: #f2f2f2;">Yes</td>
+                                            <td style="background: #f2f2f2;">30th June 2020</td>
+                                            <td style="background: #f2f2f2;">All entities/ licensees, including those who does not undertake relevant activity</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background: #8e6c3a; color: #fff">Abu Dhabi Global Market (ADGM)</td>
+                                            <td style="background: #fff;">Yes</td>
+                                            <td style="background: #fff;">30th June 2020</td>
+                                            <td style="background: #fff;">Applicable to all licensees carrying out a Relevant Activity, located in ADGM and whose financial year commences on or after 1 January 2019.</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background: #8e6c3a; color: #fff">Dubai Airport Free Zone Authority (DAFZA)</td>
+                                            <td style="background: #f2f2f2;">Yes</td>
+                                            <td style="background: #f2f2f2;">By 31 May 2020 (extended from 3 May 2020)</td>
+                                            <td style="background: #f2f2f2;">All entities/ licensees, including those who do not undertake relevant activity</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background: #8e6c3a; color: #fff">Ras Al Khaimah Economic Zone (RAKEZ)</td>
+                                            <td style="background: #fff;">Yes</td>
+                                            <td style="background: #fff;">30th June 2020</td>
+                                            <td style="background: #fff;">All entities/ licensees, including those who do not undertake relevant activity</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background: #8e6c3a; color: #fff">Dubai World Trade Centre (DWTC)</td>
+                                            <td style="background: #f2f2f2;">Yes</td>
+                                            <td style="background: #f2f2f2;">30th June 2020</td>
+                                            <td style="background: #f2f2f2;">Only entities/ licensees that are carrying out relevant activity</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="background: #8e6c3a; color: #fff">Jebel Ali Free zone (JAFZA)</td>
+                                            <td style="background: #fff;">Yes</td>
+                                            <td style="background: #fff;">30th June 2020</td>
+                                            <td style="background: #fff;">Only entities/ licensees that are carrying out relevant activity</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12 writer text-right">
+                            <p class="date">8 May 2020</p>
+                            <h4><strong>Alyzza Pamiloza</strong></h4>
+                            <p>Supervisor VAT Accounting</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/the-introduction-of-economic-substance-regulations-in-the-uae" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Fthe-introduction-of-economic-substance-regulations-in-the-uae&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/the-introduction-of-economic-substance-regulations-in-the-uae">
+                            </script>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 blogComments">
+                                    </div>
+                                </div>
+                                @*<div class="col-md-12">
+            <div class="col-md-12 border-comment">
+                <div class="row">
+                    <div class="col-md-1">
+                        <img src="wimages/avtar.jpg" class="img-circle">
+                    </div>
+                    <div class="col-md-10">
+                        <h3>Arif Ansari</h3>
+                        <p>2 Days Ago</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>After reading your article, I think Chipmunk is the best solution for me. Glad to found your article on google. Thanks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+                                <div class="col-md-12">
+                                    <h3><strong>Leave a Comment</strong></h3>
+                                </div>
+
+                                @using (Html.BeginForm("Index", "Sidebar", FormMethod.Post))
+                                {
+                                    <input type="hidden" id="BlogTitle" name="BlogTitle" value="@ViewBag.Title" />
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.TextAreaFor(model => model.Usercomment, new { @class = "form-control textFld", @placeholder = "Positive Comment" })
+                                            @Html.ValidationMessageFor(model => model.Usercomment, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit Now">
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿<div class="mainSidebar">
+    <h3><strong>Advisory Services</strong></h3>
+    <ul>
+        <li class="@ViewBag.BusinessValuation"><a href="@Url.Action("BusinessValuation", "AdvisorySubServices")">Business Valuation</a></li>
+        <li class="@ViewBag.FeasibilityStudy"><a href="@Url.Action("FeasibilityStudy", "AdvisorySubServices")">Feasibility Study</a></li>
+        <li class="@ViewBag.ManagementConsultancy"><a href="@Url.Action("ManagementConsultancy", "AdvisorySubServices")">Management Consultancy</a></li>
+        <li class="@ViewBag.DueDiligence"><a href="@Url.Action("DueDiligence", "AdvisorySubServices")">Due Diligence</a></li>
+        <li class="@ViewBag.BusinessPlan"><a href="@Url.Action("BusinessPlan", "AdvisorySubServices")">Business Plan</a></li>
+        <li class="@ViewBag.ManagementReport"><a href="@Url.Action("ManagementReport", "AdvisorySubServices")">Management Report</a></li>
+    </ul>
+    @RenderPage("~/Views/Sidebar/_RelatedPost.cshtml")
+
+</div>
+
+

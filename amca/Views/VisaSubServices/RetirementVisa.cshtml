@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "Retirement Visa UAE | Five-Year Retirement Visa in Dubai";
+    ViewBag.PageTitle = "Retirement Visa UAE";
+    ViewBag.Keyword = "retirement visa uae";
+    ViewBag.Description = "The UAE Cabinet adopted a law to grant retired people a 5-year long-term visa. To qualify for a 5-year retirement visa, a retiree must meet the requirements.";
+    ViewBag.RetirementVisa = "ActiveSubLink";
+    ViewBag.Value = "Retirement Visa UAE";
+}
+@model amca.Models.Validation
+
+@using CaptchaMvc.HtmlHelpers;
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>PRO Services</li>
+                    <li>Visa Services </li>
+                    <li>Retirement Visa</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/VisaSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/Retirement-VISA.jpg" class="img-responsive" alt="Retirement Visa UAE" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("VisaQuery", "VisaSubServices", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Individual" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <div class="form-group Specfield">
+                                                @Html.DropDownListFor(model => model.Emirate, new List<SelectListItem>
+                                                {
+                                                   new SelectListItem{ Text="Emirate", Value = "" },
+                                                   new SelectListItem{ Text="Abu Dhabi", Value = "Abu Dhabi" },
+                                                   new SelectListItem{ Text="Ajman", Value = "Ajman" },
+                                                   new SelectListItem{ Text="Dubai", Value = "Dubai" },
+                                                   new SelectListItem{ Text="Fujairah", Value = "Fujairah" },
+                                                   new SelectListItem{ Text="Ras Al Khaimah", Value = "Ras Al Khaimah" },
+                                                   new SelectListItem{ Text="Sharjah", Value = "Sharjah" },
+                                                   new SelectListItem{ Text="Umm Al Quwain", Value = "Umm Al Quwain" },
+                                                }, new { @class = "form-control  selectpicker" })
+                                                @Html.ValidationMessageFor(model => model.Emirate, "", new { @class = "errorValidation " })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Licenced Authority Name", new { @class = "form-control textFld LicencedAuthority" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.RetirementVisaServices as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="captcha">
+                                            @Scripts.Render("~/bundles/jquery")
+                                            @Html.ValidationSummary(true)
+                                            @Html.Captcha("Refresh", "", 5)
+                                        </div>
+                                        <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Retirement Visa</h2>
+                            <p>Ever wished you could retire in the UAE after being a long-term Dubai resident? As of now, you may be able to apply for the Dubai retirement visa if you qualify.</p>
+                            <p>As part of Dubai's new retirement scheme, '<strong>Retire in Dubai</strong>,' those 55 years and older are allowed to reside in the emirate on a retirement visa. Interested parties worldwide are welcome to participate, including long-term residents of Dubai. In Dubai, retirees can apply for a retirement visa, a first-of-its-kind scheme in the region.</p>
+                            <h3>ALL ABOUT THE RETIREMENT VISA IN DUBAI</h3>
+                            <p>Designed to assist ex-pats and foreigners living in Dubai after retirement, the scheme was launched upon the directive of His Highness Sheikh Mohammed bin Rashid Al Maktoum, Vice President and Prime Minister of the UAE and Ruler of Dubai.</p>
+                            <p>In recent decades, Dubai has become a popular destination for young professionals. As they near retirement, most ex-pats return home.</p>
+                            <p>Expats can now retire to Dubai permanently with the introduction of the five-year Dubai retirement visa. Expats from Dubai who meet specific retirement criteria can participate in this scheme.</p>
+                            <p>For the initial phase, the retirement visa scheme will be restricted to Dubai residents living in the emirate for over ten years. However, the scheme will provide long-term residents with a hassle-free retirement option. </p>
+                            <p>Additionally, in September 2018, the UAE Cabinet approved a law granting a long-term visa to retired residents over 55. Applicants who meet the eligibility criteria may renew their visas.</p>
+                            <p>A retiree must meet the following criteria to qualify for a 5-year renewable retirement visa:</p>
+                            <ul>
+                                <li>Invest in a 2 million AED property</li>
+                                <li>Savings of no less than 1 million AED</li>
+                                <li>An active income of at least AED 20,000 per month is required.</li>
+                            </ul>
+                            <p>The visa is valid for 5 years and can be renewed upon meeting the eligibility requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/retirement-visa-uae");
+        //$("#ddlCatagories").hide();
+    })
+
+</script>
+<script>
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+
+    }, 500);
+</script>

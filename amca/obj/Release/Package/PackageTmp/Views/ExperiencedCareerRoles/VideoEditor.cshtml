@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Video Editor | Jobs in Dubai";
+    ViewBag.PageTitle = "Video Editor";
+    ViewBag.Keyword = "Video Editor, Video Editor job description, Video Editor jobs in dubai, Video Editor meaning, Video Editor meaning in hindi, role of Video Editor";
+    ViewBag.Description = "Operate photo/video camera for shooting assignments at different customer locations. Edit content according to vision of the company.";
+    ViewBag.VideoEditor = "ActiveSubLink";
+    ViewBag.Value = "Video Editor";
+}
+
+@model amca.Models.ExperienceDesignation
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ExperiencedCareerRoles", "Career")">Experienced career roles</a></li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space sidebarFull">
+    <div class="container">
+        <div class="col-md-3 sidebarHalf">
+            @RenderPage("~/Views/Sidebar/CareerSidebar.cshtml")
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        We at AMCA are looking for a VIDEO EDITOR, preferably a female candidate, to join our team and enrich our platforms with new stories and ideas.
+                        We'd love to have you onboard if you are game for a challenge and believe in this mission.
+                    </p>
+                </div>
+                <div class="col-md-12 jobDesc">
+                    <h4 class="subHeading"><strong>Responsibilities:</strong></h4>
+                    <ul>
+                        <li>Assist in planning and creating short video content (e.g., Youtube Shorts, Reels, TikTok, etc.)</li>
+                        <li>Performing the full range of editing works from splicing to sound balancing to color correction and grading.</li>
+                        <li>Able to handle all aspects of post-production work</li>
+                        <li>Manage all stage professional-quality audio, editing, distribution, and archiving.</li>
+                        <li>Ability to adapt existing content to make fit-for-purpose on social media platforms</li>
+                        <li>Able to prioritize and manage multiple project deadlines simultaneously</li>
+                        <li>Adhere to strict deadlines and able to work under pressure</li>
+                    </ul>
+                    <h4 class="subHeading"><strong>Skills Required:</strong></h4>
+                    <ul>
+                        <li>Proficient in editing software, strong skills in various renowned editing software is a plus.</li>
+                        <li>Excellent knowledge of audio balancing and color grading, sequencing of clips, and exporting in a variety of formats</li>
+                        <li>A strong sense of story-telling is a plus</li>
+                        <li>Has a creative eye for shots</li>
+                        <li>Great attention to detail in a fast-paced environment</li>
+                        <li>Good communication skills</li>
+                        <li>Able to work independently and collaboratively</li>
+                    </ul>
+                    <br />
+                    @using (Html.BeginForm("SubmitJob", "ExperiencedCareerRoles", FormMethod.Post, new { @class = "primary-form mt-3" }))
+                    {
+                        @Html.HiddenFor(model => model.JobTitle, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                        <input type="submit" class="btn btnTheme mr0" value="Apply for this position">
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

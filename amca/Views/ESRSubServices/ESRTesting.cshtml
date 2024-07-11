@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Economic Substance Testing | ESR | ESR Notification";
+    ViewBag.PageTitle = "Economic Substance Testing";
+    ViewBag.Keyword = "economic substance regulations, esr, ministry of finance, mof, relevant activities, esr notification, economic substance notification, notification, regulatory Authorities, ministry of finance portal, esr report, economic substance report, licensee(s), economic substance requirements, penalty(ies), esr deadline, economic substance";
+    ViewBag.Description = "A notice regarding the amended Economic Substance Regulation (ESR) Filing Requirements and Deadlines has been issued by the Ministry of Finance (MOF).";
+    ViewBag.ESRTesting = "ActiveSubLink";
+    ViewBag.Value = "ESR Testing";
+}
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ESRService", "Services")">Economic Substance Regulations (ESR)</a> </li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/ESRSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/esr-testing.jpg" class="img-responsive" alt="Economic Substance Regulations" title="Economic Substance Regulations">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/ESRSubServices/QueryForm.cshtml")
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 spacing-top">
+                            <p>
+                                All the entities holding a trade license in the UAE (particularly the free zone and offshore entities) must notify their concerned Regulatory Authorities regardless of whether they are carrying out the Relevant Activities within the UAE. Aside from informing the Relevant Activities to the Regulatory Authority, providing the information with reference to the Licensee also serves as the primary purpose of the ESR Notification. Therefore, all the information provided in the ESR Notification is highly required in filing the Economic Substance Report for the same period.
+                            </p>
+                            <p>As per Article 4.4 of Ministerial Decision 100, all the Notifications must be filed within six months from the Licensees financial year-end. As a result, those Licensees who submitted ESR notification directly to their Regulatory Authorities are required to re-submit the notification through the portal of the Ministry of Finance.</p>
+                            <p>As per Article 8.4 of Decision 57, all ESR Reports must be submitted within 12 months from the end of their financial year.</p>
+                            <p>In accordance with Article 6.7 of Ministerial Decision 100, all Economic Substance Notifications and Economic Substance Reports shall only be submitted electronically on the Ministry of Finance Portal. The Ministry of Finance Portal started its launching last 1st of December and will be extended until 31st December 2020.</p>
+                            <p>The Licensees and/or Exempted Licensees must commence filing on the Ministry of Finance portal during the earlier period to avoid the penalties.</p>
+
+                            <h3>ESR Penalties</h3>
+                            <p>The penalties for failure to submit the ESR notification & report within the ESR deadline are as follows:</p>
+                            <ol>
+                                <li>Under Article 13 of Decision 57, Licensees and/or Exempted Licensees who fail to submit their Notification with the required supporting documents by 30 June 2021 will be subjected to AED 20,000.</li>
+                                <li>Under Article 13 of Decision 57, Licensees and/or Exempted Licensees that fail to resubmit their Notification by the date mentioned earlier will be subjected to a penalty of AED 20,000.</li>
+                                <li>Under Article 14 of Decision 57, Licensees and/or Exempted Licensees (where applicable) who fail to submit their Economic Substance Report within the earlier period will be subjected to AED 50,000. </li>
+                            </ol>
+                            <h3>How can AMCA help you?</h3>
+                            <p>To check your company's eligibility with the Economic Substance Requirements and assess whether your company falls under the Economic Substance Regulations or not, AMCA provides an Economic Substance Testing Service. Undeniably, the penalties for not complying with the Economic Substance Filing of Notification and Reports may result from 20,000 AED – to 50,000 AED, and AMCA can help you avoid them.</p>
+                            <p>The Economic Substance will serve as a preliminary assessment to check the applicability of the regulations on the Licensee based on the information provided.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/economic-substance-testing");
+         })
+
+</script>

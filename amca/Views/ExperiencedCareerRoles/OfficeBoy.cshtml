@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Office Assistant jobs in Dubai | Jobs in Dubai | Office Assistant";
+    ViewBag.PageTitle = "Office Assistant";
+    ViewBag.Keyword = "office Assistant, michael fattaleh, office Assistant bank, Assistant office, the office Assistant, need office Assistant, hire office Assistant, office Assistant recruitment, outsourcing office Assistant, office Assistant near me, indian office boy, require office boy, office boy agency";
+    ViewBag.Description = "We are urgently looking for an experienced Office Assistant. Job Description: Reporting delivery, Purchasing and maintaining pantry items, Collecting of cheque(s), Scanning the documents and old blue files";
+    ViewBag.OfficeBoy = "ActiveSubLink";
+    ViewBag.Value = "Office Assistant";
+}
+
+@model amca.Models.ExperienceDesignation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ExperiencedCareerRoles", "Career")">Experienced career roles</a></li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space sidebarFull">
+    <div class="container">
+        <div class="col-md-3 sidebarHalf">
+            @RenderPage("~/Views/Sidebar/CareerSidebar.cshtml")
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3><strong>We are urgently looking for an experienced Office Assistant.</strong></h3>
+                </div>
+                <div class="col-md-12 jobDesc">
+                    <h4 class="subHeading"><strong>Job Description:</strong></h4>
+                    <ul>
+                        <li>Reporting delivery
+                        <li>Purchasing and maintaining pantry items.</li>
+                        <li>Collecting cheque(s)</li>
+                        <li>Cleaning the office, including the bathroom and the balcony, in the morning.</li>
+                        <li>Cleaning the office furniture, workstation, doors, and floor.</li>
+                        <li>Cleaning the balcony, bathroom, and pantry in the afternoon.</li>
+                        <li>Maintaining a clean office</li>
+                        <li>Cleaning the glasses.</li>
+                        <li>Cleaning the utensils.</li>
+                        <li>Scanning the documents and old files.</li>
+                        <li>Arranging files for file opening.</li>
+                        <li>Keeping stationery items.</li>
+                        <li>Searching and maintaining the files.</li>
+                        <li>Stamping reports ready for delivery.</li>
+                        <li>Doing decorations for birthday celebrations.</li>
+                        <li>Coordinating with the carpenter, security guard, and water supplier.</li>
+                        <li>Taking care of old company documents like employee files, client documents, and files.</li>
+                        <li>Assisting the clients who arrive at the office.</li>
+                        <li>Making coffee for the clients.</li>
+                        <li>Taking care of misuse or excess consumption of office belongings like stationery items, coffee, tea, etc.</li>
+                        <li>Pasting the stickers on files and doors wherever necessary.</li>
+                        <li>Taking care of Parking Cards.</li>
+                        <li>Purchasing foods for Staff (occasionally).</li>
+                        <li>Purchasing for the IT material.</li>
+                        <li>Recharging the Salik Card/Metro Card.</li>
+                    </ul>
+                    <br />
+                    @using (Html.BeginForm("SubmitJob", "ExperiencedCareerRoles", FormMethod.Post, new { @class = "primary-form mt-3" }))
+                        {
+                            @Html.HiddenFor(model => model.JobTitle, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                            <input type="submit" class="btn btnTheme mr0" value="Apply for this position">
+                        }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Digital Marketing Specialist | Jobs in Dubai";
+    ViewBag.PageTitle = "Digital Marketing Specialist";
+    ViewBag.Keyword = "digital marketing specialist, digital specialist, online marketing specialist, internet marketing specialist, simplilearn's digital marketing specialist program, search marketing specialist, senior digital marketing specialist, digital campaign specialist, simplilearn digital marketing specialist, social media marketing specialists, digital marketing specialist linkedin, specialist marketing agencies, media marketing specialist, digital performance specialist, digital marketing specialist simplilearn, digital strategy specialist, marketing digital specialist, website marketing specialist, digital market specialist, paid marketing specialist, senior digital specialist, digital optimization specialist, digital content marketing specialist, digital marketing seo specialist, digital marketing specialist indeed, digital ad specialist, linkedin digital marketing specialist, digital growth specialist, digital marketing and social media specialist, certified content marketing specialist, peaktal digital agency, glassdoor digital marketing specialist, digital marketing specialist remote, digital marketing specialist linkedin profile, digital media marketing specialist";
+    ViewBag.Description = "We are searching for a talented Digital Marketing Specialist to join our team. Who will be responsible for growing revenue through digital media through Content writing and executing marketing campaigns.";
+    ViewBag.DigitalMarketingSpecialist = "ActiveSubLink";
+    ViewBag.Value = "Digital Marketing Specialist";
+}
+
+@model amca.Models.ExperienceDesignation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ExperiencedCareerRoles", "Career")">Experienced career roles</a></li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space sidebarFull">
+    <div class="container">
+        <div class="col-md-3 sidebarHalf">
+            @RenderPage("~/Views/Sidebar/CareerSidebar.cshtml")
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <p> We are looking for a talented Digital Marketing Specialist to join our team.</p>
+                </div>
+                <div class="col-md-12 jobDesc">
+                    <h4 class="subHeading"><strong>Qualifications:</strong></h4>
+                    <ul>
+                        <li>Should know about social media optimization</li>
+                        <li>Should have experience in inbound and outbound calls</li>
+                    </ul>
+                    <h4 class="subHeading"><strong>Job Descriptions</strong></h4>
+                    <ul>
+                        <li>Assist the team in the development of the overall digital marketing strategy</li>
+                        <li>Implement digital marketing activities across a broad range of digital marketing channels (SEO, SEM, Social Media, Email, Mobile, Display)</li>
+                        <li>Manage and maintain the company’s owned media, including websites, mobile apps, and email/CRM software</li>
+                        <li>Manage the creation of relevant and engaging digital content for publishing on various digital platforms</li>
+                        <li>Manage social media marketing campaigns</li>
+                        <li>Manage SEO campaigns</li>
+                        <li>Analyze digital marketing analytics reports and share insights with the team to develop optimization plans</li>
+                        <li>Stay abreast of emerging digital tools and platforms, digital marketing trends, and new technologies, and share insights with the rest of the team.</li>
+                        <li>Conduct research on market trends, brand’s audiences and competitors, and end-to-end consumer journey to drive engagements and conversions</li>
+                        <li>SEO-friendly content writer</li>
+                        <li>Write clear marketing copy to promote our services</li>
+                        <li>Prepare well-structured drafts using Content Management Systems</li>
+                        <li>Perform proofreading and editing blog posts before publication</li>
+                        <li>Coordinate with marketing and design teams to illustrate articles</li>
+                        <li>Use SEO guidelines to increase web traffic</li>
+                        <li>Ensure all-around consistency (style, fonts, images, and tone)</li>
+                        <li>Update website content as needed</li>
+                        <li>Evaluate analytics to adjust content as needed</li>
+                        <li>Conduct in-depth research on industry-related topics to develop original content.</li>
+                        <li>Develop content for blogs, articles, product descriptions, social media, and the company website</li>
+                        <li>Edit and refine existing content to improve readability</li>
+                        <li>Create compelling headlines and body copy that will capture the attention of the target audience</li>
+                        <li>Utilize the industry best practices and familiarity with the organization's mission to inspire ideas and content</li>
+                        <li>Develop related content for multiple platforms, such as websites, email marketing, product descriptions, videos, and blogs</li>
+                        <li>Communicate and cooperate with web publishers</li>
+                        <li>Ensure timely delivery of all materials</li>
+                    </ul>
+                    <br />
+                    @using (Html.BeginForm("SubmitJob", "ExperiencedCareerRoles", FormMethod.Post, new { @class = "primary-form mt-3" }))
+                    {
+                        @Html.HiddenFor(model => model.JobTitle, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                        <input type="submit" class="btn btnTheme mr0" value="Apply for this position">
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "External Audits";
+    ViewBag.Keyword = "external audit, external audit in uae, benefits of external audit, free zone companies, trade licenses of the companies, Dubai Airport Free Zone, dafza, Dubai World Central, dwc, jebel ali free zone, jafza, dubai international financial center, difc, dubai silicon oasis, dso, fujairah";
+    ViewBag.Description = "An external audit is an independent examination of the financial statements prepared by the organisation. It is an examination of a company's records and reports by an outside party. Also called independent audit, outside audit.";
+    ViewBag.PageURL = "https://amca.ae/external-audits";
+    ViewBag.ImageURL = "https://amca.ae/wimages/amca_external_audit.jpg";
+}
+
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.Title</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-8 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/amca_external_audit.jpg" class="img-responsive" title="External Audit" alt="External Audit" />
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.Title</h1>
+                            <h2>UAE Federal Law No. 2 of 2015 on Commercial Companies</h2>
+                            <p>An external audit is an independent examination of the financial statements prepared by the organisation. It is an examination of a company's records and reports by an outside party. Also called independent audit, outside audit.</p>
+                            <h3>Objectives</h3>
+                            <p>It’s objective is to determine, among other things</p>
+                            <ol>
+                                <li>The accounting records are accurate and complete</li>
+                                <li>The accounting records are prepared in accordance with the provisions of GAAP.</li>
+                                <li>The statements prepared from the accounts present fairly the organization's financial position, and the results of its financial operations. </li>
+                            </ol>
+                            <h3>External Audit in UAE</h3>
+                            <p>As per the new UAE Commercial Companies Law, Federal Law No. 2 of 2015, Article 27, Chapter 2, every company shall appoint auditors for auditing their books of accounts by a licensed auditor registered under Ministry of Economy in the UAE.</p>
+                            <p>The companies are requried to get their books audited under the following circumstances </p>
+                            <h4>A)  Legal Requirements</h4>
+                            <ul>
+                                <li><strong>Free Zone companies:</strong> Some of the Free Zones Authorities made it mandatory to submit the audited financial statements  to the authority for renewing the trade licenses of the companies registered under them. Such free zones include; Dubai Airport Free Zone (DAFZA), Dubai World Central (DWC), Jebel Ali Free Zone (JAFZA),Dubai International Financial Center (DIFC),Dubai Silicon Oasis (DSO), Creative City – Fujairah etc.</li>
+                                <li><strong>Liquidation of the Company:</strong> Audited financial statements of Companies under liquidation is one of the most important documents for a liquidator to prepare the liquidator’s Report. </li>
+                                <li><strong>Other Government Authorities:</strong> such as Municipality, various Ministerial Departments, Insurance Authorities, etc. also demand the companies to submit their audited financial statements as and when it is required for the authorities. </li>
+                            </ul>
+                            <h4>B) For Management purpose</h4>
+                            <p>To understand the financial position, to evaluate the performance of the entity, to assess the progress of the business, also to get guidance from professional financial experts, some of the companies get their books of accounts audited. </p>
+                            <h4>C) Others Requirements </h4>
+                            <p>Banks /or other non- banking financial institutions insist companies to get their books of accounts audited by an audit firm which are listed by them as approved auditors. </p>
+                            <h3>Benefits of external Audit </h3>
+                            <ol>
+                                <li>Provides validity of the accounting process </li>
+                                <li>Discovers Errors </li>
+                                <li>Identifies weaknesses internally (and suggests improvements)</li>
+                                <li>Provides assurance </li>
+                                <li>Timely detection of errors and fraud.</li>
+                            </ol>
+                        </div>
+                        <div class="col-md-12 writer text-right">
+                            <p class="date">5 Feb 2020</p>
+                            <h4><strong>Neda Naeem</strong></h4>
+                            <p>Chartered Accountant</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/external-audits" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Fexternal-audits&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/external-audits">
+                            </script>
+                        </div>
+                        @RenderPage("~/Views/Sidebar/BlogComment.cshtml")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

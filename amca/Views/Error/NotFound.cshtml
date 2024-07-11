@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "404 page not found";
+    Layout = "~/Views/Shared/_ThankyouLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div style="display: flex; height: 100vh; align-items: center;text-align: center;width: 100%;">
+            <div style="width: 100%;">
+                <h1 class="display-1">404 </h1>
+                <h2 class="text-uppercase">Page Not Found</h2>
+                <p>It Looks like you're lost...</p>
+                <div>
+                    <img src="~/wimages/404.jpg" stye="max-width: 100%;width: 500px;" alt="Page Not Found" />
+                </div>
+                <div style="margin: 10px 0">
+                    <a href="@Url.Action("Index","Page")" class="btn btn-theme text-uppercase" style="background: green;color: #fff;font-weight: 700;">Take me out of here</a>
+                </div>
+                <p class="pt-4"><small>Copyright &copy; @DateTime.Now.Year | All rights reserved <span>AMCA</span></small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

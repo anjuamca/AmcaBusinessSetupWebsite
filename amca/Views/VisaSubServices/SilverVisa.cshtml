@@ -1,0 +1,315 @@
+﻿
+
+@{
+    ViewBag.Title = "UAE Silver Residency Visa | Silver Visa | 5 Year Residency Visa";
+    ViewBag.PageTitle = "UAE Silver Visa";
+    ViewBag.Keyword = "uae silver visa, silver visa, residence visa, residence visa uae, long term visa uae";
+    ViewBag.Description = "Apply for the UAE's silver residency visa. The following categories are entitled to apply for a silver visa(5-year) in the UAE.";
+    ViewBag.silverVisa = "ActiveSubLink";
+    ViewBag.Value = "UAE Silver Visa";
+}
+@model amca.Models.Validation
+@using CaptchaMvc.HtmlHelpers;
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>PRO Services</li>
+                    <li>Visa Services </li>
+                    <li>Silver Visa</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/VisaSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/5-years-silver-visa.jpg" class="img-responsive" alt="5-years-silver-visa" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("VisaQuery", "VisaSubServices", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Individual" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6" id="ddlCatagories">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Catagories, new List<SelectListItem>
+                                            {
+                                                new SelectListItem{ Text="Catagories", Value = "" },
+                                                new SelectListItem{ Text="Investors", Value = "Investors" },
+                                                new SelectListItem{ Text="Entrepreneur", Value = "Entrepreneur" },
+                                                new SelectListItem{ Text="Outstanding Students", Value = "Outstanding Students" },
+
+                                            }, new { @class = "form-control selectpicker ddlCatagories" })
+                                            @Html.ValidationMessageFor(model => model.Catagories, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 CompanyName">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 LicencedAuthority">
+                                        <div class="form-group">
+
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Licenced Authority Name", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+
+
+                                            @*@Html.TextBoxFor(model => model.TradeLicenseAuthority, new { @class = "form-control textFld LicencedAuthority", @placeholder = "Licenced Authority Name" })
+                @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation " })*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 UniversityDiv">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.University, new List<SelectListItem>
+                                            {
+                                                new SelectListItem{ Text="Mode", Value = "" },
+                                                new SelectListItem{ Text="University", Value = "University" },
+                                                new SelectListItem{ Text="Profession", Value = "Profession" }
+                                            }, new { @class = "form-control selectpicker University" })
+                                            @Html.ValidationMessageFor(model => model.University, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 Specfield">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Specialization, new List<SelectListItem>
+                                            {
+                                               new SelectListItem{ Text="Specialization", Value = "" },
+                                               new SelectListItem{ Text="Art and Culture", Value = "Art and Culture" },
+                                               new SelectListItem{ Text="Specialist (Engineering/ Science)", Value = "Specialist (Engineering/ Science)" },
+                                               new SelectListItem{ Text="Doctors", Value = "Doctors" },
+                                               new SelectListItem{ Text="Scientists", Value = "Scientists" },
+                                               new SelectListItem{ Text="Inventors", Value = "Inventors" },
+                                               new SelectListItem{ Text="Athletes", Value = "Athletes" },
+                                               new SelectListItem{ Text="Ph.D Holders", Value = "Ph.D Holders" },
+                                               new SelectListItem{ Text="Engineers", Value = "Engineers" },
+                                               new SelectListItem{ Text="Coders", Value = "Coders" },
+                                               new SelectListItem{ Text="Other", Value = "Other" },
+                                            }, new { @class = "form-control  selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.Specialization, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 School">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.SchoolName, new { @class = "form-control textFld", @placeholder = "School Name / University Name" })
+                                            @Html.ValidationMessageFor(model => model.SchoolName, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div id="captcha">
+                                                @Scripts.Render("~/bundles/jquery")
+                                                @Html.ValidationSummary(true)
+                                                @Html.Captcha("Refresh", "", 5)
+                                            </div>
+                                            <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="hidden" id="token" name="token">
+                                                <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><strong>Categories</strong></h3>
+                            <ul>
+                                <li>Investors</li>
+                                <li>Entrepreneurs </li>
+                                <li>Outstanding students </li>
+                            </ul>
+                            <h2><strong>Eligibility for a Silver Visa(5-year)</strong></h2>
+                            <p>The following categories are entitled to apply for a silver visa(5-year) in the UAE.</p>
+
+                            <h3>
+                                <strong>1. Investors in a property in the UAE</strong>
+                            </h3>
+                            <h5><strong>Conditions</strong></h5>
+                            <p>Allowing a visa is depended on the following conditions:</p>
+                            <ul>
+                                <li>The investor ought to invest in a property with a gross worth of not less than  <strong>AED 5 million</strong>.</li>
+                                <li>The amount invested in real estate ought not be on loan basis.</li>
+                                <li>The property should be retained for at least three years.</li>
+                            </ul>
+                            <h3><strong>2. Entrepreneurs</strong></h3>
+                            <ul>
+                                <li>
+                                    This classification includes those having an existing project with a minimum capital of <strong>AED 500,000</strong> or individuals who have the endorsement of an accredited business incubator in the country.
+                                </li>
+                            </ul>
+                            <p>
+                                The entrepreneur is permitted a multi-entry visa for a half year, renewable for six months. The long-term visa includes the spouse and kids, a partner, and three executives.
+                            </p>    
+                            <h3><strong>3. Outstanding Students</strong></h3>
+                            This includes:
+                            <ul>
+                                <li>Outstanding students with a minimum grade of 95% in public and private secondary schools</li>
+                                <li>University students inside and outside the country have a distinction <strong>GPA of at least 3.75</strong> upon graduation.</li>
+                            </ul>
+                            <p>The long-term visa includes families of outstanding students</p>
+                            <div class="row">
+                                <div class="col-md-12" style="display: flex; justify-content: center;">
+                                    <div class="form-group">
+                                        <input type="button" onclick="location.href='https://goldenvisau.ae/';" class="btn btnTheme" value="Apply Now">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/uae-silver-visa");
+    })
+
+</script>
+<script type="text/javascript">
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+
+    }, 500);
+
+    $(document).ready(function () {
+        $('.CompanyName').hide();
+        $('.LicencedAuthority').hide();
+        $('.School').hide();
+        $('.Specfield').hide();
+        $('.UniversityDiv').hide();
+    })
+
+
+
+
+
+    $('.ddlCatagories').change(function () {
+
+        if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 0) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.University').hide();
+        }
+        if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 1 || document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 2) {
+
+            $('.CompanyName').show();
+            $('.LicencedAuthority').show();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.University').hide();
+        }
+        else if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 3) {
+
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').show();
+            $('.Specfield').hide();
+            $('.University').hide();
+        } else if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 4) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.UniversityDiv').show();
+            $('.University').show();
+        }
+    })
+
+    $('.University').change(function () {
+        var aa = document.getElementsByClassName('University')[1].selectedIndex;
+        if (document.getElementsByClassName('University')[1].selectedIndex == 1) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+        }
+        else if (document.getElementsByClassName('University')[1].selectedIndex == 2) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').show();
+
+        }
+    })
+
+</script>

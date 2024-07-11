@@ -1,0 +1,519 @@
+﻿@{
+    ViewBag.Title = "Regulatory Compliance and Reporting, Dubai, UAE";
+    ViewBag.PageTitle = "Regulatory Compliance and Reporting in the UAE";
+    ViewBag.Keyword = "regulatory compliance and reporting, corporate goals, risk management plans, laws and regulations, economic substance regulations, esr, organization for economic cooperation and development, oecd, harmful tax practices, esr notifications, esr reports, country by country reporting, cbcr, tax residents, cbc report, mne group, ultimate beneficial ownership, ubo, beneficial owners, shareholders, partners, ministry of economy, moe, designated non - financial business and professions, dnfbps, financial intelligent unit, goaml system, money laundering crimes";
+    ViewBag.Description = "Through the regulatory compliance and reporting in the UAE, it ensures that all companies are upholding all the country's laws and regulations";
+}
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>Regulatory Compliance and Reporting</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/RegulatoryComplianceReportingSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                            <div class="col-md-12">
+                                <img src="~/wimages/PRO-Service.jpg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("ServiceQuery", "Services", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Entity" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Service", new { @class = "form-control textFld" })
+                @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+            </div>
+        </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.RegulatoryComplianceReporting as SelectList, "Select Sub Service", new { @class = "form-control textFld", id = "serviceId"})
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="captcha">
+                                            @Scripts.Render("~/bundles/jquery")
+                                            @Html.Captcha("Refresh", "", 5)
+                                            @Html.Hidden("txtPageName", "RegulatoryComplianceReporting")
+                                            @Html.Hidden("txtPageID", "7")
+                                            @Html.ValidationSummary(true)
+                                        </div>
+                                        <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Regardless of sector or scale, all companies must obey the laws and regulations of the country’s operations. Regulatory compliance and reporting have to do with a set of guidelines that an organization must follow in accordance with the law. This is considered one of a compliance officer's most critical responsibilities–including reports on corporate compliance.</p>
+                            <p>The compliance report documents show a company's adherence to specific business regulations. In addition, some government sectors and agencies in the UAE inspect and ensure that a company's enforcement is in accordance with its corporate goals, risk management plans, and the country's laws and regulations.</p>
+                            <p>The regulatory compliance and reporting in the UAE ensure that all companies uphold all the country's laws and regulations - no one is excluded. </p>
+
+                            <h2>What are the laws and regulations that must be followed in the UAE?</h2>
+
+                            <h3>Economic Substance Regulations (ESR)</h3>
+                            <p>The Economic Substance Regulations are enacted in accordance with the global norm established by the Organization for Economic Cooperation and Development ("OECD") Forum on Harmful Tax Practices, which allows companies engaging in geographically mobile business activities to have significant operations in a jurisdiction.</p>
+                            <p>According to the Economic Substance Regulations, ESR notifications must be submitted within six months of the Licensee's financial year-end.</p>
+                            <p>Within twelve months of the end of the financial year, all ESR Reports must be submitted.</p>
+                            <p><a href="@Url.Action("ESRService", "Services")" class="link">Read More...</a></p>
+
+                            <h3><strong>Country-by-Country Reporting ("CbCR")</strong></h3>
+                            <p>The guidelines for Country-by-Country Reporting (CbCR) are based on the Organization for Economic Cooperation and Development's (OECD) CbCR guidance. It is intended for UAE-based companies that are part of multinational groups that are tax residents in different jurisdictions and have combined sales of at least 3,150,000,000 UAE Dirhams in the previous financial year.</p>
+                            <p>The CbC report should be sent within 12 months of the end of the MNE Group's reporting year.</p>
+                            <p><a href="@Url.Action("cbcr", "Services")" class="link">Read More...</a></p>
+
+                            <h3>Ultimate Beneficial Ownership (UBO)</h3>
+                            <p>The Ultimate Beneficial Owner's (UBO) goals include keeping the UAE's economic status in line with international standards. Its purpose is to create an effective regulatory structure and procedure for beneficial owner data and regulate minimum obligations in the disclosure of Beneficial Owners, Shareholders, Partners, and Nominee Board Members.</p>
+                            <p><a href="@Url.Action("UltimateBeneficialOwner", "Services")" class="link">Read More...</a></p>
+
+                            <h3>goAML system and Automatic Reporting System of the Ministry of Economy</h3>
+                            <p>The UAE's Ministry of Economy (MoE) has launched an awareness and monitoring campaign to enable registered Designated Non-Financial Business and Professions (DNFBPs) to register with the Financial Intelligent Unit (goAML) system. Similarly, it encourages targeted organizations to write in the Committee on Goods Subject to Import and Export Control (Automatic Reporting System for Sanctions Lists) system and to take steps in accordance with both the provisions of Federal Law No. 20 of 2018 on the fight against money laundering crimes and the financing of terrorism and criminal organizations, as well as relevant laws and decisions.</p>
+                            <p>The grace period for organizations to enforce these measures has been extended until March 31, 2021. Non-compliance with the above conditions would result in the suspension of your business license, as directed by the Ministry of Economy.</p>
+                            <p><a href="@Url.Action("goAML", "Services")" class="link">Read More...</a></p>
+
+                            <p><strong>What are the most challenging regulatory compliance and reporting components in the UAE?</strong></p>
+
+                            <ol>
+                                <li>
+                                    <strong>Complications in Compliance</strong>
+                                    <p>In the United Arab Emirates, determining whether or not a company complies with the country's laws and regulations is extremely difficult. As a result, there have been occasions when management assumed that the organization had already adhered to a specific rule, only to find out later that they had incurred a penalty or punishment.</p>
+                                </li>
+                                <li>
+                                    <strong>Lack of Enough Time and Resources for Training</strong>
+                                    <p>Every day, new laws and regulations are enacted that organizations in the UAE must obey. As a result, organizations must dedicate a considerable amount of time and resources to keeping their bodies up to date, through at least a training, on the current laws and regulations in the UAE, which tend to be updated regularly.</p>
+                                </li>
+                                <li>
+                                    <strong>Danger in Company’s Reputation</strong>
+                                    <p>Any company that does not comply with UAE laws and regulations risks losing its name and credibility. That is certainly not something any business owner wants to happen.</p>
+                                </li>
+                            </ol>
+                            <p>
+                                <strong>
+                                            Annexed Table to the Cabinet Decision No. (16) of 2021 Regarding the Unified List of the Violations and Administrative Fines for the Said Violations of Measures to Combat Money Laundering and Terrorism Financing that are  <u>
+                                            Subject to the Supervision of the Ministry of Justice and the Ministry of Economy
+                                        </u>
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 table-responsive">
+                            <div>
+                                <table class="table table-bordered table-res">
+                                    <thead>
+                                        <tr style="background:#8e6c3a; color:#fff;">
+                                            <th>No.</th>
+                                            <th>
+                                                Applicable Article in the
+                                                Implementing
+                                                Regulation
+                                            </th>
+                                            <th>Violation</th>
+                                            <th>Administrative Fine (AED)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Article (4) Clause 1 </td>
+                                            <td>
+                                                Failure to undertake the actions and procedures
+                                                necessary to identify the risks associated with the crime
+                                                in the violator’s field of work
+                                            </td>
+                                            <td>
+                                                100,000 AED
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Article (23) </td>
+                                            <td>
+                                                Failure to identify and assess the risks that may arise in
+                                                the violator’s field of work when developing the services
+                                                that the violator offers or when conducting new
+                                                professional practices through its facility.
+                                            </td>
+                                            <td>100,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Article (4) Clause 2</td>
+                                            <td>
+                                                Failure to undertake the actions and procedures
+                                                necessary to mitigate the risks identified based on the
+                                                results of the National Risk Assessment or the Selfassessment process given the nature and scale of the
+                                                violator’s business.
+                                            </td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Article (20)</td>
+                                            <td>
+                                                Failure to implement internal policies, procedures and
+                                                controls within the facility aimed at combating crime or
+                                                preventing involvement in suspicious business
+                                                relationships.
+                                            </td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Article (4) Clause 2/B + Article (22) Clause 1</td>
+                                            <td>
+                                                Failure to take the necessary enhanced due diligence
+                                                measures to manage high risks.
+                                            </td>
+                                            <td>200,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Article (4) Clause 3 </td>
+                                            <td>
+                                                Failure to take the necessary simplified due diligence
+                                                measures to manage low risks.
+                                            </td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Article (5)</td>
+                                            <td>
+                                                Failure to undertake the necessary customer due
+                                                diligence measures before establishing the business
+                                                relationship or resuming a business relationship or
+                                                performing a transaction under the customer’s name or
+                                                in his/her favor.
+                                            </td>
+                                            <td>100,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Article (8) Clause 3</td>
+                                            <td>
+                                                Failure to undertake the necessary measures to
+                                                understand the purpose of the business relationship and
+                                                its nature, or the failure to acquire any information
+                                                pertaining to this purpose when needed
+                                            </td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>Article (8) Clause 4</td>
+                                            <td>
+                                                Failure to undertake the necessary measures to
+                                                understand the nature of the customer’s business, the
+                                                ownership structure of his/her business, and the extent
+                                                to which the customer has control over that business.
+                                            </td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>Article (8) Clause 1 and 2</td>
+                                            <td>
+                                                Failure to verify the identity of the customer and the real
+                                                beneficiary or their representative using documents or
+                                                data collected from reliable and independent sources
+                                                before or while establishing a business relationship or
+                                                opening an account or prior to performing a transaction
+                                                for a customer with whom no business relationship has
+                                                been established.
+                                            </td>
+                                            <td>
+                                                100,000 AED
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td>Article (7) </td>
+                                            <td>
+                                                Failure to undertake the due diligence measures
+                                                pertaining to the ongoing supervision of customers while
+                                                conducting the business relationship.
+                                            </td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>Article (13</td>
+                                            <td>
+                                                Failure to notify the Financial Intelligence Unit of the
+                                                suspicious transaction report when the customer due
+                                                diligence measures were not taken before establishing or
+                                                continuing a business relationship with the customer or
+                                                performing a transaction for the customer or under
+                                                his/her name
+                                            </td>
+                                            <td>
+                                                200,000 AED
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>Article (17) Clause 1/A</td>
+                                            <td>
+                                                Delay in notifying the Financial Intelligence Unit of the
+                                                suspicious transaction report in case there is suspicion or
+                                                if there are reasonable grounds to suspect that the
+                                                business relationship with the customer is in whole or in
+                                                part linked to the crime, or that the customer’s funds that
+                                                are subject to the business relationship are in fact
+                                                proceeds of a crime or were used in committing a crime.
+                                            </td>
+                                            <td>
+                                                100,000 AED
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14</td>
+                                            <td>Article (17) Clause 1/A</td>
+                                            <td>
+                                                Failure to provide the Financial Intelligence Unit with the
+                                                additional information it requires regarding the matter
+                                                reported in the suspicious transaction report.
+                                            </td>
+                                            <td>200,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td>Article (14) Clause 1</td>
+                                            <td>Dealing with shell banks in any way</td>
+                                            <td>1,000,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>16</td>
+                                            <td>Article (14) Clause 2</td>
+                                            <td>
+                                                Opening or maintaining bank accounts using
+                                                pseudonyms, fictitious names or numbered
+                                                accounts without the account holder’s name.
+                                            </td>
+                                            <td>1,000,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17</td>
+                                            <td>Article (15) </td>
+                                            <td>
+                                                Failure to conduct due diligence measures on politically
+                                                exposed persons before establishing or continuing a
+                                                business relationship with such customers.
+                                            </td>
+                                            <td>100,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>18</td>
+                                            <td>Article (18) Clause 1 </td>
+                                            <td>
+                                                Disclosing, directly or indirectly, to the customer or any
+                                                other person(s) that they have reported or are intending
+                                                to report a suspicious transaction
+                                            </td>
+                                            <td>200,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>19</td>
+                                            <td>Article (21) </td>
+                                            <td>Failure to appoint a compliance officer</td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20</td>
+                                            <td>Article (19)</td>
+                                            <td>
+                                                Failure to implement the measures prescribed by the
+                                                National Committee for Combating Money Laundering
+                                                and the Financing of Terrorism and Illegal Organizations
+                                                with respect to customers from high-risk countries
+                                            </td>
+                                            <td>
+                                                200,000 AED
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>21</td>
+                                            <td>Article (24) Clause 1</td>
+                                            <td>
+                                                Failure to create records for keeping track of financial
+                                                transactions with customers
+                                            </td>
+                                            <td>
+                                                100,000 AED
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>22</td>
+                                            <td>Article (24) Clause 3</td>
+                                            <td>
+                                                Failure to create records that keep track of financial
+                                                transactions with the customers in an organized manner,
+                                                which prevents data analysis and tracking of financial
+                                                transactions.
+                                            </td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>23</td>
+                                            <td>Article (24) Clause 2</td>
+                                            <td>
+                                                Failure to keep records and documents related to the
+                                                financial transactions for a period of five years from the
+                                                date of concluding the transaction or terminating the
+                                                business relationship with the customer, or from the date
+                                                of completion of the inspection of the customer’s
+                                                facilities.
+                                            </td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>24</td>
+                                            <td>Article (24) Clause 4</td>
+                                            <td>
+                                                Failure to make all the information pertaining to the
+                                                customer due diligence, ongoing supervision, and the
+                                                results of their analysis, records, files, documents,
+                                                correspondence and forms available to the competent
+                                                authorities upon request.
+                                            </td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>25</td>
+                                            <td>Article (21) Clause 4</td>
+                                            <td>
+                                                Failure to provide training for the facility’s employees on
+                                                combating money laundering and the financing of
+                                                terrorism.
+                                            </td>
+                                            <td>50,000 AED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>26</td>
+                                            <td>Article (60) </td>
+                                            <td>
+                                                Failure to take the necessary measures regarding
+                                                customers included in the international or domestic
+                                                sanctions lists before establishing or continuing a
+                                                business relationship with those customers.
+                                            </td>
+                                            <td>1,000,000 AED</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <p><a href="..\..\UploadedFile\amcaae\Documents\UBO_Cabinet_Decision_No._16_of_2021.pdf" class="link">Read More...</a></p>
+                            <h3><strong>How may we be of assistance?</strong></h3>
+                            <p>With AMCA, we'll make it easy for you and your business to comply with the UAE's laws and regulations. Our experts are well-trained and specialized in delivering regulatory advice and assistance. In addition, our experts are experienced in advising and assisting with regulatory relations, meeting regulatory requirements and expectations, and obtaining regulatory approval for your company.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/regulatory-compliance-and-reporting-in-the-uae");
+         })
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+</script>

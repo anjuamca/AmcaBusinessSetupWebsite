@@ -1,0 +1,392 @@
+﻿@{
+    ViewBag.Title = "Economic Substance Regulations Dubai | ESR Dubai, UAE";
+    ViewBag.PageTitle = "Economic Substance Regulations Dubai";
+    ViewBag.Keyword = "economic substance regulations, esr uae, esr guidelines, esr relevant activities, relevant activities, economic substance, economic substance report, economic substance test, esr regulations, esr notification, esr notification form, esr filing, esr report, esr requirements, regulatory authority, competent authority, ministry of finance, cabinet of ministers, esr deadline, filing deadlines,administrative sanctions, penalt(ies), ministry of finance portal, regulatory authorities, licensees";
+    ViewBag.Description = "The Economic Substance Regulations, which is also known as ESR was formally introduced on 30th of April 2019. ESR Regulations, ESR deadline UAE.";
+}
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>Economic Substance Regulations (ESR)</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/ESRSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <marquee width="100%" direction="left" scrollamount="10" onmouseover="this.stop();" onmouseout="this.start();">
+                                <p><strong class="text-danger">
+    The ESR Notification for the financial year ending 31st December 2023 is to be filed by 30th June 2024, and ESR Reports for the financial year ending 30th June 2023 are to be filed by 30th June 2024
+</strong></p>
+                            </marquee>
+                        </div>
+                        <div class="col-md-12">
+                            <img src="~/wimages/EconomicSubstanceRegulation.svg" class="img-responsive" alt="Economic Substance Regulations" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("ServiceQuery", "Services", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Entity" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Service", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.EsrServices as SelectList, "Select Service", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div id="captcha">
+                                                @Scripts.Render("~/bundles/jquery")
+                                                @Html.Captcha("Refresh", "", 5)
+                                                @Html.Hidden("txtPageName", "ESRService")
+                                                @Html.Hidden("txtPageID", "4")
+                                                @Html.ValidationSummary(true)
+                                            </div>
+                                             <p style="color:Red; text-align:right">  @ViewBag.ErrMessage </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="hidden" id="token" name="token">
+                                                <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row space">
+                        <div class="col-md-12">
+                            <h2 style="padding-top: 0px;"><strong>ESR UAE</strong></h2>
+                            <p>
+                                The Economic Substance Regulations, which is also known as “ESR” was formally introduced to the United Arab Emirates through Cabinet of Minister Resolution No. (31) of 2019, on 30th of April 2019.  The aforementioned regulation aims to combat harmful tax practices while complying with the global standards. Similarly, the Ministry of Finance introduced the so-called “Relevant Activities” which plays a vital function in complying with the Economic Substance Regulation.
+                            </p>
+                            <p>
+                                The Economic Substance Regulations are issued pursuant to the global standard set by the Organization for Economic Cooperation and Development (“OECD”) Forum on Harmful Tax Practices, which requires entities undertaking geographically mobile business activities to have substantial activities in a jurisdiction.
+                            </p>
+                            <p>In addition to the work of the OECD, the European Union Code of Conduct Group (“EU COCG”) also adopted a resolution on a code of conduct for business taxation which aims to curb harmful tax practices.  </p>
+                            <p>The Cabinet of Ministers enacted the ESR Regulations taking into account the relevant standards developed by the OECD and the EU COCG.</p>
+                            <h3><strong>Relevant Activities</strong></h3>
+                            <p>A Licensee which is carrying out Relevant Activities shall demonstrate their Economic Substance here in the UAE and comply with the submission of the notification and Economic Substance Report to their Regulatory Authorities. The ESR Relevant Activities are as follows:</p>
+                            <ul>
+                                <li>Banking Business</li>
+                                <li>Insurance Business</li>
+                                <li>Fund Management Business</li>
+                                <li>Financial or Leasing Business</li>
+                                <li>Intellectual Property</li>
+                                <li>Headquarters Business</li>
+                                <li>Shipping Business</li>
+                                <li>Holding Company Business</li>
+                                <li>Distribution and Services Business</li>
+                            </ul>
+                            
+                            <h4><strong>Economic Substance Regulations (ESR) Date Table for ESR Notification and Reporting Filing</strong></h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr style="background:#8e6c3a; color:#fff;">
+                                        <th>Financial Year End</th>
+                                        <th>Notification filing deadline</th>
+                                        <th>Report filing deadline</th>
+                                    </tr>
+                                </thead>
+                                @*<span style="background:red;padding: 5px;color: #fff;display: inline-block;">*@
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            30-Jun-23
+                                        </td>
+                                        <td>
+                                            31-Dec-23
+                                        </td>
+                                        <td>
+                                            30-Jun-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-Jul-23
+                                        </td>
+                                        <td>
+                                            31-Jan-24
+                                        </td>
+                                        <td>
+                                            31-Jul-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-Aug-23
+                                        </td>
+                                        <td>
+                                            28-Feb-24
+                                        </td>
+                                        <td>
+                                            31-Aug-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            30-Sep-23
+                                        </td>
+                                        <td>
+                                            31-Mar-24
+                                        </td>
+                                        <td>
+                                            30-Sep-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-Oct-23
+                                        </td>
+                                        <td>
+                                            30-Apr-24
+                                        </td>
+                                        <td>
+                                            31-Oct-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            30-Nov-23
+                                        </td>
+                                        <td>
+                                            31-May-24
+                                        </td>
+                                        <td>
+                                            30-Nov-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-Dec-23
+                                        </td>
+                                        <td>
+                                            30-Jun-24
+                                        </td>
+                                        <td>
+                                            31-Dec-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-Jan-23
+                                        </td>
+                                        <td>
+                                            31-Jul-24
+                                        </td>
+                                        <td>
+                                            31-Jan-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            28-Feb-23
+                                        </td>
+                                        <td>
+                                            31-Aug-24
+                                        </td>
+                                        <td>
+                                            28-Feb-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-Mar-23
+                                        </td>
+                                        <td>
+                                            30-Sep-24
+                                        </td>
+                                        <td>
+                                            31-Mar-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            30-Apr-23
+                                        </td>
+                                        <td>
+                                            31-Oct-24
+                                        </td>
+                                        <td>
+                                            30-Apr-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-May-23
+                                        </td>
+                                        <td>
+                                            30-Nov-24
+                                        </td>
+                                        <td>
+                                            31-May-24
+                                        </td>
+                                    </tr>
+                                </tbody>
+                               
+                            </table>
+
+
+                            <h3><strong>The Amendments to the ESR</strong></h3>
+                            <p>The amendment in the ESR was formally introduced through Cabinet of Minister Resolution No. (57) of 2020 on 10th of August 2020. The ESR guidelines was similarly updated through Ministerial Decision No. (100) of 2020 on 19th of August 2020. </p>
+                            <p>Basically, the Amended ESR points out the different changes in the Regulation, such as follows:</p>
+                            <ul style="list-style: lower-alpha">
+                                <li>The Definition of Licensee</li>
+                                <li>Exempted Licensee</li>
+                                <li>Changes to some Relevant Activities </li>
+                            </ul>
+
+                            <p>The Amended ESR is applied to financial years commencing on or from 1 January 2019. Annually, the ESR notification form is required to be submitted by those entities, which are within the scope of the Regulation, to their Regulatory Authority. Within 12 months from the end of their financial year, the entities shall complete and submit the Economic Substance Report to the same Regulatory Authority (e.g. 31 December 2021 with a financial year ending 31 December 2020.) </p>
+
+                            <p>For those entities which have not yet earned income from any of the Relevant Activities, or on the other hand, meet the conditions for being exempted in ESR, is not required to meet the Economic Substance Test and to file Economic Substance Report. However, a notification form is still needed to be submitted.</p>
+                            <p>Failure to comply with the submission of the ESR will result to:</p>
+                            <ul style="list-style: lower-alpha">
+                                <li>penalties, </li>
+                                <li>spontaneous exchange of information with the foreign Competent Authority (as defined in the Article 1 of the Regulations), </li>
+                                <li>other administrative sanctions (e.g. suspension, revocation or non-renewal of the entity’s trade license or permit)</li>
+                            </ul>
+
+                            <p>The Ministry of Finance had released a notice regarding the filing of ESR Requirements and ESR Deadline. The notice aims to give the comprehensive information to those entities which are undertaking one or more Relevant Activities and are required to submit the Economic Substance Notification and/or Economic Substance Report, in accordance with Cabinet Decision No. (57) of 2020 concerning ESR Requirements (“Decision 57”) and Ministerial Decision No. (100) of 2020 (“Ministerial Decision 100”).</p>
+
+
+                            <h3><strong>Ministry of Finance Portal </strong></h3>
+                            <p>The amended Economic Substance Regulations confirm that notifications must be filed electronically on the Ministry of Finance Portal within six months of the Licensees financial year-end.</p>
+
+
+
+                            <h3><strong>New Cabinet Resolution No 57 of 2020 revoking Cabinet Resolution No 31 of 2019</strong></h3>
+                            <p>The objective of the Resolution is to determine whether a Licensee is carrying on an activity which has economic substance in the United Arab Emirates. </p>
+                            <a href="~/wimages/New-Cabinet-Resolution-No-57-of-2020-revoking-Cabinet-Resolution-No-31-of-2019.pdf" target="_blank" class="link"><strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Click the link here</strong></a>
+
+                            <h3><strong>Notice regarding ESR Filing Requirements and Deadlines</strong></h3>
+                            <p>A notice regarding the amended Economic Substance Regulation (ESR) Filing Requirements and Deadlines have been issued by the Ministry of Finance (MOF). The notice aims to provide guidance to entities undertaking one or more Relevant Activities that are required to submit a Notification (and/or Economic Substance Report) in accordance with Cabinet Decision No. 57 of 2020 concerning Economic Substance Requirements (“Decision 57”) and Ministerial Decision No 100 of 2020 (“Ministerial Decision 100”). </p>
+
+                            <a href="~/wimages/Notice-regarding-ESR-Filing-Requirements-and-Deadlines.pdf" class="link" target="_blank"><strong><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Click the link here</strong></a>
+
+                            <h3><strong>FAQ</strong></h3>
+                            <ul>
+                                <li><strong>Is it really required to resubmit the ESR Notification?</strong><p>As per the Article 4.4 of Ministerial Decision 100, all the Notifications must be filed within six months from the Licensees financial year-end. Those Licensees which already submitted directly the ESR Notification to their Regulatory Authorities are required to re-submit this Notification on the Ministry of Finance.</p></li>
+                                <li>
+                                    <strong>What if I fail to submit my ESR Notification and Report before 31 of December?</strong><p>The penalties for failure to submit the ESR notification & report within the ESR deadline are as follows:</p>
+                                    <ol>
+                                        <li>Failure to submit the ESR Notification with the required supporting documents – AED 20,000</li>
+                                        <li>
+                                            Failure to resubmit the ESR Notification (to those Licensees which already submitted directly the ESR
+                                            Notification to their Regulatory Authorities)  – AED 20,000
+                                        </li>
+                                        <li>Failure to submit the ESR Report – AED 50,000</li>
+                                    </ol>
+                                </li>
+                                <li><strong>When should I submit the ESR Notification and Report?</strong> <p>The deadline to submit ESR Notification is within 6 months of your Financial year end. For Example, If your Financial year ended on 31 December 2021, you need to file your ESR Notification by no later than 30 June 2022. If your Financial year ended on 31 December 2021, you need to file your ESR report before 31 December 2022.</p></li>
+                                <li>
+                                    <strong>How can we help you during this time?</strong>
+                                    <p>
+                                        In relation with the filing of the ESR notifications and ESR reports, AMCA is here to help you and your business to comply with these requirements in efficient and professional manners.
+                                        On your behalf, AMCA will do the following:
+                                    </p>
+                                    <ul>
+                                        <li><strong><a href="@Url.Action("ESRTesting", "ESRSubServices")" class="link">ESR Testing - </a></strong>We provide an assessment whether your company falls under the Economic Substance Regulations or not.</li>
+                                        <li><strong><a href="@Url.Action("ESRNotificationFiling", "ESRSubServices")" class="link">ESR Notification Filing</a> -</strong> We provide assistance in preparing your ESR Notification which is needed to be shared with the Authority as a part of compliance of ESR</li>
+                                        <li><strong><a href="@Url.Action("ESRReport", "ESRSubServices")" class="link">ESR Report Filing</a> - </strong>We do the preparation of the ESR Report as per the requirement of the Ministry of Finance (MOF).</li>
+                                        <li><strong><a href="@Url.Action("ESRNotificationFiling", "ESRSubServices")" class="link">Resubmission of ESR Notification Filing -</a> </strong> In accordance with Article 4.4 of Ministerial Decision 100, we will assist you in the resubmission of your ESR Notifications. </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/economic-substance-regulations");
+         })
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+</script>

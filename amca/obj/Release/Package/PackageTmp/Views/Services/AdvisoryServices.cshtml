@@ -1,0 +1,187 @@
+﻿@{
+    ViewBag.Title = "Advisory Services | Advisory Services Consultants in Dubai, UAE";
+    ViewBag.PageTitle = "Advisory Services in Dubai";
+    ViewBag.Keyword = "feasibility study, business plan, management report, financial advisory, company valuation in dubai, management consultancy in dubai, business advisory services in dubai, financial advisory services in uae, due diligence, feasibility, writing a business plan";
+    ViewBag.Description = "Advisory services in Dubai, UAE. AMCA is one of the best advisors in Dubai. We will provide business consultancy services for any firm";
+}
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>Advisory Services</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/AdvisoryServicesSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/goAML.svg" class="img-responsive" title="@ViewBag.PageTitle" alt="@ViewBag.PageTitle" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("ServiceQuery", "Services", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <h4><strong>Free Consultation</strong></h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                @Html.RadioButtonFor(model => model.LeadDataType, "Entity", new { @checked = "checked" }) Entity
+                                                @Html.RadioButtonFor(model => model.LeadDataType, "Individual") Individual
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6" id="CompanyName">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                                @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                                @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                                @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                                @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" id="TradeLicenseAuthority">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                                @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                                @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Service", new { @class = "form-control textFld" })
+                                                @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div id="captcha">
+                                                @Scripts.Render("~/bundles/jquery")
+                                                @Html.Captcha("Refresh", "", 5)
+                                                @Html.Hidden("txtPageName", "AdvisoryServices")
+                                                @Html.Hidden("txtPageID", "2")
+                                                @Html.ValidationSummary(true)
+                                            </div>
+                                            <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="hidden" id="token" name="token">
+                                                <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Businesses today face critical difficulties considering the rapidly changing economic landscape; along these lines, a strong plan that could diminish its impact on a company must be given priority. A good strategy is an aftereffect of deep analysis and interpretation of the current situation of one’s business which will inevitably result in a definitive objective of it. Not everyone can be a business analyst; likewise, only the experts can interpret your business, which is why business owners should acquire business advisory services and seek the help of business advisors to navigate the rapidly changing business market.
+                    </p>
+                    <p>
+                        AMCA is notable for its dedicated and capable expert business and financial advisors. Our professionals are known for showcasing specialized aptitude with profound industry experiences. We can undoubtedly take care of the business at expense and time. We provide professional advice for the company valuation, feasibility study, management consultancy, due diligence, business plan, and management report.
+                    </p>
+                    <h3><strong>Business Valuation</strong></h3>
+                    <p>With the help of the company valuation, the business owner will give numerous facts and figures concerning the actual worth or value of a company in terms of competitors in the market, asset values, and income values.</p>
+                    <p><a href="@Url.Action("BusinessValuation", "AdvisorySubServices")">Read More</a></p>
+
+                    <h3><strong>Feasibility Study</strong></h3>
+                    <p>A business analysis that considers all the business factors, such as the economic, technical, legal, and scheduling considerations, is known as the feasibility study.</p>
+                    <p><a href="@Url.Action("FeasibilityStudy", "AdvisorySubServices")">Read More</a></p>
+
+                    <h3><strong>Management Consultancy</strong></h3>
+                    <p>In management consulting, organizations are helped to improve their performance. For various reasons, associations hire management consultants, including gaining external advice and accessing specialized expertise.</p>
+                    <p><a href="@Url.Action("ManagementConsultancy", "AdvisorySubServices")">Read More</a></p>
+
+                    <h3><strong>Due Diligence</strong></h3>
+                    <p>The due diligence process starts with an investigation to see the risks, such as financial, legal, or operational risks, from a legal perspective.</p>
+                    <p><a href="@Url.Action("DueDiligence", "AdvisorySubServices")">Read More</a></p>
+
+                    <h3><strong>Business Plan</strong></h3>
+                    <p>A business plan can be dubbed the “roadmap to success.” It provides greater transparency and clarity in all the business aspects that can help improve.</p>
+                    <p><a href="@Url.Action("BusinessPlan", "AdvisorySubServices")">Read More</a></p>
+
+                    <h3><strong>Management Report</strong></h3>
+                    <p>A management report is an essential factor in running an effective business. It is considered an important tool to track and analyze the overall business health while looking at the areas needed to improve and growth opportunities.</p>
+                    <p><a href="@Url.Action("ManagementReport", "AdvisorySubServices")">Read More</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/advisory-services-in-dubai-uae");
+    })
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+</script>
+
+<script>
+    $(function () {
+
+        $(':radio[name=LeadDataType]').change(function () {
+            if ($(this).val() == "Individual") {
+                $("#CompanyName").hide();
+                $("#TradeLicenseAuthority").hide();
+            }
+            else {
+                $("#CompanyName").show();
+                $("#TradeLicenseAuthority").show();
+            }
+        });
+    });
+</script>

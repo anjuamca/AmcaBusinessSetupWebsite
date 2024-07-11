@@ -1,0 +1,712 @@
+﻿
+@{
+    ViewBag.Title = "UAE Golden Visa | UAE Golden Visa Benefits and Requirements";
+    ViewBag.PageTitle = "UAE Golden Visa";
+    ViewBag.Keyword = "uae golden visa, golden visa, residence visa, residence visa uae, long term visa uae";
+    ViewBag.Description = "The UAE golden visa allows residency for ten years. Engineers, coders, doctors and other professionals can now apply the golden visa. Dubai Golden Visa...";
+    ViewBag.goldenVisa = "ActiveSubLink";
+    ViewBag.Value = "UAE Golden Visa";
+}
+@model amca.Models.Validation
+@using CaptchaMvc.HtmlHelpers; 
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner"> 
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>PRO Services</li>
+                    <li>Visa Services </li>
+                    <li>Golden Visa</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/VisaSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/10-years-golden-visa.jpg" class="img-responsive" alt="10-years-golden-visa" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("VisaQuery", "VisaSubServices", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Individual" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" id="ddlCatagories">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Catagories, new List<SelectListItem>
+                                            {
+                                                new SelectListItem{ Text="Catagories", Value = "" },
+                                                new SelectListItem{ Text="Investors", Value = "Investors" },
+                                                new SelectListItem{ Text="Outstanding Students", Value = "Outstanding Students" },
+                                                new SelectListItem{ Text="Specialized talents/ Researchers", Value = "Specialized talents/ Researchers" }
+
+                                            }, new { @class = "form-control selectpicker ddlCatagories" })
+                                            @Html.ValidationMessageFor(model => model.Catagories, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 CompanyName">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld ", @placeholder = "Company Name" })
+                                            @*@Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation " })*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 LicencedAuthority">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Licenced Authority Name", new { @class = "form-control textFld" })
+                                            @*@Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })*@
+
+
+                                            @*@Html.TextBoxFor(model => model.TradeLicenseAuthority, new { @class = "form-control textFld LicencedAuthority", @placeholder = "Licenced Authority Name" })
+                @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation " })*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 UniversityDiv">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.University, new List<SelectListItem>
+                                            {
+                                                new SelectListItem{ Text="Mode", Value = "" },
+                                                new SelectListItem{ Text="University", Value = "University" },
+                                                new SelectListItem{ Text="Profession", Value = "Profession" }
+                                            }, new { @class = "form-control selectpicker University" })
+                                            @Html.ValidationMessageFor(model => model.University, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 Specfield">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Specialization, new List<SelectListItem>
+                                            {
+                                                new SelectListItem{ Text="Specialization", Value = "" },
+                                                new SelectListItem{ Text="Art and Culture", Value = "Art and Culture" },
+                                                new SelectListItem{ Text="Specialist (Engineering/ Science)", Value = "Specialist (Engineering/ Science)" },
+                                                new SelectListItem{ Text="Doctors", Value = "Doctors" },
+                                                new SelectListItem{ Text="Scientists", Value = "Scientists" },
+                                                new SelectListItem{ Text="Inventors", Value = "Inventors" },
+                                                new SelectListItem{ Text="Athletes", Value = "Athletes" },
+                                                new SelectListItem{ Text="Ph.D Holders", Value = "Ph.D Holders" },
+                                                new SelectListItem{ Text="Engineers", Value = "Engineers" },
+                                                new SelectListItem{ Text="Coders", Value = "Coders" },
+                                                new SelectListItem{ Text="Other", Value = "Other" },
+                                            }, new { @class = "form-control  selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.Specialization, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 School">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.SchoolName, new { @class = "form-control textFld", @placeholder = "School Name / University Name" })
+                                            @Html.ValidationMessageFor(model => model.SchoolName, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.GoldenVisaServices as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-md-6" >
+                                            <div id="captcha">
+                                                @Html.ValidationSummary(true)
+                                                @Scripts.Render("~/bundles/jquery")
+                                                @Html.Captcha("Refresh", "", 5)
+                                            </div>
+                                            <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="hidden" id="token" name="token">
+                                                <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>GOLDEN VISA</h2>
+                            <p>A number of significant amendments have been recently made to the Golden Visa scheme to simplify eligibility criteria. </p>
+                            <p>Some significant changes were made with respect to specific Emirates; According to the government portals, the eligibility criteria for Golden Visa UAE have been expanded to include the following:</p>
+                            <h2><u>Dubai Golden Visa</u></h2>
+                            <h3>Golden Visa for scientists</h3>
+                            <p>In accordance with the recommendations of the Emirates Scientists Council, this residence is offered to scientists and researchers with high achievement and influence under the following conditions: </p>
+                            <ul>
+                                <li>A recommendation letter from "Emirates Scientists Council" or a letter from "Rashid Award for Scientific outstanding" that he/she has been awarded the Medal of Scientific outstanding</li>
+                                <li>Copy of the sponsored passport.</li>
+                            </ul>
+                            <h3>Golden Visa for Athletes</h3>
+                            <p>Under this category, the Golden Residency Visa for specialised talents and researchers in various fields of science and knowledge is granted for 10 years without a sponsor and is subject to renewal.</p>
+                            <ul>
+                                <li>
+                                    <strong>Requirements:</strong>
+                                    <ul>
+                                        <li>Applicants need a recommendation letter from the General Authority of Sports in Dubai OR Dubai Sports Council.</li>
+                                        <li>A copy of the sponsored passport.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h3>Golden Visa for Doctors</h3>
+                            <p>A wide range of specialisations is available in this field. Veterinary doctors are included in this category. Doctors must have a letter stating their medical practice from the Health Authority or Ministry of Health of their country.</p>
+                            <ul>
+                                <li>
+                                    <strong>Requirements:</strong>
+                                    <ul>
+                                        <li>Applicants would require a copy of their labour card.</li>
+                                        <li>A copy of the labour contract from MOHRE.</li>
+                                        <li>A copy of the sponsored residency</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h3>Golden Visa for Inventors</h3>
+                            <ul>
+                                <li>
+                                    <strong>Requirements:</strong>
+                                    <ul>
+                                        <li>Applicant would require a recommendation letter from the Ministry of Economy.</li>
+                                        <li>A copy of the sponsored passport</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h3>Golden Visa for Executive Directors</h3>
+                            <p>Under this category, an Executive Director and his family members can be granted</p>
+                            <ul>
+                                <li>
+                                    <strong>Requirements:</strong>
+                                    <ul>
+                                        <li>Executive Directors would require a “NOC” letter from the company that does not mind the golden residency, also mentioned that the service period is not less than 5 years as a general manager – executive director – chairman of the board of directors.</li>
+                                        <li>Attested equivalency certificate of a higher degree from Ministry of Education.</li>
+                                        <li>Salary certificate, which should not be less than AED 50,000 monthly.</li>
+                                        <li>Labor contract with the same profession and salary certificate.</li>
+                                        <li>Bank statement for the last 6 months.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h3>Golden Visa for Specialists in Engineering & Science</h3>
+                            <p>This service grants a (Golden Residency Visa) for specialized talents and researchers in various fields of science and knowledge for a period of (10) years without a sponsor and subject to renewal (granted to applicant and his family member)</p>
+                            <ul>
+                                <li>Attested degree (bachelor's degree or higher) or a letter of equivalency for the academic degree from the Ministry of Education (in the case of the certificate from outside the country).</li>
+                                <li>Copy of the sponsored residency.</li>
+                                <li>A work contract in one of the following disciplines: (Epidemiology and Viruses - Artificial Intelligence - Big Data - Computer Engineering - Electronics Engineering - Software Engineering - Electrical Engineering - Genetic Engineering - Biotechnology Engineering).</li>
+                            </ul>
+
+                            <h3>Golden Visa for Creative Specialist in culture and Art</h3>
+                            <p>This service grants a (Golden Residency Visa) for specialized talents and researchers in various fields of science and knowledge for a period of (10) years without a sponsor and subject to renewal (granted to applicant and his family member)</p>
+                            <ul>
+                                <li>
+                                    <strong>Requirements:</strong>
+                                    <ul>
+                                        <li>Applicants will need a recommendation letter from the Dubai Culture and Arts Authority. </li>
+                                        <li>A copy of the sponsored passport.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h3>Golden Visa for Real Estate Investors</h3>
+                            <p>This service allows the real estate investor who owns a property equal valued at AED 2,000,000 or more at the time of purchase to apply for a 10 years renewable residency visa, and the husband or wife and children can be sponsored.</p>
+                            <ol>
+                                <li>Minimum 2 million value property or owned share ( one property or more ) under the applicant name</li>
+                                <li>In case the property is mortgage, an Noc letter from the bank to issue a visa on the property and shows the paid and remaining amounts</li>
+                            </ol>
+                            <h3>Golden Visa for entrepreneurs</h3>
+                            <p>This service grants (Golden Residency Visa) for a period of (5) years to an entrepreneur who owns an economic project of a technical or future nature based on risk & innovation. Further an Approval letter from Dubai Future Foundation must be needed for the same.</p>
+
+                            <h3>Golden Visa for outstanding students</h3>
+                            <p>The service grants a golden residency visa for outstanding students for a period of 5 or 10 years and automatically renewed if the same conditions are met.</p>
+                            <ul>
+                                <li>
+                                    <strong>Requirements:</strong>
+                                    <ul>
+                                        <li>
+                                            High school graduate
+                                            <ul>
+                                                <li>A recommendation letter from the Ministry of Education.</li>
+                                                <li>Copy of the sponsored residency (Dubai residents only).</li>
+                                                <li>Copy of the sponsored passport.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Universities graduate
+                                            <ul>
+                                                <li>Attested degree (bachelor's degree or higher) and academic transcript.</li>
+                                                <li>Copy of the sponsored residency (Dubai residents only).</li>
+                                                <li>Copy of the sponsored passport.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h3>Golden Visa for Retired Foreigners</h3>
+                            <p>Under this category, a retired foreigner can be granted a Golden Residency Visa for 5 years without a sponsor, subject to renewal.</p>
+                            <ul>
+                                <li>
+                                    <strong>Requirement:</strong>
+                                    <ul>
+                                        <li>The applicant would need a bank letter with a deposit value or income of AED15,000 or real estate ownership with a value of one million AED.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h3>Golden Visa for Investors</h3>
+                            <p>This service grants (Golden Residency Visa) for a period of (5) or (10) years and automatically renewed if the same conditions are met</p>
+                            <ul>
+                                <li>
+                                    <strong>Investor in an investment fund (commercial investor)</strong>
+                                    <ul>
+                                        <li>Company's financial report for the previous year (Made by the company's financial auditor)</li>
+                                        <li>Company's Trade license and photocopy of the List of Partners' Names</li>
+                                        <li>Copy of the sponsored residency</li>
+                                        <li>Company's bank statement (last 3 months)</li>
+                                        <li>Company's (VAT Return) for the previous year</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Investor in an investment fund (deposit)</strong>
+                                    <ul>
+                                        <li>A bank letter in Arabic form showcases a "fix deposit". A note must be mentioned in the letter. (The fixed deposit will not be broken for the next two years, OR in case the fixed deposit was broken for any reason, the General Directorate of Residency and Foreigners Affairs - Dubai must be notified)</li>
+                                        <li>Copy of the sponsored passport.</li>
+                                        <li>Tenancy contract.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Investor in (Tax Return Investor)</strong>
+                                    <ul>
+                                        <li>A letter from the Federal Tax Authority.</li>
+                                        <li>Company's Trade license and photocopy of the List of Partners' Names.</li>
+                                        <li>Copy of the sponsored residency.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h2><u>UAE Golden Visa- Other Emirates</u></h2>
+                            <ul>
+                                <li>
+                                    <strong>Golden Visa for Persons Who are Talented Pioneers</strong>
+                                    <ul>
+                                        <li>Specialist- Specialist in culture</li>
+                                        <li>Specialist- Information Technology Professionals</li>
+                                        <li>Specialists- Professionals in Education</li>
+                                        <li>Talent in Digital Technology</li>
+                                        <li>Scholars- Elite Educational Field</li>
+                                        <li>Scientists- Elite Health Fields</li>
+                                        <li>Scientists- Elite Field of Industries and 4th Industrial Revolution</li>
+                                        <li>Scholars- Senior Scholars and Clerics</li>
+                                        <li>Scientists- Scientists and Researchers with Achievements</li>
+                                        <li>Creative People of Culture and Art- The Distinguished Professionals</li>
+                                        <li>Creative People of Culture and Art- Prominent</li>
+                                        <li>Humanitarian Pioneers</li>
+                                        <li>Creators of People of Culture and Art- Major</li>
+                                        <li>Exceptional Talent</li>
+                                        <li>Innovators and Inventors</li>
+                                        <li>Scientists and Specialists- Health Professionals</li>
+                                        <li>Scientists and Specialists- Holders of a master’s degree or Doctorate</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Golden Visa for Frontline Workers</strong>
+                                    <ul>
+                                        <li>In crises such as the Covid-19 Pandemic, frontline workers may also be granted Golden Visas.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Golden Visa for High Schools Top Ranked in UAE</strong>
+                                    <ul>
+                                        <li>Obtaining an excellent grade or an average of 95% from public or private schools.</li>
+                                        <li>A recommendation letter from the Ministry of Education.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Golden Visa for Graduates of Accredited Universities in the UAE</strong>
+                                    <ul>
+                                        <li>A recommendation letter from the university states that his GPA is at least (3.8).</li>
+                                        <li>Duration should be at most two years since graduation.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Golden Visa for Graduates of Accredited Universities outside the UAE</strong>
+                                    <ul>
+                                        <li>The university ranking should not be at least the top 100 universities in the world according to the international classification approved by the Ministry of Education.</li>
+                                        <li>GPA is at least (3.5) for bachelor students.</li>
+                                        <li>Duration should be at most two years since graduation.</li>
+                                        <li>Approved certificate from the Ministry of Education.</li>
+                                        <li>
+                                            The List of the top 100 universities:
+                                            <button class="show-1-yes">Show ( + )</button>
+                                            <button class="hide-1-yes">Hide ( - )</button>
+                                            <ul id="target-1">
+                                                <li>Massachusetts Institute of Technology</li>
+                                                <li>University of Oxford</li>
+                                                <li>Princeton University</li>
+                                                <li>Cornell University</li>
+                                                <li>Stanford University</li>
+                                                <li>University of Cambridge</li>
+                                                <li>Harvard University</li>
+                                                <li>California Institute of Technology</li>
+                                                <li>Imperial College London</li>
+                                                <li>University College London</li>
+                                                <li>Zurich Swiss Federal Institute of Technology</li>
+                                                <li>University of Chicago</li>
+                                                <li>National University of Singapore</li>
+                                                <li>Nanyang Technological University</li>
+                                                <li>University of Pennsylvania</li>
+                                                <li>Ecole Polytechnique Federale de Lausanne</li>
+                                                <li>Yale University</li>
+                                                <li>University of Edinburgh</li>
+                                                <li>Tsinghua University</li>
+                                                <li>Peking University</li>
+                                                <li>Columbia University</li>
+                                                <li>University of Hong Kong</li>
+                                                <li>University of Michigan</li>
+                                                <li>Johns Hopkins University</li>
+                                                <li>The University of Tokyo</li>
+                                                <li>University of Toronto</li>
+                                                <li>Australian National University</li>
+                                                <li>McGill University</li>
+                                                <li>The University of Manchester</li>
+                                                <li>Northwestern University</li>
+                                                <li>Fudan University</li>
+                                                <li>University of California, Berkeley</li>
+                                                <li>Kyoto University</li>
+                                                <li>The Hong Kong University of Science and Technology</li>
+                                                <li>King's College London</li>
+                                                <li>Seoul National University</li>
+                                                <li>The University of Melbourne</li>
+                                                <li>The University of Sydney</li>
+                                                <li>The Chinese University of Hong Kong</li>
+                                                <li>University of California, Los Angeles</li>
+                                                <li>Korea Advanced Institute of Science & Technology</li>
+                                                <li>New York University</li>
+                                                <li>The University of New South Wales</li>
+                                                <li>PSL Research University</li>
+                                                <li>Zhejiang University</li>
+                                                <li>University of British Columbia</li>
+                                                <li>The University of Queensland</li>
+                                                <li>University of California, San Diego</li>
+                                                <li>London School of Economics and Political Science</li>
+                                                <li>Shanghai Jiao Tong University</li>
+                                                <li>Technische Universitat Munchen</li>
+                                                <li>Duke University</li>
+                                                <li>Carnegie Mellon University</li>
+                                                <li>City University of Hong Kong</li>
+                                                <li>University of Amsterdam</li>
+                                                <li>Tokyo Institute of Technology</li>
+                                                <li>Delft University of Technology</li>
+                                                <li>Monash University</li>
+                                                <li>Institut Polytechnique de Paris</li>
+                                                <li>Brown University</li>
+                                                <li>The University of Warwick</li>
+                                                <li>University of Bristol</li>
+                                                <li>Ruprecht Karls Universitat Heidelberg</li>
+                                                <li>Ludwig-Maximilians-Universitat Munchen</li>
+                                                <li>Universiti Malaya</li>
+                                                <li>The Hong Kong Polytechnic University</li>
+                                                <li>University of Texas at Austin</li>
+                                                <li>National Taiwan University</li>
+                                                <li>Universidad de Buenos Aires</li>
+                                                <li>Katholieke Universiteit Leuven</li>
+                                                <li>University of Zurich</li>
+                                                <li>Sorbonne University</li>
+                                                <li>University of Glasgow</li>
+                                                <li>Korea University</li>
+                                                <li>University of Wisconsin-Madison</li>
+                                                <li>Osaka University</li>
+                                                <li>University of Southampton</li>
+                                                <li>Lomonosov Moscow State University</li>
+                                                <li>University of Copenhagen</li>
+                                                <li>Yonsei University</li>
+                                                <li>Pohang University of Science and Technology</li>
+                                                <li>University of Illinois at Urbana-Champaign</li>
+                                                <li>Tohoku University</li>
+                                                <li>Durham University</li>
+                                                <li>University of Washington</li>
+                                                <li>The University of Auckland</li>
+                                                <li>Lund University</li>
+                                                <li>Georgia Institute of Technology</li>
+                                                <li>Royal Institute of Technology</li>
+                                                <li>University of Birmingham</li>
+                                                <li>University of St Andrews</li>
+                                                <li>University of Leeds</li>
+                                                <li>The University of Western Australia</li>
+                                                <li>Rice University</li>
+                                                <li>The University of Sheffield</li>
+                                                <li>Pennsylvania State University</li>
+                                                <li>Sungkyunkwan University</li>
+                                                <li>University of Science and Technology of China</li>
+                                                <li>Technical University of Denmark</li>
+                                                <li>University of North Carolina, Chapel Hill</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @*toggle_morefilter end*@
+                            </ul>
+                            <h2><u>Additional Information on Golden Visa-Other Emirates</u></h2>
+                            <ul>
+                                <li>
+                                    <strong>Outstanding Specialized Talents</strong>
+                                    <ul>
+                                        <li>It includes the following professions (Doctors and Scientists/Athletes/Inventors/Creative People of Culture and Art/Specialists in Scientific Fields/Executive Directors/Doctoral Degree Holders, and Pioneers of Humanitarian Work).</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Outstanding Specialized Talents - Doctors and Scientists</strong>
+                                    <ul>
+                                        <li>Provide an approved letter from the Ministry of Health - UAE to practice medicine (doctors).</li>
+                                        <li>Valid passport copy.</li>
+                                        <li>Valid health insurance.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Outstanding Specialized Talents – Athletes</strong>
+                                    <ul>
+                                        <li>Provide a recommendation letter from the General Sports Authority or one of the Sports Councils.</li>
+                                        <li>Valid passport copy.</li>
+                                        <li>Valid health insurance.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Outstanding Specialized Talents – Inventors</strong>
+                                    <ul>
+                                        <li>Provide a recommendation letter from the Ministry of Economy.</li>
+                                        <li>Valid passport copy.</li>
+                                        <li>Valid health insurance.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Specialist– Specialist in culture </strong>
+                                    <ul>
+                                        <li>Provide an approved letter from the Department of Culture and Arts in the relevant emirate.</li>
+                                        <li>Valid passport copy.</li>
+                                        <li>Valid health insurance.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Outstanding Specialized Talents – Executive Directors</strong>
+                                    <ul>
+                                        <li>Provide an attested university degree.</li>
+                                        <li>Provide experience certificate (minimum 5 years of experience).</li>
+                                        <li>Provide a salary certificate (not less than 30,000 AED).</li>
+                                        <li>Valid work contract.</li>
+                                        <li>Valid passport copy.</li>
+                                        <li>Valid health insurance.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Outstanding Specialized Talents – Doctoral Degree Holders</strong>
+                                    <ul>
+                                        <li>Provide an attested copy of the PhD certificate from the Ministry of Education in one of the priority disciplines.</li>
+                                        <li>Valid passport copy.</li>
+                                        <li>Valid health insurance.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Outstanding Specialized Talents – Pioneers of humanitarian works</strong>
+                                    <ul>
+                                        <li>A candidate should be a pioneer in humanitarian work within one of the following categories:</li>
+                                        <li>Members who have worked in international and regional organisations, or outstanding employees, for a minimum of five years.</li>
+                                        <li>Members of civil associations and institutions of public interest, or outstanding employees, for a minimum of five years.</li>
+                                        <li>Individuals who have received an appreciation award from a local, regional, or international organisation specialising in humanitarian work.</li>
+                                        <li>Awarded to outstanding humanitarian volunteers with at least five years of service or at least 500 hours of volunteer service.</li>
+                                        <li>Funders of humanitarian work provide the value of the support of at least two million UAE dirhams or its equivalent.</li>
+                                        <li>All other categories of humanitarian work are agreed upon between the authority and the Ministry.</li>
+                                        <li>A minister can also nominate pioneers of humanitarian work.</li>
+                                        <li>Holding a university degree.</li>
+                                        <li>Completing other requirements imposed by a ministry or authority.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Investors in Public Investments</strong>
+                                    <ul>
+                                        <li>Submission of a letter from an investment fund accredited in the UAE stating that the investor has a deposit of two million dirhams.</li>
+                                        <li>Or submission of a valid commercial license or industrial license and a memorandum of the association stating that the investor’s capital is not less than two million dirhams.</li>
+                                        <li>Or partner in a company's capital with no less than 2 million dirhams.</li>
+                                        <li>Or submission of a letter from the Federal Tax Authority stating that the investor pays the government no less than AED 250,000 annually.</li>
+                                        <li>Or submit a letter from the Federal Tax Authority stating that he is a partner in an establishment that pays tax to the government, and his share in the tax is at least 250,000 dirhams annually.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Real estate investors</strong>
+                                    <ul>
+                                        <li>Provide a letter from the Department of Land and Real Estate Regulation of the respective emirate stating that he owns one or more properties whose value is not less than 2 million dirhams and state that the property is not subject to a loan.</li>
+                                        <li>Proof of housing in the country (home ownership/house rental contract).</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Entrepreneurs</strong>
+                                    <ul>
+                                        <li>A Letter from an auditor in the UAE stating that the project value is not less than 500,000 dirhams (the project owner).</li>
+                                        <li>Provide a letter from the authorities in the emirate stating that the project is of a technical or future nature in which leadership is achieved (the project owner)</li>
+                                        <li>Provide a letter from an accredited business incubator in the UAE to establish the proposed activity in the country (founder of a project)</li>
+                                        <li>Valid passport copy.</li>
+                                        <li>Valid health insurance.</li>
+                                        <li>Proof of housing in the country (home ownership/house rental contract).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/uae-golden-visa");
+    })
+
+</script>
+<script type="text/javascript">
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+
+    }, 500);
+
+    $(document).ready(function () {
+        $('.CompanyName').hide();
+        $('.LicencedAuthority').hide();
+        $('.School').hide();
+        $('.Specfield').hide();
+        $('.UniversityDiv').hide();
+    })
+
+    $('.ddlCatagories').change(function () {
+        if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 0) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.UniversityDiv').hide();
+        }
+        if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 1) {
+
+            $('.CompanyName').show();
+            $('.LicencedAuthority').show();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.UniversityDiv').hide();
+        }
+        else if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 2) {
+
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').show();
+            $('.Specfield').hide();
+            $('.UniversityDiv').hide();
+        }
+        else if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 3) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.UniversityDiv').show();
+        }
+        else {
+            $('.UniversityDiv').hide();
+        }
+    })
+
+    $('.UniversityDiv').change(function () {
+        var aa = document.getElementsByClassName('University')[1].selectedIndex;
+        if (document.getElementsByClassName('University')[1].selectedIndex == 1) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+        }
+        else if (document.getElementsByClassName('University')[1].selectedIndex == 2) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').show();
+
+        }
+    })
+
+    $('#toggle_morefilter').hide();
+    $(document).ready(function () {
+        $('#show-hidden-university').click(function () {
+            $('#toggle_morefilter').slideToggle("slow");
+          
+        });
+    });
+    $('.hide-1-yes').hide();
+    $('#target-1').hide();
+    $('.show-1-yes').click(function () {
+        $('#target-1').show(500);
+        $('.show-1-yes').hide(0);
+        $('.hide-1-yes').show(0);
+    });
+    $('.hide-1-yes').click(function () {
+        $('#target-1').hide(500);
+        $('.show-1-yes').show(0);
+        $('.hide-1-yes').hide(0);
+    });
+</script>

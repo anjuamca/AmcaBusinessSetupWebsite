@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D84E55C2-0125-40ED-B2AA-06E7F9FA770A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>amca</RootNamespace>
+    <AssemblyName>amca</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44342</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="hbehr.recaptcha, Version=1.9.0.36338, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReCaptcha-AspNet.1.9.0\lib\net472\hbehr.recaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BusinessLogic\Insight.cs" />
+    <Compile Include="Controllers\AdvisorySubServicesController.cs" />
+    <Compile Include="Controllers\BusinessSetupSubServicesController.cs" />
+    <Compile Include="Controllers\CareerController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ESRSubServicesController.cs" />
+    <Compile Include="Controllers\ExperiencedCareerRolesController.cs" />
+    <Compile Include="Controllers\InsightController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\PROSubServicesController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\SidebarController.cs" />
+    <Compile Include="Controllers\StudentandCampusRoleController.cs" />
+    <Compile Include="Controllers\SubmitJobController.cs" />
+    <Compile Include="Controllers\VisaSubServicesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AMCAWebsiteCon.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMCAWebsiteCon.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AMCAWebsiteCon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMCAWebsiteCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AMCAWebsiteCon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMCAWebsiteCon.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BlogComment.cs">
+      <DependentUpon>AMCAWebsiteCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Candidate_Data_DL.cs" />
+    <Compile Include="Models\Candidate_Data_PL.cs" />
+    <Compile Include="Models\ContactUsData.cs">
+      <DependentUpon>AMCAWebsiteCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExperienceDesignation.cs" />
+    <Compile Include="Models\InsightModel.cs" />
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>AMCAWebsiteCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceModel.cs" />
+    <Compile Include="Models\ServiceModelD.cs" />
+    <Compile Include="Models\SQLConnectivity.cs" />
+    <Compile Include="Models\Validation.cs" />
+    <Compile Include="Models\WebsiteLead.cs">
+      <DependentUpon>AMCAWebsiteCon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap-datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="bootstrap-datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.bg.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ca.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.cs.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.da.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.de.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.el.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.es.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.fi.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.fr.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.he.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.hr.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.hu.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.id.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.is.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.it.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ja.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.kr.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.lt.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.lv.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ms.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.nb.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.nl.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pl.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pt-BR.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pt.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ro.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.rs-latin.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.rs.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ru.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sk.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sl.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sv.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sw.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.th.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.tr.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ua.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.uk.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.zh-TW.js" />
+    <Content Include="Content\aos.css" />
+    <Content Include="Content\bootstrap-select.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cookieconsent.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\owl.carousel.min.css" />
+    <Content Include="Content\owl.theme.default.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\AMCAWebsiteCon.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AMCAWebsiteCon.edmx</DependentUpon>
+      <LastGenOutput>AMCAWebsiteCon.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AMCAWebsiteCon.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AMCAWebsiteCon.edmx</DependentUpon>
+      <LastGenOutput>AMCAWebsiteCon.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\aos.js" />
+    <Content Include="Scripts\bootstrap-select.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\lazyload.js" />
+    <Content Include="Scripts\loader.js" />
+    <Content Include="Scripts\snow.js" />
+    <Content Include="wimages\404.jpg" />
+    <Content Include="wimages\AboutUs.svg" />
+    <Content Include="wimages\accounting-services-in-uae.jpg" />
+    <Content Include="wimages\addressBg.jpg" />
+    <Content Include="wimages\advertMark.svg" />
+    <Content Include="wimages\advisoryService.svg" />
+    <Content Include="wimages\advisory_service.svg" />
+    <Content Include="wimages\amca-VAT-Registration-in-UAE.jpg" />
+    <Content Include="wimages\amca-VAT-Registration-in-UAE.svg" />
+    <Content Include="wimages\amca_external_audit.jpg" />
+    <Content Include="wimages\amca_external_audit.svg" />
+    <Content Include="wimages\amca_federal_tax_authority_mandated.jpg" />
+    <Content Include="wimages\amca_federal_tax_authority_mandated.svg" />
+    <Content Include="wimages\amca_Indian_consulate_issues_advisory.jpg" />
+    <Content Include="wimages\amca_Indian_consulate_issues_advisory.svg" />
+    <Content Include="wimages\amca_new_requirements_will_not_imperil_offshore_formation.jpg" />
+    <Content Include="wimages\amca_new_requirements_will_not_imperil_offshore_formation.svg" />
+    <Content Include="wimages\amca_new_UAE_bankruptcy_law.jpg" />
+    <Content Include="wimages\amca_new_UAE_bankruptcy_law.svg" />
+    <Content Include="wimages\amca_small_firms_need.jpg" />
+    <Content Include="wimages\amca_small_firms_need.svg" />
+    <Content Include="wimages\amca_VAT_could_mean_higher_costs_for_banking_service.jpg" />
+    <Content Include="wimages\amca_VAT_could_mean_higher_costs_for_banking_service.svg" />
+    <Content Include="wimages\assetM.svg" />
+    <Content Include="wimages\auditAss.svg" />
+    <Content Include="wimages\audit_assurance.svg" />
+    <Content Include="wimages\automative.svg" />
+    <Content Include="wimages\avtar.jpg" />
+    <Content Include="wimages\bgAbout.jpg" />
+    <Content Include="wimages\bgrow.jpg" />
+    <Content Include="wimages\business-valuation.svg" />
+    <Content Include="wimages\BusinessPlan.svg" />
+    <Content Include="wimages\businessSetup.svg" />
+    <Content Include="wimages\business_setup.svg" />
+    <Content Include="wimages\CbCR.svg" />
+    <Content Include="wimages\chemical.svg" />
+    <Content Include="wimages\confidentiality.svg" />
+    <Content Include="wimages\constructionR.svg" />
+    <Content Include="wimages\consumer.svg" />
+    <Content Include="wimages\coronavirus-smashes-2020.jpg" />
+    <Content Include="wimages\dafza.png" />
+    <Content Include="wimages\ded.png" />
+    <Content Include="wimages\deRegistration.svg" />
+    <Content Include="wimages\difc-unveils-a-new-innovation-license.jpg" />
+    <Content Include="wimages\difc.png" />
+    <Content Include="wimages\dmcc-audit-report-deadline-2020.jpg" />
+    <Content Include="wimages\dmcc.png" />
+    <Content Include="wimages\dsoa-logo.png" />
+    <Content Include="wimages\dtec.png" />
+    <Content Include="wimages\DueDeligence.svg" />
+    <Content Include="wimages\DWC.png" />
+    <Content Include="wimages\EconomicSubstanceRegulation.svg" />
+    <Content Include="wimages\Emanuela.jpg" />
+    <Content Include="wimages\energyN.svg" />
+    <Content Include="wimages\esr-notification.jpg" />
+    <Content Include="wimages\esr.jpg" />
+    <Content Include="wimages\Evaluation-of-Audit.jpg" />
+    <Content Include="wimages\external_audit.jpg" />
+    <Content Include="wimages\favicon.png" />
+    <Content Include="wimages\FeasibilityStudy.svg" />
+    <Content Include="wimages\feedback.svg" />
+    <Content Include="wimages\financialS.svg" />
+    <Content Include="wimages\foodCo.svg" />
+    <Content Include="wimages\Freezone.svg" />
+    <Content Include="wimages\fta.png" />
+    <Content Include="wimages\fujaira.png" />
+    <Content Include="wimages\goAML.svg" />
+    <Content Include="wimages\healthcare.svg" />
+    <Content Include="wimages\how-to-correct-errors-in-your-vat-return.jpg" />
+    <Content Include="wimages\icon-play.png" />
+    <Content Include="wimages\importance-accounting-in-the-business -world.svg" />
+    <Content Include="wimages\importance-accounting-in-the-business-world.jpg" />
+    <Content Include="wimages\industriesMet.svg" />
+    <Content Include="wimages\intigrity.svg" />
+    <Content Include="wimages\IntroVideoAMCA.mp4" />
+    <Content Include="wimages\jafza.png" />
+    <Content Include="wimages\language.svg" />
+    <Content Include="wimages\legalAdv.svg" />
+    <Content Include="wimages\Liquidation-of-Company.jpg" />
+    <Content Include="wimages\liquidation_deregistration.svg" />
+    <Content Include="wimages\logo.svg" />
+    <Content Include="wimages\logo1.svg" />
+    <Content Include="wimages\logoFooter.svg" />
+    <Content Include="wimages\Looking-for-RAKEZ-Approved-Auditors.jpg" />
+    <Content Include="wimages\mail-5.png" />
+    <Content Include="wimages\mailGraphics.svg" />
+    <Content Include="wimages\main.jpg" />
+    <Content Include="wimages\Mainland.svg" />
+    <Content Include="wimages\ManagementConsultancy.svg" />
+    <Content Include="wimages\ManagementReport.svg" />
+    <Content Include="wimages\MissionAndVision.svg" />
+    <Content Include="wimages\missionVision.jpg" />
+    <Content Include="wimages\Mr_Abdulla.jpg" />
+    <Content Include="wimages\Mr_Tariq.jpg" />
+    <Content Include="wimages\Natalie.jpg" />
+    <Content Include="wimages\New-Law-Alert-get-ready-to-regulate-Family-Owned-Business.jpg" />
+    <Content Include="wimages\New-Law-For-Setting-Up-Government-Companies-in-Dubai.jpg" />
+    <Content Include="wimages\nonprofit.svg" />
+    <Content Include="wimages\Offshore.svg" />
+    <Content Include="wimages\oilGas.svg" />
+    <Content Include="wimages\oilM.svg" />
+    <Content Include="wimages\parentcompanyofficers.svg" />
+    <Content Include="wimages\powerU.svg" />
+    <Content Include="wimages\privateE.svg" />
+    <Content Include="wimages\productionD.svg" />
+    <Content Include="wimages\Qingdao.jpg" />
+    <Content Include="wimages\quotes.png" />
+    <Content Include="wimages\restuarent.svg" />
+    <Content Include="wimages\retailtrade.svg" />
+    <Content Include="wimages\taxConsulting.svg" />
+    <Content Include="wimages\tax_consulting.svg" />
+    <Content Include="wimages\technologyM.svg" />
+    <Content Include="wimages\the-unexpected-visitors.jpg" />
+    <Content Include="wimages\timely.svg" />
+    <Content Include="wimages\travelT.svg" />
+    <Content Include="wimages\uae-moves-towards-normalcy.jpg" />
+    <Content Include="wimages\UAE_flag.gif" />
+    <Content Include="wimages\UltimateBeneficialOwner.svg" />
+    <Content Include="wimages\vatAccounting.svg" />
+    <Content Include="wimages\vat_accounting.svg" />
+    <Content Include="wimages\Vinko.jpg" />
+    <Content Include="wimages\whoWeAre.jpg" />
+    <Content Include="wimages\yosufAhmad.jpg" />
+    <EntityDeploy Include="Models\AMCAWebsiteCon.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AMCAWebsiteCon.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AMCAWebsiteCon.edmx.diagram">
+      <DependentUpon>AMCAWebsiteCon.edmx</DependentUpon>
+    </Content>
+    <Content Include="sass\main.scss" />
+    <Content Include="sass\_mobile.scss" />
+    <Content Include="sass\_variables.scss" />
+    <Content Include="bootstrap-datetimepicker\less\datetimepicker.less" />
+    <Content Include="bootstrap-datetimepicker\LICENSE" />
+    <Content Include="bootstrap-datetimepicker\README.md" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\cookieconsent.min.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Page\AboutUs.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
+    <Content Include="wimages\companyProfile.pdf" />
+    <Content Include="Views\Sidebar\AuditSidebar.cshtml" />
+    <Content Include="Views\Sidebar\CommonSidebar.cshtml" />
+    <Content Include="Views\Sidebar\VatAccountingBookkeepingSidebar.cshtml" />
+    <Content Include="Views\Sidebar\TaxServicesSidebar.cshtml" />
+    <Content Include="Views\Services\AdvisoryServices.cshtml" />
+    <Content Include="Views\Sidebar\AdvisoryServicesSidebar.cshtml" />
+    <Content Include="Views\Services\BusinessSetUp.cshtml" />
+    <Content Include="Views\Sidebar\BusinessSetUpSidebar.cshtml" />
+    <Content Include="Views\Sidebar\LiquidationDeRegistrationSidebar.cshtml" />
+    <Content Include="Views\Page\Industries.cshtml" />
+    <Content Include="Views\Page\AuditFirmsInDubaiCareers.cshtml" />
+    <Content Include="Views\Page\Insights.cshtml" />
+    <Content Include="Views\Page\ContactUs.cshtml" />
+    <Content Include="Views\AdvisorySubServices\BusinessValuation.cshtml" />
+    <Content Include="Views\AdvisorySubServices\FeasibilityStudy.cshtml" />
+    <Content Include="Views\AdvisorySubServices\ManagementConsultancy.cshtml" />
+    <Content Include="Views\AdvisorySubServices\DueDiligence.cshtml" />
+    <Content Include="Views\AdvisorySubServices\BusinessPlan.cshtml" />
+    <Content Include="Views\AdvisorySubServices\ManagementReport.cshtml" />
+    <Content Include="Views\BusinessSetupSubServices\MainlandCompanyFormation.cshtml" />
+    <Content Include="Views\BusinessSetupSubServices\FreeZoneCompanyFormation.cshtml" />
+    <Content Include="Views\BusinessSetupSubServices\OffshoreCompanyFormation.cshtml" />
+    <Content Include="Views\Page\Disclaimer.cshtml" />
+    <Content Include="Views\Page\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Sidebar\BlogSidebar.cshtml" />
+    <Content Include="Views\Sidebar\BlogComment.cshtml" />
+    <Content Include="Views\QueryForm\QueryForm.cshtml" />
+    <Content Include="Views\Page\Success.cshtml" />
+    <Content Include="Views\Shared\_ThankyouLayout.cshtml" />
+    <Content Include="Views\Page\Guest.cshtml" />
+    <Content Include="Views\Page\BlogThankyou.cshtml" />
+    <Content Include="Views\Services\ESRService.cshtml" />
+    <Content Include="Views\Sidebar\ESRSidebar.cshtml" />
+    <Content Include="Views\ESRSubServices\ESRNotificationFiling.cshtml" />
+    <Content Include="Views\Sidebar\ESRServiceSidebar.cshtml" />
+    <Content Include="Views\ESRSubServices\ESRReport.cshtml" />
+    <Content Include="Views\Shared\_ProposalLayout.cshtml" />
+    <Content Include="Views\Page\ProposalSuccess.cshtml" />
+    <Content Include="Views\Page\RequestProposal.cshtml" />
+    <Content Include="Views\Services\PROServices.cshtml" />
+    <Content Include="Views\PROSubServices\Visa.cshtml" />
+    <Content Include="Views\PROSubServices\Attestation.cshtml" />
+    <Content Include="Views\VisaSubServices\TenYearsVisa.cshtml" />
+    <Content Include="Views\Sidebar\PROSidebar.cshtml" />
+    <Content Include="Views\Sidebar\VisaSidebar.cshtml" />
+    <Content Include="Views\Sidebar\PROServiceSidebar.cshtml" />
+    <Content Include="Views\Services\cbcr.cshtml" />
+    <Content Include="Views\Sidebar\ServiceSidebar.cshtml" />
+    <Content Include="Views\ESRSubServices\ESRTesting.cshtml" />
+    <Content Include="Views\BusinessSetupSubServices\QueryForm.cshtml" />
+    <Content Include="Views\AdvisorySubServices\QueryForm.cshtml" />
+    <Content Include="Views\VisaSubServices\QueryForm.cshtml" />
+    <Content Include="Views\ESRSubServices\QueryForm.cshtml" />
+    <Content Include="Views\Services\goAML.cshtml" />
+    <Content Include="Views\Services\RegulatoryComplianceReporting.cshtml" />
+    <Content Include="Views\Sidebar\RegulatoryComplianceReportingSidebar.cshtml" />
+    <Content Include="Views\Services\ParentCompany.cshtml" />
+    <Content Include="Views\Career\ExperiencedCareerRoles.cshtml" />
+    <Content Include="Views\Sidebar\CareerSidebar.cshtml" />
+    <Content Include="Views\Career\StudentAndCampusRole.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\TelesalesExecutive.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\DigitalMarketingSpecialist.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\AdminExecutive.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\HRExecutive.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\OfficeBoy.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\ContentWriter.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\ITCoordinator.cshtml" />
+    <Content Include="Views\SubmitJob\ApplyJob.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\ApplyJobs.cshtml" />
+    <Content Include="Views\Page\ThankyouCareer.cshtml" />
+    <Content Include="Views\Sidebar\goAMLSidebar.cshtml" />
+    <Content Include="Views\Services\UltimateBeneficialOwner.cshtml" />
+    <Content Include="Views\Insight\HomeInsight.cshtml" />
+    <Content Include="Views\Insight\InsightView.cshtml" />
+    <Content Include="Views\Insight\CoronaVirusSmashes2020.cshtml" />
+    <Content Include="Views\Insight\DIFCUnveilsANewInnovationLicense.cshtml" />
+    <Content Include="Views\Insight\DubaiNewLawToRegulateAFamilyOwnedBusiness.cshtml" />
+    <Content Include="Views\Insight\ESRAmmendment.cshtml" />
+    <Content Include="Views\Insight\ESRFilingDateExtendedto31January21.cshtml" />
+    <Content Include="Views\Insight\ESRUae.cshtml" />
+    <Content Include="Views\Insight\FullForeignOwnership.cshtml" />
+    <Content Include="Views\Insight\GetYourLifetimeInvestorVisaInUAE.cshtml" />
+    <Content Include="Views\Insight\goAMLRegistration.cshtml" />
+    <Content Include="Views\Insight\IndianConsulateIssues.cshtml" />
+    <Content Include="Views\Insight\IntroductionESR.cshtml" />
+    <Content Include="Views\Insight\NewLawForSettingUpGovernmentCompaniesInDubai.cshtml" />
+    <Content Include="Views\Insight\NewRequirementsWill.cshtml" />
+    <Content Include="Views\Insight\NewUAEBankruptcy.cshtml" />
+    <Content Include="Views\Insight\QueryForm.cshtml" />
+    <Content Include="Views\Insight\UAEAllows100ownership.cshtml" />
+    <Content Include="Views\Insight\UAEGoldenVisa.cshtml" />
+    <Content Include="Views\Insight\UAEMovesTowardsNormalcy.cshtml" />
+    <Content Include="Views\VisaSubServices\GoldenVisa.cshtml" />
+    <Content Include="Views\VisaSubServices\SilverVisa.cshtml" />
+    <Content Include="Views\VisaSubServices\BusinessVisa.cshtml" />
+    <Content Include="Views\VisaSubServices\RemoteWorkVisa.cshtml" />
+    <Content Include="Views\VisaSubServices\TouristVisa.cshtml" />
+    <Content Include="Views\VisaSubServices\RetirementVisa.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\MarketingSpecialist.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\ASPDotNET.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\VideoEditor.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\CompanyFormationSpecialist.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\PROAssistant.cshtml" />
+    <Content Include="Views\VisaSubServices\GreenVisa.cshtml" />
+    <Content Include="Views\VisaSubServices\EntryPermitsVisa.cshtml" />
+    <Content Include="Views\Page\_BlogPartialData.cshtml" />
+    <Content Include="Views\Sidebar\_RelatedPost.cshtml" />
+    <Content Include="Views\Page\TermsandConditions.cshtml" />
+    <Content Include="Views\ExperiencedCareerRoles\ITSystemAdministrator.cshtml" />
+    <Content Include="Views\Career\ListAllJobs.cshtml" />
+    <Content Include="Views\Career\JobDescription.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="CandidateCV\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Views\RequestProposal\" />
+    <Folder Include="Views\StudentandCampusRole\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>16126</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44342/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

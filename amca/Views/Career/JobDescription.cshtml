@@ -1,0 +1,63 @@
+﻿@model amca.Models.Candidate_Data_PL
+@{
+    ViewBag.Title = @Model.PageTitle;
+    ViewBag.PageTitle = @Model.PageTitle;
+    ViewBag.Keyword = @Model.Keyword;
+    ViewBag.Description = @Model.MetaDescription;
+    ViewBag.PageURL = "https://amcaauditing.com/" + @Model.PageURL;
+    ViewBag.Career = "active";
+    ViewBag.ogImageUrl = "https://amcaauditing.com/img/img1.svg";
+}
+<style>
+    .jobtitle {
+        margin-top: 20px;
+        font-size: 24px;
+        color: #dca953;
+    }
+</style>
+<section>
+    <div class="row otherBanner aboutUs lgHeight">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="captionBanner">
+                    <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                        <li>Careers</li>
+                    </ul>
+                </div>
+            </div> <!-- end of col-md-12 -->
+        </div>
+    </div> <!-- end of row -->
+</section>
+<section>
+    <div class="row space sidebarFull">
+        <div class="container">
+            <div class="col-md-12">
+                <h2 class="jobtitle"> @Html.Raw(@Model.JobTitle)</h2>
+                <h3>Overview</h3>
+                @Html.Raw(@Model.JobContent)
+                <h3>Responsibilities</h3>
+                @Html.Raw(@Model.JobResponsibility)
+                <h3>Requirements</h3>
+                @Html.Raw(@Model.JobRequirements)
+                @using (Html.BeginForm("SubmitJob", "ExperiencedCareerRoles", FormMethod.Post, new { @class = "primary-form mt-3" }))
+                {
+                    @Html.HiddenFor(model => model.JobTitle, new { @class = "form-control textFld", @readonly = "readonly", Value = @Html.Raw(Model.JobTitle) })
+                    @Html.HiddenFor(model => model.AutoId, new { @class = "form-control textFld", @readonly = "readonly", Value = @Html.Raw(Model.AutoId) })
+                    <input type="submit" class="btn btnTheme mr0" value="Apply for this position">
+                }
+            </div>
+        </div>
+    </div>
+</section>
+@Scripts.Render("~/bundles/jquery")
+
+<script type="text/javascript">
+$(document).ready(function () {
+    window.addEventListener('popstate', function (event) {
+        location.reload();
+    }, false);
+    $(this).scrollTop(0);
+})
+</script>

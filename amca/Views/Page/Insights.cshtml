@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "AMCA Blogs | ESR | ESR Report | Business Setup";
+    ViewBag.Keyword = "insights, vat registration in uae, external audit, uae federal law, vat, federal tax authority";
+    ViewBag.Description = "VAT could mean higher costs for banking services | New UAE bankruptcy law to be operational in early 2017.";
+}
+@model amca.Models.InsightModel
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">Insights</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Insights</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="control-label">Service For</label>
+                        @Html.DropDownListFor(model => model.ServiceMain, ViewBag.AmcaAeServices as SelectList, "All", new { @class = "form-control textFld" })
+                    </div>
+                </div>
+            </div>
+            <div id="partial-load"></div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+
+    function SelectedValue() {
+        var ServiceType = null;
+        ServiceType = this.value;
+
+        $.ajax({
+            // method: "GET",
+            url: "/Page/BlogSearch",
+            type: "GET",
+            data: { ServiceType: ServiceType },
+            contentType: "application/json; charset=utf-8",
+            cache: false,
+            headers: {
+                'Cache-Control': 'no-cache'
+            },
+            processData: true,
+            success: function (result) {
+                document.getElementById("partial-load").innerHTML = result;
+            }
+        });
+    }
+
+    window.onload = function () {
+        document.all.ServiceMain.onchange = SelectedValue;
+        document.all.ServiceMain.selectedIndex = 0;
+        document.all.ServiceMain.onchange();
+
+    };
+</script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#eachBlog a ").mousedown(function (event) {
+            switch (event.which) {
+                case 1:
+                    var blogID = $(this).attr('id');
+                    $.ajax({
+                        type: "post",
+                        url: "/Insight/getdata",
+                        data: { "blogID": blogID },
+                        success: function (data) {
+                            Url = data;
+                            history.pushState("", document.title, window.location.origin + "/" + data);
+                            location.reload();
+                        }
+                    })
+
+                    break;
+
+                case 2:
+                    var blogID = $(this).attr('id');
+                    $.ajax({
+                        type: "post",
+                        url: "/Insight/getdata",
+                        data: { "blogID": blogID },
+                        success: function (data) {
+                            Url = data;
+                            window.open(window.location.origin + "/" + data, '_blank');
+                        }
+                    })
+
+                    break;
+            }
+
+
+        })
+    })
+
+
+</script>
+
+
+
+
+

@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Thankyou";
+    Layout = "~/Views/Shared/_ThankyouLayout.cshtml";
+}
+
+<div class="row">
+    <div class="msgthankyou">
+        <h1>Thank You!</h1>
+        <p>for giving comments</p>
+        <img src="wimages/mailGraphics.svg" class="img-responsive" alt="AMCA" title="Thank You">
+        @*<p>We are doing our best to be as responsive as possible and our experts will get back to you soon.</p>*@
+        <a href="@Url.Action("Index", "Page")">
+            <button class="btn btnTheme">Go To Homepage</button>
+        </a>
+    </div>
+</div>
+
+

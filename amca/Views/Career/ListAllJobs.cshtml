@@ -1,0 +1,121 @@
+﻿@model amca.Models.Candidate_Data_PL
+@{
+    ViewBag.Title = "Experienced Career Roles | Jobs in Dubai | Jobs in UAE";
+    ViewBag.PageTitle = "Experienced Career Roles";
+    ViewBag.Keyword = "jobs in uae, jobs in dubai, we are hiring, arabic auditor jobs in dubai, auditor jobs in dubai, aministrative specialist jobs in dubai, tele sales executive jobs in dubai, ";
+    ViewBag.Description = "Experienced career roles. We hire people with relevant experience across our company to assist us to reach our ambitious goals.";
+}
+<style>
+    .job-all-list {
+        margin-top: 30px;
+        background: #F3F4F4;
+        padding: 20px 10px;
+    }
+    .job-all-list .right-section {
+        margin-top: 8px;
+        text-align: right;
+    }
+    .job-all-list .right-section .d-flex-job {
+        display: flex;
+        width: 100%;
+    }
+    .job-all-list h4 {
+        color: #caa669;
+    }
+    .job-all-list .pill ul {
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+    }
+    .careers .open-positions ul li {
+        padding-bottom: 0px;
+        padding-right:0px;
+    }
+    .job-all-list .pill ul li {
+        display: inline-block;
+        background: #ddd;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .job-all-list .right-section .d-flex-job .location {
+        font-size: 16px;
+        width: 100%;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+        .job-all-list .right-section .d-flex-job .location span {
+            display: block;
+            font-size: 14px;
+            color: #919191;
+        }
+    .newJobs {
+        font-size: 12px;
+        color: #677078;
+        background: #f4f5f8;
+        padding: 0 10px;
+        line-height: 24px;
+        display: inline-block;
+        margin-right: 10px;
+    }
+    
+}
+</style>
+    <div class="row otherBanner aboutUs lgHeight">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="captionBanner">
+                    <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                        <li>Careers</li>
+                    </ul>
+                </div>
+            </div> <!-- end of col-md-12 -->
+        </div>
+    </div> <!-- end of row -->
+
+    <div class="row space section1 careers">
+        <div class="container">
+            <div class="col-md-12 open-positions">
+                    @foreach (var eachJob in Model.listData)
+                    {
+                            <div class="row">
+                                <div class="col-md-12 job-all-list">
+                                    <div class="col-md-6">
+                                        @if (eachJob.IsActive.ToString() == "True")
+                                        {
+                                            <span class="newJobs">We Are Hiring</span>
+                                        }
+                                        <h4>@eachJob.JobTitle</h4>
+                                        <div class="pill">
+                                            <ul>
+                                                <li>@eachJob.JobType</li>
+                                                <li>Posted On: @eachJob.createdOn</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 right-section">
+                                        <div class="d-flex-job">
+                                            <div class="location">@eachJob.CurrentLocation.ToString()<span>@eachJob.CountryCode.ToString()</span></div>
+                                            @if (eachJob.IsActive.ToString() == "True")
+                                            {
+                                                <div class="button-job">
+                                                    <a href="@eachJob.PageURL.ToString()" class="btn btnTheme" role="button">view and apply</a>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="button-job">
+                                                    <a href="javascript:void(0)" disabled role="button" class="btn btnTheme">view and apply</a>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                    </div>
+                             </div>
+                    }
+            </div>
+        </div>
+    </div>
+

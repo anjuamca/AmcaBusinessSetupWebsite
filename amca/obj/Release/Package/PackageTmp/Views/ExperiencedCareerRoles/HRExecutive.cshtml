@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "HR Executive | HR Executive Jobs in Dubai";
+    ViewBag.PageTitle = "HR Executive";
+    ViewBag.Keyword = "hr executive, human resources executive, human resources executive, hr executive, talent acquisition executive, role of hr executive, hr executive search, senior hr executive, hr executive work, hr cum admin, sr hr executive, hr and admin executive, hr & admin executive, executive director human resources, hr executive training, senior manager hr, admin cum hr, junior hr executive, hrm executive recruitment, senior executive human resources";
+    ViewBag.Description = "We are looking for a Human Resources Executive (HR Executive) having a previous experience in Accounting Firm. Duties & Responsibilities: Responsible for overall quality system in HR department";
+    ViewBag.HRExecutive = "ActiveSubLink";
+    ViewBag.Value = "HR Executive";
+}
+
+@model amca.Models.ExperienceDesignation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ExperiencedCareerRoles", "Career")">Experienced career roles</a></li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space sidebarFull">
+    <div class="container">
+        <div class="col-md-3 sidebarHalf">
+            @RenderPage("~/Views/Sidebar/CareerSidebar.cshtml")
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3><strong>We are looking for a Human Resources Executive (HR Executive) having a previous experience in Accounting Firm.</strong></h3>
+                    <p>Any Nationality (Female) with Pleasing Personality</p>
+                </div>
+                <div class="col-md-12 jobDesc">
+                    <h4 class="subHeading"><strong>Qualifications:</strong></h4>
+                    <ul>
+                        <li>Should have a Bachelor’s Degree in Human Resources, Business Administration, Finance, or a related field</li>
+                        <li>Should know HR transactions such as visa processing, compensation and benefits, recruitment, and other related HR functions.</li>
+                        <li>Should be proficient in English. Writing in Arabic is an advantage.</li>
+                        <li>Should be proficient in Microsoft Office</li>
+                        <li>Should be focused and attentive to details</li>
+                        <li>Should be an attentive listener, understanding, empathetic, and personable</li>
+                    </ul>
+                    <h4 class="subHeading"><strong>Duties &amp; Responsibilities</strong></h4>
+                    <ul>
+                        <li>Responsible for an overall quality system in an HR department</li>
+                        <li>Understanding and executing staffing requisition, requirements, and issues from all departments</li>
+                        <li>Drafting and updating documents such as job descriptions, employee handbooks, performance appraisals, forms, SOP, policies, and other HR-related documents.</li>
+                        <li>Screening the candidates by resume shortlisting, phone interviews, and personal interviews in coordination with the concerned departments</li>
+                        <li>Issuing Letter of Offer/Intent/Employment to the selected candidates</li>
+                        <li>Conducting orientation program and briefing to new employee</li>
+                        <li>Performing the visa applications and renewal of visas of the employees</li>
+                        <li>Taking care of the company's DMCC Portal</li>
+                        <li>Maintaining employee leaves, medical, and attendance records. Keeping track of employees’ attendance and absenteeism and reporting it to the Human Resources Manager</li>
+                        <li>Making the medical insurance application for the new employees</li>
+                        <li>Reviewing, updating, and maintaining proper filing, such as employees’ medical insurance policies</li>
+                        <li>Preparing and forwarding emails to all the employees</li>
+                        <li>Attending and understanding employee’s grievances in their work engagement level and implementing corrective measures for them</li>
+                        <li>Planning of company events or activities on occasions by management’s approval</li>
+                        <li>Organizing training sessions or training for employees, ensuring they are fully equipped to perform their duties.</li>
+                        <li>Promoting a positive and open work environment where employees feel comfortable speaking up about issues</li>
+                        <li>Displaying enough knowledge about the UAE’S overall pertinent labor laws</li>
+                    </ul>
+                    <br />
+                    @using (Html.BeginForm("SubmitJob", "ExperiencedCareerRoles", FormMethod.Post, new { @class = "primary-form mt-3" }))
+                    {
+                        @Html.HiddenFor(model => model.JobTitle, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                        <input type="submit" class="btn btnTheme mr0" value="Apply for this position">
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

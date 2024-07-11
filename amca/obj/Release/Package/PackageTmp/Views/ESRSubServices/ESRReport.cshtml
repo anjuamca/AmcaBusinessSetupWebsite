@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Economic Substance Report | ESR Reporting UAE";
+    ViewBag.Keyword = "economic substance report, esr report, licensee, federal tax authority, relevant activities, corporate entity, limited liability company, public joint stock company, private joint stock company, partnership, general partnership, financial reporting, vat, tax jurisdictions, uae branch(es), liquidation, ministry of finance, ministry of finance portal, economic substance test, penalt(ies), relevant income";
+    ViewBag.Description = "All the Licensees which derive Relevant Income from the Relevant Activities during a Reportable Period in the UAE are entitled to do their Economic Substance Report.";
+    ViewBag.ESRReport = "ActiveSubLink";
+    ViewBag.Value = "ESR Report";
+}
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.Title</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("ESRService", "Services")">Economic Substance Regulations (ESR)</a> </li>
+                    <li>Economic Substance Report</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/ESRSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/ESR-Report.jpg" class="img-responsive" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderPage("~/Views/ESRSubServices/QueryForm.cshtml")
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><strong>Introduction</strong></h2>
+                            <p>
+                                All the Licensees who derive Relevant Income from the Relevant Activities during a Reportable Period in the UAE are entitled to their Economic Substance Report. As part of the presentation of the ESR report, the National Assessing Authority is involved. As a result, the Federal Tax Authority must receive information about the Licensee and its income, expenditures, assets, employees, and governance-related activities.
+                            </p>
+                            <h3>The Submission of the ESR Report</h3>
+                            <p>
+                                The following entities (not an Exempted Licensee) must file their Economic Substance Report:
+                            </p>
+                            <ul>
+                               <li>A Corporate Entity</li>
+                               <li>Limited Liability Company</li>
+                               <li>Public Joint Stock Company</li>
+                               <li>Private Joint Stock Company etc.</li>
+                               <li>Partnership</li>
+                               <li>Limited Liability Partnership</li>
+                               <li>General Partnership</li>
+                            </ul>
+                            <h3>ESR Report Filing</h3>
+                            <ol>
+                                <li>
+                                    <strong>ESR Report Filing for a Multiple Licensee</strong>
+                                    <p>As per the Ministry of Finance, each Licensee must file the Economic Substance Report on a stand-alone basis. This is regardless of whether the Licensee is part of a consolidated group for financial reporting or VAT purposes.</p>
+                                </li>
+                                <li>
+                                    <strong>ESR Report Filing for the UAE Corporate Entity with UAE Branches</strong>
+                                    <p>For the UAE Corporate Entity, which has one or more UAE branches, it is its obligation to report their Relevant Activities and the Relevant Activities of their UAE branches in one composite ESR Report.</p>
+                                </li>
+                                <li>
+                                    <strong>ESR Report Filing for Foreign Entities with UAE Branch</strong>
+                                    <p>As long as a foreign entity has a UAE branch reporting to the foreign parent organization, its ESR Report is not required.</p>
+                                </li>
+                                <li>
+                                    <strong>ESR Report Filing for the UAE Entity, which carries Relevant Activities under its Foreign Branch</strong>
+                                    <p>For the UAE Entity, which carries Relevant Activities under its foreign branch or permanent establishment subject to tax in the foreign jurisdiction, it is not required for the UAE entity to do the Economic Substance Report of their Foreign Branch.</p>
+                                </li>
+                                <li>
+                                    <strong>ESR Report Filing for a Licensee which is in the process of Liquidation</strong>
+                                    <p>A Licensee who is in the process of Liquidation and probably carries out a Relevant Activity in the year of Liquidation must be able to comply with the filing of their ESR Notification and Economic Substance Report (where applicable) for the period up to liquidation.</p>
+                                </li>
+                            </ol>
+
+                            <h3>Deadline for ESR Report</h3>
+                            <p>The deadline to submit ESR Report is within 12 months of your financial year-end. For example, If your Financial year ended on 31 December 2021, you must file your ESR report no later than 31 Dec 2022.</p>
+                            <p><strong>Penalties for Failure to submit an Economic Substance Report and Failure to meet the Economic Substance Test</strong></p>
+                            <p>If the Licensee failed to submit the Economic Substance Report and any relevant information or documentation required to be raised or failed to meet the Economic Substance Test for each Financial Year, the Licensee is subjected to a dirhams fifty thousand (AED 50,000).</p>
+                            <p>An entity that will incorrectly claim exemption from the Economic Substance Regulations and knowingly provide incorrect or false information may result in the Licensee being considered to have failed the Economic Substance Test for the Relevant Reportable Period.</p>
+                            <p>An entity which will incorrectly claim exemption from the Economic Substance Regulations, and knowingly providing incorrect or false information, may result for the Licensee to be considered to have failed the Economic Substance Test for the Relevant Reportable Period. </p>
+                            <h3>Get in touch with us and let AMCA do it for you!</h3>
+                            <p>In relation to the Economic Substance Report, AMCA is here to help you and your business comply with the proper procedures for filing and submitting your ESR Report. In addition to ensuring that our Economic Substance Report is offered promptly, we prepare your ESR Report for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/esr-report-in-the-uae");
+         })
+
+</script>

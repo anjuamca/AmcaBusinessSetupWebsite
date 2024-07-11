@@ -1,0 +1,225 @@
+﻿
+@{
+    ViewBag.Title = "UAE Entry Permits Visa | Entry Permits Visa in Dubai";
+    ViewBag.PageTitle = "UAE Entry Permits Visa";
+    ViewBag.Keyword = "UAE Entry Permits visa,Entry Permits visa, business visa for dubai, uae business visa, dubai tourist visa ";
+    ViewBag.Description = "Visitors to the UAE with different purposes now have the option of applying for 10 different types of entry visas without the need for a host or sponsor.";
+    ViewBag.EntryPermitsVisa = "ActiveSubLink";
+    ViewBag.Value = "Entry Permits Visa";
+}
+@model amca.Models.Validation
+
+@using CaptchaMvc.HtmlHelpers;
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>PRO Services</li>
+                    <li>Visa Services </li>
+                    <li>Entry Permits Visa</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/VisaSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/tourist-VISA.jpg" class="img-responsive" alt="Retirement Visa UAE" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("VisaQuery", "VisaSubServices", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Individual" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+            <div>
+                <div class="form-group Specfield">
+                    @Html.DropDownListFor(model => model.Emirate, new List<SelectListItem>
+                    {
+                       new SelectListItem{ Text="Emirate", Value = "" },
+                       new SelectListItem{ Text="Abu Dhabi", Value = "Abu Dhabi" },
+                       new SelectListItem{ Text="Ajman", Value = "Ajman" },
+                       new SelectListItem{ Text="Dubai", Value = "Dubai" },
+                       new SelectListItem{ Text="Fujairah", Value = "Fujairah" },
+                       new SelectListItem{ Text="Ras Al Khaimah", Value = "Ras Al Khaimah" },
+                       new SelectListItem{ Text="Sharjah", Value = "Sharjah" },
+                       new SelectListItem{ Text="Umm Al Quwain", Value = "Umm Al Quwain" },
+                    }, new { @class = "form-control  selectpicker" })
+                    @Html.ValidationMessageFor(model => model.Emirate, "", new { @class = "errorValidation " })
+                </div>
+            </div>
+        </div>*@
+                                    @*<div class="col-md-6">
+            <div class="form-group">
+
+                @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Licenced Authority Name", new { @class = "form-control textFld LicencedAuthority" })
+                @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+
+            </div>
+        </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+            </div>
+        </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.EntryVisaServices as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="captcha">
+                                            @Scripts.Render("~/bundles/jquery")
+                                            @Html.ValidationSummary(true)
+                                            @Html.Captcha("Refresh", "", 5)
+                                        </div>
+                                        <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Entry Permits</h2>
+                            <p>Visitors to the UAE with different purposes now have the option of applying for ten different types of entry visas without the need for a host or sponsor.</p>
+                            <p>UAE visitors can choose from several types of visas under the new system. Introducing new permits will also eliminate the need for a host or sponsor.</p>
+                            <p>Entry visas have undergone significant improvements, such as facilitating entry requirements for all visa types and offering flexible visa durations to meet visitors' needs and their purpose for visiting. In addition, all entry visas will now be valid for 60 days from the date of issuance and will be available for single or multiple entries. In addition, they can be renewed for similar periods.</p>
+                            <h3>Job exploration entry visa</h3>
+                            <p>Designed to attract young talents and skilled professionals to explore job opportunities in the country, the Job Exploration Visa is mainly intended to attract such people. Applicants who meet the following requirements will be granted a visa without the need for a sponsor or host:</p>
+                            <ul>
+                                <li>Applicants must be categorized in the first, second, or third skill level according to the Ministry of Human Resources and Emiratisation</li>
+                                <li>Applicants must be fresh graduates of the top 500 universities worldwide
+                                <li>To be eligible, applicants must have a bachelor's degree or equivalent.</li>
+                            </ul>
+                            <h3>Business entry visa</h3>
+                            <p>Businesses and entrepreneurs can invest and do business in the UAE with a Business Entry Visa. The visa simplifies entry by eliminating the need for a sponsor or host.</p>
+                            <h3>Multi-entry tourist visa</h3>
+                            <p>A 5-year multi-entry tourist visa was introduced in addition to the regular tourist visa sponsored by the UAE tourism establishment.</p>
+                            <p>To make the process easier for tourists and visitors, the new multiple-entry tourist visa can now be granted to all nationalities. On each visit, tourists can stay in the country for 90 days on a five-year visa, which is extendable for another 90 days.</p>
+                            <p>To qualify for this visa, you must submit the following:</p>
+                            <ul>
+                                <li>In addition, applicants should provide proof of having a bank account with a balance of at least AED 14,700 ($4,000) or foreign currency equivalent during the last six (6) months.</li>
+                            </ul>
+                            <p>Besides the multi-entry visa, the UAE has begun issuing tourist visas for 60 days as part of the reforms.</p>
+                            <h3>Family visa</h3>
+                            <p>As UAE family visa rules allowed parents to sponsor their under-18-year-old children earlier. A parent can now sponsor a male child up to 25. It is also possible for disabled children to be sponsored by their parents under a special permit, and unmarried females can be sponsored for an indefinite period of time.</p>
+                            <h3>Entry permit to visit relatives or friends</h3>
+                            <p>Visitors may apply for an entry permit to visit family or friends if they are UAE citizens or residents. Hosts or sponsors are not needed.</p>
+                            <h3>Entry permit for a temporary work mission</h3>
+                            <p>An entry permit for a temporary work mission can be obtained by visitors sponsored by their employer and have a temporary assignment such as probation testing or a project-based mission. In addition, visitors who are relatives or friends of a UAE citizen or resident may apply for this entry permit.</p>
+                            <p>There are several requirements, including:</p>
+                            <ul>
+                                <li>Temporary work contract</li>
+                                <li>Clarification of the purpose of the visit from the employer</li>
+                                <li>Fitness to work and proof of health.</li>
+                            </ul>
+                            <h3>Entry permit for study and training</h3>
+                            <p>Those attending training and study courses or participating in internship programs are eligible for the entry permit for study and training. A university, educational institution, or research institute licensed in the country can sponsor this type of permit.</p>
+                            <p>It is necessary to obtain a letter from the entity stating the details of the training or internship program and how long it will last.</p>
+                            <h3>Residence permit for humanitarian cases</h3>
+                            <p>In the following humanitarian cases, UAE residence permits will be issued:</p>
+                            <ul>
+                                <li>To qualify for a residence permit, a female resident must have one or more children whose husband was of UAE nationality.</li>
+                                <li>Foreign-passport-holding parents or children of UAE citizens</li>
+                                <li>Foreign passport holders whose spouses and children are citizens of Gulf Corporation Council (GCC) states</li>
+                            </ul>
+                            <h3>Medical Treatment</h3>
+                            Foreign patients can be sponsored for treatment in the UAE by a medical establishment, government, or private hospital. The sponsor (medical establishment) is responsible for processing entry permits for patients seeking treatment.
+                            <h3>Diplomatic Affairs</h3>
+                            <p>Foreigners with Diplomatic, Memorable, or UN passports will be issued a Diplomatic Entry Permit.</p>
+                            <h3>Study or Training</h3>
+                            <p>An entry permit for study or training can be obtained by students sponsored by educational institutions or public and private entities.</p>
+                            <h3>Emergency</h3>
+                            <p>Emergency entry permits will be available to transit passengers, sailors, flight crews, and military personnel in an emergency.</p>
+                            <h3>GCC Residents</h3>
+                            <p>The GCC Resident Entry Permit can be obtained by residents of GCC countries and their escorts.</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/entry-permits-visa-uae");
+        //$("#ddlCatagories").hide();
+    })
+
+</script>
+<script>
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+
+    }, 500);
+    tsParticles.load({ preset: "fireworks" });
+</script>

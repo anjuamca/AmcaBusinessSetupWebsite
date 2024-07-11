@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Importance Accounting in the Business World";
+    ViewBag.Keyword = "importance accounting in the business world, accounting, what is accounting, what is the importance of accounting";
+    ViewBag.Description = "In the world of business, it is very common for us to hear that accounting plays a vital role as this gives the stakeholders a gauge of how well a company is performing. Given this, do we really know the how important accounting contributes to the business?";
+    ViewBag.PageURL = "https://amca.ae/importance-accounting-in-the-business-world";
+    ViewBag.ImageURL = "https://amca.ae/wimages/importance-accounting-in-the-business-world.jpg";
+}
+
+<div class="row otherBanner aboutUs">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <div class="servicesH">Insights</div>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li><a href="@Url.Action("Insights", "Page")">Insights</a> </li>
+                    <li>@ViewBag.Title</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                @RenderPage("~/Views/Sidebar/BlogSidebar.cshtml")
+                <div class="col-md-8 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/importance-accounting-in-the-business-world.jpg" class="img-responsive" title="Importance Accounting in the Business World" alt="Importance Accounting in the Business World" />
+                        </div>
+                    </div>
+                    <div class="row space3">
+                        <div class="col-md-12">
+                            <h1>@ViewBag.Title</h1>
+                            <p>In the world of business, it is very common for us to hear that accounting plays a vital role as this gives the stakeholders a gauge of how well a company is performing. Given this, do we really know the how important accounting contributes to the business? </p>
+                            <p>Before we jump into the significance of accounting in the world of business, let us first tackle the basics – what is accounting?</p>
+                            <h3>What is accounting? </h3>
+                            <p>The American Institute of Certified Public Accountants (AICPA) defines accounting as: "the art of recording, classifying, and summarizing in a significant manner and in terms of money, transactions and events which are, in part at least of financial character, and interpreting the results thereof." In layman’s term, it can be said that accounting is a regular maintenance of financial records and understanding what it is trying to say about the business.</p>
+
+                            <h3>What is the importance of accounting?</h3>
+
+                            <ol>
+                                <li><strong>Tracks business performance</strong> Accounting records reveals the results of operations and the financial position of the company as well. Various balance sheet and profit and loss ratios can also be calculated, which can aid user of financial statements to evaluate the performance of an entity. We can also compare previous period accounting data with the current period to gauge how the company performed through time.</li>
+                                <li><strong>Helps business to be statutory compliant</strong> Proper business accounting ensures timely recording our liabilities which needs to be paid within the prescribed time as some may result to penalties, this includes VAT penalties for some UAE companies, and higher interest expenses, in case of loans.</li>
+                                <li><strong>Supports to create budget and projections </strong> Accounting data helps to prepare budget and forecast for upcoming period. This can guide the business where to go and what to expect for the coming years.</li>
+                                <li><strong>Aids to monitor cash flow</strong> The working capital and cash requirement of an enterprise can be duly taken care by proper accounting system.</li>
+                            </ol>
+                            <p>Accounting is often referred as the language of business as it really says a lot about your business.</p>
+                        </div>
+                        <div class="col-md-12 writer text-right">
+                            <p class="date">15 Mar 2020</p>
+                            <h4><strong>Cyril Ibañez</strong></h4>
+                            <p>Certified Public Accountant</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="fb-share-button" data-href="https://amca.ae/importance-accounting-in-the-business-world" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Famca.ae%2Fimportance-accounting-in-the-business-world&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                            <script type="IN/Share" data-url="https://amca.ae/importance-accounting-in-the-business-world">
+                            </script>
+                        </div>
+                        @RenderPage("~/Views/Sidebar/BlogComment.cshtml")
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

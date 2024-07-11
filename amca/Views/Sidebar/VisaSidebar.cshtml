@@ -1,0 +1,87 @@
+﻿@model amca.Models.Validation
+<div class="col-md-3 recentPost">
+    <div class="mainSidebar">
+        <h3><strong>VISA</strong></h3>
+        <ul>
+            <li class="@ViewBag.goldenVisa"><a href="@Url.Action("GoldenVisa", "VisaSubServices")">Golden Visa</a></li>
+            <li class="@ViewBag.GreenVisa"><a href="@Url.Action("GreenVisa", "VisaSubServices")">Green Visa</a></li>
+            <li class="@ViewBag.EntryPermitsVisa"><a href="@Url.Action("EntryPermitsVisa", "VisaSubServices")">Entry Permits Visa</a></li>
+            <li class="@ViewBag.RemoteWorkVisa"><a href="@Url.Action("RemoteWorkVisa", "VisaSubServices")">Remote Work Visa</a></li>
+            @*<li class="@ViewBag.touristVisa"><a href="@Url.Action("TouristVisa", "VisaSubServices")">Tourist Visa</a></li>*@
+            <li class="@ViewBag.RetirementVisa"><a href="@Url.Action("RetirementVisa", "VisaSubServices")">Retirement Visa</a></li>
+        </ul>
+        @RenderPage("~/Views/Sidebar/_RelatedPost.cshtml")
+    </div>
+    @*<div class="row">
+            <div class="col-md-12 heading" style="margin-top: 20px;">
+                <h4>Recent Post</h4>
+            </div>
+        </div>*@
+    @*<div class="row post">
+            <div class="col-md-4">
+                <img src="~/wimages/ammendment-esr.jpg" class="img-responsive" title="The Amendments to the Economic Substance Regulations in the UAE" alt="The Amendments to the Economic Substance Regulations in the UAE" />
+            </div>
+            <div class="col-md-8">
+                <p class="date">8 Nov 2020</p>
+                <h5><a href="@Url.Action("ESRAmmendment", "Insight")">The Amendments to the Economic Substance Regulations in the UAE</a></h5>
+            </div>
+        </div>*@
+    <div class="row socialWr">
+        <div class="col-md-12 heading">
+            <h4>Receive Latest Updates</h4>
+        </div>
+        <div class="col-md-12">
+            @using (Ajax.BeginForm("BlogSidebar", "Insight", new AjaxOptions { HttpMethod = "POST", OnSuccess = "Showmessage" }, new { @id = "SubscribeForm" }))
+            {
+                <div class="row">
+                    <div class="col-md-12" style="display: flex;">
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btnSubscribe pull-right" value="Subscribe">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div id="SuccessfulMsg"></div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row socialWr">
+        <div class="col-md-12 heading">
+            <h4>Follow Us</h4>
+        </div>
+        <div class="col-md-12">
+            <ul class="socialIcons">
+                <a href="https://www.facebook.com/amcaauditing" target="_blank">
+                    <li class="fb">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </li>
+                </a>
+                <a href="https://www.linkedin.com/company/amcamiddleeast" target="_blank">
+                    <li class="in">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </li>
+                </a>
+                <a href="https://www.instagram.com/amca.auditing/" target="_blank">
+                    <li class="insta">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </li>
+                </a>
+                <a href="https://amcaauditing.com/" target="_blank">
+                    <li class="website">
+                        <i class="fa fa-link" aria-hidden="true"></i>
+                    </li>
+                </a>
+                <a href="https://www.youtube.com/watch?v=bcMiiT8Y04s" target="_blank">
+                    <li class="youtube">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</div>

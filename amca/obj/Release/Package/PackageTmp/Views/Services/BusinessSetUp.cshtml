@@ -1,0 +1,193 @@
+﻿@{
+    ViewBag.Title = "Business Setup Services in Dubai, UAE | Business Consultants";
+    ViewBag.PageTitle = "Business Setup services in Dubai, UAE";
+    ViewBag.Keyword = "business setup, business setup in uae, setting up a company, business setup consultants in UAE, company formation in uae, setting up a new business, company setup in uae, business setup services, mainland company formation, freezone company formation, setting up a corporation, setting up a new company, income tax, tax advantage, rising economy, logistics services, no corporate tax, free zone company set-up, fastest growing economies, UAE offshore company, free zone company, mainland, free zones in uae,uae business setup, business setup, setting up a business, new business ideas in uae, starting a business in the uae, free zones in uae";
+    ViewBag.Description = "Looking for a business setup services in Dubai ? We are one of the best business setup consultants in Dubai, UAE. We will help you to start your own business.";
+}
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>Business Setup</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/BusinessSetUpSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/businessSetup.svg" class="img-responsive" title="@ViewBag.PageTitle" alt="@ViewBag.PageTitle" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("ServiceQuery", "Services", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            Entity     @Html.RadioButtonFor(model => model.LeadDataType, "Entity", new { @checked = "checked" })
+                                            Individual @Html.RadioButtonFor(model => model.LeadDataType, "Individual")
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6" id="CompanyName">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" id="TradeLicenseAuthority">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Service", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="captcha">
+                                            @Scripts.Render("~/bundles/jquery")
+                                            @Html.Captcha("Refresh", "", 5)
+                                            @Html.Hidden("txtPageID", "1")
+                                            @Html.Hidden("txtPageName", "BusinessSetUp")
+                                            @Html.ValidationSummary(true)
+                                        </div>
+
+                                        <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    @*<img src="wimages/audit_assurance.svg" class="rightImg" alt="Audit Assurance" title="Audit Assurance">*@
+
+                    <p>Recent years have witnessed a boom in investment in the UAE. Moreover, thanks to economic reforms implemented by forward-looking governments, businesses worldwide are becoming more interested in setting up regional operations in the UAE.</p>
+                    <p>Amca offers a wide variety of business setup services in Dubai and the UAE for medium and large enterprises. We provide business setup services that are rooted in trust and quality.</p>
+                    <h3><strong>Why Set Up Your Business in UAE?</strong></h3>
+                    <p>The United Arab Emirates is known to provide all the incoming businesses with the privileges of setting up a new business in the country. From having a very satisfying industry environment to providing efficient quality services to the incoming companies, we cannot deny that new business ideas in UAE are such a good thing to consider. Aside from this, UAE is also known for providing new businesses a very modern and stylish amenities while having a universal government standard. These things are given to all incoming new companies regardless of their country of origin.</p>
+                    <p>As of today, more and more entrepreneurs and investors are launching their business in the UAE, as they are entitled to receive and enjoy the following privileges:</p>
+                    <ul>
+                        <li><strong>Tax Advantage – </strong>The foreign investors in the UAE get to enjoy substantial tax benefits. They are exempted from paying their personal, corporate, and capital gains taxes. This business-friendly policy attracts a lot of new companies and established conglomerates to this prospering territory.</li>
+                        <li><strong>Rising Economy – </strong>UAE is known to be one of the fastest-growing economies, attracting businessmen and investors from different parts of the world. The UAE has a stable financial climate that helps many organizations, including those planning to set up a corporation.</li>
+                        <li><strong>Logistics services –</strong> UAE is considered the region’s best market for logistics. Its logistics market has been steadily driven by the consistent and fast growth of e-commerce across the region and using international trade. Likewise, it has the most advanced and developed infrastructure in the area.</li>
+                        <li><strong>No Corporate Tax -</strong> UAE and Dubai are both tax-free environments. Regardless of what of type of company it is, there is a zero corporate and income tax on the businesses. In Dubai, they are planning to open more and more tax-free zones to support different industries. </li>
+                        <li><strong>Free Zone Company Set-up – </strong>There are more than 45 free zones in UAE in which setting up a new company for foreign investors would be easy because it does not compromise on its ownership. It makes a perfect location for any business venture, manufacturing, trading, or service.</li>
+                    </ul>
+
+                    <h2><strong>Company Formation in UAE</strong></h2>
+                    <p>No matter what kind of business you wish to set up, and whatever the formation of that business, you will be in good hands with AMCA, your business setup consultant in the UAE.</p>
+                    <p>We will familiarize you with the law related to the UAE company setup. Then, we will apply for an operating license and submit all required documentation to the authorities. After that, we will handle the pre-approval process, so you don't need to do anything.</p>
+                    <p><strong>You can count on us for the following company formation:</strong></p>
+
+                    <ol>
+                        <li>
+                            <strong>Mainland Company Formation – </strong> A company on the mainland is registered in one of the UAE DED (Department of Economic Development). A business entity must be registered with the DED, which will provide you with a business license to start doing a business in UAE.
+                            <p><a href="@Url.Action("MainlandCompanyFormation", "BusinessSetupSubServices")">Read More</a></p>
+                        </li>
+                        <li>
+                            <strong>Free Zone Company Formation – </strong> A free zone company has no restriction in terms of ownership as an expat can hold complete 100%.
+                            <p><a href="@Url.Action("FreeZoneCompanyFormation", "BusinessSetupSubServices")">Read More</a></p>
+                        </li>
+                        <li>
+                            <strong>Offshore Company Formation – </strong> A UAE offshore company is established in another jurisdiction while its parent corporation is in another country.
+                            <p><a href="@Url.Action("OffshoreCompanyFormation", "BusinessSetupSubServices")">Read More</a></p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/business-setup-services-dubai");
+    })
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+</script>
+
+<script>
+    $(function () {
+
+        $(':radio[name=LeadDataType]').change(function () {
+            if ($(this).val() == "Individual") {
+                $("#CompanyName").hide();
+                $("#TradeLicenseAuthority").hide();
+            }
+            else {
+                $("#CompanyName").show();
+                $("#TradeLicenseAuthority").show();
+            }
+        });
+    });
+</script>

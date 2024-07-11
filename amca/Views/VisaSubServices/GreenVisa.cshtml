@@ -1,0 +1,343 @@
+﻿
+
+@{
+    ViewBag.Title = "UAE Green Residency Visa | Green Visa | 5 Year Residency Visa";
+    ViewBag.PageTitle = "UAE Green Visa";
+    ViewBag.Keyword = "uae silver visa, uae Green visa, residence visa,uae Green visa, residence visa uae, long term visa uae, how to apply for green visa uae";
+    ViewBag.Description = "A UAE green visa for five years can sponsor themselves without a sponsoring company, providing various benefits to family members as well.";
+    ViewBag.GreenVisa = "ActiveSubLink";
+    ViewBag.Value = "UAE Green Visa";
+}
+@model amca.Models.Validation
+@using CaptchaMvc.HtmlHelpers;
+
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>PRO Services</li>
+                    <li>Visa Services </li>
+                    <li>Green Visa</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/VisaSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/5-years-silver-visa.jpg" class="img-responsive" alt="5-years-silver-visa" title="@ViewBag.PageTitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("VisaQuery", "VisaSubServices", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Individual" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6" id="ddlCatagories">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Catagories, new List<SelectListItem>
+                                            {
+                                                new SelectListItem{ Text="Catagories", Value = "" },
+                                                new SelectListItem{ Text="Investors", Value = "Investors" },
+                                                new SelectListItem{ Text="Entrepreneur", Value = "Entrepreneur" },
+                                                new SelectListItem{ Text="Outstanding Students", Value = "Outstanding Students" },
+
+                                            }, new { @class = "form-control selectpicker ddlCatagories" })
+                                            @Html.ValidationMessageFor(model => model.Catagories, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 CompanyName">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 LicencedAuthority">
+                                        <div class="form-group">
+
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Licenced Authority Name", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+
+
+                                            @*@Html.TextBoxFor(model => model.TradeLicenseAuthority, new { @class = "form-control textFld LicencedAuthority", @placeholder = "Licenced Authority Name" })
+                @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation " })*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 UniversityDiv">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.University, new List<SelectListItem>
+                                            {
+                                                new SelectListItem{ Text="Mode", Value = "" },
+                                                new SelectListItem{ Text="University", Value = "University" },
+                                                new SelectListItem{ Text="Profession", Value = "Profession" }
+                                            }, new { @class = "form-control selectpicker University" })
+                                            @Html.ValidationMessageFor(model => model.University, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 Specfield">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Specialization, new List<SelectListItem>
+                                            {
+                                               new SelectListItem{ Text="Specialization", Value = "" },
+                                               new SelectListItem{ Text="Art and Culture", Value = "Art and Culture" },
+                                               new SelectListItem{ Text="Specialist (Engineering/ Science)", Value = "Specialist (Engineering/ Science)" },
+                                               new SelectListItem{ Text="Doctors", Value = "Doctors" },
+                                               new SelectListItem{ Text="Scientists", Value = "Scientists" },
+                                               new SelectListItem{ Text="Inventors", Value = "Inventors" },
+                                               new SelectListItem{ Text="Athletes", Value = "Athletes" },
+                                               new SelectListItem{ Text="Ph.D Holders", Value = "Ph.D Holders" },
+                                               new SelectListItem{ Text="Engineers", Value = "Engineers" },
+                                               new SelectListItem{ Text="Coders", Value = "Coders" },
+                                               new SelectListItem{ Text="Other", Value = "Other" },
+                                            }, new { @class = "form-control  selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.Specialization, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 School">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.SchoolName, new { @class = "form-control textFld", @placeholder = "School Name / University Name" })
+                                            @Html.ValidationMessageFor(model => model.SchoolName, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.GreenVisaServices as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div id="captcha">
+                                                @Scripts.Render("~/bundles/jquery")
+                                                @Html.ValidationSummary(true)
+                                                @Html.Captcha("Refresh", "", 5)
+                                            </div>
+                                            <p style="color:Red;text-align:right;">  @ViewBag.ErrMessage </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="hidden" id="token" name="token">
+                                                <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>The UAE has introduced a new green visa as part of the government's extensive changes to the visa system. </p>
+                            <p>Those with a UAE green visa for five years can sponsor themselves without a sponsoring company. Besides providing benefits to family members, it has several other advantages.</p>
+                            <h2>Who is eligible for a UAE green visa? </h2> 
+                            <p>
+                                In an effort to attract talents, professionals, freelancers, investors, and entrepreneurs, a new five-year residence track has been launched. These new residence types come with unparalleled benefits.
+                                In addition, more advantages have been added to facilitate family members' residences, extended grace periods between 6 months and 12 months for those whose residence permit has been canceled or expired, and simplified and facilitated all residence requirements.
+                            </p>
+                            <p>Applicants for green visas from the UAE fall into these categories;</p>
+                            <h3>Green residence for skilled employees</h3>
+                            <p>Skilled employees without a sponsor or employer now have a 5-year residency period under the Green residence amendments.</p>
+                            <p>Listed below are the only requirements:</p>
+                            <ul>
+                                <li>Valid employment contracts are required for applicants</li>
+                                <li>As per the Ministry of Human Resources and Emiratization, it should be classified at the first, second, or third occupational level.</li>
+                                <li>An undergraduate degree or equivalent is required as a minimum educational level.</li>
+                                <li>Applicants should have a minimum salary of AED 15,000 (USD 4,083.74).</li>
+                            </ul>
+                            <h2>Green residence for freelancing and self-employment</h2>
+                            <p>Since the freelancing industry and flexible work models are multiplying worldwide, a new Green residence allows freelancers and self-employed individuals to reside in the UAE for five years without the need for sponsors or employers.</p>
+                            <h3>Among the requirements are the following:</h3>
+                            <ul>
+                                <li>A freelancer/self-employment permit can be obtained from the Ministry of Human Resources and Emiratisation</li>
+                                <li>A prerequisite is at least a bachelor's degree or a specialized diploma.</li>
+                                <li>A self-employment income of AED 360,000 (USD 9,800.99) for the last two years.</li>
+                                <li>The applicant should prove their financial solvency during their stay in the country.</li>
+                            </ul>
+                            <h2>Green residence for investor or partner</h2>
+                            <p>
+                                Investors or partners can now live in the Green Residence to encourage investment. A five-year residency permit is provided to investors who establish or participate in commercial activities. In addition, the validity of this category has been extended from two to five years.
+                            </p>
+                            <p>Below are the requirements:</p>
+                            <ul>
+                                <li>Investment approval and investment proof.</li>
+                                <li>The total invested capital will be calculated if the investor (partner) holds more than one license.</li>
+                                <li>It is mandatory to obtain approval from the local authorities.</li>
+                            </ul>
+                            <h3>The benefits of a UAE green visa</h3>
+                            <p>With the UAE's new Green Visa, skilled individuals from all walks of life can live and work independently in the country. Listed below are some of the benefits you can get from it.</p>
+                            <ul>
+                                <li>
+                                    <strong>Sponsors are not required.</strong>
+                                    <p>UAE Green Visas have the advantage of not requiring you to be sponsored by your employer, unlike other visas. Furthermore, you are not granted the right to cancel your Visa by your employer, which makes it much safer.</p>
+                                </li>
+                                <li>
+                                    <strong>New benefits for family members</strong>
+                                    <p>Family members will benefit from the new system in more ways. For example, in the UAE, residents can now sponsor their first-degree relatives for five years of residency, including their spouses and children.</p>
+                                    <p>The ICP announced that ex-pats had been granted a grace period of six months following the expiration or cancellation of their UAE residence visa. Ex-pats remain in the country for 6 months to amend their status, get a new residence visa, or leave the country. Grace periods are exempt from fines. However, the dependents of a green visa holder may have to pay an overstaying fine if the green visa holder fails to renew or cancel their visas.</p>
+                                    <p>In addition, children are now allowed to marry at 25 (previously 18 years old), and unmarried daughters are not restricted by age. There is no age limit on the residence permit granted to children of determination.</p>
+                                    <p>First-degree relatives may accompany the Green Residence holder. However, family members must permanently reside for the same period as their original residence holder.</p>
+                                </li>
+                                <li>
+                                    <strong>Flexible Lifestyle & Easy Travel</strong>
+                                    <p>The Green Visa makes it easy to travel within and outside the country. In addition, Emirates can be quickly exited and re-entered if you need to travel elsewhere.</p>
+                                    <p>For foreign professionals the UAE is an excellent place to live and work for foreign professionals. As a student in the UAE, you can also use this visa.</p>
+                                </li>
+                            </ul>
+                            
+                            <div class="row">
+                                <div class="col-md-12" style="display: flex; justify-content: center;">
+                                    <div class="form-group">
+                                        <input type="button" onclick="location.href='https://goldenvisau.ae/';" class="btn btnTheme" value="Apply Now">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/uae-green-visa");
+    })
+
+</script>
+<script type="text/javascript">
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+
+    }, 500);
+
+    $(document).ready(function () {
+        $('.CompanyName').hide();
+        $('.LicencedAuthority').hide();
+        $('.School').hide();
+        $('.Specfield').hide();
+        $('.UniversityDiv').hide();
+    })
+
+
+
+
+
+    $('.ddlCatagories').change(function () {
+
+        if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 0) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.University').hide();
+        }
+        if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 1 || document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 2) {
+
+            $('.CompanyName').show();
+            $('.LicencedAuthority').show();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.University').hide();
+        }
+        else if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 3) {
+
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').show();
+            $('.Specfield').hide();
+            $('.University').hide();
+        } else if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 4) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.UniversityDiv').show();
+            $('.University').show();
+        }
+    })
+
+    $('.University').change(function () {
+        var aa = document.getElementsByClassName('University')[1].selectedIndex;
+        if (document.getElementsByClassName('University')[1].selectedIndex == 1) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+        }
+        else if (document.getElementsByClassName('University')[1].selectedIndex == 2) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').show();
+
+        }
+    })
+
+</script>

@@ -1,0 +1,275 @@
+﻿
+@{
+    ViewBag.Title = "UAE Remote Working Visa | Remote Work Visa Dubai";
+    ViewBag.PageTitle = "UAE Remote Working Visa";
+    ViewBag.Keyword = "uae working visa, golden visa, residence visa, residence visa uae, long term visa uae";
+    ViewBag.Description = "Remote working visa UAE, Dubai. If you are an employee, you must give proof of employment from your current employer, including a one-year contract.";
+    ViewBag.RemoteWorkVisa = "ActiveSubLink";
+    ViewBag.Value = "UAE Remote Working Visa";
+}
+@model amca.Models.Validation
+@using CaptchaMvc.HtmlHelpers;
+<div class="row otherBanner aboutUs lgHeight">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>PRO Services</li>
+                    <li>Visa Services </li>
+                    <li>Remote Working Visas</li>
+                </ul>
+            </div>
+
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row sidebarFull">
+                @RenderPage("~/Views/Sidebar/VisaSidebar.cshtml")
+                <div class="col-md-9 pagesMContain">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="~/wimages/remote-work-visa.jpg" class="img-responsive" alt="Economic Substance Regulations" title="Economic Substance Regulations">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("VisaQuery", "VisaSubServices", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Name" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6" id="ddlCatagories">
+                                        <div>
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.Catagories, new List<SelectListItem>
+                                                {
+                                                   new SelectListItem{ Text="Catagories", Value = "" },
+                                                   new SelectListItem{ Text="Employee ", Value = "Employee " },
+                                                   new SelectListItem{ Text="Business Owner", Value = "Business Owner" },
+
+                                                }, new { @class = "form-control selectpicker ddlCatagories" })
+                                                @Html.ValidationMessageFor(model => model.Catagories, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 CompanyName">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation " })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                        <div class="form-group">
+
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Licenced Authority Name", new { @class = "form-control textFld LicencedAuthority" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+
+
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                @Html.DropDownListFor(model => model.country, ViewBag.Nationality as SelectList, "Select Country you are working for", new { @class = "form-control selectpicker" })
+                                                @Html.ValidationMessageFor(model => model.country, "", new { @class = "errorValidation" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" id="captcha">
+                                        @Scripts.Render("~/bundles/jquery")
+                                        @Html.ValidationSummary(true)
+                                        @Html.Captcha("Refresh", "", 5)
+                                        <p style="color:Red">  @ViewBag.ErrMessage </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><strong>UAE Remote Working Visa  </strong></h2>
+                            <p>
+                                The UAE cabinet announced a new remote work visas plan that would allow employees from all around the world to work remotely from the UAE
+                                to attract skills and experience from all over the world. The one-year visa allows foreigners to visit the UAE under self-sponsorship and
+                                work under the visa's terms and conditions.
+                            </p>
+                            <p>
+                                The new program seeks to help both the public and private sectors by improving work-life balance, increasing productivity, and improving the business environment.
+                                Employees can also improve their digital abilities and adapt to the new gig economy.
+                            </p>
+                            <p>
+                                The move allows remote workers and their families to yearly relocate to one of the world's leading tourism and business destinations and enjoy a secure and
+                                high-quality lifestyle underpinned by a robust digital infrastructure that assures seamless connectivity.
+                            </p>
+
+
+                            <h3><strong>The Virtual Working Program in Dubai</strong></h3>
+                            <p>
+                                Dubai has established a unique new scheme that allows overseas remote working professionals from other countries to live in Dubai while serving their employers in their home country.
+                                Freelancers can now work and live legally in the UAE. According to updates on the official UAE government website, if your application to live in Dubai is accepted by the UAE authorities, you may also bring your family with you.
+                                The program costs $287 per person, plus a processing fee and medical insurance with valid UAE coverage.
+                            </p>
+
+                            <h3><strong>Key eligibility requirements</strong></h3>
+                            <p>To apply for the program, you must have a valid passport with a minimum of six-month validity and valid health insurance covering your stay in the UAE.</p>
+                            <p>If you are an employee, you must:</p>
+                            <ul>
+                                <li>give proof of employment from your current employer, including a one-year contract;</li>
+                                <li>Acquire a monthly salary of at least USD 5,000.</li>
+                                <li>provide the previous month's salary slip and bank statements for the previous three months.</li>
+                            </ul>
+
+                            <p>If you are the owner of a business, you must:</p>
+                            <ul>
+                                <li>provide proof of one year or longer ownership of the business.</li>
+                                <li>have a monthly salary of USD 5,000 on average</li>
+                                <li>provide previous three months submit bank statements</li>
+                            </ul>
+                            <p>
+                                You can get all kinds of services through the virtual working program, including telecommunications, utilities, medical care, and education.
+                                In addition, Dubai's extensive and smooth digital infrastructure, worldwide networking opportunities, and 0% income tax for people are all available to you.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/uae-remote-working-visa");
+    })
+
+</script>
+<script type="text/javascript">
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+
+    }, 500);
+
+    $(document).ready(function () {
+        $('.CompanyName').hide();
+        $('.LicencedAuthority').hide();
+        $('.School').hide();
+        $('.Specfield').hide();
+        $('.UniversityDiv').hide();
+    })
+
+
+
+
+
+    $('.ddlCatagories').change(function () {
+
+        if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 0) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.University').hide();
+        }
+        if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 1 || document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 2) {
+
+            $('.CompanyName').show();
+            $('.LicencedAuthority').show();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.University').hide();
+        }
+        else if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 3) {
+
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').show();
+            $('.Specfield').hide();
+            $('.University').hide();
+        } else if (document.getElementsByClassName('ddlCatagories')[1].selectedIndex == 4) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+            $('.UniversityDiv').show();
+            $('.University').show();
+        }
+    })
+
+    $('.University').change(function () {
+        var aa = document.getElementsByClassName('University')[1].selectedIndex;
+        if (document.getElementsByClassName('University')[1].selectedIndex == 1) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').hide();
+        }
+        else if (document.getElementsByClassName('University')[1].selectedIndex == 2) {
+            $('.CompanyName').hide();
+            $('.LicencedAuthority').hide();
+            $('.School').hide();
+            $('.Specfield').show();
+
+        }
+    })
+
+</script>

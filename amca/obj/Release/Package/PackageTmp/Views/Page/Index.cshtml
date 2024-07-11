@@ -1,0 +1,351 @@
+﻿@{
+    ViewBag.Title = "Company Formation in Dubai, UAE | Company Registration";
+    ViewBag.Keyword = "business setup, business setup dubai, business setup in dubai, business setup consultants in dubai, business setup uae, business setup companies in dubai, business setup services in dubai, business setup abu dhabi, business setup services, business setup in dubai freezone, new business setup in dubai, business setup in dubai cost, business setup cost in dubai, business setup dubai cost, business setup in uae free zone, business setup in ajman, business setup ajman, business setup consultants, business setup companies in uae, how to setup business in dubai, best business setup consultants in dubai, business setup in ajman free zone, business setup consultants in uae, business setup services in uae, business setup dubai mainland, business setup in dubai mainland, business setup company, business setup consultants jlt, business setup in rak free zone, business setup in fujairah free zone";
+    ViewBag.Description = "AMCA is an extended network of professional firms providing Audit, Tax, Accounting, and Advisory services.";
+
+}
+
+@model IEnumerable<amca.Models.Validation>
+@{
+
+    IEnumerable<amca.Models.InsightModel> insightModel = ViewData["InsightModel"] as IEnumerable<amca.Models.InsightModel>;
+}
+
+<div class="row bannerMain">
+    <video class="headerVideo" autoplay muted loop playsinline preload="metadata" data-object-fit="cover">
+        <source src="../../wimages/AMCA-intro.m4v">
+    </video>
+    <div class="overlay">
+        <div class="captionBanner">
+            <h1>Business Setup in Dubai</h1>
+            <h2>Be with Us and Experience the Best</h2>
+            <p style="color: #fff;" class="mobilehide">Setting up a company in Dubai will never be a problem anymore! With AMCA, <br /> make your life easier through our business set-up skills and fulfill your dreams of having your own company.</p>
+            <a class="popup-youtube btn btnTheme" href="https://www.youtube.com/watch?v=bcMiiT8Y04s">
+                View Intro Videos
+            </a>
+            <a href="javascript:void(0);" class="btn btnTheme" id="requestCust" title="Request a Free Consultation">
+                Request a free consultation
+            </a>
+        </div>
+    </div>
+    @*<div class="nationalDay">
+        <img src="~/wimages/uae-national-day.svg" />
+    </div>*@
+</div> <!-- end of row -->
+<div class="row space section1">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12" data-aos="fade-up">
+                    <h2 class="mainHeading">About <span>AMCA</span></h2>
+                    <h3><strong>10+ Year Of Experience</strong></h3>
+                    <p>AMCA was established in 2010, primarily as an auditing firm. Our commitment to excellence & in-depth knowledge of the business has assisted us in establishing ourselves as a pioneer in the field. We have served many organizations in public and private sectors in our decade-long presence. Having started our operations in Sheikh Zayed Road, Dubai, we gradually expanded into two additional locations; one in Abu Dhabi and the other in JLT DMCC in Dubai. In addition to this, AMCA is a tax agency licensed by the Federal Tax Authority.</p>
+                    <p>Through the years, we have offered a wide range of services, including Auditing & Assurance, Bookkeeping & Accounting, Advisory Services, Business Setup & Liquidation. In addition, our services have recently been expanded to include Data Analysis and IT Solutions. As of 2022, we expect to open new branches in Oman, Kuwait, KSA, and Bahrain. </p>
+                    <p><strong><a href="@Url.Action("AboutUs", "Page")" class="link">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </strong></p>
+                </div>
+                <div class="col-md-12 foundPH" data-aos="fade-up">
+                    <h3><strong>Our Founding Partners</strong></h3>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="../wimages/Mr_Abdulla.jpg" width="160" height="160" loading="lazy" class="lazyload img-responsive img-circle" alt="Mr Abdulla" title="Mr Abdulla">
+                        </div>
+                        <div class="col-md-10">
+                            <h5><strong>Mr. Abdulla A. AL Marzooqi</strong></h5>
+                            <p>Mr. Abdulla A. Al Marzooqi, one of the partners of AMCA, is an FTA Tax Agent with CPA & ASA. He has over 30 years of experience in many leading companies across the United Arab Emirates. During this period, Mr. Abdulla provided financial advisory, business consultancy, system implementation and review, and internal and external audits to companies. As a result, the private and public sectors highly seek his services. Mr. Abdulla has also held positions in the Ministry of Interior, Abu Dhabi Police, Dubai Municipality, and Abu Dhabi Tourism Authority.</p>
+                        </div>
+                    </div>
+                    <div class="row sepration">
+                        <div class="col-md-2">
+                            <img src="../wimages/Mr_Tariq.jpg" width="160" height="160" loading="lazy" class="lazyload img-responsive img-circle" alt="Mr Tariq" title="Mr Tariq">
+                        </div>
+                        <div class="col-md-10">
+                            <h5><strong>Mr. Tariq A. AL Marzooqi</strong></h5>
+                            <p>Mr. Tariq A. AL Marzooqi is a highly qualified CPA, a multi-talented, versatile, and dedicated professional who serves as the partner of AMCA. He has over 18 years of experience in various businesses across the United Arab Emirates. Mr. Tariq has also held senior positions such as Finance Controller and Finance Manager in Abu Dhabi Company for Onshore Oil Operation (ADCO) and Abu Dhabi Food Control Authority (ADFCA).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-aos="fade-up">
+                <div class="col-md-12 col-xs-12">
+                    <h3 class="mainHeading">Industries We Have <span>Worked On</span></h3>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="row text-center">
+                        <div class="col-md-2 col-xs-6 industries">
+                            <img src="../wimages/privateE.svg" width="80" height="75" loading="lazy" class="lazyload" alt="Private Equity" title="Private Equity">
+                            <h4><strong>Private Equity</strong></h4>
+                        </div>
+                        <div class="col-md-2 col-xs-6 industries">
+                            <img src="../wimages/financialS.svg" width="80" height="75" loading="lazy" class="lazyload" alt="Financial Services" title="Financial Services">
+                            <h4><strong>Financial Services</strong></h4>
+                        </div>
+                        <div class="col-md-2 col-xs-6 industries">
+                            <img src="../wimages/healthcare.svg" width="80" height="75" loading="lazy" class="lazyload" alt="Healthcare" title="Healthcare">
+                            <h4><strong>Healthcare</strong></h4>
+                        </div>
+                        <div class="col-md-2 col-xs-6 industries">
+                            <img src="../wimages/powerU.svg" width="80" height="75" loading="lazy" class="lazyload" alt="Power and Utilities" title="Power and Utilities">
+                            <h4><strong>Power and Utilities</strong></h4>
+                        </div>
+                        <div class="col-md-2 col-xs-6 industries">
+                            <img src="../wimages/restuarent.svg" width="80" height="75" loading="lazy" class="lazyload" alt="Restaurants" title="Restaurants">
+                            <h4><strong>Restaurants</strong></h4>
+                        </div>
+                        <div class="col-md-2 col-xs-6 industries">
+                            <img src="../wimages/assetM.svg" width="80" height="75" loading="lazy" class="lazyload" alt="Asset management" title="Asset management">
+                            <h4><strong>Asset management</strong></h4>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <a class="btn btnTheme" href="@Url.Action("Industries", "Page")">
+                            view more
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end of container -->
+</div> <!-- end of row -->
+<div class="row space section1">
+    <div class="container">
+        <div class="col-md-12">
+            <h2 class="mainHeading spaceHeading">Services We <span>Offer</span></h2>
+        </div> <!-- end of col-md-12 -->
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12 services">
+                    <div class="content sec">
+                        <div class="alignC">
+                            <h3><strong>Business Set-up</strong></h3>
+                            <p>UAE offers all incoming businesses the privilege of setting up their business within the country. As a result, setting up a business has never been easier, with a highly satisfying industry environment and grand business opportunities.</p>
+                            <p class="readM"><strong><a href="@Url.Action("BusinessSetUp", "Services")">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </strong></p>
+                        </div>
+                    </div>
+                    <div class="graphics">
+                        <img src="../wimages/businessSetup.svg" alt="Business Set-up Graphics" class="lazyload" loading="lazy" width="444" height="371" title="Business Set-up Graphics" data-aos="flip-down" data-aos-anchor-placement="bottom-bottom">
+                    </div>
+                </div>
+                <div class="col-md-12 services">
+                    <div class="graphics">
+                        <img src="../wimages/advisoryService.svg" alt="Advisory Services Graphics" class="lazyload" loading="lazy" width="444" height="371" title="Advisory Services Graphics" data-aos="flip-down" data-aos-anchor-placement="bottom-bottom">
+                    </div>
+                    <div class="content prim">
+                        <div class="alignC">
+                            <h3><strong>Advisory Services</strong></h3>
+                            <p>As the economic landscape changes rapidly, businesses today are facing critical difficulties. An effective plan can help minimize these effects. Typically, a business advisor provides practical assistance to a company, continuously monitoring to improve the business.</p>
+                            <p class="readM"><strong><a href="@Url.Action("AdvisoryServices", "Services")">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 services">
+                    <div class="content sec">
+                        <div class="alignC">
+                            <h3><strong>PRO Services</strong></h3>
+                            <p>UAE is one of the most investor-friendly destinations to start a business, but proper documentation approvals are a must! An easy way out of this is to appoint a hassle-free PRO assistant.</p>
+                            <p class="readM"><strong><a href="@Url.Action("PROServices", "Services")">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </strong></p>
+                        </div>
+                    </div>
+                    <div class="graphics">
+                        <img src="../wimages/pro-services-svg.svg" alt="PRO Services" width="444" height="371" class="lazyload" loading="lazy" title="PRO Services" data-aos="flip-down" data-aos-anchor-placement="bottom-bottom">
+                    </div>
+                </div>
+                <div class="col-md-12 services">
+                    <div class="graphics">
+                        <img src="../wimages/esr-servise-graphics.svg" width="444" height="371" loading="lazy" class="lazyload" alt="Economic Substance Regulations (ESR)" title="Economic Substance Regulations (ESR)" data-aos="flip-down" data-aos-anchor-placement="bottom-bottom">
+                    </div>
+                    <div class="content prim">
+                        <div class="alignC">
+                            <h3><strong>Economic Substance Regulations (ESR)</strong></h3>
+                            <p>The Economic Substance Regulations, also known as “ESR,” were formally introduced to the United Arab Emirates through Cabinet of Minister Resolution No. (31) of 2019 on the 30th of April 2019.</p>
+                            <p class="readM"><strong><a href="@Url.Action("ESRService", "Services")">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 services">
+                    <div class="content sec">
+                        <div class="alignC">
+                            <h3><strong>Ultimate Beneficial Ownership (UBO)</strong></h3>
+                            <p>The United Arab of Emirates replaced Cabinet Resolution No. 34 of 2020 with Cabinet Resolution No. (58) of 2020 regulating Beneficial Owner Procedures (the "Resolution").</p>
+                            <p class="readM"><strong><a href="@Url.Action("UltimateBeneficialOwner", "Services")">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </strong></p>
+                        </div>
+                    </div>
+                    <div class="graphics">
+                        <img src="../wimages/ubo.svg" width="444" height="371" loading="lazy" class="lazyload" alt="Ultimate Beneficial Ownership (UBO)" title="Ultimate Beneficial Ownership (UBO)" data-aos="flip-down" data-aos-anchor-placement="bottom-bottom">
+                    </div>
+                </div>
+                <div class="col-md-12 services">
+                    <div class="graphics">
+                        <img src="../wimages/cbcr-service.svg" width="444" height="371" class="lazyload" loading="lazy" alt="The UAE Country-by-Country Reporting (CbCR)" title="The UAE Country-by-Country Reporting (CbCR)" data-aos="flip-down" data-aos-anchor-placement="bottom-bottom">
+                    </div>
+                    <div class="content prim">
+                        <div class="alignC">
+                            <h3><strong>The UAE Country-by-Country Reporting (CbCR)</strong></h3>
+                            <p>The Cabinet Resolution No. (32) of 2019 (the “Resolution”) on Country-by-Country Reporting (“CbCR”) was issued in the United Arab Emirates on 30 April 2019.</p>
+                            <p class="readM"><strong><a href="@Url.Action("cbcr", "Services")">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a> </strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div> <!-- end of container -->
+</div> <!-- end of row -->
+@RenderPage("~/Views/Insight/HomeInsight.cshtml")
+
+<div class="row space section1 clients">
+    <div class="container">
+        <div class="col-md-12">
+            <h2 class="mainHeading">We are reliable <span>partner</span></h2>
+            <p class="spaceHeading">We are proud to be one of the best business setup consultants in the United Arab Emirates. We know that our stability, growth and success are strongly correlated to our commitment to excellence and the professional services we provide to our clients.</p>
+        </div> <!-- end of col-md-12 -->
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <i class="fa fa-calendar-plus-o iconI" aria-hidden="true"></i>
+                    <div class="counter-plus">
+                        <div class="largeH counter" data-count="10">0</div>
+                        <span>+</span>
+                    </div>
+                    <div class="smallH">Years Of Experience</div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fa fa-users iconI" aria-hidden="true"></i>
+                    <div class="counter-plus">
+                        <div class="largeH counter" data-count="2624">0</div>
+                        <span>+</span>
+                    </div>
+                    <div class="smallH">Satisfied Customers</div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fa fa-map-marker iconI" aria-hidden="true"></i>
+                    <div class="counter-plus">
+                        <div class="largeH counter" data-count="3">0</div>
+                        <span>+</span>
+                    </div>
+                    <div class="smallH">Locations</div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fa fa-graduation-cap iconI" aria-hidden="true"></i>
+                    <div class="counter-plus">
+                        <div class="largeH counter" data-count="45">0</div>
+                        <span>+</span>
+                    </div>
+                    <div class="smallH">Experienced Employees</div>
+                </div>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div>
+<div class="row space section1 blogs">
+    <div class="container">
+        <div class="col-md-12">
+            <h2 class="mainHeading spaceHeading">Insights</h2>
+        </div> <!-- end of col-md-12 -->
+        <div class="col-md-12">
+            <div class="owl-carousel owl-theme blogs-slide">
+
+
+                @foreach (var blogElement in insightModel)
+                {
+                    <div class="item">
+                        <div class="row blogWrap">
+                            <div class="col-md-12">
+                                <div class="caption">
+                                    <a href="@blogElement.pageUrlText" class="link"><img src=@Url.Content(@blogElement.ImageURL) loading="lazy" class="lazyload img-responsive" width="540" height="284" title="@blogElement.BlogTitle" alt="@blogElement.BlogTitle" /></a>
+                                    <div class="date">@blogElement.CreatedOn</div>
+                                </div>
+                                <h4><a href="@blogElement.pageUrlText" class="link"><strong>@blogElement.BlogTitle</strong></a></h4>
+                                <p>@blogElement.Description</p>
+                                <p id="eachBlog"><strong><a id="@blogElement.BlogID" href="@blogElement.pageUrlText" class="link">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></strong></p>
+                            </div>
+                        </div> <!-- end of row -->
+                    </div>
+                }
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "");
+        $("#eachBlog a ").mousedown(function (event) {
+            switch (event.which) {
+                case 1:
+                    var blogID = $(this).attr('id');
+                    $.ajax({
+                        type: "post",
+                        url: "/Insight/getdata",
+                        data: { "blogID": blogID },
+                        success: function (data) {
+                            Url = data;
+                            history.pushState("", document.title, window.location.origin + "/" + data);
+                            location.reload();
+                        }
+                    })
+
+                    break;
+
+                case 2:
+                    var blogID = $(this).attr('id');
+                    $.ajax({
+                        type: "post",
+                        url: "/Insight/getdata",
+                        data: { "blogID": blogID },
+                        success: function (data) {
+                            Url = data;
+                            window.open(window.location.origin + "/" + data, '_blank');
+                        }
+                    })
+
+                    break;
+            }
+
+
+        })
+    })
+
+
+</script>
+@*CELEBRATION*@
+@*<style>
+    #loaderCeleb {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: #fff;
+        background: url('../../wimages/UAE_flag.gif') 50% 50% no-repeat rgb(249,249,249);
+        
+    }
+    .content-celeb {
+        position: absolute;
+        top: 550px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+        .content-celeb span {
+            color: #c5951f
+        }
+</style>
+<div id="loaderCeleb">
+    <div class="content-celeb">
+        <h3><span>AMCA</span> family would like to extend its warmest greetings!</h3>
+        <h2>UAE <span>NATIONAL DAY</span> 2022</h2>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+      
+       $('#loaderCeleb').fadeOut(5000);
+    });
+
+</script>*@
+@*CELEBRATION END*@
+

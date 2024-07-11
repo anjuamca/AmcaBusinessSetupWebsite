@@ -1,0 +1,11 @@
+﻿<div class="mainSidebar">
+    <ul>
+        <li class="@ViewBag.InternalAudit"><a href="@Url.Action("InternalAudit", "AuditAssuranceSubServices")">Internal Audit</a></li>
+        <li class="@ViewBag.ExternalAudit"><a href="@Url.Action("ExternalAudit", "AuditAssuranceSubServices")">External Audit</a></li>
+        <li class="@ViewBag.TaxAudit"><a href="@Url.Action("TaxAudit", "AuditAssuranceSubServices")">Tax Audit</a></li>
+        <li class="@ViewBag.RevenueAudit"><a href="@Url.Action("RevenueAudit", "AuditAssuranceSubServices")">Revenue Audit</a></li>
+        <li class="@ViewBag.InterimAudit"><a href="@Url.Action("InterimAudit", "AuditAssuranceSubServices")">Interim Audit</a></li>
+    </ul>
+    @RenderPage("~/Views/Sidebar/_RelatedPost.cshtml")
+</div>
+

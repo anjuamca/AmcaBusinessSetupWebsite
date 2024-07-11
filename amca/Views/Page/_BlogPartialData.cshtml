@@ -1,0 +1,19 @@
+﻿<div class="row blogWrap1">
+
+    @foreach (var blogElement in Model)
+    {
+        <div class="col-md-4">
+            <div class="post-card">
+                <div class="caption">
+                    <a href="@blogElement.pageUrlText" class="link"><img src="@Url.Content(@blogElement.ImageURL)" class="img-responsive" height="184" width="350" title="@blogElement.BlogTitle" alt="@blogElement.BlogTitle" /></a>
+                </div>
+                <div class="content">
+                    <div class="date">@blogElement.CreatedOn</div>
+                    <h4><strong> <a href="@blogElement.pageUrlText">@blogElement.BlogTitle</a></strong></h4>
+                    <p class="description">@blogElement.Description</p>
+                    <p id="eachBlog"><strong><a id="@blogElement.BlogID" href="@blogElement.pageUrlText" class="link">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></strong></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
