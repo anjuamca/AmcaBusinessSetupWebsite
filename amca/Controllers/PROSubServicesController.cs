@@ -202,6 +202,7 @@ namespace amca.Controllers
                 }
                 BindDropDown();
                 BindService();
+                ViewData["BlogServiceModel"] = BlogSearch(4);
                 ViewBag.ErrMessage = "Error: captcha is not valid.";
                 return View(txtPageName);
             }
