@@ -67,11 +67,27 @@
                         </div>
                     </div>
                 </div>
+                @*<div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.Service, ViewBag.ServiceList as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                        @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                    </div>
+                </div>
+            </div>*@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            @Html.DropDownListFor(model => model.Service, ViewBag.ServiceList as SelectList, "Select Services", new { @class = "form-control inputB" })
+                            @Html.DropDownListFor(model => model.Service, ViewBag.AllServices as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
                             @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.SubServiceId, new SelectList(""), "Select Sub Service", new { @class = "form-control inputB", id = "subServiceId" })
+                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
                         </div>
                     </div>
                 </div>
@@ -223,4 +239,17 @@
             }
         });
     });
+
+    $(document).ready(function () {
+        $("#serviceId").change(function () {
+            $.get("/Page/GetSubServices", { Id: $("#serviceId").val() }, function (data) {
+                var jsondata = JSON.parse(data);
+                $("#subServiceId").empty();
+                $("#subServiceId").append("<option value=''>Select Sub Service</option>");
+                $.each(jsondata, function (index, row) {
+                    $("#subServiceId").append("<option value='" + row.Id + "'>" + row.Name + "</option>");
+                });
+            });
+        })
+    }); 
 </script>

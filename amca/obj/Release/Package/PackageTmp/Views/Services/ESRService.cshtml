@@ -24,15 +24,15 @@
 
 <div class="row space">
     <div class="container">
-        <div class="col-md-12">
+        <div class="col-md-12"> 
             <div class="row sidebarFull">
-                @RenderPage("~/Views/Sidebar/ESRSidebar.cshtml")
+                @RenderPage("~/Views/Sidebar/ESRSidebar.cshtml") 
                 <div class="col-md-9 pagesMContain">
                     <div class="row">
                         <div class="col-md-12">
                             <marquee width="100%" direction="left" scrollamount="10" onmouseover="this.stop();" onmouseout="this.start();">
                                 <p><strong class="text-danger">
-    The ESR Notification for the financial year ending 31st December 2022 is to be filed by 30th June 2023, and ESR Reports for the financial year ending 30th June 2022 are to be filed by 30th June 2023
+    The ESR Notification for the financial year ending 31st December 2023 is to be filed by 30th June 2024, and ESR Reports for the financial year ending 30th June 2023 are to be filed by 30th June 2024
 </strong></p>
                             </marquee>
                         </div>
@@ -98,10 +98,16 @@
                                             @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    @*<div class="col-md-6">
                                         <div class="form-group">
                                             @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Service", new { @class = "form-control textFld" })
                                             @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.EsrServices as SelectList, "Select Service", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
                                         </div>
                                     </div>
                                 </div>
@@ -165,87 +171,87 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            30-Jun-22
+                                            30-Jun-23
                                         </td>
-                                        <td>
-                                            31-Dec-22
-                                        </td>
-                                        <td>
-                                            <span style="background:red;padding: 5px;color: #fff;display: inline-block;">  30-Jun-23 </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            31-Jul-22
-                                        </td>
-                                        <td>
-                                            31-Jan-23
-                                        </td>
-                                        <td>
-                                             31-Jul-23 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            31-Aug-22
-                                        </td>
-                                        <td>
-                                            28-Feb-23
-                                        </td>
-                                        <td>
-                                            31-Aug-23
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            30-Sep-22
-                                        </td>
-                                        <td>
-                                            31-Mar-23
-                                        </td>
-                                        <td>
-                                            30-Sep-23
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            31-Oct-22
-                                        </td>
-                                        <td>
-                                            30-Apr-23
-                                        </td>
-                                        <td>
-                                            31-Oct-23
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            30-Nov-22
-</td>
-                                        <td>
-                                             31-May-23
-</td>
-                                        <td>
-                                            30-Nov-23
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span style="background:red;padding: 5px;color: #fff;display: inline-block;">  31-Dec-22 </span>
-</td>
-                                        <td>
-                                            <span style="background:red;padding: 5px;color: #fff;display: inline-block;">   30-Jun-23</span>
-</td>
                                         <td>
                                             31-Dec-23
                                         </td>
+                                        <td>
+                                            30-Jun-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-Jul-23
+                                        </td>
+                                        <td>
+                                            31-Jan-24
+                                        </td>
+                                        <td>
+                                            31-Jul-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-Aug-23
+                                        </td>
+                                        <td>
+                                            28-Feb-24
+                                        </td>
+                                        <td>
+                                            31-Aug-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            30-Sep-23
+                                        </td>
+                                        <td>
+                                            31-Mar-24
+                                        </td>
+                                        <td>
+                                            30-Sep-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-Oct-23
+                                        </td>
+                                        <td>
+                                            30-Apr-24
+                                        </td>
+                                        <td>
+                                            31-Oct-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            30-Nov-23
+                                        </td>
+                                        <td>
+                                            31-May-24
+                                        </td>
+                                        <td>
+                                            30-Nov-24
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            31-Dec-23
+                                        </td>
+                                        <td>
+                                            30-Jun-24
+                                        </td>
+                                        <td>
+                                            31-Dec-24
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             31-Jan-23
                                         </td>
                                         <td>
-                                            31-Jul-23
+                                            31-Jul-24
                                         </td>
                                         <td>
                                             31-Jan-24
@@ -256,7 +262,7 @@
                                             28-Feb-23
                                         </td>
                                         <td>
-                                            31-Aug-23
+                                            31-Aug-24
                                         </td>
                                         <td>
                                             28-Feb-24
@@ -267,7 +273,7 @@
                                             31-Mar-23
                                         </td>
                                         <td>
-                                            30-Sep-23
+                                            30-Sep-24
                                         </td>
                                         <td>
                                             31-Mar-24
@@ -278,7 +284,7 @@
                                             30-Apr-23
                                         </td>
                                         <td>
-                                            31-Oct-23
+                                            31-Oct-24
                                         </td>
                                         <td>
                                             30-Apr-24
@@ -289,7 +295,7 @@
                                             31-May-23
                                         </td>
                                         <td>
-                                            30-Nov-23
+                                            30-Nov-24
                                         </td>
                                         <td>
                                             31-May-24

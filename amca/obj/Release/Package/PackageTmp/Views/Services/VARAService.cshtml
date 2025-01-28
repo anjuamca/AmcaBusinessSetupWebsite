@@ -1,0 +1,246 @@
+﻿@{
+    ViewBag.Title = "Virtual Assets Regulatory Authority (VARA) | VARA Declaration UAE";
+    ViewBag.PageTitle = "Virtual Assets Regulatory Authority (VARA)";
+    ViewBag.Keyword = "VARA compliance audit , vara uae , vara regulations , vara dubai , virtual assets regulatory authority , vara regulations , VARA audit checklist , VARA compliance requirements , Dubai VARA rules , Virtual asset compliance , How to prepare for VARA compliance audit in Dubai";
+    ViewBag.Description = "The Virtual Asset Regulatory Authority (VARA) oversees and regulates virtual asset activities in Dubai. At AMCA, we provide expert consultation services, registration support, policy implementation, and audit preparation to ensure your business meets VARA’s requirements.";
+    ViewBag.PageURL = "https://amca.ae/virtual-assets-regulatory-authority";
+    ViewBag.ImageURL = "https://amca.ae/wimages/ultimate-beneficial-owner.jpg";
+    ViewBag.Value = "Virtual Assets Regulatory Authority (VARA)";
+    ViewBag.VARAServices = "ActiveSubLink";
+
+}
+
+@using CaptchaMvc.HtmlHelpers;
+@model amca.Models.Validation
+
+<div class="row otherBanner aboutUs lgHeight">
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="captionBanner">
+                <h1 class="servicesH">@ViewBag.PageTitle</h1>
+                <ul>
+                    <li><a href="@Url.Action("Index", "Page")">Home</a> </li>
+                    <li>Services</li>
+                    <li>@ViewBag.PageTitle</li>
+                </ul>
+            </div>
+        </div> <!-- end of col-md-12 -->
+    </div>
+</div> <!-- end of row -->
+<div class="row space">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row mobileOrder">
+                <div class="col-md-3 sidebarHalf">
+                    @RenderPage("~/Views/Sidebar/RegulatoryComplianceReportingSidebar.cshtml")
+                    @RenderPage("~/Views/Sidebar/CommonSidebar.cshtml")
+                </div>
+                <div class="col-md-9 contentOr">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <marquee width="100%" direction="left" scrollamount="10"  onmouseover="this.stop();" onmouseout="this.start();">
+                                <p><strong>Licensing authorities begins issuing written warnings to entities that violate Ultimate Beneficial Owner Procedures.</strong></p>
+                            </marquee>
+                        </div>
+                        <div class="col-md-12">
+                            <img src="~/wimages/Vara-Service.jpg" class="img-responsive" title="@ViewBag.PageTitle" alt="@ViewBag.PageTitle" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formThemePage">
+                                @using (Html.BeginForm("ServiceQuery", "Services", FormMethod.Post, new { @class = "fromB" }))
+                                {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h4><strong>Free Consultation</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Entity" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div> 
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control textFld", @placeholder = "Concern Person" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control selectpicker ddlNationalityCode" })
+                                            @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control textFld restrictZero", @placeholder = "Contact No" })
+                                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control textFld", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control selectpicker" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control textFld" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.VARAServiceList as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div id="captcha">
+                                                @Scripts.Render("~/bundles/jquery")
+                                                @Html.Captcha("Refresh", "", 5)
+                                                @Html.Hidden("txtPageName", "VARAService")
+                                                @Html.ValidationSummary(true)
+                                            </div>
+                                            <p style="color:Red;text-align:right">  @ViewBag.ErrMessage </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="token" name="token">
+                                            <input type="submit" class="btn btnTheme pull-right" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row space3">
+                        <div class="col-md-12 linkingText"> 
+                            <h3>Ensure Your Business Meets VARA Regulations with Expert Assistance</h3>
+                            <p>The UAE’s financial landscape is evolving rapidly, and as part of its commitment to ensuring the security and integrity of the financial system, it introduced the <strong>Virtual Asset Regulatory Authority (VARA)</strong>. This entity plays a key role in regulating and overseeing virtual assets within the UAE, including cryptocurrencies and blockchain-based technologies. With its focus on regulatory compliance, VARA ensures that virtual asset activities within the country align with international standards while preventing illicit financial activities. 
+                            <br /><br />
+                            At <strong>AMCA</strong>, we provide comprehensive <strong>VARA compliance services</strong> to assist businesses operating in the virtual asset space in adhering to the UAE’s regulations. Our team is equipped with the expertise to guide businesses through the regulatory requirements, including the registration process, Anti-Money Laundering (AML) protocols, and other necessary compliance obligations.</p>
+                            <br />
+                            <h3>What is VARA?</h3>
+                            <p>The <strong>Virtual Asset Regulatory Authority (VARA)</strong> is a government body established by the UAE government to regulate and supervise virtual assets in Dubai. VARA was introduced in response to the increasing importance of virtual assets globally and the need for a regulated environment for virtual asset activities in the UAE. VARA aims to ensure that the growing virtual asset sector operates safely, transparently, and accountably while promoting economic growth and innovation in the UAE.<br /><br />Virtual assets, including cryptocurrencies, tokenized assets, and blockchain-based technologies, can potentially transform the financial industry and bring new risks. VARA ensures that businesses in the virtual asset industry comply with standards that protect investors, prevent money laundering, and ensure the financial system's integrity.</p>
+
+                            <br />
+                            <h3>Why is VARA Compliance Important?</h3>
+                            <p>VARA compliance is crucial for virtual asset businesses in the UAE, as it helps businesses align with local and international regulations. By ensuring businesses comply with VARA standards, they reduce the risks of operating in a highly regulated industry.</p>
+                            <h4>Here are some reasons why VARA compliance is essential:</h4>
+                            <ul>
+                                <li>VARA ensures that virtual asset businesses adhere to strict operational standards, providing a safe environment for investors to engage with these assets.</li>
+                                <li>As the virtual asset industry grows, regulatory compliance is becoming a significant factor in attracting investors and businesses. VARA compliance enhances the credibility and trustworthiness of virtual asset businesses.</li>
+                                <li>VARA’s AML (Anti-Money Laundering) and Combating the Financing of Terrorism(CFT) regulations are designed to prevent using virtual assets for illicit activities.</li>
+                                <li>Non-compliance with VARA can lead to hefty fines, sanctions, or even the shutdown of business operations. By adhering to VARA’s guidelines, businesses stay on the right side of the law.</li>
+                            </ul>
+                            <br />
+                            <h3>Who Needs to Comply with VARA?</h3>
+                            <p>VARA applies to all businesses dealing with virtual assets in Dubai and beyond. If your business is involved in any of the following activities, you must ensure compliance with VARA regulations:</p>
+                            <ul>
+                                <li><p><strong>Advisory Services : </strong>Providing expert advice on virtual assets.</p></li>
+                                <li><p><strong>Broker-Dealer Services : </strong>Facilitating transactions involving virtual assets.</p></li>
+                                <li><p><strong>Custody Services : </strong>Safeguarding virtual assets on behalf of clients.</p></li>
+                                <li><p><strong>Exchange Services : </strong>Operating platforms for the trading of virtual assets.</p></li>
+                                <li><p><strong>Exchange Services : </strong>Enabling the lending or borrowing of virtual assets.</p></li>
+                                <li><p><strong>VA Management and Investment Services : </strong>Managing and investing in virtual assets on behalf of clients.</p></li>
+                                <li><p><strong>VA Transfer and Settlement Services : </strong>Assisting in the transfer and settlement of virtual assets.</p></li>
+                            </ul>
+                            <p>This includes businesses such as:</p>
+                            <ul>
+                                <li><p><strong>Cryptocurrency Exchanges</strong></p></li>
+                                <li><p><strong>Wallet Providers</strong></p></li>
+                                <li><p><strong>Virtual Asset Service Providers (VASPs)</strong></p></li>
+                                <li><p><strong>Issuance of Virtual Assets such as Initial Coin Offering (ICO) Issuers</strong></p></li>
+                                <li><p><strong>Virtual Asset Custodians</strong></p></li>
+                            </ul>
+                            <p>If your business falls under any of these categories, it is imperative to comply with VARA regulations to operate legally within the UAE.</p>
+                            <br />
+                            <h3>Key Aspects of VARA Compliance</h3>
+                            <p>VARA compliance covers several critical areas that virtual asset businesses must adhere to. These include:</p>
+                            <h4>1. Licensing and Registration</h4>
+                            <p>Before engaging in any virtual asset activity in the UAE, businesses must apply for and obtain a license from VARA. This licensing process ensures that only businesses that meet VARA’s requirements are authorized to operate in the country.<br /><br />The process involves submitting business documents, providing detailed information about your operations, and undergoing an assessment by VARA. AMCA can assist your business with registration, ensuring all required documentation is correctly prepared and submitted.</p>
+                            <h4>2. Anti-Money Laundering (AML) and Combatting the financing of Terrorism(CFT)</h4>
+                            <p>VARA requires businesses to establish robust AML/CFT/CPF procedures to prevent virtual assets from being used for illicit activities, including money laundering ,terrorism financing and Proliferation Financing.<br /><br />Businesses must conduct <strong>Customer Due Diligence (CDD)</strong> to verify the identities of their customers and adopt <strong>Risk Based Approach(RBA)</strong> to assess the risk they may pose. Monitoring transactions and reporting suspicious activities to relevant authorities is also mandatory. AMCA’s compliance experts can assist you in designing and implementing AML/CFT/CPF policies that meet VARA’s strict requirements.</p>
+                            <h4>3. Data Protection and Privacy Regulations</h4>
+                            <p>With the increase in digital transactions, data privacy and security are paramount. VARA requires businesses to adopt stringent data protection measures to safeguard customer information and comply with relevant UAE laws. Businesses must protect personal data, adhere to privacy regulations, and ensure data collection, use, and storage transparency. AMCA can help your business implement a data protection policy that complies with VARA’s requirements and the UAE’s data protection laws.</p>
+                            <h4>4. Operational Standards and Risk Management</h4>
+                            <p>VARA mandates that businesses operate with transparency, fairness, and accountability. Businesses must establish clear operational procedures that outline how virtual assets are traded, stored, and transferred. Additionally, businesses must have adequate risk management strategies to minimize potential exposure to financial crimes, fraud, and cyber threats. AMCA can help your business create and implement these operational standards to ensure VARA compliance.</p>
+                            <h4>5. Regular Audits and Reporting</h4>
+                            <p>To ensure ongoing compliance, businesses must undergo regular audits to assess their adherence to VARA regulations. This includes submitting periodic reports to VARA demonstrating compliance with the AML/CFT regulations, operational standards, and other legal requirements. AMCA can assist in preparing for audits, gathering the necessary data, and preparing reports for VARA to ensure that your business remains compliant.</p>
+
+                            <br />
+                            <h3>How AMCA Can Help with VARA Compliance</h3>
+                            <p>
+                                At <strong>AMCA</strong>, we offer a comprehensive suite of services to help your business achieve and fully comply with VARA regulations. Our team of experts provides tailored solutions to meet the unique needs of your virtual asset business, ensuring a seamless compliance process.
+                                <br /><br />
+                                Here’s how we can assist:
+                            </p>
+                            <ul>
+                                <li><strong>Consultation and Guidance</strong><p>We provide an initial consultation to assess your business’s compliance requirements and help you understand the steps needed to meet VARA standards.</p></li>
+                                <li><strong>Business Registration and Licensing</strong><p>AMCA will assist in registering your virtual asset business with VARA, ensuring that all documentation is submitted accurately and on time.</p></li>
+                                <li><strong>AML/CFT/CPF Compliance</strong><p>We help design and implement AML/CFT/CPF procedures that meet VARA’s strict guidelines, protecting your business from money laundering , terrorism financing and proliferation financing risks.</p></li>
+                                <li><strong>Operational Risk Management</strong><p>Our team can help you implement risk management strategies to safeguard your business operations and meet VARA’s operational standards.</p></li>
+                                <li><strong>Audit Preparation and Reporting</strong><p>We offer audit preparation services and assist in compiling the necessary reports to submit to VARA, ensuring your business remains compliant throughout the year.</p></li>
+                                <li><strong>Ongoing Compliance Monitoring</strong><p>With AMCA, you will have ongoing support to monitor your business’s compliance and make necessary adjustments to align with regulatory changes.</p></li>
+                            </ul>
+                            <br />
+                            <h3>Get Started with VARA Compliance Today!</h3>
+                            <p>Ensure that your virtual asset business complies with Dubai's regulatory requirements. <strong>Contact AMCA today</strong> to schedule a free consultation and learn how we can help you achieve full VARA compliance.<br /><br />For more information or inquiries, please reach out to us at info@amca.ae or call us at +971 4 123 4567.</p>
+                            <p><strong>Stay compliant. Stay secure.</strong></p>
+                        </div> 
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("form-control");
+    document.getElementById('captcha').getElementsByTagName("input")[1].classList.add("textFld");
+    setTimeout(function () {
+        document.getElementById('captcha').getElementsByTagName("a")[0].removeAttribute("href");
+    }, 500);
+
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/virtual-assets-regulatory-authority");
+    })
+
+</script>
+
+
+
+
+

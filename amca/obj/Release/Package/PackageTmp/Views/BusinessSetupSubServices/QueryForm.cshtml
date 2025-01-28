@@ -11,8 +11,8 @@
         </div>
         <div class="col-md-12">
             <div class="form-group">
-                 @Html.RadioButtonFor(model => model.LeadDataType, "Entity", new { @checked = "checked" })Entity
-                 @Html.RadioButtonFor(model => model.LeadDataType, "Individual")Individual
+                @Html.RadioButtonFor(model => model.LeadDataType, "Entity", new { @checked = "checked" })Entity
+                @Html.RadioButtonFor(model => model.LeadDataType, "Individual")Individual
             </div>
         </div>
 
@@ -58,12 +58,18 @@
                 @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
             </div>
         </div>
-        <div class="col-md-6">
+        @*<div class="col-md-6">
             <div class="form-group">
                 @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
                 @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
             </div>
-        </div>
+        </div>*@ 
+           <div class="col-md-6">
+               <div class="form-group">
+                   @Html.DropDownListFor(model => model.SubServiceId, ViewBag.MainlandService as SelectList , new { @class = "form-control textFld", id = "serviceId", @readonly = "readonly" })
+                   @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+               </div>
+           </div> 
         <div class="col-md-6" id="captcha">
             @Scripts.Render("~/bundles/jquery")
             @Html.ValidationSummary(true)

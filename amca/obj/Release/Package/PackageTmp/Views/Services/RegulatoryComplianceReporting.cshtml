@@ -96,10 +96,16 @@
                                             @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
                                         </div>
                                     </div>
+                                    @*<div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Service", new { @class = "form-control textFld" })
+                @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+            </div>
+        </div>*@
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Service", new { @class = "form-control textFld" })
-                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.RegulatoryComplianceReporting as SelectList, "Select Sub Service", new { @class = "form-control textFld", id = "serviceId"})
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
                                         </div>
                                     </div>
                                     <div class="col-md-6">

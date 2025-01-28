@@ -1595,10 +1595,28 @@ textarea {
         }
     }
 
+
     @media screen and (max-width: 600px) {
         .mobilehide {
             display: none;
         }
+        .job-all-list .pill ul li {
+            display: block;
+            margin-top: 5px;
+            height:24px !important;
+        }
+
+        .job-all-list .right-section {
+            text-align: left;
+        }
+
+            .job-all-list .right-section .d-flex-job {
+                display: block;
+            }
+
+                .job-all-list .right-section .d-flex-job .location {
+                    margin-bottom: 10px;
+                }
 
         .pad-lft {
             padding-left: 14px;

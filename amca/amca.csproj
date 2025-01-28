@@ -494,7 +494,6 @@
     <Content Include="Views\Career\ExperiencedCareerRoles.cshtml" />
     <Content Include="Views\Sidebar\CareerSidebar.cshtml" />
     <Content Include="Views\Career\StudentAndCampusRole.cshtml" />
-    <Content Include="Views\ExperiencedCareerRoles\TelesalesExecutive.cshtml" />
     <Content Include="Views\ExperiencedCareerRoles\DigitalMarketingSpecialist.cshtml" />
     <Content Include="Views\ExperiencedCareerRoles\AdminExecutive.cshtml" />
     <Content Include="Views\ExperiencedCareerRoles\HRExecutive.cshtml" />

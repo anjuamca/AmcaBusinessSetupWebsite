@@ -220,74 +220,74 @@ namespace amca.Controllers
                 }
             }
         }
-        [Route("telesales-jobs-in-dubai")]
-        public ActionResult TelesalesExecutive()
-        {
-            return View();
-        }
-        [Route("admin-executive-jobs-in-dubai")]
-        public ActionResult AdminExecutive()
-        {
-            return View();
-        }
-        [Route("content-writer-jobs-in-dubai")]
-        public ActionResult ContentWriter()
-        {
-            return View();
-        }
-        [Route("digital-marketing-jobs-in-dubai")]
-        public ActionResult DigitalMarketingSpecialist()
-        {
-            return View();
-        }
-        [Route("hr-executive-jobs-in-dubai")]
-        public ActionResult HRExecutive()
-        {
-            return View();
-        }
-        [Route("it-coordinator-jobs-in-dubai")]
-        public ActionResult ITCoordinator()
-        {
-            return View();
-        }
+        //[Route("telesales-jobs-in-dubai")]
+        //public ActionResult TelesalesExecutive()
+        //{
+        //    return View();
+        //}
+        //[Route("admin-executive-jobs-in-dubai")]
+        //public ActionResult AdminExecutive()
+        //{
+        //    return View();
+        //}
+        //[Route("content-writer-jobs-in-dubai")]
+        //public ActionResult ContentWriter()
+        //{
+        //    return View();
+        //}
+        //[Route("digital-marketing-jobs-in-dubai")]
+        //public ActionResult DigitalMarketingSpecialist()
+        //{
+        //    return View();
+        //}
+        //[Route("hr-executive-jobs-in-dubai")]
+        //public ActionResult HRExecutive()
+        //{
+        //    return View();
+        //}
+        //[Route("it-coordinator-jobs-in-dubai")]
+        //public ActionResult ITCoordinator()
+        //{
+        //    return View();
+        //}
 
-        [Route("ITSystemAdministrator-jobs-in-dubai")]
-        public ActionResult ITSystemAdministrator()
-        {
-            return View();
-        }
-        [Route("office-boy-jobs-in-dubai")]
-        public ActionResult OfficeBoy()
-        {
-            return View();
-        }
-        [Route("marketing-specialist-jobs-in-dubai")]
-        public ActionResult MarketingSpecialist()
-        {
-            return View();
-        }
+        //[Route("ITSystemAdministrator-jobs-in-dubai")]
+        //public ActionResult ITSystemAdministrator()
+        //{
+        //    return View();
+        //}
+        //[Route("office-boy-jobs-in-dubai")]
+        //public ActionResult OfficeBoy()
+        //{
+        //    return View();
+        //}
+        //[Route("marketing-specialist-jobs-in-dubai")]
+        //public ActionResult MarketingSpecialist()
+        //{
+        //    return View();
+        //}
         
-        [Route("aspdotnet-developer-jobs-in-dubai")]
-        public ActionResult ASPDotNET()
-        {
-            return View();
-        }
+        //[Route("aspdotnet-developer-jobs-in-dubai")]
+        //public ActionResult ASPDotNET()
+        //{
+        //    return View();
+        //}
 
         
-        [Route("video-editor-jobs-in-dubai")]
-        public ActionResult VideoEditor()
-        {
-            return View();
-        }
-        [Route("company-formation-specialist-jobs-in-dubai")]
-        public ActionResult CompanyFormationSpecialist()
-        {
-            return View();
-        }
-        [Route("pro-assistant-jobs-in-dubai")]
-        public ActionResult PROAssistant()
-        {
-            return View();
-        }
+        //[Route("video-editor-jobs-in-dubai")]
+        //public ActionResult VideoEditor()
+        //{
+        //    return View();
+        //}
+        //[Route("company-formation-specialist-jobs-in-dubai")]
+        //public ActionResult CompanyFormationSpecialist()
+        //{
+        //    return View();
+        //}
+        //[Route("pro-assistant-jobs-in-dubai")]
+        //public ActionResult PROAssistant()
+        //{
+        //    return View();
+        //}
     }
 }

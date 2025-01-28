@@ -15,8 +15,8 @@
                 @Html.RadioButtonFor(model => model.LeadDataType, "Individual")Individual
             </div>
         </div>
-        <div class="col-md-6" id="CompanyName1" >
-            <div class="form-group" >
+        <div class="col-md-6" id="CompanyName1">
+            <div class="form-group">
                 @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control textFld", @placeholder = "Company Name" })
                 @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
             </div>
@@ -59,10 +59,16 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
-                @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                @Html.TextBoxFor(model => model.SubServiceId, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
             </div>
         </div>
+        @*<div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.SubServiceId, ViewBag.BusinessValuation as SelectList, new { @class = "form-control textFld", id = "serviceId", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+            </div>
+        </div>*@
         <div class="col-md-6">
             <div id="captcha">
                 @Scripts.Render("~/bundles/jquery")

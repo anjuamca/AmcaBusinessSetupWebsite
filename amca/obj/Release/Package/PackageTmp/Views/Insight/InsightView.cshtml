@@ -70,14 +70,14 @@
                                 </div>
                                 @if (@Model.ServiceMain.ToString() == "Business Set-up" || @Model.ServiceMain.ToString() == "Advisory Services" || @Model.ServiceMain.ToString() == "PRO Service" || @Model.ServiceMain.ToString() == "Others" || @Model.ServiceMain.ToString() == "Visa Services")
                                 {
-                                    
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                @Html.RadioButtonFor(model => model.LeadDataType, "Entity", new { @checked = "checked" }) Entity
-                                                @Html.RadioButtonFor(model => model.LeadDataType, "Individual") Individual
-                                            </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @Html.RadioButtonFor(model => model.LeadDataType, "Entity", new { @checked = "checked" }) Entity
+                                            @Html.RadioButtonFor(model => model.LeadDataType, "Individual") Individual
                                         </div>
-                                    
+                                    </div>
+
                                 }
                                 else
 
@@ -132,15 +132,21 @@
                                     </div>
                                 </div>
                                 @*<div class="col-md-6">
-                                        <div class="form-group">
-                                            @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
-                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
-                                        </div>
-                                    </div>*@
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Service, new { @class = "form-control textFld", @readonly = "readonly", @ViewBag.Value })
+                @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+            </div>
+        </div>*@
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        @Html.DropDownListFor(model => model.Service, ViewBag.ServiceList as SelectList, "Select Services", new { @class = "form-control forminput-theme" })
+                                        @Html.DropDownListFor(model => model.Service, ViewBag.AllServiceTypeServices as SelectList, "Select Services", new { @class = "form-control forminput-theme", id = "serviceId" })
                                         @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        @Html.DropDownListFor(model => model.SubServiceId, new SelectList(""), "Select Sub Service", new { @class = "form-control inputB", id = "subServiceId" })
+                                        @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -281,4 +287,17 @@
             }
         });
     });
+
+    $(document).ready(function () {
+        $("#serviceId").change(function () {
+            $.get("/Page/GetSubServices", { Id: $("#serviceId").val() }, function (data) {
+                var jsondata = JSON.parse(data);
+                $("#subServiceId").empty();
+                $("#subServiceId").append("<option value=''>Select Sub Service</option>");
+                $.each(jsondata, function (index, row) {
+                    $("#subServiceId").append("<option value='" + row.Id + "'>" + row.Name + "</option>");
+                });
+            });
+        })
+    }); 
 </script>
