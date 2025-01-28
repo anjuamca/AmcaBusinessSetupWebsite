@@ -385,6 +385,7 @@
     <Content Include="wimages\uae-moves-towards-normalcy.jpg" />
     <Content Include="wimages\UAE_flag.gif" />
     <Content Include="wimages\UltimateBeneficialOwner.svg" />
+    <Content Include="wimages\Vara-Service.jpg" />
     <Content Include="wimages\vatAccounting.svg" />
     <Content Include="wimages\vat_accounting.svg" />
     <Content Include="wimages\Vinko.jpg" />
@@ -545,6 +546,7 @@
     <Content Include="Views\ExperiencedCareerRoles\ITSystemAdministrator.cshtml" />
     <Content Include="Views\Career\ListAllJobs.cshtml" />
     <Content Include="Views\Career\JobDescription.cshtml" />
+    <Content Include="Views\Services\VARAService.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

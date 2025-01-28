@@ -113,7 +113,7 @@
                                     </div>*@
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.VARAService as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
+                                            @Html.DropDownListFor(model => model.SubServiceId, ViewBag.VARAServiceList as SelectList, "Select Services", new { @class = "form-control inputB", id = "serviceId" })
                                             @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
                                         </div>
                                     </div>

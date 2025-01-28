@@ -300,7 +300,7 @@ namespace amca.Controllers
             ServiceModel PL = new ServiceModel();
             PL.OpCode = 73;
             ServiceModelD.returnTable(PL);
-            ViewBag.VARAService = ToSelectList(PL.dt, "Id", "Name");
+            ViewBag.VARAServiceList = ToSelectList(PL.dt, "Id", "Name");
 
             Session["txtPageName"] = "VARAService";
             ViewData["BlogServiceModel"] = BlogSearch(7);
@@ -492,7 +492,7 @@ namespace amca.Controllers
                 {
                     PL.OpCode = 73;
                     ServiceModelD.returnTable(PL);
-                    ViewBag.VARAService = ToSelectList(PL.dt, "Id", "Name");
+                    ViewBag.VARAServiceList = ToSelectList(PL.dt, "Id", "Name");
                 }
                 return View(txtPageName);
             }
