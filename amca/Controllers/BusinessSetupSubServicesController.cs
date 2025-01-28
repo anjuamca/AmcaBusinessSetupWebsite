@@ -205,6 +205,34 @@ namespace amca.Controllers
                 }
                 BindDropDown();
                 ViewBag.ErrMessage = "Error: captcha is not valid.";
+                ViewData["BlogServiceModel"] = BlogSearch(5);
+
+                ServiceModel PL = new ServiceModel();
+                if (txtPageName == "MainlandCompanyFormation")
+                {
+                    PL.OpCode = 26;
+                    PL.ServiceType = "73";
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.MainlandService = ToSelectList(PL.dt, "Id", "Name");
+                    Session["txtPageName"] = "MainlandCompanyFormation";
+                }
+                if (txtPageName == "FreeZoneCompanyFormation")
+                {
+                    PL.OpCode = 26;
+                    PL.ServiceType = "72";
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.MainlandService = ToSelectList(PL.dt, "Id", "Name");
+                    Session["txtPageName"] = "FreeZoneCompanyFormation";
+                }
+                if (txtPageName == "OffshoreCompanyFormation")
+                {
+                    PL.OpCode = 26;
+                    PL.ServiceType = "74";
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.MainlandService = ToSelectList(PL.dt, "Id", "Name");
+                    Session["txtPageName"] = "OffshoreCompanyFormation";
+                }
+
                 return View(txtPageName);
             }
         }

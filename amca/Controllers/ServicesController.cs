@@ -188,7 +188,7 @@ namespace amca.Controllers
             ViewBag.PROServices = ToSelectList(PL.dt, "Id", "Name");
 
 
-            Session["txtPageName"] = "AdvisoryServices";
+            Session["txtPageName"] = "PROServices";
             ViewData["BlogServiceModel"] = BlogSearch(9);
             Session["BlogSearch"] = 9;
             return ServiceQuery();
@@ -242,6 +242,7 @@ namespace amca.Controllers
             ServiceModelD.returnTable(PL);
             ViewBag.DMCCServices = ToSelectList(PL.dt, "Id", "Name");
             //////////////////////////////////////////////////////////////////
+            Session["txtPageName"] = "ParentCompany";
             ViewData["BlogServiceModel"] = BlogSearch(7);
             Session["BlogSearch"] = 7;
             return ServiceQuery();
@@ -259,6 +260,7 @@ namespace amca.Controllers
             ViewBag.RegulatoryComplianceReporting = ToSelectList(PL.dt, "Id", "SubServiceName");
             Session["txtPageName"] = "RegulatoryComplianceReporting";
             ViewData["BlogServiceModel"] = BlogSearch(7);
+            Session["BlogSearch"] = 7;
             return ServiceQuery();
         }
         [Route("the-uae-country-by-country-reporting-cbcr")]
@@ -270,6 +272,7 @@ namespace amca.Controllers
             ServiceModelD.returnTable(PL);
             ViewBag.CBCRServices = ToSelectList(PL.dt, "Id", "Name");
 
+            Session["txtPageName"] = "cbcr";
             ViewData["BlogServiceModel"] = BlogSearch(7);
             Session["BlogSearch"] = 7;
             return ServiceQuery();
@@ -284,7 +287,24 @@ namespace amca.Controllers
             ServiceModelD.returnTable(PL);
             ViewBag.UBOServices = ToSelectList(PL.dt, "Id", "Name");
 
-            ViewData["BlogServiceModel"] = BlogSearch(7);            
+            Session["txtPageName"] = "UltimateBeneficialOwner";
+            ViewData["BlogServiceModel"] = BlogSearch(7);
+            Session["BlogSearch"] = 7;
+            return ServiceQuery();
+        }
+
+        [Route("virtual-assets-regulatory-authority")]
+        public ActionResult VARAService() // Virtual Assets Regulatory Authority
+        {
+            // Select UBO Services
+            ServiceModel PL = new ServiceModel();
+            PL.OpCode = 73;
+            ServiceModelD.returnTable(PL);
+            ViewBag.VARAServiceList = ToSelectList(PL.dt, "Id", "Name");
+
+            Session["txtPageName"] = "VARAService";
+            ViewData["BlogServiceModel"] = BlogSearch(7);
+            Session["BlogSearch"] = 7;
             return ServiceQuery();
         }
         public void BindDropDown() {
@@ -407,6 +427,73 @@ namespace amca.Controllers
                 bindServiceDdl(txtPageID);
                 ViewBag.ErrMessage = "Error: captcha is not valid.";
 
+                ServiceModel PL = new ServiceModel();
+                if (txtPageName == "BusinessSetUp")
+                {
+                    string BusinessSetUpService = "9";
+                    PL.OpCode = 66;
+                    PL.ServiceType = BusinessSetUpService;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.BusinessSetupServices = ToSelectList(PL.dt, "Id", "SubServiceName");
+                }
+                if (txtPageName == "AdvisoryServices")
+                {
+                    string AdvisoryServices = "4";
+                    PL.OpCode = 66;
+                    PL.ServiceType = AdvisoryServices;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.AdvisoryService = ToSelectList(PL.dt, "Id", "SubServiceName");
+                }
+                if (txtPageName == "PROServices")
+                {
+                    PL.OpCode = 38;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.PROServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+                if (txtPageName == "ESRService")
+                {
+                    PL.OpCode = 27;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.EsrServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+                if (txtPageName == "goAML")
+                {
+                    PL.OpCode = 30;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.goAMLServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+                if (txtPageName == "ParentCompany")
+                {
+                    PL.OpCode = 31;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.DMCCServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+                if (txtPageName == "RegulatoryComplianceReporting")
+                {
+                    string regulatorycompliancereporting = "14";
+                    PL.OpCode = 66;
+                    PL.ServiceType = regulatorycompliancereporting;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.RegulatoryComplianceReporting = ToSelectList(PL.dt, "Id", "SubServiceName");
+                }
+                if (txtPageName == "cbcr")
+                {
+                    PL.OpCode = 29;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.CBCRServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+                if (txtPageName == "UltimateBeneficialOwner")
+                {
+                    PL.OpCode = 28;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.UBOServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+                if (txtPageName == "VARAService")
+                {
+                    PL.OpCode = 73;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.VARAServiceList = ToSelectList(PL.dt, "Id", "Name");
+                }
                 return View(txtPageName);
             }
         }

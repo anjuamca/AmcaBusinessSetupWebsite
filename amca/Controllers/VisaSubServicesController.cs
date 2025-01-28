@@ -251,6 +251,45 @@ namespace amca.Controllers
                 }
                 BindDropDown();
                 ViewBag.ErrMessage = "Error: captcha is not valid.";
+                ViewData["BlogServiceModel"] = BlogSearch(9);
+
+                ServiceModel PL = new ServiceModel();
+
+                if (txtPageName == "GoldenVisa")
+                {
+                    PL.OpCode = 33;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.GoldenVisaServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+
+                if (txtPageName == "GreenVisa")
+                {
+                    PL.OpCode = 34;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.GreenVisaServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+
+                if (txtPageName == "RemoteWorkVisa")
+                {
+                    PL.OpCode = 36;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.RemoteVisaServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+
+                if (txtPageName == "EntryPermitsVisa")
+                {
+                    PL.OpCode = 35;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.EntryVisaServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+
+                if (txtPageName == "RetirementVisa")
+                {
+                    PL.OpCode = 37;
+                    ServiceModelD.returnTable(PL);
+                    ViewBag.RetirementVisaServices = ToSelectList(PL.dt, "Id", "Name");
+                }
+
                 return View(txtPageName);
             }
         }

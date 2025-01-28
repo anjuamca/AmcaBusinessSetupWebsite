@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D84E55C2-0125-40ED-B2AA-06E7F9FA770A}|amca\\amca.csproj|d:\\mohd owais ansari\\git websites\\amcaae\\amca\\views\\services\\varaservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D84E55C2-0125-40ED-B2AA-06E7F9FA770A}|amca\\amca.csproj|solutionrelative:amca\\views\\services\\varaservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D84E55C2-0125-40ED-B2AA-06E7F9FA770A}|amca\\amca.csproj|D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D84E55C2-0125-40ED-B2AA-06E7F9FA770A}|amca\\amca.csproj|solutionrelative:amca\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D84E55C2-0125-40ED-B2AA-06E7F9FA770A}|amca\\amca.csproj|D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\views\\sidebar\\regulatorycompliancereportingsidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D84E55C2-0125-40ED-B2AA-06E7F9FA770A}|amca\\amca.csproj|solutionrelative:amca\\views\\sidebar\\regulatorycompliancereportingsidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D84E55C2-0125-40ED-B2AA-06E7F9FA770A}|amca\\amca.csproj|D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\views\\services\\ultimatebeneficialowner.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D84E55C2-0125-40ED-B2AA-06E7F9FA770A}|amca\\amca.csproj|solutionrelative:amca\\views\\services\\ultimatebeneficialowner.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UltimateBeneficialOwner.cshtml",
+              "DocumentMoniker": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\Views\\Services\\UltimateBeneficialOwner.cshtml",
+              "RelativeDocumentMoniker": "amca\\Views\\Services\\UltimateBeneficialOwner.cshtml",
+              "ToolTip": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\Views\\Services\\UltimateBeneficialOwner.cshtml",
+              "RelativeToolTip": "amca\\Views\\Services\\UltimateBeneficialOwner.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAEwFsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-27T12:12:50.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegulatoryComplianceReportingSidebar.cshtml",
+              "DocumentMoniker": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\Views\\Sidebar\\RegulatoryComplianceReportingSidebar.cshtml",
+              "RelativeDocumentMoniker": "amca\\Views\\Sidebar\\RegulatoryComplianceReportingSidebar.cshtml",
+              "ToolTip": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\Views\\Sidebar\\RegulatoryComplianceReportingSidebar.cshtml",
+              "RelativeToolTip": "amca\\Views\\Sidebar\\RegulatoryComplianceReportingSidebar.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-27T12:09:12.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VARAService.cshtml",
+              "DocumentMoniker": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\Views\\Services\\VARAService.cshtml",
+              "RelativeDocumentMoniker": "amca\\Views\\Services\\VARAService.cshtml",
+              "ToolTip": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\Views\\Services\\VARAService.cshtml",
+              "RelativeToolTip": "amca\\Views\\Services\\VARAService.cshtml",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAAHMAAAB2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-27T12:07:55.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ServicesController.cs",
+              "DocumentMoniker": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\Controllers\\ServicesController.cs",
+              "RelativeDocumentMoniker": "amca\\Controllers\\ServicesController.cs",
+              "ToolTip": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAe\\amca\\Controllers\\ServicesController.cs",
+              "RelativeToolTip": "amca\\Controllers\\ServicesController.cs",
+              "ViewState": "AgIAANUBAAAAAAAAAAAAAO4BAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T06:50:24.72Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
